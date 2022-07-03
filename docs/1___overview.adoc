@@ -1,0 +1,158 @@
+== Overview
+
+SSP is a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
+The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parametrization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
+This description is tool neutral and is intended to be used primarly as an exchange format of simulation system descriptions between different tools.
+
+SSP can be seen as an extension to the FMI (Functional Mockup Interface) standard [FMI20].
+FMI describes a tool independent standard to exchange single simulation models.
+Using SSP complete systems consisting of multiple interconnected simulation models can be defined with the desired signal flow and also with the wanted parameterization of each single model as well as the parameters for the complete system.
+This system topology can include hierarchies of sub-systems for proper structuring of the overall system.
+Along the signal flow, unit definitions can be used for automatic unit conversion or unit checking.
+Parameters can be derived from other parameters to be able to introduce dependencies of parameters between different components or to assure consistent use of same values for multiple components where needed.
+While SSP is closely aligned to FMI it can also be used with components of other formats than FMI.
+
+=== Properties and Guiding Ideas
+
+This section introduces the basic properties and guiding principles that underly the design of the SSP standard:
+
+_Tool independence_: The core intent of SSP is to enable the exchange of partial and complete simulation systems between tools.
+In consequence any tool-specific data is not stored in the standard schema and will be lost during transfer between implementations.
+However specific data can be stored in customized annotations for reuse in the same tool.
+Additional common data for use across tools can also be standardized as layered standards (cf. section 2.2).
+
+_Simplicity_: SSP is focused on the possibility to exchange complete or partial topologies and parameters between different tools as simply as possible, while retaining essential information.
+This optionally also includes basic graphical information, to ensure basic recognizability, while eschewing the complexities of full and exact graphical model exchange.
+This approach also differentiates SSP from systems engineering standards like SysML: By focusing on simplicity and simulation-related features, SSP avoids the complexities that have plagued the tool-independent exchange of SysML models, enabling a wider adoption across the tool landscape.
+
+_Maximum Reuseability:_ SSP contributes to maximizing reusability of models and parameters across tools and use cases.
+SSP can be used to specify required interfaces of a single component without the need to build a running model.
+Such an interface specification can be used as a template for the implementation of a model.
+In consequence compatibility between different implementations can be guaranteed, ensuring that these implementations will fit into the overall system structure.
+The feature of automated unit conversion further reduces the need for adaptations between uses.
+Mechanisms like signal dictionaries support simplified signal matching even across hierarchies, without the need to adjust all intervening interfaces.
+Hierarchical structures enable encapsulation and combination of small components into subsystems that can be reused in larger subsystems.
+
+=== Typical Use cases
+
+To understand the value of SSP, five basic use cases are listed below.
+These use cases are driven by the idea of collaboration of different departments either in one organization or across organizations.
+Additionally, a systems engineering approach is used, where a system design is performed at an early stage before the implementation of each component is completed.
+
+It is also very important to keep in mind that SSP is defined as a tool independent exchange format.
+All elements of SSP can be used in different tools.
+Hence for every use case the most appropriate tool can be used and the result can be stored with SSP and imported by another tool for the next use case.
+
+Another strength of SSP is due to its simple syntax that users can easily write their own software to read, generate or manipulate SSP files and exchange them with other tools that support SSP.
+
+==== Designing a simulation structure
+
+For the simulation of complex systems, first a design of this system should be created.
+From a simulation perspective, each component has to be described with its inputs and outputs and its required parameters.
+This can be done using SSP by defining the wrapper of this component with an empty Component element comprising the connectors for the inputs and outputs and the component’s parameters.
+
+The interaction of the components is defined by the connections.
+Connections in SSP are always causal.
+Connections can be made directly between components or via signal dictionaries.
+A signal dictionary is a collection of signals similar to a bus concept (e.g. like a CAN bus).
+During the design phase of a system, a signal dictionary can be a good way to predefine the available signal connections.
+
+If the system has global parameters that shall be propagated to multipile components, the definition can also be made at system level.
+The mapping to the parameters of the components can be realized either using connections or through parameter bindings that can include parameter mappings.
+
+==== SSP as definition of component interfaces and parameterization as template
+
+The main result of the design of the complete simulation structure is the definition of all needed components and the used parameterization structure.
+Each component can be used as a design template for the implementation – including the wanted parameters.
+The system designer extracts each component into a separate SSP file as preparation for the implementation and sends it to the implementor.
+
+The implementor of the component can import this SSP file as a template in his authoring tool and directly code the behavior using the defined input signals and the definition of the parameters to calculate the defined output signals.
+
+After completion of the implementation the component can be returned as a running entity in an SSP package file for insertion into the complete system structure by the integrator.
+The integrator can decide whether to merge the components from different sources into one file or use the components as references by using the appropriate mechanisms in SSP to just link to the original SSP files.
+The latter approach has the benefit that the components can be used “untouched” and any “warranty” given by the author of the component is not corrupted.
+Even traceability information can be retained this way.
+
+==== SSP as central parameterization description and syntax for other parameterization databases
+
+A good system design can be used for various applications.
+The structure keeps the same for all these applications.
+The parameter settings are used to differentiate the applications.
+Therefore a good parametrization concept is important to facilitate this reuse.
+SSP supports the creation of a central parameterization structure for entire systems.
+The SSP parameter data model can be used to integrate parameters from various sources, including external parameter databases, which can export their parameter data as SSV data sets.
+Through the URI-based addressing mechanism, tools can support direct access to such databases from system structure descriptions.
+
+==== SSP as particular instances of ready-to-simulate simulation systems
+
+After implementation of all components and provisioning of the parameter settings for a particular system everything is in place for running simulations.
+All these entities can be stored in one single SSP package, which can be imported by the executing system for running the simulation.
+Depending on the execution system it might be necessary to define additional settings for the solver or other execution algorithms.
+The core SSP standard does not include these execution-specific settings, but layered standards will be defined to include those settings.
+
+These complete instances of simulation systems can also be used as an archive for traceability purposes.
+
+==== SSP for reuse of system structure elements during development
+
+As an example, a system structure defined originally for software-in-the-loop testing can also be reused for hardware-in-the-loop testing.
+Where FMI enables the reuse of individual models across platforms, SSP enables the reuse of complete systems and subsystems, including their configurations, basic layouts, and parameters.
+
+Data management tools can control the lifecycle of the SSP-based system structures.
+There is an increasing desire to reuse environment models to provide proven, consistent solutions for the validation of controller models in different projects and development stages (e.g., for virtual validation and HIL simulations).
+
+Data management environments provide capabilities for managing model compositions, handling variants of systems and managing the parameter and signal interfaces of the different model systems.
+
+The SSP approach enables the sharing of standardized system structure descriptions between data management, integration and configuration tools for SIL, MIL and HIL scenarios.
+
+=== Feature Overview
+
+* Hierarchical (multi-level) description of systems of connected components
+* Use of different kind of components: FMUs and external SSPs/SSDs, extensible to other models
+* Binding of parameters both at component and system-level, including automatic unit-transformations and name-mapping
+* Signal dictionaries support cross-hierarchical signal pools (e.g for buses)
+* Packaging of SSDs, FMUs, Parameters, … into one bundle (SSP)
+* Light-weight support for variant handling at SSP level +
+(multiple SSDs sharing components, parameters, resources)
+* Optional exchange of graphical information (similar display across tools)
+* URI references to all resources: Integration with other systems via URIs and usage of subsystems in a read-only manner
+
+=== Acknowledgements
+
+This standard was developed as part of the Modelica Association Project “System Structure and Parametrization” (MAP SSP).
+The following companies and persons were involved in the creation of the standard as direct contributors to the standard document:
+
+* Christian Bertsch, Bosch
+* Dag Brück, Dassault Systèmes
+* Markus Deppe, dSpace
+* Hans-Martin Heinkel, Bosch
+* Maria Henningsson, Modelon
+* Jan-Niklas Jäschke, TLK-Thermo
+* Jochen Köhler, ZF Friedrichshafen
+* Jürgen Krasser, AVL
+* Peter Lobner, eXXcellent solutions
+* Pierre R. Mai, PMSF IT Consulting
+* Masoud Najafi, Altair
+* Joel Petersson, Modelon
+* Torsten Sommer, Dassault Systèmes
+* Klaus Schuch, AVL
+* Karl Wernersson, Dassault Systèmes
+* Ulrich Wurstbauer, TWT
+* Hang Yu, Pratt & Miller Engineering
+
+We would also like to thank all persons that provided feedback during the internal and public feedback periods, as well as prototype implementations and public presentations furthering the aims of this standard.
+
+=== Changes in 1.0.1
+
+The following changes were performed as part of the 1.0.1 maintenance release:
+
+* Correct version string for 1.0 release (Issue #54)
+* Clarify that GTypeChoice is optional for connectors (Issue #80)
+* Clarify use of binary connectors (Issue #98)
+* Clarify interaction with structured variable naming convention in FMI (Issue #59)
+* Clarify icon rotation specification (Issue #29)
+* Add non-normative comment on empty/missing source attribute of components (Issue #82)
+* Clarify connector geometry override (Issue #30)
+* Add further examples of graphical notation (Issue #42)
+* Minor typographical fixes (Issues #56, #57, #58)
+
+Note that there were no changes to the XML Schema files of the standard.

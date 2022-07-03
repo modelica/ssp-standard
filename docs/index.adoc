@@ -1,0 +1,34 @@
+= System Structure and Parameterization
+:doctype: book
+:sectnums:
+:sectnumlevels: 5
+:toc: left
+:toc-title: Contents
+:toclevels: 5
+:xrefstyle: short
+:docinfo: shared
+:stylesheet: ssp-spec.css
+:stem: latexmath
+:source-highlighter: highlightjs
+:nofooter:
+:icons: font
+
+include::0___preamble.adoc[]
+
+include::1___overview.adoc[]
+
+include::2___common_concepts.adoc[]
+
+include::3___packaging.adoc[]
+
+include::4___common_content.adoc[]
+
+include::5___ssd.adoc[]
+
+include::6___ssv.adoc[]
+
+include::7___ssm.adoc[]
+
+include::8___ssb.adoc[]
+
+include::A___literature.adoc[]

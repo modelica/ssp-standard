@@ -1,0 +1,64 @@
+== SSP Common Concepts
+
+=== Extensibility
+
+The SSP standard allows the set of data and meta-data stored and transported via SSP file formats to be extended by tools and users through three extension mechanisms: Annotations, extra files and MIME type-based format dispatch.
+
+==== Annotation Mechanism
+
+All XML-based file formats defined in the SSP standard allow optional ssc:Annotation elements to be inserted in all XML elements that represent entities of the underlying data model.
+This is achieved through the ssc:TAnnotations type defined in section 4.2. Each ssc:Annotation element contains a required type attribute, which contains the namespace for that annotation, as defined in section 2.1.3. The content of the ssc:Annotation element *CAN* be arbitrary XML data, and *CAN* make use of XML namespaces and XML schemas for combined validation where appropriate.
+
+==== Extra Files Mechanism
+
+The System Structure Package (SSP) file format is a ZIP-based packaging format, and thus not XML-based.
+It offers a separate mechanism to include additional data and meta-data into the package format through the reserved extra/ ZIP entry prefix (i.e. top-level directory), as defined in section 3. Files are placed inside sub-directories under that top-level directory using the namespace as defined in section 2.1.3 as part of the sub-directory name.
+The content of files and further sub-directories placed in those sub-directories are unrestricted.
+
+==== Extension Namespaces
+
+Both annotations and extra files extensions make use of a namespace mechanism based on reverse domain notation: The originator of a specification for additional data specifies a domain name under their control as the namespace for the additional data, in order to avoid conflicts due to name collisions.
+The namespace is used in reverse domain notation for the type attributes in the annotation mechanism and as part of the file entry prefix under extra/ in the extra files mechanism.
+All namespaces under both the org.modelica and org.ssp-standard domains are reserved for use in future layered standards (see below).
+
+{empty}[ For example, extensions defined by the Modelica Association might make use of the org.modelica.ssp namespace.
+This could lead to annotations with a type attribute of org.modelica.ssp.something, and/or extra files under the extra/org.modelica.ssp.something sub-directory. ]
+
+==== MIME-type based format dispatch
+
+In all places where SSP file formats reference additional, potentially external, data, the reference not only caries a source specification (indicating where the data can be located, if it is not inlined), but also a MIME type attribute, specifying the file format of the data being referenced.
+The base standard specifies a minimum set of MIME types and related file formats (including specifically the SSP-defined file formats and FMI) that must be supported by implementations.
+
+However implementations are free to support additional MIME types and file formats where sensible, and the exact semantics of support for additional file formats can be specified through layered standards, as described below.
+
+In this fashion extension of SSP to support pre-existing, new or domain-specific file formats after the base standard has been finalized can be realized, as long as the file format can be semantically mapped to the SSP concepts already in place.
+
+=== Versioning and Layered Standards
+
+The SSP standard uses semantic version numbers, as defined in [SV200], where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers [ _e.g. 1.2.3 for major version 1, minor version 2 and patch version 3_ ].
+
+* Major versions will introduce changes that are neither backward nor forward-compatible, including changes to the XML schemas to include new non-ignorable content.
+* Minor versions will only contain clarifications and include new layered standards, which may add new ignorable XML content, as defined below, into the core standard document, indicating that the standard needs to be supported by all conforming implementations.
+* Patch versions will only change explanatory text of the standard, make formerly defined content clearer, without any other changes to the XML schemas or other content definitions.
+For this reason, the version number attribute of all SSP files will only contain major and minor version numbers and not the patch version number: It should never be necessary for an importing tool to know the patch version number of the standard that the generating tool implemented.
+
+In order to enable the backward-compatible extension of the SSP standard in minor releases and between minor releases, MAP SSP will make extensive use of the layered standard mechanism to introduce new features in a fully backward-compatible and optional way.
+
+A layered standard defines extensions to the base SSP standard by specifying either standardized annotations, standardized extra files in SSP archives, and/or support for additional MIME types/file formats, as defined in section 2.1. A layered standard can include a single or combined set of extension mechanisms from this set.
+The layered standard is thus considered to be layered on top of the definitions and extensions mechanisms provided by this base standard.
+
+Layered standards can fall into three categories:
+
+* Layered standards can be defined by third parties, making them third-party layered standards, without any representations by MAP SSP for their suitability or content, or even knowledge by MAP SSP about their existence.
+* Layered standards can be defined/adopted and published by MAP SSP itself, making them MAP SSP layered standards.
+* Finally, layered standards that have achieved enough adoption or importance to be included into the base standard set can be incorporated into a new minor release version of the base standard as an optional or mandatory appendix, making support for this layered standard optional or required for conformance with the newly published minor release version of the base standard.
+
+=== Content addressing
+
+All references between files using file formats defined in the SSP standard are expressed through URIs.
+Usually those references make use of relative URIs, where the base URI that those relative URIs are resolved against are specified in the SSP standard [ _e.g. for SSDs, relative URIs to other content are usually resolved against the URI of the SSD, but can optionally also be resolved against the URI of referenced components, e.g. in order to reference a file inside a referenced FMU._ ].
+
+However the SSP syntax is not restricted to relative URIs, and allows both absolute URIs, and URIs of any schema to be used to identify and/or locate referenced content.
+Besides basic support for file-schema URIs, the set of schemas and transport mechanisms supported are up to the implementation.
+
+This approach allows the uniform expression of dependencies, regardless of whether the SSP distribution is file-based, web-based or using a PLM system or other repository.
