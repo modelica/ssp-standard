@@ -1,11 +1,7 @@
-Document version: 1.0.1
+This document is a current working draft of the System Structure and Parameterization Standard (SSP).
+*It is unreleased, and does not constitute a standard of the Modelica Association.*
 
-May 25, 2022
-
-This document is the first public release of the System Structure and Parameterization Standard (SSP).
-This constitutes a standard of the Modelica Association.
-
-On the Downloads page (https://ssp-standard.org/downloads), this specification, as well as supporting XML schema files are provided.
+// On the Downloads page (https://ssp-standard.org/downloads), this specification, as well as supporting XML schema files are provided.
 
 Contact the SSP development group at map-ssp_projectlead@googlegroups.com.
 
