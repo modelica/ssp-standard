@@ -105,9 +105,137 @@
                         </xs:attribute>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="Float64">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:double" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="unit" type="xs:string" use="optional">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the unit of the parameter value and must
+                                    reference one of the unit definitions provided in the Units
+                                    element of the enclosing file.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Float32">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:single" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="unit" type="xs:string" use="optional">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the unit of the parameter value and must
+                                    reference one of the unit definitions provided in the Units
+                                    element of the enclosing file.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Integer">
                     <xs:complexType>
                         <xs:attribute name="value" type="xs:int" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Int8">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:byte" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UInt8">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:unsignedByte" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Int16">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:short" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UInt16">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:unsignedShort" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Int32">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:int" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UInt32">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:unsignedInt" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Int64">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:long" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute gives the value of the parameter.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="UInt64">
+                    <xs:complexType>
+                        <xs:attribute name="value" type="xs:unsignedLong" use="required">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This attribute gives the value of the parameter.

@@ -62,7 +62,10 @@ The following XML child elements are specified for the Parameter element:
 [width="100%",cols="31%,69%",options="header",]
 |===
 |Element |Description
-|Real / Integer / Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the parameter. See below for details on each type.
+|Real / Float64 / Float32 / +
+Integer / Int8 / UInt8 / Int16 / UInt16 / +
+Int32 / UInt32 / Int64 / UInt64 / +
+Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the parameter. See below for details on each type.
 |===
 
 ==== Real
@@ -78,11 +81,133 @@ This type specifies a parameter that represents an IEEE754 double precision floa
 |unit |This optional attribute gives the name of the unit of the parameter. The name *MUST* match the name of a unit defined in the Units element in the ParameterSet root element.
 |===
 
+==== Float64
+
+image:images/image50.png[image,width=231,height=149]
+
+This type specifies a parameter that represents an IEEE754 double precision floating point number.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|unit |This optional attribute gives the name of the unit of the parameter. The name *MUST* match the name of a unit defined in the Units element in the ParameterSet root element.
+|===
+
+==== Float32
+
+image:images/image50.png[image,width=231,height=149]
+
+This type specifies a parameter that represents an IEEE754 single precision floating point number.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|unit |This optional attribute gives the name of the unit of the parameter. The name *MUST* match the name of a unit defined in the Units element in the ParameterSet root element.
+|===
+
 ==== Integer
 
 image:images/image51.png[image,width=222,height=95]
 
 This type specifies a parameter that represents a 32-bit signed integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== Int8
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 8-bit signed integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== UInt8
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 8-bit unsigned integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== Int16
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 16-bit signed integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== UInt16
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 16-bit unsigned integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== Int32
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 32-bit signed integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== UInt32
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 32-bit unsigned integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== Int64
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 64-bit signed integer.
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Attribute |Description
+|value |This required attribute specifies the value of the parameter.
+|===
+
+==== UInt64
+
+image:images/image51.png[image,width=222,height=95]
+
+This type specifies a parameter that represents a 64-bit unsigned integer.
 
 [width="100%",cols="23%,77%",options="header",]
 |===
