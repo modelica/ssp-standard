@@ -57,3 +57,17 @@ jobs:
       with:
         directory: build
         arguments: --only-4xx --url_ignore '/http:\/\/ssp-standard.org\/SSP1\/.*/'
+
+    - name: Push HTML to ssp-standard.org
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      uses: cpina/github-action-push-to-another-repository@v1.5
+      env:
+        SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+      with:
+        source-directory: 'build'
+        destination-github-username: 'modelica'
+        destination-repository-name: 'ssp-standard.org'
+        user-email: ci@ssp-standard.org
+        target-branch: master
+        target-directory: docs/2.0-dev
+
