@@ -124,12 +124,14 @@ The following XML child elements are specified for the Connector element:
 [width="100%",cols="23%,77%",options="header",]
 |===
 |Element |Description
-|Real / Integer / +
+|Real / Float64 / Float32 / +
+Integer / Int8 / UInt8 / Int16 / UInt16 / +
+Int32 / UInt32 / Int64 / UInt64 / +
 Boolean / String / Enumeration / Binary |Exactly one of these elements *CAN* be present to specify the type of the Connector. See 4.5.1 Type Choice for details.
 |ConnectorGeometry |This optional element defines the geometry information of the connector. See below for details.
 |===
 
-The type of the Connector is identified by the presence of one of the XML child elements Real, Integer, Boolean, String, Enumeration, or Binary.
+The type of the Connector is identified by the presence of one of the XML child elements Real, Float64, Float32, Integer, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Boolean, String, Enumeration, or Binary.
 
 ===== ConnectorGeometry
 
