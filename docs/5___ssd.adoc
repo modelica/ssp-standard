@@ -83,7 +83,7 @@ The following XML child elements are specified for the TElement type:
 image:images/image26.png[image,width=371,height=82]
 
 This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
-For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP100], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
+For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP120], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
 
 Names of <ScalarVariable> elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
 Hence, several ScalarVariables might be grouped as a structure or an array.
