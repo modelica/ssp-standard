@@ -276,7 +276,79 @@
                     </xs:attribute>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="Float64">
+                <xs:complexType>
+                    <xs:attribute name="unit" type="xs:string" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute gives the unit of the entity and must
+                                reference one of the unit definitions provided in the Units
+                                element of the containing file.
+                                
+                                If a unit is not supplied, the unit is determined through
+                                default mechanisms: For FMU components, the unit of the
+                                underlying variable would be used, for systems the units
+                                of connected underlying connectors could be used if unambiguous.
+                                If a unit cannot be deduced unambinguously, the user should
+                                be informed of this error.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Float32">
+                <xs:complexType>
+                    <xs:attribute name="unit" type="xs:string" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute gives the unit of the entity and must
+                                reference one of the unit definitions provided in the Units
+                                element of the containing file.
+                                
+                                If a unit is not supplied, the unit is determined through
+                                default mechanisms: For FMU components, the unit of the
+                                underlying variable would be used, for systems the units
+                                of connected underlying connectors could be used if unambiguous.
+                                If a unit cannot be deduced unambinguously, the user should
+                                be informed of this error.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="Integer">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Int8">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="UInt8">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Int16">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="UInt16">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Int32">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="UInt32">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Int64">
+                <xs:complexType>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="UInt64">
                 <xs:complexType>
                 </xs:complexType>
             </xs:element>

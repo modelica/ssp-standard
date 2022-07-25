@@ -53,6 +53,8 @@ The following XML child elements are specified for the DictionaryEntry element:
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element |Description
-|Real / Integer / +
+|Real / Float64 / Float32 / +
+Integer / Int8 / UInt8 / Int16 / UInt16 / +
+Int32 / UInt32 / Int64 / UInt64 / +
 Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the signal dictionary entry. See section 4.5.1 for details.
 |===

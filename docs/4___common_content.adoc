@@ -170,7 +170,9 @@ _[ Note that in the case of connectors the use of a type element itself is optio
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element |Description
-|Real / Integer / +
+|Real / Float64 / Float32 / +
+Integer / Int8 / UInt8 / Int16 / UInt16 / +
+Int32 / UInt32 / Int64 / UInt64 / +
 Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the element. See below for details.
 |===
 
@@ -188,11 +190,87 @@ If the attribute is not supplied, the unit is determined through default mechani
 | |
 |===
 
+===== Float64
+
+image:images/image12.png[image,width=226,height=95]
+
+This type specifies that the connector in question represents an IEEE754 double precision floating point number.
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
+If the attribute is not supplied, the unit is determined through default mechanisms: For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified. For systems, the units of connected underlying connectors could be used if unambiguous. If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. Notwithstanding these mechanisms, unitless variables of type Float64 are supported.
+| |
+|===
+
+===== Float32
+
+image:images/image12.png[image,width=226,height=95]
+
+This type specifies that the connector in question represents an IEEE754 single precision floating point number.
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
+If the attribute is not supplied, the unit is determined through default mechanisms: For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified. For systems, the units of connected underlying connectors could be used if unambiguous. If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. Notwithstanding these mechanisms, unitless variables of type Float32 are supported.
+| |
+|===
+
 ===== Integer
 
 image:images/image13.png[image,width=56,height=28]
 
 This type specifies that the connector in question represents a 32-bit signed integer number.
+
+===== Int8
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 8-bit signed integer number.
+
+===== UInt8
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 8-bit unsigned integer number.
+
+===== Int16
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 16-bit signed integer number.
+
+===== UInt16
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 16-bit unsigned integer number.
+
+===== Int32
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 32-bit signed integer number.
+
+===== UInt32
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 32-bit unsigned integer number.
+
+===== Int64
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 64-bit signed integer number.
+
+===== UInt64
+
+image:images/image13.png[image,width=56,height=28]
+
+This type specifies that the connector in question represents a 64-bit unsigned integer number.
 
 ===== Boolean
 
@@ -257,7 +335,7 @@ image:images/image19.png[image,width=323,height=187]
 This element provides for a linear transformation of the source value to the target value, i.e. in the calculation target = factor * source + offset.
 
 Note that conversions based on different units are performed, unless prevented by suppressUnitConversion, prior to the application of the linear transformation, i.e. the value of source is already converted to the target unit in the formula above.
-Linear transformations are only valid for connectors of Real type.
+Linear transformations are only valid for connectors of Real, Float64 or Float32 type.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
