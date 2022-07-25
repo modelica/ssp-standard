@@ -1,6 +1,6 @@
 Document version: 1.0.1
 
-May 25, 2022
+July 25, 2022
 
 This document is the first public release of the System Structure and Parameterization Standard (SSP).
 This constitutes a standard of the Modelica Association.
@@ -17,7 +17,7 @@ History / Road Map
 |===
 |Version |Date |Remarks
 |1.0 |2019-03-05 |First Public Release of SSP
-|1.0.1 |2022-05-25 |Public Release of SSP 1.0.1
+|1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
 |===
 
 Please report issues that you find with this specification to map-ssp_projectlead@googlegroups.com.

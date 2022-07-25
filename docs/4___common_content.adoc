@@ -223,7 +223,7 @@ The underlying type of the connector is the same as for Integer.
 
 image:images/image17.png[image,width=319,height=114]
 
-This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the (planned) FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [OSMP100].
+This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [OSMP120].
 
 [width="100%",cols="28%,72%",options="header",]
 |===
