@@ -53,10 +53,10 @@ jobs:
         if-no-files-found: error
 
     - name: Check HTML
-      uses: chabad360/htmlproofer@master
+      uses: zoeleblanc/htmlproofer@master
       with:
         directory: build
-        arguments: --only-4xx --url_ignore '/http:\/\/ssp-standard.org\/SSP1\/.*/'
+        arguments: --only-4xx --url-ignore '/http:\/\/ssp-standard.org\/SSP1\/.*/'
 
     - name: Push HTML to ssp-standard.org
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -70,4 +70,3 @@ jobs:
         user-email: ci@ssp-standard.org
         target-branch: master
         target-directory: docs/2.0-dev
-
