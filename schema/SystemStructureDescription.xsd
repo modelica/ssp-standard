@@ -625,7 +625,7 @@
                         <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
                     </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
-                    <xs:attribute name="name" use="required">
+                    <xs:attribute name="name" type="xs:string" use="required">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
                                 This attribute gives the connector a name, which
