@@ -56,7 +56,7 @@ jobs:
       uses: zoeleblanc/htmlproofer@master
       with:
         directory: build
-        arguments: --only-4xx --url-ignore '/http:\/\/ssp-standard.org\/SSP1\/.*/'
+        arguments: --only-4xx --url-ignore '/http:\/\/ssp-standard.org\/SSP1\/.*/,/https:\/\/opensource.org\/.*/'
 
     - name: Push HTML to ssp-standard.org
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
