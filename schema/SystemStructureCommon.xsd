@@ -116,6 +116,13 @@
         </xs:attribute>
     </xs:attributeGroup>
     
+    <xs:simpleType name="TGenericInteger">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="18446744073709551615"/>
+            <xs:minInclusive value="-9223372036854775808"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:complexType name="TEnumerations">
         <xs:sequence>
             <xs:element name="Enumeration" minOccurs="1" maxOccurs="unbounded" type="ssc:TEnumeration"/>
@@ -481,7 +488,7 @@
                     <xs:documentation xml:lang="en">
                         This element provides for a transformation of integer parameter values
                         based on a mapping table and is valid for parameters of integer and 
-                        enumeration type.  Each mapping table entry is provided by a MapEntry
+                        enumeration types.  Each mapping table entry is provided by a MapEntry
                         element.
                     </xs:documentation>
                 </xs:annotation>
@@ -489,7 +496,7 @@
                     <xs:sequence>
                         <xs:element name="MapEntry" minOccurs="1" maxOccurs="unbounded">
                             <xs:complexType>
-                                <xs:attribute name="source" type="xs:int" use="required">
+                                <xs:attribute name="source" type="ssc:TGenericInteger" use="required">
                                     <xs:annotation>
                                         <xs:documentation xml:lang="en">
                                             This attribute gives the value of the parameter in the
@@ -497,7 +504,7 @@
                                         </xs:documentation>
                                     </xs:annotation>
                                 </xs:attribute>
-                                <xs:attribute name="target" type="xs:int" use="required">
+                                <xs:attribute name="target" type="ssc:TGenericInteger" use="required">
                                     <xs:annotation>
                                         <xs:documentation xml:lang="en">
                                             This attribute gives the value of the parameter to use
