@@ -84,8 +84,9 @@ image:images/image26.png[image,width=371,height=82]
 
 This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
 For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP120], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
+For FMI 3.0 FMUs, the connector name has to match either the name of the corresponding variable element, or one of its <Alias> elements.
 
-Names of <ScalarVariable> elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
+Names of variable elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
 Hence, several ScalarVariables might be grouped as a structure or an array.
 However, the name of a connector *MUST* match the name of a single <ScalarVariable>.
 
@@ -102,7 +103,7 @@ The following XML attributes are specified for the Connector element:
 |===
 |Attribute |Description
 |name a|
-This attribute gives the connector a name, which *SHALL* be unique within the given model element, and, for components, *MUST* match the name of a relevant variable/port in the underlying component implementation. In the case of referenced FMUs this *MUST* match the name of the relevant variable in the referenced FMU.
+This attribute gives the connector a name, which *SHALL* be unique within the given model element, and, for components, *MUST* match the name of a relevant variable/port in the underlying component implementation. In the case of referenced FMUs this *MUST* match the name of the relevant variable or alias in the referenced FMU.
 
 Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation. At least those connectors *MUST* be present which are referenced in connections inside the SSD.
 
@@ -111,7 +112,7 @@ This attribute specifies the kind of the given connector, which indicates whethe
 
 For components this *MUST* match the related kind of the underlying component implementation. For referenced FMUs it *MUST* match the combination of variability and causality:
 
-For FMI 2.0 this means that the causality of the variable *MUST* match the kind of the connector (with the kind inout not being valid for either FMI 2.0 or 1.0).
+For FMI 2.0 and 3.0 this means that the causality of the variable *MUST* match the kind of the connector (with the kind inout not being valid for either FMI 3.0, 2.0, or 1.0).
 
 For FMI 1.0 this means that for connectors of kind input or output the causality of the variable *MUST* be input or output and the variability of the variable *MUST* be discrete or continuous (for outputs also constant and parameter are allowable). For connectors of kind parameter the causality of the FMI 1.0 variable *MUST* be input or internal and the variability *MUST* be parameter. For connectors of kind calculatedParameter the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be parameter.
 
