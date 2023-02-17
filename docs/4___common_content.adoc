@@ -365,7 +365,7 @@ In that case values not mapped by a mapping entry are kept unchanged.
 
 image:images/image21.png[image,width=546,height=155]
 
-This element provides for a transformation of integer values based on a mapping table and is valid for connectors of Integer or Enumeration type.
+This element provides for a transformation of integer values based on a mapping table and is valid for connectors of all the integer types and Enumeration type.
 Each mapping table entry is provided by a MapEntry element.
 Mapping entries *MUST* be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value *MUST* be present.
 The mapping does not have to be complete, i.e. partial mappings *CAN* be specified.
@@ -374,6 +374,10 @@ In that case values not mapped by a mapping entry are kept unchanged.
 When mapping to an Enumeration type, the target value *MUST* be a valid enumeration value for that type.
 When mapping from an Enumeration type, the source value *MUST* be a valid enumeration value for that type.
 This transformation can be applied between connectors of different Enumeration types, as long as all resulting target values are valid in the target Enumeration type.
+
+The target values provided in transformation entries *MUST* be limited to the value space of the target connector.
+The source values provided in transformation entries *CAN* exceed the value space of the source connector.
+Such entries are ignored in the mapping process.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
