@@ -68,5 +68,5 @@ jobs:
         destination-github-username: 'modelica'
         destination-repository-name: 'ssp-standard.org'
         user-email: ci@ssp-standard.org
-        target-branch: master
-        target-directory: docs/2.0-dev
+        target-branch: main
+        target-directory: static/docs/main

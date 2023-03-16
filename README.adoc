@@ -5,7 +5,7 @@ image::docs/images/SSP.svg[width=30%,align="center"]
 The System Structure and Parameterization (SSP) standard is a free standard that defines a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
 It is currently supported by https://ssp-standard.org/tools/[8] tools and maintained as a https://modelica.org/projects[Modelica Association Project].
 
-https://ssp-standard.org/downloads/[Releases] and the https://ssp-standard.org/docs/2.0-dev/[latest development version] of the specification are available on the https://ssp-standard.org/[SSP website].
+https://ssp-standard.org/[Releases] and the https://ssp-standard.org/docs/main/[latest development version] of the specification are available on the https://ssp-standard.org/[SSP website].
 
 == Repository Structure
 
@@ -21,6 +21,6 @@ https://ssp-standard.org/downloads/[Releases] and the https://ssp-standard.org/d
 
 == Copyright and License
 
-XML schemas and documentation copyright (C) 2016 - 2022 the Modelica Association Project SSP.
+XML schemas and documentation copyright (C) 2016 - 2023 the Modelica Association Project SSP.
 XML schemas released under the https://opensource.org/licenses/BSD-2-Clause[2-Clause BSD License].
 Documentation released under https://creativecommons.org/licenses/by-sa/4.0/[Attribution-ShareAlike 4.0 International].
