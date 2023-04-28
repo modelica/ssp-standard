@@ -487,7 +487,7 @@
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
                         This element provides for a transformation of integer parameter values
-                        based on a mapping table and is valid for parameters of integer and 
+                        based on a mapping table and is valid for parameters of all integer and 
                         enumeration types.  Each mapping table entry is provided by a MapEntry
                         element.
                     </xs:documentation>
