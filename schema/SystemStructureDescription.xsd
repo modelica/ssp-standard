@@ -646,30 +646,36 @@
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
                                 This attribute specifies the kind of the given connector,
-                                which indicates whether the connector is an input, an
-                                output, both (inout), a parameter or a calculated parameter (i.e.
-                                a parameter that is calculated by the component during initialization).
-                                For components this must match the related kind of the underlying
-                                component implementation, e.g. for referenced FMUs it must match the
-                                combination of variability and causality.
+                                which indicates whether the connector is an input, an output,
+                                both (inout), a constant, a parameter, a calculated parameter
+                                (i.e. a parameter that is calculated by the component during
+                                initialization), or a structural parameter (i.e. a parameter
+                                that can be set during (re-)configuration mode).
                                 
-                                For FMI 2.0 this means that the causality of the variable must
-                                match the kind of the connector.
+                                For components this must match the related kind of the underlying
+                                component implementation. For referenced FMUs it must match the
+                                combination of variability and causality:
+                                
+                                For FMI 2.0 and 3.0 this means that the causality of the variable
+                                must match the kind of the connector (with the kind inout not being
+                                valid for either FMI 3.0, 2.0, or 1.0).
                                 
                                 For FMI 1.0 this means that for connectors of kind input or output
                                 the causality of the variable must be input or output and the
                                 variability of the variable must be discrete or continuous (for
                                 outputs also constant and parameter are allowable).  For connectors
-                                of kind parameter the causality must be input or internal and the
-                                variablity must be parameter.  For connectors of kind
-                                calculatedParameter the causality must be output and the variablity
-                                must be parameter.
+                                of kind parameter the causality of the FMI 1.0 variable must be
+                                input or internal and the variability must be parameter.  For
+                                connectors of kind calculatedParameter the causality of the FMI 1.0
+                                variable must be output and the variability must be parameter. For
+                                connectors of kind constant the causality of the FMI 1.0 variable
+                                must be output and the variability must be constant.
                                 
                                 For SignalDictionaryReferences, the kind of a given connector can
                                 additionally be 'inout', which indicates that the semantics of the
                                 connector are derived from the connections going to the connector.
                                 This can be used for example to allow a connector to function as
-                                both an input and output within the same SignaleDictionaryReference.
+                                both an input and output within the same SignalDictionaryReference.
                             </xs:documentation>
                         </xs:annotation>
                         <xs:simpleType>
@@ -678,6 +684,8 @@
                                 <xs:enumeration value="output"/>
                                 <xs:enumeration value="parameter"/>
                                 <xs:enumeration value="calculatedParameter"/>
+                                <xs:enumeration value="structuralParameter"/>
+                                <xs:enumeration value="constant"/>
                                 <xs:enumeration value="inout"/>
                             </xs:restriction>
                         </xs:simpleType>
