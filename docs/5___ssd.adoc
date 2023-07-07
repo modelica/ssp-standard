@@ -108,15 +108,20 @@ This attribute gives the connector a name, which *SHALL* be unique within the gi
 Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation. At least those connectors *MUST* be present which are referenced in connections inside the SSD.
 
 |kind a|
-This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), a parameter or a calculated parameter (i.e. a parameter that is calculated by the component during initialization).
+This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
 
-For components this *MUST* match the related kind of the underlying component implementation. For referenced FMUs it *MUST* match the combination of variability and causality:
+For components this *MUST* match the related kind of the underlying component implementation.
+For referenced FMUs it *MUST* match the combination of variability and causality:
 
 For FMI 2.0 and 3.0 this means that the causality of the variable *MUST* match the kind of the connector (with the kind inout not being valid for either FMI 3.0, 2.0, or 1.0).
 
-For FMI 1.0 this means that for connectors of kind input or output the causality of the variable *MUST* be input or output and the variability of the variable *MUST* be discrete or continuous (for outputs also constant and parameter are allowable). For connectors of kind parameter the causality of the FMI 1.0 variable *MUST* be input or internal and the variability *MUST* be parameter. For connectors of kind calculatedParameter the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be parameter.
+For FMI 1.0 this means that for connectors of kind input or output the causality of the variable *MUST* be input or output and the variability of the variable *MUST* be discrete or continuous (for outputs also constant and parameter are allowable).
+For connectors of kind parameter the causality of the FMI 1.0 variable *MUST* be input or internal and the variability *MUST* be parameter.
+For connectors of kind calculatedParameter the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be parameter.
+For connectors of kind constant the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be constant.
 
-For SignalDictionaryReferences, the kind of a given connector can additionally be inout, which indicates that the semantics of the connector are derived from the connections going to the connector. This can be used for example to allow a connector to function as both an input and output within the same SignalDictionaryReference.
+For SignalDictionaryReferences, the kind of a given connector can additionally be inout, which indicates that the semantics of the connector are derived from the connections going to the connector.
+This can be used for example to allow a connector to function as both an input and output within the same SignalDictionaryReference.
 
 |===
 
@@ -305,7 +310,7 @@ image:images/image32.png[image,width=646,height=470]
 The ParameterBindings element provides the parameter bindings for a component or system, where each binding is specified in a ParameterBinding element.
 A parameter binding applies a set of parameter values (a parameter set), supplied by a parameter source (for example a parameter file) to parametrize a component or system.
 
-For FMU components this allows the parametrization of the FMU's parameters and start values of other variables.
+For FMU components this allows the parametrization of the FMU's parameters, structural parameters, and start values of other variables.
 For systems this allows the parametrization of complete (sub-)hierarchies of sub-systems and components using a hierarchical naming scheme.
 
 When no parameter mapping is specified as part of the binding, then all the parameter values provided by the parameter source are applied using their original names.
@@ -333,12 +338,14 @@ If this is not wanted, then it is up to the generating implementation to ensure 
 {empty}[ _For example, for a system A containing a system B with component C and variable D, and system A also containing a component called B.C and variable D, both variables will have the hierarchical name A.B.C.D. If this is not wanted, then proper care should be taken in naming component B.C and system B/component C in non-conflicting ways.
 The standard allows such punning, because the ability to have a . in the name of systems or components allows for example the replacement of a monolithic component with a system of components, or vice-versa, while keeping parameter names identical._ ]
 
-More than one ParameterBinding can be supplied., In this case all of the parameters found will be used to parametrize the component, with parameter values in ParameterBinding sources appearing at a succeeding position in the element order taking priority over prior sources at the same hierarchy level, should a parameter be included in more than one ParameterBinding source.
+More than one ParameterBinding can be supplied.
+In this case all of the parameters found will be used to parametrize the component, with parameter values in ParameterBinding sources appearing at a succeeding position in the element order taking priority over prior sources at the same hierarchy level, should a parameter be included in more than one ParameterBinding source.
 
 When ParameterBinding sources on multiple levels of the hierarchy supply values for the same parameter, bindings at a higher hierarchy level take precedence over lower levels, i.e. bindings at a system level take precedence over bindings at a sub-system or component level.
 
 Parameter bindings for FMU components can be used to set any initial values in the FMU which are legal to change.
-It is assumed that the parameterization is applied prior to initializing for FMI 1.0, or before entering initialization mode for FMI 2.0.
+It is assumed that the parameterization is applied prior to initializing for FMI 1.0, or before entering initialization mode for FMI 2.0/3.0.
+For structural parameters it is assumed that the parameterization is applied in configuration mode for FMI 3.0.
 
 This means that variables eligible for parameterization are those with:
 
@@ -469,28 +476,41 @@ The following table specifies all allowed connections, depending on the owner of
 Note that source and destination in the following table indicate the resulting data flow and are unrelated to the start and end designation of a connection, as described above.
 
 Implementations *MUST NOT* specify connections that are not of one of the allowed combinations in the following table.
-Implementations *MUST* ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout or parameter connector of an element, or a calculatedParameter or output connector of an enclosing system.
+Implementations *MUST* ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout, parameter, or structuralParameter connector of an element, or a constant, calculatedParameter, or output connector of an enclosing system.
 
 [width="100%",cols="22%,32%,21%,25%",options="header",]
 |===
 |Source | |Destination |
 |*Owner* |*Kind* |*Owner* |*Kind*
+|System |structuralParameter |System |calculatedParameter
+|System |structuralParameter |System |output
 |System |parameter |System |calculatedParameter
 |System |parameter |System |output
 |System |input |System |output
+|System |structuralParameter |Element |structuralParameter
+|System |structuralParameter |Element |parameter
+|System |structuralParameter |Element |input
+|System |structuralParameter |Element |inout
 |System |parameter |Element |parameter
 |System |parameter |Element |input
 |System |parameter |Element |inout
 |System |input |Element |input
 |System |input |Element |inout
+|Element |constant |Element |structuralParameter
+|Element |constant |Element |parameter
+|Element |constant |Element |input
+|Element |constant |Element |inout
 |Element |calculatedParameter |Element |parameter
 |Element |calculatedParameter |Element |input
 |Element |calculatedParameter |Element |inout
 |Element |output |Element |input
 |Element |output |Element |inout
 |Element |inout |Element |input
+|Element |constant |System |constant
+|Element |constant |System |calculatedParameter
+|Element |constant |System |output
 |Element |calculatedParameter |System |calculatedParameter
-|Element |calcualtedParameter |System |output
+|Element |calculatedParameter |System |output
 |Element |output |System |output
 |Element |inout |System |output
 |===
