@@ -338,7 +338,8 @@ If this is not wanted, then it is up to the generating implementation to ensure 
 {empty}[ _For example, for a system A containing a system B with component C and variable D, and system A also containing a component called B.C and variable D, both variables will have the hierarchical name A.B.C.D. If this is not wanted, then proper care should be taken in naming component B.C and system B/component C in non-conflicting ways.
 The standard allows such punning, because the ability to have a . in the name of systems or components allows for example the replacement of a monolithic component with a system of components, or vice-versa, while keeping parameter names identical._ ]
 
-More than one ParameterBinding can be supplied. In this case all of the parameters found will be used to parametrize the component, with parameter values in ParameterBinding sources appearing at a succeeding position in the element order taking priority over prior sources at the same hierarchy level, should a parameter be included in more than one ParameterBinding source.
+More than one ParameterBinding can be supplied.
+In this case all of the parameters found will be used to parametrize the component, with parameter values in ParameterBinding sources appearing at a succeeding position in the element order taking priority over prior sources at the same hierarchy level, should a parameter be included in more than one ParameterBinding source.
 
 When ParameterBinding sources on multiple levels of the hierarchy supply values for the same parameter, bindings at a higher hierarchy level take precedence over lower levels, i.e. bindings at a system level take precedence over bindings at a sub-system or component level.
 
