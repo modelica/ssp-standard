@@ -610,7 +610,7 @@
                                     connector. The number of dimension elements in a connector provides
                                     the dimensionality of the array.
                                     
-                                    Either the fixedSize or the sizeConnector attributes CAN be present
+                                    Either the size or the sizeConnector attributes CAN be present
                                     on the element, indicating a fixed size, or a size that depends on
                                     the structural parameter or constant referenced by the sizeConnector
                                     attribute.
@@ -621,7 +621,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:attribute name="fixedSize" type="xs:unsignedLong" use="optional">
+                                <xs:attribute name="size" type="xs:unsignedLong" use="optional">
                                     <xs:annotation>
                                         <xs:documentation xml:lang="en">
                                             This attribute gives the size of this dimension of the
