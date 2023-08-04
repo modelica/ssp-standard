@@ -228,7 +228,7 @@
     <xs:complexType name="TAnnotations">
         <xs:sequence maxOccurs="unbounded">
             <xs:element name="Annotation">
-                <xs:complexType>
+                <xs:complexType mixed="true">
                     <xs:sequence>
                         <xs:any namespace="##any" processContents="lax" minOccurs="0"/>
                     </xs:sequence>
