@@ -556,4 +556,48 @@
         </xs:choice>
     </xs:group>
     
+    <xs:group name="GDimensions">
+        <xs:sequence>
+            <xs:element name="Dimension" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This optional element specifies one dimension of an array connector.
+                        If no dimension elements are present in a connector, it is a scalar
+                        connector. The number of dimension elements in a connector provides
+                        the dimensionality of the array.
+                        
+                        Either the size or the sizeConnector attributes CAN be present
+                        on the element, indicating a fixed size, or a size that depends on
+                        the structural parameter or constant referenced by the sizeConnector
+                        attribute.
+                        
+                        If none of the attributes are present, then the size of the dimension
+                        is unspecified at the SSD level. If both attributes are present this
+                        is considered an error.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:attribute name="size" type="xs:unsignedLong" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute gives the size of this dimension of the
+                                connector as a fixed, unchangeable number.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="sizeConnector" type="xs:string" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute references another connector by name, that
+                                gives the size of this dimension of the connector, e.g. a
+                                structural parameter or a constant of the underlying
+                                component that gives the dimension size.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    
 </xs:schema>
