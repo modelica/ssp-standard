@@ -95,7 +95,7 @@ At least those connectors *MUST* be present which are referenced in connections 
 Unreferenced connectors will yield the behavior that is specified for the underlying component variables/ports, e.g. an unconnected FMU input variable will remain at its default value during the whole simulation.
 The same is true for variables/ports that are not referenced through a connector at all._ ]
 
-image:images/image27.png[image,width=406,height=578]
+image:images/image27.png[image,width=396,height=986]
 
 The following XML attributes are specified for the Connector element:
 
@@ -133,37 +133,14 @@ The following XML child elements are specified for the Connector element:
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements *CAN* be present to specify the type of the Connector. See 4.5.1 Type Choice for details.
-|Dimension |One or more of these optional elements define the connector array dimensions, making the connector an array connector. See below for details.
+Boolean / String / Enumeration / Binary |Exactly one of these elements *CAN* be present to specify the type of the Connector. See <<ssc_types>> for details.
+|Dimension |One or more of these optional elements define the connector array dimensions, making the connector an array connector. See <<ssc_dimensions>> for details.
 |ConnectorGeometry |This optional element defines the geometry information of the connector. See below for details.
 |===
 
 The type of the Connector is identified by the presence of one of the XML child elements Real, Float64, Float32, Integer, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Boolean, String, Enumeration, or Binary.
 
-===== Dimension
-
-image:images/image60.png[image,width=295,height=149]
-
-This optional element specifies one dimension of an array connector.
-If no dimension elements are present in a connector, it is a scalar connector.
-The number of dimension elements in a connector provides the dimensionality of the array.
-                                    
-Either the size or the sizeConnector attributes *CAN* be present on the element, indicating a fixed size, or a size that depends on the structural parameter or constant referenced by the sizeConnector attribute.
-If none of the attributes are present, then the size of the dimension is unspecified at the SSD level.
-It is considered an error if both attributes are present.
-
-The following XML attributes are specified for the Dimension element:
-
-[width="100%",cols="28%,72%",options="header",]
-|===
-|Attribute |Description
-|size a|
-This attribute gives the size of this dimension of the connector as a fixed, unchangeable number.
-
-|sizeConnector a|
-This attribute references another connector by name, that gives the size of this dimension of the connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.
-
-|===
+The dimensionality of the Connector is given by the presence of one or more Dimension elements.
 
 ===== ConnectorGeometry
 

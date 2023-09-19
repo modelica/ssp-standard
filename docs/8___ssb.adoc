@@ -38,7 +38,7 @@ The following XML child elements are specified for the SignalDictionary element:
 
 ==== DictionaryEntry
 
-image:images/image59.png[image,width=470,height=480]
+image:images/image59.png[image,width=485,height=923]
 
 A dictionary entry defines a single signal in the signal dictionary.
 
@@ -56,5 +56,6 @@ The following XML child elements are specified for the DictionaryEntry element:
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the signal dictionary entry. See section 4.5.1 for details.
+Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the signal dictionary entry. See <<ssc_types>> for details.
+|Dimension |One or more of these optional elements define the signal dictionary entry array dimensions, making the signal dictionary entry an array signal dictionary entry. See <<ssc_dimensions>> for details.
 |===

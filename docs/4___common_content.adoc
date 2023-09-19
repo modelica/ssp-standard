@@ -155,11 +155,12 @@ image:images/image10.png[image,width=263,height=771]
 |offset |Optional attribute specifying an optional offset, defaults to 0.
 |===
 
-=== XML Element Choices
+=== XML Element Groups
 
-These XML elements choices are common to multiple file formats.
-They are used inside elements to select one of multiple child elements.
+These XML element choices and sequences are common to multiple file formats.
+They are used inside elements to select one of multiple child elements, or provide common sequence content.
 
+[#ssc_types]
 ==== Type Choice
 
 image:images/image11.png[image,width=312,height=203]
@@ -313,6 +314,7 @@ The attribute value *MUST* be a valid MIME type as specified in RFC 2045; it *CA
 
 |===
 
+[#ssc_transformations]
 ==== Transformation Choice
 
 image:images/image18.png[image,width=474,height=133]
@@ -406,3 +408,42 @@ This transformation can be applied between connectors of different Enumeration t
 |source |This attribute gives the source value that this entry applies to.
 |target |This attribute gives the value to use instead of the source value when applying it to the system or component.
 |===
+
+[#ssc_dimensions]
+==== Dimension Sequence
+
+image:images/image61.png[image,width=535,height=153]
+
+The Dimension element is used to specify the dimensions of array connectors, signal dictionary entries, or parameter values.
+
+[width="100%",cols="33%,67%",options="header",]
+|===
+|Element |Description
+|Dimension |One or more instances of this element *CAN* be present to specify the dimensions of the containing model element. If no instances are present, the containing model element is scalar. See below for details.
+|===
+
+===== Dimension
+
+image:images/image60.png[image,width=295,height=149]
+
+This element specifies one dimension of a potentially multi-dimensional array connector, signal dictionary entry, or parameter value (modeling element).
+If no dimension elements are present in a modeling element, it is a scalar modeling element.
+The number of dimension elements in a modeling element provides the dimensionality of the array.
+
+For connector elements, either the size or the sizeConnector attributes *CAN* be present on the element, indicating a fixed size, or a size that depends on the structural parameter or constant referenced by the sizeConnector attribute.
+If none of the attributes are present, then the size of the dimension is unspecified at the SSD level.
+It is considered an error if both attributes are present.
+
+For signal dictionary and parameter value elements, only the size attribute can be used and therefore *MUST* be present on the element, indicating a fixed size.
+For those elements, it is considered an error if both attributes are present, or the size attribute is not present.
+
+The following XML attributes are specified for the Dimension element:
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|size a|
+This attribute gives the size of this dimension of the array as a fixed, unchangeable number.
+
+|sizeConnector a|
+This attribute references another connector by name, that gives the size of this dimension of the array connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.

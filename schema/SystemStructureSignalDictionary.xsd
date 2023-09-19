@@ -72,6 +72,7 @@
     <xs:complexType name="TDictionaryEntry">
         <xs:sequence>
             <xs:group ref="ssc:GTypeChoice"/>
+            <xs:group ref="ssc:GDimensions"/>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>

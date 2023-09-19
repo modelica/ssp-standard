@@ -330,6 +330,18 @@
                     </xs:complexType>
                 </xs:element>
             </xs:choice>
+            <xs:group ref="ssc:GDimensions">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This optional sequence of elements specifies the dimensions of
+                        an array parameter.  If no dimension elements are present in a
+                        parameter, it is a scalar parameter. The number of dimension
+                        elements in a parameter provides the dimensionality of the
+                        parameter.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:group>
+            
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>

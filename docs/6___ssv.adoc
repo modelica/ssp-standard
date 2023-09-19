@@ -47,7 +47,7 @@ It is *not required* that all parameters included in the Parameters element corr
 This allows the definition of large parameter data sets out of which only a subset is applied in a given case.
 See section 5.2.3 for the semantic defintion of parameter bindings.
 
-image:images/image49.png[image,width=424,height=448]
+image:images/image49.png[image,width=458,height=891]
 
 The following XML attributes are specified for the Parameter element:
 
@@ -66,7 +66,10 @@ The following XML child elements are specified for the Parameter element:
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
 Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the parameter. See below for details on each type.
+|Dimension |One or more of these optional elements define the parameter array dimensions, making the parameter an array parameter. See <<ssc_dimensions>> for details.
 |===
+
+The dimensionality of the parameter is given by the presence of one or more Dimension elements.
 
 ==== Real
 
