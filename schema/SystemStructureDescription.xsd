@@ -457,6 +457,19 @@
                                                 </xs:documentation>
                                             </xs:annotation>
                                         </xs:attribute>
+                                        <xs:attribute name="startIndices" use="optional">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="en">
+                                                    This optional attribute gives the list of indices of an
+                                                    array connector that this connection is restricted to.
+                                                    If not supplied this indicates that this connection
+                                                    applies to the whole connector, not just a single element.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:list itemType="xs:unsignedLong"/>
+                                            </xs:simpleType>
+                                        </xs:attribute>
                                         <xs:attribute name="endElement" type="xs:string" use="optional">
                                             <xs:annotation>
                                                 <xs:documentation xml:lang="en">
@@ -477,6 +490,19 @@
                                                     element.
                                                 </xs:documentation>
                                             </xs:annotation>
+                                        </xs:attribute>
+                                        <xs:attribute name="endIndices" use="optional">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="en">
+                                                    This optional attribute gives the list of indices of an
+                                                    array connector that this connection is restricted to.
+                                                    If not supplied this indicates that this connection
+                                                    applies to the whole connector, not just a single element.
+                                                </xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:list itemType="xs:unsignedLong"/>
+                                            </xs:simpleType>
                                         </xs:attribute>
                                         <xs:attribute name="suppressUnitConversion" type="xs:boolean" use="optional" default="false">
                                             <xs:annotation>

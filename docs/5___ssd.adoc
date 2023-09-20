@@ -457,7 +457,7 @@ image:images/image37.png[image,width=314,height=37]
 
 This optional element provides the connections between connectors of the system, connectors of its elements and inbetween those connectors.
 
-image:images/image38.png[image,width=499,height=654]
+image:images/image38.png[image,width=503,height=762]
 
 This element specifies a connection between two connectors, either of the system or its directly contained elements.
 Note that only connections between certain kinds of connectors are allowed, as specified in section 5.3.2.1. Note also that the terms start and end in the attribute names of the connector, like startElement or endConnector, do not denote directionality of the data flow implied by the connector.
@@ -468,8 +468,10 @@ That is determined by the combination of the semantics of the actual connectors 
 |Attribute |Description
 |startElement |Optional attribute giving the the name of the element that contains the connector given as startConnector. If the attribute is not present, then the startConnector names a connector on this system.
 |startConnector |Required attribute giving the name of the connector that is the start of the connection. If startElement is not supplied this indicates a connector on this system, otherwise the connector is to be found on the given element.
+|startIndices |Optional attribute giving the list of indices of an array connector that this connection is restricted to. If not supplied this indicates that this connection applies to the whole connector, not just a single element.
 |endElement |Optional attribute giving the name of the element that contains the connector given as endConnector. If the attribute is not present, then the endConnector names a connector on this system.
 |endConnector |Required attribute giving the name of the connector that is the end of the connection. If endElement is not supplied this indicates a connector on this system, otherwise the connector is to be found on the given element.
+|endIndices |Optional attribute giving the list of indices of an array connector that this connection is restricted to. If not supplied this indicates that this connection applies to the whole connector, not just a single element.
 |suppressUnitConversion |Optional attribute specifying whether automatic conversions between start and end connector are performed using unit information potentially available for both start and end definitions. If this attribute is supplied and its value is true, then the environment will not perform any automatic unit conversions, otherwise automatic unit conversions can be performed. This is also relevant in conjunction with the optional linear transformation supplied via the LinearTransformation element: With suppressUnitConversion = true, the linear transformation is performed instead of any unit conversions, whereas otherwise the linear transformation is performed in addition to any unit conversions.
 |===
 
