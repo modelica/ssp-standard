@@ -692,7 +692,11 @@ A component is an atomic element of a system (i.e. its internal structure is not
 |Attribute |Description
 |type |Optional attribute giving the MIME type of the component, which defaults to application/x-fmu-sharedlibrary to indicate the type of the component. Valid further types are application/x-ssp-definition for system structure description files, and application/x-ssp-package for system structure package files. No further types are currently defined.
 |source a|
-This attribute indicates the source of the component as an URI (cf. RFC 3986). For purposes of the resolution of relative URIs the base URI is the URI of the SSD. Therefore for components that are located alongside the SSD, relative URIs without scheme and authority *CAN* and *SHOULD* be used to specify the component sources. For components that are packaged inside an SSP that contains this SSD, this is *REQUIRED* (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).
+Optional attribute indicating the implementation source of the component.
+
+To use a system structure description for simulation architecture design without implementation, the component source can be explicitly omitted.
+
+If defined, a component source has to be specified as an URI (cf. RFC 3986). For purposes of the resolution of relative URIs the base URI is the URI of the SSD. Therefore for components that are located alongside the SSD, relative URIs without scheme and authority *CAN* and *SHOULD* be used to specify the component sources. For components that are packaged inside an SSP that contains this SSD, this is *REQUIRED* (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).
 
 {empty}[ _For example for an FMU called MyDemoFMU.fmu, that is located in the resources directory of an SSP, the correct URI would be resources/MyDemoFMU.fmu._ ]
 
@@ -701,8 +705,6 @@ When referencing another SSP, by default the default SSD of the SSP (i.e. System
 When the URI is a same-document URI with a fragment identifier, for example #other-system, then the fragment identifier *MUST* identify a system element in this SSD document with an id attribute identical to the fragment identifier. This mechanism can be used to instantiate an embedded system definition multiple times through reference to its definition element.
 
 Note that implementations are only *REQUIRED* to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go "up" a level via ..) are *not required* to be supported by implementations, and are in fact often not supported for security or other reasons. Implementations are also *not required* to support any absolute URIs and any specific URI schemes (but are of course allowed to support any and all kinds of URIs where this is considered useful).
-
-{empty}[ Since the release of SSP 1.0, the need to support the exchange of system structure descriptions containing components with no specified implementation has been identified, to exchange system designs as templates, for example. Future releases of SSP will therefore likely make the source attribute optional, to support such use cases. Current practice for 1.x has been to either already treat this attribute as optional or to use the empty string value to indicate a missing implementation. Tools wanting to support these use cases should therefore be prepared to accept SSD files with missing or empty source attributes on components, and treat them like empty systems for the purposes of semantics. ]
 
 |implementation |When the referenced component is an FMU that contains multiple implementations [ _for example Co-Simulation and Model Exchange_], this optional attribute can be used to determine which FMU implementation should be employed. If the attribute is missing or uses the default value any, the importing tool is free to choose what kind of FMU implementation to use. If the value is CoSimulation or ModelExchange the corresponding FMU implementation *MUST* be used. It is an error if the specified type of FMU implementation is not present in the FMU.
 |===
