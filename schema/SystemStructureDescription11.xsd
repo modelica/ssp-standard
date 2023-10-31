@@ -191,8 +191,11 @@
                 <xs:attribute name="source" type="xs:anyURI" use="required">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This attribute indicates the source of the component as an URI
-                            (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                            Optional attribute indicating the implementation source of the 
+                            component.
+
+                            If defined, a component source has to be specified as an URI
+                            (cf. RFC 3986)  For purposes of the resolution of relative URIs
                             the base URI is the URI of the SSD.  Therefore for components
                             that are located alongside the SSD, relative URIs without scheme
                             and authority can and should be used to specify the component
