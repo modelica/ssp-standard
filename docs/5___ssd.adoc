@@ -478,6 +478,10 @@ Note that source and destination in the following table indicate the resulting d
 Implementations *MUST NOT* specify connections that are not of one of the allowed combinations in the following table.
 Implementations *MUST* ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout, parameter, or structuralParameter connector of an element, or a constant, calculatedParameter, or output connector of an enclosing system.
 
+It is implementation-defined whether connections between connectors of different types are allowed, and to what extent conversions are performed.
+This includes type conversions that can be performed without data loss, e.g. converting from an output of type `Float32` to an input of type `Float64` or `Real`, as well as conversions that can potentially lead to data loss, e.g. converting from an output of type `Float64` to an input of type `Float32` or `Int8`.
+It is also implementation-defined how and whether any error-handling at runtime is performed in those cases.
+
 [width="100%",cols="22%,32%,21%,25%",options="header",]
 |===
 |Source | |Destination |
