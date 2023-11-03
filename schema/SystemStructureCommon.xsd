@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
     targetNamespace="http://ssp-standard.org/SSP1/SystemStructureCommon">
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="https://www.w3.org/XML/2008/06/xlink.xsd"/>
     <xs:annotation>
         <xs:documentation xml:lang="en">
             This is the normative XML Schema 1.0 schema for the MAP SSP
@@ -64,6 +66,101 @@
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
+	
+	<xs:group name="GElementCommon">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+                Common element content for all modeling elements of the STC file.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Classification" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+                        This element, which can occur multiple times, provides a set of classifications
+                        of an STC modeling element, provided as Keyword Value Pairs (KWP), the meaning
+                        of which is interpreted according to the name of the classification provided in
+                        the name attribute.
+                        
+                        This approach can be used, for example, to provide searchable keywords for
+                        content, or to assign and track quality or validation level requirements
+                        across the STC process, or to maintain variant or other classification
+                        content across the process.
+                    </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ClassificationEntry" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+                                    This element provides a keyword value pair entry, with the
+                                    keyword provided through the keyword attribute and the value
+                                    being the contents of the element.
+                                </xs:documentation>
+							</xs:annotation>
+							<xs:complexType mixed="true">
+								<xs:sequence>
+									<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+								<xs:attribute name="keyword" type="xs:normalizedString" use="required">
+									<xs:annotation>
+										<xs:documentation xml:lang="en">
+                                            This attribute gives the keyword for the classification entry
+                                            (i.e. keyword value pair).  It is left undefined whether this
+                                            must be unique across the entries of the Classification element,
+                                            or whether repeated entries are allowed.  This will depend on
+                                            the definition of the classification.
+                                        </xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute ref="xlink:type" fixed="simple"/>
+								<xs:attribute ref="xlink:href">
+									<xs:annotation>
+										<xs:documentation xml:lang="en">
+                                            This attribute gives an optional link for the classification
+                                            entry (i.e. keyword value pair).  This link can be given in
+                                            addition to any content of the classification entry, or it
+                                            can be the sole information of the classification entry.
+                                            The rules will depend on the definition of the classification.
+                                        </xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attributeGroup ref="ssc:ABaseElement"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="type" type="xs:normalizedString">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+                                This attribute provides the name of the type of classification
+                                being provided.  The name should be unique across the Classification
+                                elements of the immediately enclosing element.
+                                
+                                In order to ensure uniqueness all types should be identified
+                                with reverse domain name notation (cf. Java package names
+                                or Apple UTIs) of a domain that is controlled by the entity
+                                defining the semantics and content of the classification.
+                            </xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute ref="xlink:type" fixed="simple"/>
+					<xs:attribute ref="xlink:href">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+                                This attribute gives an optional link for the classification
+                                itself.  This link can be given to provide additional,
+                                potentially human readable information on the classification
+                                type that tools can use to provide this information to the
+                                user, especially for unknown classification types.
+                            </xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attributeGroup ref="ssc:ABaseElement"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Annotations" type="ssc:TAnnotations" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
     
     <xs:attributeGroup name="ATopLevelMetaData">
         <xs:annotation>
@@ -145,7 +242,7 @@
                     </xs:attribute>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="ssc:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
         <xs:attribute name="name" type="xs:string" use="required">
@@ -212,7 +309,7 @@
                     <xs:attribute name="offset" type="xs:double" default="0"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="ssc:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
         <xs:attribute name="name" type="xs:string" use="required">

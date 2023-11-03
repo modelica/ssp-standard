@@ -51,7 +51,7 @@
                 <xs:element name="Enumerations" minOccurs="0" type="ssc:TEnumerations"/>
                 <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
                 <xs:element name="DefaultExperiment" minOccurs="0" type="ssd:TDefaultExperiment"/>
-                <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                <xs:group ref="ssc:GElementCommon"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
                 <xs:annotation>
@@ -166,7 +166,7 @@
         <xs:complexContent>
             <xs:extension base="ssd:TElement">
                 <xs:sequence>
-                    <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                    <xs:group ref="ssc:GElementCommon"/>
                 </xs:sequence>
                 <xs:attribute name="type" type="xs:string" use="optional" default="application/x-fmu-sharedlibrary">
                     <xs:annotation>
@@ -322,7 +322,7 @@
         <xs:complexContent>
             <xs:extension base="ssd:TElement">
                 <xs:sequence>
-                    <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                    <xs:group ref="ssc:GElementCommon"/>
                 </xs:sequence>
                 <xs:attribute name="dictionary" type="xs:string" use="required">
                     <xs:annotation>
@@ -433,7 +433,7 @@
                                                     </xs:attribute>
                                                 </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                                            <xs:group ref="ssc:GElementCommon"/>
                                         </xs:sequence>
                                         <xs:attributeGroup ref="ssc:ABaseElement"/>
                                         <xs:attribute name="startElement" type="xs:string" use="optional">
@@ -575,7 +575,7 @@
                             </xs:sequence>
                         </xs:complexType>
                     </xs:element>
-                    <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                    <xs:group ref="ssc:GElementCommon"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -622,7 +622,7 @@
                                 <xs:attribute name="y" type="xs:double" use="required"/>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        <xs:group ref="ssc:GElementCommon"/>
                     </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                     <xs:attribute name="name" type="xs:string" use="required">
@@ -862,7 +862,7 @@
                                 </xs:attribute>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        <xs:group ref="ssc:GElementCommon"/>
                     </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                     <xs:attribute name="type" type="xs:string" use="optional" default="application/x-ssp-parameter-set">
@@ -941,7 +941,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="ssc:GElementCommon"/>
         </xs:sequence>
         <xs:attribute name="startTime" type="xs:double" use="optional">
             <xs:annotation>

@@ -50,7 +50,7 @@
                 <xs:element name="Parameters" type="ssv:TParameters"/>
                 <xs:element name="Enumerations" minOccurs="0" type="ssc:TEnumerations"/>
                 <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
-                <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                <xs:group ref="ssc:GElementCommon"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
                 <xs:annotation>
@@ -330,7 +330,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:choice>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="ssc:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
         <xs:attribute name="name" type="xs:string" use="required">

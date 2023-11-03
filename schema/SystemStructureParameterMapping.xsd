@@ -48,7 +48,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="MappingEntry" minOccurs="0" maxOccurs="unbounded" type="ssm:TMappingEntry"/>
-                <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                <xs:group ref="ssc:GElementCommon"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
                 <xs:annotation>
@@ -77,7 +77,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:group>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="ssc:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
         <xs:attribute name="source" type="xs:string" use="required">
