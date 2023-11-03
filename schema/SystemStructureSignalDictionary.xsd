@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mit XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) von  (eXXcellent solutions GmbH) bearbeitet -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ssb="http://ssp-standard.org/SSP1/SystemStructureSignalDictionary" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" targetNamespace="http://ssp-standard.org/SSP1/SystemStructureSignalDictionary" elementFormDefault="qualified">
-	<xs:annotation>
-		<xs:documentation xml:lang="en">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:ssb="http://ssp-standard.org/SSP1/SystemStructureSignalDictionary"
+    xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+    targetNamespace="http://ssp-standard.org/SSP1/SystemStructureSignalDictionary">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
             This is the normative XML Schema 1.0 schema for the MAP SSP
             SystemStructureSignalDictionary 2.0 format.
             
@@ -38,45 +40,49 @@
             OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
             POSSIBILITY OF SUCH DAMAGE.
         </xs:documentation>
-	</xs:annotation>
-	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="SystemStructureCommon.xsd"/>
-	<xs:element name="SignalDictionary">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="DictionaryEntry" type="ssb:TDictionaryEntry" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element name="Enumerations" type="ssc:TEnumerations" minOccurs="0"/>
-				<xs:element name="Units" type="ssc:TUnits" minOccurs="0"/>
-				<xs:group ref="ssc:GElementCommon"/>
-			</xs:sequence>
-			<xs:attribute name="version" use="required">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
+    </xs:annotation>
+    
+    <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="SystemStructureCommon.xsd"/>
+    
+    <xs:element name="SignalDictionary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="DictionaryEntry" minOccurs="0" maxOccurs="unbounded" type="ssb:TDictionaryEntry"/>
+                <xs:element name="Enumerations" minOccurs="0" type="ssc:TEnumerations"/>
+                <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
+                <xs:group ref="ssc:GElementCommon"/>
+            </xs:sequence>
+            <xs:attribute name="version" use="required">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
                         Version of SSB format, 2.0-alpha for this release.
                     </xs:documentation>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:normalizedString">
-						<xs:pattern value="2[.][0-9]+(-.+)"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-			<xs:attributeGroup ref="ssc:ABaseElement"/>
-			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:complexType name="TDictionaryEntry">
-		<xs:sequence>
-			<xs:group ref="ssc:GTypeChoice"/>
-			<xs:group ref="ssc:GElementCommon"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="ssc:ABaseElement"/>
-		<xs:attribute name="name" use="required">
-			<xs:annotation>
-				<xs:documentation xml:lang="en">
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="2[.][0-9]+(-.+)"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attributeGroup ref="ssc:ABaseElement"/>
+            <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="TDictionaryEntry">
+        <xs:sequence>
+            <xs:group ref="ssc:GTypeChoice"/>
+            <xs:group ref="ssc:GElementCommon"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+        <xs:attribute name="name" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
                     This attribute gives the dictionary entry a name, which
                     shall be unique within the signal dictionary.
                 </xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-	</xs:complexType>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+       
 </xs:schema>

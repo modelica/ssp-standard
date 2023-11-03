@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Mit XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) von  (eXXcellent solutions GmbH) bearbeitet -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ssm="http://ssp-standard.org/SSP1/SystemStructureParameterMapping" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" targetNamespace="http://ssp-standard.org/SSP1/SystemStructureParameterMapping" elementFormDefault="qualified">
-	<xs:annotation>
-		<xs:documentation xml:lang="en">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:ssm="http://ssp-standard.org/SSP1/SystemStructureParameterMapping"
+    xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+    targetNamespace="http://ssp-standard.org/SSP1/SystemStructureParameterMapping">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
             This is the normative XML Schema 1.0 schema for the MAP SSP
             SystemStructureParameterMapping 2.0 format.
             
@@ -38,64 +40,67 @@
             OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
             POSSIBILITY OF SUCH DAMAGE.
         </xs:documentation>
-	</xs:annotation>
-	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="SystemStructureCommon.xsd"/>
-	<xs:element name="ParameterMapping">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="MappingEntry" type="ssm:TMappingEntry" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:group ref="ssc:GElementCommon"/>
-			</xs:sequence>
-			<xs:attribute name="version" use="required">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
+    </xs:annotation>
+    
+    <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="SystemStructureCommon.xsd"/>
+    
+    <xs:element name="ParameterMapping">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MappingEntry" minOccurs="0" maxOccurs="unbounded" type="ssm:TMappingEntry"/>
+                <xs:group ref="ssc:GElementCommon"/>
+            </xs:sequence>
+            <xs:attribute name="version" use="required">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
                         Version of SSM format, 2.0-alpha for this release.
                     </xs:documentation>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:normalizedString">
-						<xs:pattern value="2[.][0-9]+(-.+)"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-			<xs:attributeGroup ref="ssc:ABaseElement"/>
-			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:complexType name="TMappingEntry">
-		<xs:sequence>
-			<xs:group ref="ssc:GTransformationChoice" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="2[.][0-9]+(-.+)"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attributeGroup ref="ssc:ABaseElement"/>
+            <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="TMappingEntry">
+        <xs:sequence>
+            <xs:group ref="ssc:GTransformationChoice" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
                         This optional element specifies a transformation that is to be applied to
                         the parameter value prior to its application to its target parameter.
                     </xs:documentation>
-				</xs:annotation>
-			</xs:group>
-			<xs:group ref="ssc:GElementCommon"/>
-		</xs:sequence>
-		<xs:attributeGroup ref="ssc:ABaseElement"/>
-		<xs:attribute name="source" type="xs:string" use="required">
-			<xs:annotation>
-				<xs:documentation xml:lang="en">
+                </xs:annotation>
+            </xs:group>
+            <xs:group ref="ssc:GElementCommon"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+        <xs:attribute name="source" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
                     This attribute specifies the name of the parameter in the parameter source
                     that is to be mapped to a new name and/or provided with a transformation
                     in this mapping entry.
                 </xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="target" type="xs:string" use="required">
-			<xs:annotation>
-				<xs:documentation xml:lang="en">
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="target" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
                     This attribute specifies the name of the parameter in the system or
                     component that is to be parametrized, i.e. that is the target of this
                     mapping entry.
                 </xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-		<xs:attribute name="suppressUnitConversion" type="xs:boolean" use="optional" default="false">
-			<xs:annotation>
-				<xs:documentation xml:lang="en">
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="suppressUnitConversion" type="xs:boolean" use="optional" default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
                     This attribute specifies whether automatic conversions between start
                     and end connector are performed using unit information potentially
                     available for both start and end definitions.  If this attribute is
@@ -107,7 +112,8 @@
                     is performed instead of any unit conversions, whereas otherwise the
                     linear transformation is performed in addition to any unit conversions.
                 </xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
-	</xs:complexType>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+   
 </xs:schema>
