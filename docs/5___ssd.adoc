@@ -83,7 +83,6 @@ The following XML child elements are specified for the TElement type:
 image:images/image26.png[image,width=371,height=82]
 
 This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
-For specification of system architecture, local variables may be defined with `kind="local"`.
 For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP120], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
 For FMI 3.0 FMUs, the connector name has to match either the name of the corresponding variable element, or one of its <Alias> elements.
 
@@ -121,7 +120,8 @@ For connectors of kind parameter the causality of the FMI 1.0 variable *MUST* be
 For connectors of kind calculatedParameter the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be parameter.
 For connectors of kind constant the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be constant.
 
-When SSP is used for specification of a system architecture, connectors of kind `local` are used to define local variables of the system. Such a local variable *MUST NOT* be used for connections.
+Connectors of kind `local` are used to define variables of the model element. Such a variable is not intended to be used for connections.
+However, if it is connected, the semantics are same as for an `output`.
 
 For SignalDictionaryReferences, the kind of a given connector can additionally be inout, which indicates that the semantics of the connector are derived from the connections going to the connector.
 This can be used for example to allow a connector to function as both an input and output within the same SignalDictionaryReference.
