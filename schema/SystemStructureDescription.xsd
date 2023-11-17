@@ -182,11 +182,8 @@
                 <xs:attribute name="source" type="xs:anyURI" use="optional">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            Optional attribute indicating the implementation source of the 
-                            component.
-
-                            If defined, a component source has to be specified as an URI
-                            (cf. RFC 3986)  For purposes of the resolution of relative URIs
+                            Optional attribute indicating the source of the component as a URI
+                            (cf. RFC 3986). For purposes of the resolution of relative URIs
                             the base URI is the URI of the SSD.  Therefore for components
                             that are located alongside the SSD, relative URIs without scheme
                             and authority can and should be used to specify the component
@@ -219,6 +216,19 @@
                             security or other reasons.  Implementations are also not required to
                             support any absolute URIs and any specific URI schemes (but are of
                             course allowed to support any and all kinds of URIs where useful).
+
+                            If the source attribute is missing, this indicates that there is no
+                            provided source for the component, indicating a simulation
+                            architecture design without implementation. Implementations *CAN*
+                            take any specified type attribute into account when handling such
+                            components. In any other regard implementations *CAN* treat such
+                            components as equivalent to an empty system with the same connectors
+                            and other properties as specified for the component.
+
+                            Note that not specifying a source attribute is not the same as
+                            specifying a source attribute with an emtpy string value, as that
+                            is considered a valid relative URI. Implementations *MUST NOT*
+                            specify an empty relative URI to indicate a missing implementation.
                         </xs:documentation>
                     </xs:annotation>
                 </xs:attribute>
