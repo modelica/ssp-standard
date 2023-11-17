@@ -29,6 +29,48 @@ jobs:
         echo REVNUMBER:       $REVNUMBER
         echo "REVNUMBER=$REVNUMBER" >> $GITHUB_ENV
 
+    - name: Fetch XML Schema Schema
+      run: wget https://www.w3.org/TR/xmlschema11-1/XMLSchema.xsd
+
+    - name: Enable Annotations for Validation Errors and Warnings
+      uses: korelstar/xmllint-problem-matcher@v1
+
+    - name: Validate SSC Schema
+      uses: ChristophWurst/xmllint-action@v1
+      with:
+        xml-file: ./schema/SystemStructureCommon.xsd
+        xml-schema-file: ./XMLSchema.xsd
+
+    - name: Validate SSD Schema
+      uses: ChristophWurst/xmllint-action@v1
+      with:
+        xml-file: ./schema/SystemStructureDescription.xsd
+        xml-schema-file: ./XMLSchema.xsd
+
+    - name: Validate SSD11 Schema
+      uses: ChristophWurst/xmllint-action@v1
+      with:
+        xml-file: ./schema/SystemStructureDescription11.xsd
+        xml-schema-file: ./XMLSchema.xsd
+
+    - name: Validate SSV Schema
+      uses: ChristophWurst/xmllint-action@v1
+      with:
+        xml-file: ./schema/SystemStructureParameterValues.xsd
+        xml-schema-file: ./XMLSchema.xsd
+
+    - name: Validate SSM Schema
+      uses: ChristophWurst/xmllint-action@v1
+      with:
+        xml-file: ./schema/SystemStructureParameterMapping.xsd
+        xml-schema-file: ./XMLSchema.xsd
+
+    - name: Validate SSB Schema
+      uses: ChristophWurst/xmllint-action@v1
+      with:
+        xml-file: ./schema/SystemStructureSignalDictionary.xsd
+        xml-schema-file: ./XMLSchema.xsd
+
     - name: Create build directory
       run: |
         mkdir -p build/schema
