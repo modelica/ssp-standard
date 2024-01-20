@@ -228,11 +228,11 @@
 
                             If the source attribute is missing, this indicates that there is no
                             provided source for the component, indicating a simulation
-                            architecture design without implementation. Implementations *CAN*
-                            take any specified type attribute into account when handling such
-                            components. In any other regard implementations *CAN* treat such
-                            components as equivalent to an empty system with the same connectors
-                            and other properties as specified for the component.
+                            architecture design without complete executable implementation.
+                            Implementations *CAN* take any specified type attribute into account
+                            when handling such components. In any other regard implementations
+                            *CAN* treat such components as equivalent to an empty system with the
+                            same connectors and other properties as specified for the component.
 
                             Note that not specifying a source attribute is not the same as
                             specifying a source attribute with an emtpy string value, as that

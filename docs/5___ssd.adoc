@@ -681,7 +681,7 @@ When the URI is a same-document URI with a fragment identifier, for example #oth
 
 Note that implementations are only *REQUIRED* to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go "up" a level via ..) are *not required* to be supported by implementations, and are in fact often not supported for security or other reasons. Implementations are also *not required* to support any absolute URIs and any specific URI schemes (but are of course allowed to support any and all kinds of URIs where this is considered useful).
 
-If the source attribute is missing, this indicates that there is no provided source for the component, indicating a simulation architecture design without implementation.
+If the source attribute is missing, this indicates that there is no provided source for the component, indicating a simulation architecture design without complete executable implementation.
 Implementations *CAN* take any specified type attribute into account when handling such components.
 In any other regard implementations *CAN* treat such components as equivalent to an empty system with the same connectors and other properties as specified for the component.
 
