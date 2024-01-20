@@ -134,7 +134,7 @@ The following XML child elements are specified for the Connector element:
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
 Boolean / String / Enumeration / Binary |Exactly one of these elements *CAN* be present to specify the type of the Connector. See <<ssc_types>> for details.
-|Dimension |One or more of these optional elements define the connector array dimensions, making the connector an array connector. See <<ssc_dimensions>> for details.
+|Dimension |One or more of these optional elements specify the connector array dimensions, making the connector an array connector. See <<ssc_dimensions>> for details.
 |ConnectorGeometry |This optional element defines the geometry information of the connector. See below for details.
 |===
 
