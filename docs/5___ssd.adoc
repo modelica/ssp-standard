@@ -339,6 +339,8 @@ The hierarchical names of the parameters or other variables of a system are form
 {empty}[ _For example for a system A containing a system B which contains an exposed parameter named SP1 and an element C with a parameter P2, the hierarchical names of the parameters in system A are B.SP1 and B.C.P2 respectively.
 The hierarchical name of those parameters inside system B are SP1 and C.P2 respectively._ ]
 
+{empty}[ _For example, a parameter binding of a e.g. a component A which contains an exposed parameter P shall reference the parameter using its local name P, not the hierarchical name A.P (possibly after any mapping)._ ]
+
 Note that the hierarchical names of parameters or other variables do not have to be unique: If two or more variables end up with the same hierarchical name (due to so-called punning), then any parameter values being applied to that name *MUST* be applied to all of them.
 If this is not wanted, then it is up to the generating implementation to ensure that no punning occurs, through proper choice of system and element names.
 
