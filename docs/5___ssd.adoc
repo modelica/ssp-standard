@@ -119,7 +119,7 @@ Note that there is no requirement that connectors have to be present for all var
 At least those connectors *MUST* be present which are referenced in connections inside the SSD.
 
 |kind a|
-This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
+This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), acausal (in e.g. Modelica), a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
 
 For components this *MUST* match the related kind of the underlying component implementation.
 For referenced FMUs it *MUST* match the combination of variability and causality:
@@ -156,6 +156,28 @@ Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *
 
 The type of the Connector is identified by the presence of one of the XML child elements Real, Float64, Float32, Integer, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Boolean, String, Enumeration, Binary, or Clock.
 
+When Modelica models are represeented in SSP, built-in input and output connectors shall be mapped as follows.
+
+[width="100%",cols="25%,25%,50%",options="header",]
+|===
+|Modelica Type |SSP Type |SSP Kind
+|RealInput |ssc:Real |input
+|RealOutput |ssc:Real |output
+|IntegerInput |ssc:Integer |input
+|IntegerOutput |ssc:Integer |output
+|BooleanInput |ssc:Boolean |input
+|BooleanOutput |ssc:Boolean |output
+|StringInput |ssc:String |input
+|StringOutput |ssc:String |output
+|===
+
+Modelica connectors of more advanced types are mapped the same way as Modelica component models.
+
+* The connector type is ssc:Binary.
+* The connector source attribute contains the full path of the Modelica model.
+* The media type is "text/x-modelica".
+* Acausal Modelica connector types are in SSP of kind="acausal".
+
 The dimensionality of the Connector is given by the presence of one or more Dimension elements.
 
 The association of a connector to a clock is given by the presence of one or more Clock elements.
@@ -176,6 +198,7 @@ If defined, this ConnectorGeometry overrides any ConnectorGeometry of a System i
 |Attribute |Description
 |x |Required attribute giving the x coordinate of the connector inside the special coordinate system.
 |y |Required attribute giving the y coordinate of the connector inside the special coordinate system.
+|rotation |Optional attribute giving the counter-clockwise rotation around (x, y). The default value is 0 (zero).
 |===
 
 [ _Graphical example for a ConnectorGeometry:_
@@ -750,7 +773,7 @@ A component is an atomic element of a system (i.e. its internal structure is not
 |===
 |Attribute |Description
 |type |Optional attribute giving the MIME type of the component, which defaults to `application/x-fmu-sharedlibrary` to indicate the type of the component.
-Valid further types are `application/x-ssp-definition` for system structure description files, and `application/x-ssp-package` for system structure package files.
+Valid further types are `application/x-ssp-definition` for system structure description files, `application/x-ssp-package` for system structure package files, and `text/x-modelica` for Modelica models.
 No further types are currently defined.
 |source a|
 Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
@@ -767,7 +790,8 @@ When the URI is a same-document URI with a fragment identifier, for example `#ot
 This mechanism can be used to instantiate an embedded system definition multiple times through reference to its definition element.
 
 Note that implementations are only *REQUIRED* to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go up a level via `..`) are *not required* to be supported by implementations, and are in fact often not supported for security or other reasons.
-Implementations are also *not required* to support any absolute URIs and any specific URI schemes (but are of course allowed to support any and all kinds of URIs where this is considered useful).
+Implementations are also *not required* to support any absolute URIs and any specific URI schemes, but are of course allowed to support any and all kinds of URIs where this is considered useful.
+One example is the use of the `modelica:` URI scheme to designate a model in the namespace of a Modelica environment.
 
 If the source attribute is missing, this indicates that there is no provided source for the component, indicating a simulation architecture design without complete executable implementation.
 Implementations *CAN* take any specified type attribute into account when handling such components.
