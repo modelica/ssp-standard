@@ -144,6 +144,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:group ref="ssc:GMetaData"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
         <xs:attribute name="name" use="required">
