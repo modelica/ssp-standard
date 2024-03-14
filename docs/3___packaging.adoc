@@ -25,6 +25,8 @@ Tools not supporting variant-containing SSPs *MUST* deal with the given SSP by i
 
 If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such system structure definition *MUST* be different from any of the other root level system structure definitions.
 
+{empty} [ _Tools *MAY* want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement._ ]
+
 Tools *SHOULD* use the name attribute of the root SystemStructureDescription element of the SSD files when presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 
 The ZIP archive *MAY* contain additional entries with the prefix resources/ which can be used to bundle resources referenced from the System Structure Description file(s) through relative URIs as specified in the sections below.
