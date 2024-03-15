@@ -27,7 +27,7 @@ The following XML child elements are specified for the SystemStructureDescriptio
 |System |This required element specifies the root system of the model, see section 5.3.
 |Enumerations |This optional element *MUST* contain definitions for all enumerations referenced in the system description file. See section 4.4.1 for its definition.
 |Units |This optional element *MUST* contain definitions for all units referenced in the system description file. See section 4.4.2 for its definition.
-|DefaultExperiment |This optional element *MAY* contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.
+|DefaultExperiment |This optional repeatable element *MAY* provide information of one or more default simulation setups that are supplied with the system definition for informational purposes, see description below.
 |===
 
 The root system of the model is specified through the required System element, see section 5.3.
@@ -40,8 +40,9 @@ image:images/image24.png[image,width=449,height=248]
 
 This element contains information of a default simulation setup that is supplied with the system definition for informational purposes.
 
-{empty}[ _Note that in contrast to FMI 2.0 only start and stop time are specified here, since values like step size or tolerance depend on the specific solver or master algorithms employed and are hence not specified in this global element.
-Additional solver or master algorithm specific information can be supplied through the annotation mechanism, or using a future layered standard._ ]
+Besides the setup information itself, the element can also specify stimuli and reference time-series data bindings, that can be used to provide reference results for basic validity checking.
+
+Note that the simulation setup only provides for very basic simulation settings and does not support specifying advanced solver or co-simulation setups.
 
 {empty}[ _The handling of systems comprising components with differing units for the independent variable depends on the implementation.
 It should be noted that since FMI 2.0 the unit of the independent variable for FMUs is clearly specified: It defaults to seconds, however other units can be specified by explicitly defining the independent variable.
@@ -52,6 +53,8 @@ This standard does not specify additional measures to deal with differing indepe
 |Attribute |Description
 |startTime |This optional attribute gives the start time of the simulation.
 |stopTime |This optional attribute gives the stop time of the simulation.
+|stepSize |This optional attribute gives a suggested fixed step size for the simulation.
+|tolerance |This optional attribute gives a suggested tolerance for the simulation.
 |===
 
 === Common Model Element Type
