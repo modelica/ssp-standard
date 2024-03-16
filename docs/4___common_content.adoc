@@ -444,6 +444,6 @@ The following XML attributes are specified for the Dimension element:
 |Attribute |Description
 |size a|
 This attribute gives the size of this dimension of the array as a fixed, unchangeable number.
-
 |sizeConnector a|
 This attribute references another connector by name, that gives the size of this dimension of the array connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.
+|===
