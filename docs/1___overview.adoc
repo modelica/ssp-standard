@@ -19,7 +19,7 @@ This section introduces the basic properties and guiding principles that underly
 _Tool independence_: The core intent of SSP is to enable the exchange of partial and complete simulation systems between tools.
 In consequence any tool-specific data is not stored in the standard schema and will be lost during transfer between implementations.
 However specific data can be stored in customized annotations for reuse in the same tool.
-Additional common data for use across tools can also be standardized as layered standards (cf. section 2.2).
+Additional common data for use across tools can also be standardized as layered standards (cf. <<Annotation Mechanism>>).
 
 _Simplicity_: SSP is focused on the possibility to exchange complete or partial topologies and parameters between different tools as simply as possible, while retaining essential information.
 This optionally also includes basic graphical information, to ensure basic recognizability, while eschewing the complexities of full and exact graphical model exchange.
@@ -49,7 +49,7 @@ Another strength of SSP is due to its simple syntax that users can easily write 
 
 For the simulation of complex systems, first a design of this system should be created.
 From a simulation perspective, each component has to be described with its inputs and outputs and its required parameters.
-This can be done using SSP by defining the wrapper of this component with an empty Component element comprising the connectors for the inputs and outputs and the component’s parameters.
+This can be done using SSP by defining the wrapper of this component with an empty Component element comprising the connectors for the inputs and outputs and the component's parameters.
 
 The interaction of the components is defined by the connections.
 Connections in SSP are always causal.

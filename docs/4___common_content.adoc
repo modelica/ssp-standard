@@ -1,7 +1,7 @@
-== Common Content (SSC)
+== Common Content (SSC) [[SSC]]
 
 Common Structures and Attributes that are used across all XML Schemas are defined in the SystemStructureCommon.xsd Schema, which is imported by all other XML Schemas.
-All Types and AttributeGroups live in the http://ssp-standard.org/SSP1/SystemStructureCommon namespace, nicknamed ssc.
+All Types and AttributeGroups live in the `http://ssp-standard.org/SSP1/SystemStructureCommon` namespace, nicknamed `ssc`.
 
 === Common Attributes
 
@@ -25,7 +25,8 @@ image:images/image2.png[image,width=324,height=35]
 [width="100%",cols="18%,82%",options="header",]
 |===
 |Element |Description
-|Annotations |This optional element can be used to give additional information for any model entity. When it is present, it *MUST* contain 1 or more Annotation elements as specified below.
+|Annotations |This optional element can be used to give additional information for any model entity.
+When it is present, it *MUST* contain 1 or more Annotation elements as specified below.
 |===
 
 Each annotation is encapsulated in an Annotation element, with a required type attribute specifying the type of the annotation, and arbitrary XML content from arbitrary namespaces.
@@ -38,7 +39,7 @@ For vendor-specific annotations this *SHOULD* be a domain controlled by the tool
 For MAP-SSP-defined annotations, this *MUST* be a domain under the org.modelica or org.ssp-standard prefixes.
 Annotations that are not defined by MAP SSP *MUST NOT* use these two prefixes,
 
-This mechanism can be used both for tool-specific annotations, as well as for layered standards (see section 2.2) and other agreed-upon extensions, and thus provides a generic extension mechanism.
+This mechanism can be used both for tool-specific annotations, as well as for layered standards (see <<Versioning and Layered Standards>>) and other agreed-upon extensions, and thus provides a generic extension mechanism.
 
 === Top-Level Attributes
 
@@ -71,8 +72,8 @@ image:images/image5.png[image,width=397,height=47]
 
 This optional element *MUST* contain definitions for all enumerations referenced in a file.
 
-{empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities.
-Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
+{empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities._
+_Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
 
 image:images/image6.png[image,width=441,height=273]
 
@@ -90,7 +91,6 @@ The following XML child elements are specified for the Enumeration element:
 |===
 |Element |Description
 |Item |One or more elements specifying the items of the enumeration.
-| |
 |===
 
 ===== Item
@@ -112,8 +112,8 @@ image:images/image8.png[image,width=315,height=47]
 
 This optional element *MUST* contain definitions for all units referenced in a file.
 
-{empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities.
-Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
+{empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities._
+_Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
 
 image:images/image9.png[image,width=380,height=273]
 
@@ -166,7 +166,7 @@ They are used inside elements to select one of multiple child elements, or provi
 image:images/image11.png[image,width=312,height=203]
 
 The following XML child elements denote the data type of a connector or dictionary entry.
-_[ Note that in the case of connectors the use of a type element itself is optional, in the case of dictionary entries it is required ]_.
+[ _Note that in the case of connectors the use of a type element itself is optional, in the case of dictionary entries it is required_ ].
 
 [width="100%",cols="33%,67%",options="header",]
 |===
@@ -187,8 +187,11 @@ This type specifies that the connector in question represents an IEEE754 double 
 |===
 |Attribute |Description
 |unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
-If the attribute is not supplied, the unit is determined through default mechanisms: For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified. For systems, the units of connected underlying connectors could be used if unambiguous. If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. Notwithstanding these mechanisms, unitless variables of type Real are supported.
-| |
+If the attribute is not supplied, the unit is determined through default mechanisms:
+For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
+For systems, the units of connected underlying connectors could be used if unambiguous. +
+If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. +
+Notwithstanding these mechanisms, unitless variables of type Real are supported.
 |===
 
 ===== Float64
@@ -201,8 +204,11 @@ This type specifies that the connector in question represents an IEEE754 double 
 |===
 |Attribute |Description
 |unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
-If the attribute is not supplied, the unit is determined through default mechanisms: For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified. For systems, the units of connected underlying connectors could be used if unambiguous. If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. Notwithstanding these mechanisms, unitless variables of type Float64 are supported.
-| |
+If the attribute is not supplied, the unit is determined through default mechanisms:
+For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
+For systems, the units of connected underlying connectors could be used if unambiguous. +
+If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. +
+Notwithstanding these mechanisms, unitless variables of type Float64 are supported.
 |===
 
 ===== Float32
@@ -215,8 +221,11 @@ This type specifies that the connector in question represents an IEEE754 single 
 |===
 |Attribute |Description
 |unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
-If the attribute is not supplied, the unit is determined through default mechanisms: For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified. For systems, the units of connected underlying connectors could be used if unambiguous. If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. Notwithstanding these mechanisms, unitless variables of type Float32 are supported.
-| |
+If the attribute is not supplied, the unit is determined through default mechanisms:
+For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
+For systems, the units of connected underlying connectors could be used if unambiguous. +
+If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. +
+Notwithstanding these mechanisms, unitless variables of type Float32 are supported.
 |===
 
 ===== Integer
@@ -295,7 +304,8 @@ The underlying type of the connector is the same as for Integer.
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
-|name |This required attribute gives the name of an enumeration which references into the defined enumerations of a document. The name *MUST* match the name of an Enumeration entry in the Enumerations XML element of the top-level element of the file.
+|name |This required attribute gives the name of an enumeration which references into the defined enumerations of a document.
+The name *MUST* match the name of an Enumeration entry in the Enumerations XML element of the top-level element of the file.
 |===
 
 ===== Binary
@@ -308,10 +318,11 @@ This type specifies that the connector in question represents a length-terminate
 |===
 |Attribute |Description
 |mime-type a|
-This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific application/octet-stream type. This information *CAN* be used by the implementation to detect mismatches between connected binary connectors, or provide automatic means of conversion between different formats. It should be noted that the implementation is *not required* to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors are connected.
+This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific application/octet-stream type.
+This information *CAN* be used by the implementation to detect mismatches between connected binary connectors, or provide automatic means of conversion between different formats.
+It should be noted that the implementation is *not required* to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors are connected.
 
 The attribute value *MUST* be a valid MIME type as specified in RFC 2045; it *CAN* include additional arguments, etc., as specified in RFC 2045.
-
 |===
 
 [#ssc_transformations]
@@ -419,7 +430,9 @@ The Dimension element is used to specify the dimensions of array connectors, sig
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element |Description
-|Dimension |One or more instances of this element *CAN* be present to specify the dimensions of the containing model element. If no instances are present, the containing model element is scalar. See below for details.
+|Dimension |One or more instances of this element *CAN* be present to specify the dimensions of the containing model element.
+If no instances are present, the containing model element is scalar.
+See below for details.
 |===
 
 ===== Dimension
