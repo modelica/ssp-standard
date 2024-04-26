@@ -69,7 +69,7 @@ The system designer extracts each component into a separate SSP file as preparat
 The implementor of the component can import this SSP file as a template in his authoring tool and directly code the behavior using the defined input signals and the definition of the parameters to calculate the defined output signals.
 
 After completion of the implementation, the component can be returned as a running entity in an SSP package file for insertion into the complete system structure by the integrator.
-The integrator can decide whether to merge the components from different sources into one file, or use the components as references by using the appropriate mechanisms in SSP to just link to the original SSP files.
+The integrator can decide whether to merge the components from different sources into one file or use the components as references by using the appropriate mechanisms in SSP to just link to the original SSP files.
 The latter approach has the benefit that the components can be used “untouched” and any “warranty” given by the author of the component is not corrupted.
 Even traceability information can be retained this way.
 
