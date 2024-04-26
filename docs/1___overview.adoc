@@ -6,7 +6,7 @@ This description is tool neutral and is intended to be used primarly as an excha
 
 SSP can be seen as an extension to the FMI (Functional Mockup Interface) standard [FMI20].
 FMI describes a tool independent standard to exchange single simulation models.
-Using SSP complete systems consisting of multiple interconnected simulation models can be defined with the desired signal flow and also with the wanted parameterization of each single model as well as the parameters for the complete system.
+Using SSP, complete systems consisting of multiple interconnected simulation models can be defined with the desired signal flow and also with the wanted parameterization of each single model as well as the parameters for the complete system.
 This system topology can include hierarchies of sub-systems for proper structuring of the overall system.
 Along the signal flow, unit definitions can be used for automatic unit conversion or unit checking.
 Parameters can be derived from other parameters to be able to introduce dependencies of parameters between different components or to assure consistent use of same values for multiple components where needed.
@@ -57,7 +57,7 @@ Connections can be made directly between components or via signal dictionaries.
 A signal dictionary is a collection of signals similar to a bus concept (e.g. like a CAN bus).
 During the design phase of a system, a signal dictionary can be a good way to predefine the available signal connections.
 
-If the system has global parameters that shall be propagated to multipile components, the definition can also be made at system level.
+If the system has global parameters that shall be propagated to multiple components, the definition can also be made at system level.
 The mapping to the parameters of the components can be realized either using connections or through parameter bindings that can include parameter mappings.
 
 ==== SSP as definition of component interfaces and parameterization as template
@@ -68,7 +68,7 @@ The system designer extracts each component into a separate SSP file as preparat
 
 The implementor of the component can import this SSP file as a template in his authoring tool and directly code the behavior using the defined input signals and the definition of the parameters to calculate the defined output signals.
 
-After completion of the implementation the component can be returned as a running entity in an SSP package file for insertion into the complete system structure by the integrator.
+After completion of the implementation, the component can be returned as a running entity in an SSP package file for insertion into the complete system structure by the integrator.
 The integrator can decide whether to merge the components from different sources into one file or use the components as references by using the appropriate mechanisms in SSP to just link to the original SSP files.
 The latter approach has the benefit that the components can be used “untouched” and any “warranty” given by the author of the component is not corrupted.
 Even traceability information can be retained this way.
@@ -87,7 +87,7 @@ Through the URI-based addressing mechanism, tools can support direct access to s
 
 After implementation of all components and provisioning of the parameter settings for a particular system everything is in place for running simulations.
 All these entities can be stored in one single SSP package, which can be imported by the executing system for running the simulation.
-Depending on the execution system it might be necessary to define additional settings for the solver or other execution algorithms.
+Depending on the execution system, it might be necessary to define additional settings for the solver or other execution algorithms.
 The core SSP standard does not include these execution-specific settings, but layered standards will be defined to include those settings.
 
 These complete instances of simulation systems can also be used as an archive for traceability purposes.
