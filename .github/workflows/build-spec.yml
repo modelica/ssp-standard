@@ -14,11 +14,11 @@ jobs:
   build-spec:
 
     name: Build SSP Specification
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: List variables
       run: |
@@ -88,7 +88,7 @@ jobs:
         cp docs/images/* build/images
 
     - name: Create ZIP archive
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: SSP-Specification
         path: build/*
@@ -101,8 +101,8 @@ jobs:
         arguments: --only-4xx --url-ignore '/http:\/\/ssp-standard.org\/SSP1\/.*/,/https:\/\/opensource.org\/.*/'
 
     - name: Push HTML to ssp-standard.org
-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-      uses: cpina/github-action-push-to-another-repository@v1.5
+      if: ${{ github.repository == 'modelica/ssp-standard' && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      uses: cpina/github-action-push-to-another-repository@v1.7.2
       env:
         SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
       with:
