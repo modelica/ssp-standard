@@ -148,14 +148,17 @@ The following XML child elements are specified for the Connector element:
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements *CAN* be present to specify the type of the Connector. See <<ssc_types>> for details.
+Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *CAN* be present to specify the type of the Connector. See <<ssc_types>> for details.
 |Dimension |One or more of these optional elements specify the connector array dimensions, making the connector an array connector. See <<ssc_dimensions>> for details.
+|Clock |One or more of these optional elements associate the connector to a clock of the given name, which must be defined on the element that contains this connector.
 |ConnectorGeometry |This optional element defines the geometry information of the connector. See below for details.
 |===
 
-The type of the Connector is identified by the presence of one of the XML child elements Real, Float64, Float32, Integer, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Boolean, String, Enumeration, or Binary.
+The type of the Connector is identified by the presence of one of the XML child elements Real, Float64, Float32, Integer, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Boolean, String, Enumeration, Binary, or Clock.
 
 The dimensionality of the Connector is given by the presence of one or more Dimension elements.
+
+The association of a connector to a clock is given by the presence of one or more Clock elements.
 
 ===== ConnectorGeometry
 
@@ -530,6 +533,15 @@ Implementations *MUST* ensure that data flow is specified unambiguously, includi
 It is implementation-defined whether connections between connectors of different types are allowed, and to what extent conversions are performed.
 This includes type conversions that can be performed without data loss, e.g. converting from an output of type `Float32` to an input of type `Float64` or `Real`, as well as conversions that can potentially lead to data loss, e.g. converting from an output of type `Float64` to an input of type `Float32` or `Int8`.
 It is also implementation-defined how and whether any error-handling at runtime is performed in those cases.
+
+It is also implementation-defined whether and which connections between connectors that are associated to different clocks are allowed.
+
+The table below applies directly to connectors of type `Clock` with an `intervalVariability` of `triggered`.
+For connectors of type `Clock` with an `intervalVariability` that is not `triggered` the table applies with the following provisions:
+* The connector is treated as a connector of kind `output` for the purposes of determining permissible connections.
+* It is implementation-defined whether and which connections between two connectors of kind `input` with `intervalVariability` that is not `triggered` are allowed. Such connections are deemed to establish equality constraints on the clock ticks, where the resolution mechanism, including direction of resolution is implementation-defined.
+
+For all connections of an element connector of type `Clock` to a system connector of type `Clock`, the `intervalVariability` of the two connectors must be identical.
 
 [width="100%",cols="22%,32%,21%,25%",options="header",]
 |===

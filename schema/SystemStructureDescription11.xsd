@@ -648,6 +648,17 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:group>
+                        <xs:element name="Clock" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element associates the connector to a clock of the
+                                    given name, which must be defined on the given element.
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:attribute name="name" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
                         <xs:element name="ConnectorGeometry" minOccurs="0">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
