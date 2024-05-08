@@ -193,11 +193,11 @@ image:images/image28.png[image,width=307,height=149]
 This optional XML element gives the geometry information of the connector.
 Note that x and y coordinates are in a special coordinate system, where 0,0 is the lower-left corner of the containing model element, and 1,1 is the upper-right corner of the model element, regardless of aspect ratio.
 
-For systems the placement of connectors for the inside and outside view of the system is identical, the special coordinate system is just translated to different actual coordinate systems, namely the one determined by the ElementGeometry for the outside view, and the one determined by SystemGeometry for the inside view.
+By default, the placement of connectors for a system's inside and outside views is identical.
+The special coordinate system is just translated to different actual coordinate systems, namely the one determined by ElementGeometry for the outside view and the one determined by SystemGeometry for the inside view.
 
-For systems by default the placement of connectors for the inside and outside view of the system is identical, the special coordinate system is just translated to different actual coordinate systems, namely the one determined by the ElementGeometry for the outside view, and the one determined by SystemGeometry for the inside view.
-
-For systems optionally a different placement of connectors for the inside view of the system can be specified with the systemInnerX and systemInnerY coordinates. This enables to preserve the inside system layout when integrating a system in a system structure and to avoid unintended changes to the position of the connectors on the inside view of the system when doing layout changes on the outside view and vice versa.
+For systems, optionally, different placement of connectors for the inside view of the system can be specified with the systemInnerX and systemInnerY coordinates.
+This enables preserving the inside system layout when integrating a system in a system structure and avoiding unintended changes to the position of the connectors on the inside view of the system when making layout changes on the outside view and vice versa.
 
 If defined, this ConnectorGeometry overrides any ConnectorGeometry of a System in a referenced SSD file or any port location defined by an FMU (as defined in the relevant FMI standards).
 
