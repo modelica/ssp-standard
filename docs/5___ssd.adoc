@@ -147,7 +147,7 @@ The type of the Connector is identified by the presence of one of the XML child 
 
 The dimensionality of the Connector is given by the presence of one or more Dimension elements.
 
-The association of a conenctor to a clock is given by the presence of one or more Clock elements.
+The association of a connector to a clock is given by the presence of one or more Clock elements.
 
 ===== ConnectorGeometry
 
