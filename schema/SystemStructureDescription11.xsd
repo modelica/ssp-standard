@@ -60,6 +60,7 @@
                 <xs:element name="Enumerations" minOccurs="0" type="ssc:TEnumerations"/>
                 <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
                 <xs:element name="DefaultExperiment" minOccurs="0" type="ssd:TDefaultExperiment"/>
+                <xs:group ref="ssc:GMetaData"/>
                 <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
@@ -287,10 +288,13 @@
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:choice>
-                        <xs:element ref="ssb:SignalDictionary"/>
-                        <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                    </xs:choice>
+                    <xs:sequence>
+                        <xs:choice>
+                            <xs:element ref="ssb:SignalDictionary"/>
+                            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:choice>
+                        <xs:group ref="ssc:GMetaData"/>
+                    </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                     <xs:attribute name="type" type="xs:string" use="optional" default="application/x-ssp-signal-dictionary"/>
                     <xs:attribute name="source" type="xs:anyURI" use="optional">
@@ -856,10 +860,13 @@
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:choice>
-                                    <xs:element ref="ssm:ParameterMapping"/>
-                                    <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                                </xs:choice>
+                                <xs:sequence>
+                                    <xs:choice>
+                                        <xs:element ref="ssm:ParameterMapping"/>
+                                        <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:choice>
+                                    <xs:group ref="ssc:GMetaData"/>
+                                </xs:sequence>
                                 <xs:attributeGroup ref="ssc:ABaseElement"/>
                                 <xs:attribute name="type" type="xs:string" use="optional" default="application/x-ssp-parameter-mapping"/>
                                 <xs:attribute name="source" type="xs:anyURI" use="optional">
@@ -897,6 +904,7 @@
                                 </xs:attribute>
                             </xs:complexType>
                         </xs:element>
+                        <xs:group ref="ssc:GMetaData"/>
                         <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
                     </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
