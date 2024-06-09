@@ -162,7 +162,7 @@ When Modelica models are represeented in SSP, built-in input and output connecto
 Modelica connectors of more advanced types are mapped the same way as Modelica component models.
 
 * The connector type is ssc:Binary.
-* The media type is "text/x-modelica" and the "type" attribute designates the path of the Modleica connector..
+* The media type is "text/x-modelica" and the "path" attribute designates the path of the Modleica connector..
 * Acausal Modelica connector types are in SSP of kind="acausal".
 
 The dimensionality of the Connector is given by the presence of one or more Dimension elements.
