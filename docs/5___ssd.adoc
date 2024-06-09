@@ -174,8 +174,7 @@ When Modelica models are represeented in SSP, built-in input and output connecto
 Modelica connectors of more advanced types are mapped the same way as Modelica component models.
 
 * The connector type is ssc:Binary.
-* The connector source attribute contains the full path of the Modelica model.
-* The media type is "text/x-modelica".
+* The media type is "text/x-modelica" and the "path" attribute designates the path of the Modleica connector..
 * Acausal Modelica connector types are in SSP of kind="acausal".
 
 The dimensionality of the Connector is given by the presence of one or more Dimension elements.
@@ -198,7 +197,6 @@ If defined, this ConnectorGeometry overrides any ConnectorGeometry of a System i
 |Attribute |Description
 |x |Required attribute giving the x coordinate of the connector inside the special coordinate system.
 |y |Required attribute giving the y coordinate of the connector inside the special coordinate system.
-|rotation |Optional attribute giving the counter-clockwise rotation around (x, y). The default value is 0 (zero).
 |===
 
 [ _Graphical example for a ConnectorGeometry:_
@@ -578,6 +576,7 @@ For all connections of an element connector of type `Clock` to a system connecto
 |System |parameter |System |local
 |System |input |System |output
 |System |input |System |local
+|System|acausal|System|acausal
 |System |structuralParameter |Element |structuralParameter
 |System |structuralParameter |Element |parameter
 |System |structuralParameter |Element |input
@@ -587,6 +586,7 @@ For all connections of an element connector of type `Clock` to a system connecto
 |System |parameter |Element |inout
 |System |input |Element |input
 |System |input |Element |inout
+|System|acausal|Element|acausal
 |Element |constant |Element |structuralParameter
 |Element |constant |Element |parameter
 |Element |constant |Element |input
@@ -599,6 +599,7 @@ For all connections of an element connector of type `Clock` to a system connecto
 |Element |local  |Element |input
 |Element |local  |Element |inout
 |Element |inout |Element |input
+|Element|acausal|Element|acausal
 |Element |constant |System |constant
 |Element |constant |System |calculatedParameter
 |Element |constant |System |output
@@ -612,6 +613,7 @@ For all connections of an element connector of type `Clock` to a system connecto
 |Element |local  |System |local
 |Element |inout |System |output
 |Element |inout |System |local
+|Element|acausal|System|acausal
 |===
 
 The following XML child elements are specified for the Connection element:
@@ -775,6 +777,8 @@ A component is an atomic element of a system (i.e. its internal structure is not
 |type |Optional attribute giving the MIME type of the component, which defaults to `application/x-fmu-sharedlibrary` to indicate the type of the component.
 Valid further types are `application/x-ssp-definition` for system structure description files, `application/x-ssp-package` for system structure package files, and `text/x-modelica` for Modelica models.
 No further types are currently defined.
+For type `text/x-modelica`, a media type parameter `path` specifies the full path of the Modelica class.
+{empty}[ _Example: `type="text/x-modelica; path=Modelica.Mechanics.Rotational.Interface.Flange_A"`._ ]
 |source a|
 Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
@@ -791,7 +795,6 @@ This mechanism can be used to instantiate an embedded system definition multiple
 
 Note that implementations are only *REQUIRED* to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go up a level via `..`) are *not required* to be supported by implementations, and are in fact often not supported for security or other reasons.
 Implementations are also *not required* to support any absolute URIs and any specific URI schemes, but are of course allowed to support any and all kinds of URIs where this is considered useful.
-One example is the use of the `modelica:` URI scheme to designate a model in the namespace of a Modelica environment.
 
 If the source attribute is missing, this indicates that there is no provided source for the component, indicating a simulation architecture design without complete executable implementation.
 Implementations *CAN* take any specified type attribute into account when handling such components.
