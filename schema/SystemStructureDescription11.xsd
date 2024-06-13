@@ -249,9 +249,10 @@
                             attribute can be used to determine which FMU implementation should be
                             employed.  If the attribute is missing or uses the default value "any",
                             the importing tool is free to choose what kind of FMU implementation
-                            to use.  If the value is "CoSimulation" or "ModelExchange" the corresponding
-                            FMU implementation must be used.  It is an error if the specified type
-                            of FMU implementation is not present in the FMU.
+                            to use.  If the value is "CoSimulation", "ModelExchange", or
+                            "ScheduledExecution", the corresponding FMU implementation must be used.
+                            It is an error if the specified type of FMU implementation is not present
+                            in the FMU.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:simpleType>
@@ -259,6 +260,7 @@
                             <xs:enumeration value="any"/>
                             <xs:enumeration value="ModelExchange"/>
                             <xs:enumeration value="CoSimulation"/>
+                            <xs:enumeration value="ScheduledExecution"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
