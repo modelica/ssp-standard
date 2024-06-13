@@ -778,7 +778,7 @@ Implementations *MUST NOT* specify an empty relative URI to indicate a missing i
 
 |implementation |When the referenced component is an FMU that contains multiple implementations [ _for example Co-Simulation and Model Exchange_], this optional attribute can be used to determine which FMU implementation should be employed.
 If the attribute is missing or uses the default value any, the importing tool is free to choose what kind of FMU implementation to use.
-If the value is CoSimulation or ModelExchange the corresponding FMU implementation *MUST* be used.
+If the value is CoSimulation, ModelExchange, or ScheduledExecution the corresponding FMU implementation *MUST* be used.
 It is an error if the specified type of FMU implementation is not present in the FMU.
 |===
 
