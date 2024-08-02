@@ -199,7 +199,8 @@ The special coordinate system is just translated to different actual coordinate 
 For systems, optionally, different placement of connectors for the inside view of the system can be specified with the systemInnerX and systemInnerY coordinates.
 This enables preserving the inside system layout when integrating a system in a system structure and avoiding unintended changes to the position of the connectors on the inside view of the system when making layout changes on the outside view and vice versa.
 
-If defined, this ConnectorGeometry overrides any ConnectorGeometry of a System in a referenced SSD file or any port location defined by an FMU (as defined in the relevant FMI standards).
+If defined, this ConnectorGeometry overrides any ConnectorGeometry of a System in a referenced SSD file or any port location defined by an FMU (as defined in the relevant FMI standards) for the x and y coordinates of the outside view.
+Any inside view is not overridden.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
