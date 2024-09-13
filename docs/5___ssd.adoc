@@ -119,7 +119,7 @@ Note that there is no requirement that connectors have to be present for all var
 At least those connectors *MUST* be present which are referenced in connections inside the SSD.
 
 |kind a|
-This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
+This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), unspecified, a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
 
 For components this *MUST* match the related kind of the underlying component implementation.
 For referenced FMUs it *MUST* match the combination of variability and causality:
@@ -137,6 +137,9 @@ However, if it is connected, the semantics are same as for an `output`.
 
 For SignalDictionaryReferences, the kind of a given connector can additionally be inout, which indicates that the semantics of the connector are derived from the connections going to the connector.
 This can be used for example to allow a connector to function as both an input and output within the same SignalDictionaryReference.
+
+Connectors of kind `unspecified` are used to define connectors for which the flow of information is either not yet specified, or is determined at runtime, for example for acausal connections of Modelica models.
+Such connectors can be connected to any other connector under the rules of the underlying modeling language.
 
 |===
 
@@ -159,6 +162,29 @@ The type of the Connector is identified by the presence of one of the XML child 
 The dimensionality of the Connector is given by the presence of one or more Dimension elements.
 
 The association of a connector to a clock is given by the presence of one or more Clock elements.
+
+When Modelica models are represented in SSP, built-in input and output connectors shall be mapped as follows:
+
+[width="100%",cols="25%,25%,50%",options="header",]
+|===
+|Modelica Type |SSP Type |SSP Kind
+|RealInput |ssc:Real |input
+|RealOutput |ssc:Real |output
+|IntegerInput |ssc:Integer |input
+|IntegerOutput |ssc:Integer |output
+|BooleanInput |ssc:Boolean |input
+|BooleanOutput |ssc:Boolean |output
+|StringInput |ssc:String |input
+|StringOutput |ssc:String |output
+|===
+
+Modelica connectors of more advanced types are currently mapped in the following way:
+
+* The connector type is ssc:Binary.
+* The media type is `text/x-modelica` and the `path` parameter of the media type designates the path of the Modelica connector.
+* Acausal Modelica connector types are mapped to connectors of kind unspecified.
+
+_[ Note that the current opaque mapping of more advanced types to Binary connectors is a temporary solution, and a more detailed mapping may be provided in future versions of the standard supporting more complex data types. ]_
 
 ===== ConnectorGeometry
 
@@ -530,6 +556,10 @@ Note that source and destination in the following table indicate the resulting d
 Implementations *MUST NOT* specify connections that are not of one of the allowed combinations in the following table.
 Implementations *MUST* ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout, parameter, or structuralParameter connector of an element, or a local, constant, calculatedParameter, or output connector of an enclosing system.
 
+For connectors of kind unspecified it is ultimately implementation-defined whether and how connections are allowed, as the exact semantics depend on the underlying modeling language.
+For the purposes of the following table, connectors of kind unspecified are treated as connectors of whatever kind is needed to make the connection allowed, i.e. they serve a wild-card role.
+The handling of conflicts that arise in transitive connections from conflicting wild-card assignments is implementation-defined.
+
 It is implementation-defined whether connections between connectors of different types are allowed, and to what extent conversions are performed.
 This includes type conversions that can be performed without data loss, e.g. converting from an output of type `Float32` to an input of type `Float64` or `Real`, as well as conversions that can potentially lead to data loss, e.g. converting from an output of type `Float64` to an input of type `Float32` or `Int8`.
 It is also implementation-defined how and whether any error-handling at runtime is performed in those cases.
@@ -750,8 +780,10 @@ A component is an atomic element of a system (i.e. its internal structure is not
 |===
 |Attribute |Description
 |type |Optional attribute giving the MIME type of the component, which defaults to `application/x-fmu-sharedlibrary` to indicate the type of the component.
-Valid further types are `application/x-ssp-definition` for system structure description files, and `application/x-ssp-package` for system structure package files.
+Valid further types are `application/x-ssp-definition` for system structure description files, `application/x-ssp-package` for system structure package files, and `text/x-modelica` for Modelica models.
 No further types are currently defined.
+For type `text/x-modelica`, a media type parameter `path` specifies the full path of the Modelica class.
+{empty}[ _Example: `type="text/x-modelica; path=Modelica.Mechanics.Rotational.Interface.Flange_A"`._ ]
 |source a|
 Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
@@ -767,7 +799,7 @@ When the URI is a same-document URI with a fragment identifier, for example `#ot
 This mechanism can be used to instantiate an embedded system definition multiple times through reference to its definition element.
 
 Note that implementations are only *REQUIRED* to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go up a level via `..`) are *not required* to be supported by implementations, and are in fact often not supported for security or other reasons.
-Implementations are also *not required* to support any absolute URIs and any specific URI schemes (but are of course allowed to support any and all kinds of URIs where this is considered useful).
+Implementations are also *not required* to support any absolute URIs and any specific URI schemes, but are of course allowed to support any and all kinds of URIs where this is considered useful.
 
 If the source attribute is missing, this indicates that there is no provided source for the component, indicating a simulation architecture design without complete executable implementation.
 Implementations *CAN* take any specified type attribute into account when handling such components.

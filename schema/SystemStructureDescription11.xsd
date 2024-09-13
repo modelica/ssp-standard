@@ -704,12 +704,12 @@
                     <xs:attribute name="kind" use="required">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
-                                This attribute specifies the kind of the given connector,
-                                which indicates whether the connector is an input, an output,
-                                both (inout), a local variable, a constant, a parameter, a
-                                calculated parameter (i.e. a parameter that is calculated by
-                                the component during initialization), or a structural parameter
-                                (i.e. a parameter that can be set during (re-)configuration mode).
+                                This attribute specifies the kind of the given connector, which
+                                indicates whether the connector is an input, an output, both
+                                (inout), unspecified, a local variable, a constant, a parameter,
+                                a calculated parameter (i.e. a parameter that is calculated by the
+                                component during initialization), or a structural parameter (i.e.
+                                a parameter that can be set during (re-)configuration mode).
                                 
                                 For components this must match the related kind of the underlying
                                 component implementation. For referenced FMUs it must match the
@@ -729,12 +729,23 @@
                                 variable must be output and the variability must be parameter. For
                                 connectors of kind constant the causality of the FMI 1.0 variable
                                 must be output and the variability must be constant.
+
+                                Connectors of kind `local` are used to define variables of the
+                                model element. Such a variable is not intended to be used for
+                                connections. However, if it is connected, the semantics are same as
+                                for an `output`.
                                 
                                 For SignalDictionaryReferences, the kind of a given connector can
                                 additionally be 'inout', which indicates that the semantics of the
                                 connector are derived from the connections going to the connector.
                                 This can be used for example to allow a connector to function as
                                 both an input and output within the same SignalDictionaryReference.
+
+                                Connectors of kind `unspecified` are used to define connectors for
+                                which the flow of information is either not yet specified, or is
+                                determined at runtime, for example for acausal connections of
+                                Modelica models. Such connectors can be connected to any other
+                                connector under the rules of the underlying modeling language.
                             </xs:documentation>
                         </xs:annotation>
                         <xs:simpleType>
@@ -747,6 +758,7 @@
                                 <xs:enumeration value="constant"/>
                                 <xs:enumeration value="local"/>
                                 <xs:enumeration value="inout"/>
+                                <xs:enumeration value="unspecified"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>
