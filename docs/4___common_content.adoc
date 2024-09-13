@@ -464,10 +464,10 @@ This attribute references another connector by name, that gives the size of this
 [#ssc_metadata]
 ==== MetaData Sequence
 
-image:images/SystemStructureCommon_GMetaData.png[image,width=597,height=146]
+image:images/SystemStructureCommon_GMetaData.png[image,width=597,height=196]
 
-The MetaData element allows the specification of additional meta data for a given resource.
-Multiple (or no) MetaData elements may be present in a given resource.
+The MetaData element allows the specification of additional meta data for a given model element.
+Multiple (or no) MetaData elements may be present in a given model element.
 
 [width="100%",cols="33%,67%",options="header",]
 |===
@@ -531,7 +531,9 @@ In that case there *SHOULD* be a layered specification that defines how embeddin
 
 image:images/SystemStructureCommon_Signature.png[image,width=423,height=534]
 
-This element specifies digital signature information on the meta data referenced by the enclosing MetaData element.
+This element specifies digital signature information on the data or meta data referenced by the enclosing element:
+If the Signature element is contained within a MetaData element, it refers to the meta data referenced by the MetaData element.
+If the Signature element is contained within any other element, it refers to the content of that element.
 
 The Signature element is structured by the following subordinated elements.
 
@@ -557,7 +559,7 @@ This mandatory attribute specifies the MIME type of the signature, which does no
 If no specific MIME type can be indicated, then the type `application/octet-stream` is to be used.
 |source a|
 Optional attribute indicating the source of the signature as a URI (cf. RFC 3986).
-For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as `SSD`, and the URI of the containing model element (e.g. component) if the base attribute is specified as `component`, or the URI of the meta data source if the sourceBase attribute is specified as `metaData`.
+For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as `SSD`, the URI of the containing model element (e.g. component) if the base attribute is specified as `component`, or the URI of the meta data source if the sourceBase attribute is specified as `metaData`.
 
 This allows the specification of signature sources that reside inside the component (for example an FMU), or the meta data through relative URIs.
 
@@ -565,4 +567,5 @@ If the source attribute is missing, the signature *MUST* be provided inline as c
 |sourceBase a|
 Defines the base the source URI is resolved against:
 If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the SSD, if the attribute is specified as `component` the URI is resolved against the (resolved) URI of the model element (e.g. component) source, or if the attribute is specified as `metaData` the URI is resolved against the (resolved) URI of the meta data source.
+The value `metaData` is only valid if the Signature element is contained within a MetaData element.
 |===
