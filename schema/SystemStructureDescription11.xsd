@@ -665,12 +665,13 @@
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This optional element gives the geometry information of the connector.
-                                    Note that x and y coordinates are in a special coordinate system, where
-                                    0,0 is the lower-left corner of the component/system, and 1,1 is the
-                                    upper-right corner of the component, regardless of aspect ratio.
+                                    Note that x and y coordinates are in a normalized connector coordinate
+                                    system, where 0,0 is the lower-left corner of the component/system,
+                                    and 1,1 is the upper-right corner of the component, regardless of
+                                    aspect ratio.
                                     
                                     By default, the placement of connectors for a system's inside and
-                                    outside views is identical. The special coordinate system is just
+                                    outside views is identical. The connector coordinate system is just
                                     translated to different actual coordinate systems, namely the one
                                     determined by ElementGeometry for the outside view and the one
                                     determined by SystemGeometry for the inside view.
