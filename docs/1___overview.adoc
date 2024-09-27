@@ -141,6 +141,39 @@ The following companies and persons were involved in the creation of the standar
 
 We would also like to thank all persons that provided feedback during the internal and public feedback periods, as well as prototype implementations and public presentations furthering the aims of this standard.
 
+=== Changes in 2.0.0
+
+The following changes were performed as part of the 2.0.0 major release:
+
+* Support for FMI 3
+  ** Basic types, such as Float32.
+  ** Scheduled execution (component implementation attribute).
+  ** Clocked signals.
+  ** Array connectors.
+* Optional inner view connector coordinates (wen inner view is different from outer view).
+* Initial meta-data support from "SSP Traceability" project.
+* Optional support for representing Modelica components and connectors in SSP.
+* Clarifications and bug fixes.
+
+* Fix HTML check by @beutlich in https://github.com/modelica/ssp-standard/pull/2
+* Fix link to 2-clause BSD license by @pmai in https://github.com/modelica/ssp-standard/pull/6
+* Fix missing type of Connector name attribute (#3) by @pmai in https://github.com/modelica/ssp-standard/pull/4
+* Add initial draft to include new FMI 3.0 data types by @pmai in https://github.com/modelica/ssp-standard/pull/1
+* Specify alias handling for FMI 3.0 by @pmai in https://github.com/modelica/ssp-standard/pull/5
+* Add constant and structuralParameter as connector kinds by @pmai in https://github.com/modelica/ssp-standard/pull/10
+* Allow mixed content in annotations, as in FMI 3.0 by @pmai in https://github.com/modelica/ssp-standard/pull/13
+* Clarify type conversion handling by @pmai in https://github.com/modelica/ssp-standard/pull/21
+* Variable defined as connector local by @DagBruck in https://github.com/modelica/ssp-standard/pull/22
+* Add XML schema checking to build process by @pmai in https://github.com/modelica/ssp-standard/pull/25
+* Initial support for array connectors by @pmai in https://github.com/modelica/ssp-standard/pull/8
+* Make component source optional by @peter-lobner in https://github.com/modelica/ssp-standard/pull/18
+* Uniqueness of root SSDs by @DagBruck in https://github.com/modelica/ssp-standard/pull/23
+* Clarification parameter designation by @DagBruck in https://github.com/modelica/ssp-standard/pull/27
+* Update 1___overview.adoc by @dweil in https://github.com/modelica/ssp-standard/pull/32
+* Initial draft of clock support by @pmai in https://github.com/modelica/ssp-standard/pull/24
+* Add ScheduledExecution to implementation attribute by @pmai in https://github.com/modelica/ssp-standard/pull/38
+
+
 === Changes in 1.0.1
 
 The following changes were performed as part of the 1.0.1 maintenance release:
