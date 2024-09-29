@@ -255,6 +255,202 @@
         </xs:sequence>
     </xs:complexType>
     
+    <xs:group name="GMetaData">
+        <xs:sequence>
+            <xs:element name="MetaData" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element can specify additional meta data for the given resource. Multiple
+                        (or no) MetaData elements may be present.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Content" type="ssc:ContentType" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This optional element can contain inlined content of the resource meta data. If it
+                                    is present, then the attribute source of the MetaData element must not be present.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Signature" type="ssc:SignatureType" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element can contain digital signature information on the meta data referenced
+                                    by the enclosing MetaData element. It is left unspecified what types of signatures
+                                    are used and/or available for now.  Multiple or no signature elements may be present.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="kind" use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute indicates the kind of resource meta data that is referenced, i.e.
+                                what role it plays in relation to the resource being described.
+                            </xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="general"/>
+                                <xs:enumeration value="quality"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="type" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This mandatory attribute specifies the MIME type of the resource meta data, which
+                                does not have a default value.  If no specific MIME type can be indicated, then
+                                the type application/octet-stream is to be used.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="source" type="xs:anyURI" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute indicates the source of the resource meta data as a
+                                URI (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                                the base URI is the URI of the STC, if the sourceBase attribute is
+                                not specified or is specified as STC, and the URI of the referenced
+                                resource if the sourceBase attribute is specified as resource.
+                                
+                                This allows the specification of meta data sources that reside
+                                inside the resource (e.g. an FMU) through relative URIs.
+                                
+                                For meta data that are located alongside the STC, relative URIs
+                                without scheme and authority can and should be used to specify the
+                                meta data sources.  For meta data that are packaged inside an SSP
+                                that contains this STC, this is mandatory (in this way, the STC
+                                URIs remain valid after unpacking the SSP into the filesystem).
+                                
+                                If the source attribute is missing, the meta data is provided
+                                inline as contents of the Content element, which must not be
+                                present otherwise.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="sourceBase" use="optional" default="SSD">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                Defines the base the source URI is resolved against:  If the attribute
+                                is missing or is specified as SSD, the source is resolved against the
+                                URI of the SSD, if the attribute is specified as resource the URI is
+                                resolved against the (resolved) URI of the resource source.
+                            </xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="SSD"/>
+                                <xs:enumeration value="resource"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Signature" type="ssc:SignatureType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element can contain digital signature information on the data referenced
+                        by the enclosing element. It is left unspecified what types of signatures
+                        are used and/or available for now.  Multiple or no signature elements may be present.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="SignatureType">
+        <xs:sequence>
+            <xs:element name="Content" type="ssc:ContentType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="role" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This mandatory attribute specifies the role this signature has in the overall
+                    process. It indicates whether the digital signature is intended to just convey
+                    the authenticity of the information, or whether a claim for suitability of
+                    the information for certain purposes is made.  In the later case, the digital
+                    signature format should include detailed information about what suitability
+                    claims are being made.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="authenticity"/>
+                    <xs:enumeration value="suitability"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="type" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This mandatory attribute specifies the MIME type of the resource signature, which
+                    does not have a default value.  If no specific MIME type can be indicated, then
+                    the type application/octet-stream is to be used.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="source" type="xs:anyURI" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute indicates the source of the digital signature as a
+                    URI (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                    the base URI is the URI of the SSD, if the sourceBase attribute is
+                    not specified or is specified as SSD, the URI of the  containing model
+                    element (e.g. component) if the sourceBase attribute is specified as
+                    component, or the URI of the meta data source if the sourceBase
+                    attribute is specified as metaData.
+                    
+                    This allows the specification of signature sources that reside
+                    inside the component (for example an FMU), or the meta data
+                    through relative URIs.
+                    
+                    If the source attribute is missing, the signature is provided
+                    inline as contents of the Content element, which must not be
+                    present otherwise.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="sourceBase" use="optional" default="SSD">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    Defines the base the source URI is resolved against: If the attribute
+                    is missing or is specified as SSD, the source is resolved against the
+                    URI of the SSD, if the attribute is specified as component the URI is
+                    resolved against the (resolved) URI of the model element (e.g.
+                    component) source, or if the attribute is specified as metaData the
+                    URI is resolved against the (resolved) URI of the meta data source.
+                    The value metaData is only valid if the Signature element is contained
+                    within a MetaData element.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="SSD"/>
+                    <xs:enumeration value="component"/>
+                    <xs:enumeration value="metaData"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+    </xs:complexType>
+
+    <xs:complexType name="ContentType" mixed="true">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This optional element can contain inlined content of an entity. If it is present,
+                then the attribute source of the enclosing element must not be present.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+    </xs:complexType>
+
     <xs:group name="GTypeChoice">
         <xs:choice>
             <xs:annotation>

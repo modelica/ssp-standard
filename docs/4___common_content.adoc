@@ -460,3 +460,112 @@ This attribute gives the size of this dimension of the array as a fixed, unchang
 |sizeConnector a|
 This attribute references another connector by name, that gives the size of this dimension of the array connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.
 |===
+
+[#ssc_metadata]
+==== MetaData Sequence
+
+image:images/SystemStructureCommon_GMetaData.png[image,width=597,height=196]
+
+The MetaData element allows the specification of additional meta data for a given model element.
+Multiple (or no) MetaData elements may be present in a given model element.
+
+[width="100%",cols="33%,67%",options="header",]
+|===
+|Element  |Description
+|MetaData |One or more instances of this element *CAN* be present to specify meta data related to the containing model element.
+See below for details.
+|===
+
+===== MetaData
+
+image:images/SystemStructureCommon_MetaData.png[image,width=369,height=543]
+
+This element specifies a source of meta data related to the containing model element.
+
+The MetaData element is structured by the following subordinated elements.
+
+[width="100%",cols="33%,67%",options="header",]
+|===
+|Element  |Description
+|Content  |An instance of this element *CAN* be present to contain inlined content of the model element meta data.
+If it is present, then the attribute `source` of the MetaData element *MUST NOT* be present.
+See below for details.
+|Signature|One or more instances of this element *CAN* be present to specify digital signature information on the meta data referenced by the enclosing MetaData element.
+It is left unspecified what types of signatures are used and/or available for now.
+See below for details.
+|===
+
+The following XML attributes are specified for the MetaData element:
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|kind a|
+This attribute indicates the kind of model element meta data that is referenced, i.e. what role it plays in relation to the model element being described.
+The kind can be `general` or `quality`, indicating general meta data or quality related meta data, respectively.
+|type a|
+This mandatory attribute specifies the MIME type of the meta data, which does not have a default value.
+If no specific MIME type can be indicated, then the type `application/octet-stream` is to be used.
+|source a|
+Optional attribute indicating the source of the meta data as a URI (cf. RFC 3986).
+For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as `SSD`, and the URI of the containing model element (e.g. component) if the base attribute is specified as `component`.
+
+This allows the specification of meta data sources that reside inside the component (for example an FMU) through relative URIs.
+
+If the source attribute is missing, the meta data *MUST* be provided inline as contents of a Content element, which *MUST NOT* be present otherwise.
+|sourceBase a|
+Defines the base the source URI is resolved against:
+If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the SSD, if the attribute is specified as `component` the URI is resolved against the (resolved) URI of the model element (e.g. component) source.
+|===
+
+===== Content
+
+image:images/SystemStructureCommon_Content.png[image,width=377,height=306]
+
+This element specifies the inlined content of the model element meta data.
+
+When this element is present, its contents *MUST* be an `srmd:SimulationResourceMetaData` element as specified by the SRMD schema of the SSP Traceability Specification, if the type attribute of the enclosing MetaData element is `application/x-srmd-meta-data`, or any other valid XML content if the type attribute references another MIME type.
+In that case there *SHOULD* be a layered specification that defines how embedding the content works for that MIME type.
+
+===== Signature
+
+image:images/SystemStructureCommon_Signature.png[image,width=423,height=534]
+
+This element specifies digital signature information on the data or meta data referenced by the enclosing element:
+If the Signature element is contained within a MetaData element, it refers to the meta data referenced by the MetaData element.
+If the Signature element is contained within any other element, it refers to the content of that element.
+
+The Signature element is structured by the following subordinated elements.
+
+[width="100%",cols="33%,67%",options="header",]
+|===
+|Element  |Description
+|Content  |An instance of this element *CAN* be present to contain inlined content of the signature.
+If it is present, then the attribute `source` of the Signature element *MUST NOT* be present.
+See below for details.
+|===
+
+The following XML attributes are specified for the Signature element:
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|role a|
+This mandatory attribute specifies the role this signature has in the overall process.
+It indicates whether the digital signature is intended to just convey the authenticity of the information (value `authenticity`), or whether a claim for suitability of the information for certain purposes is made (value `suitability`).
+In the latter case, the digital signature format should include detailed information about what suitability claims are being made.
+|type a|
+This mandatory attribute specifies the MIME type of the signature, which does not have a default value.
+If no specific MIME type can be indicated, then the type `application/octet-stream` is to be used.
+|source a|
+Optional attribute indicating the source of the signature as a URI (cf. RFC 3986).
+For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as `SSD`, the URI of the containing model element (e.g. component) if the base attribute is specified as `component`, or the URI of the meta data source if the sourceBase attribute is specified as `metaData`.
+
+This allows the specification of signature sources that reside inside the component (for example an FMU), or the meta data through relative URIs.
+
+If the source attribute is missing, the signature *MUST* be provided inline as contents of a Content element, which *MUST NOT* be present otherwise.
+|sourceBase a|
+Defines the base the source URI is resolved against:
+If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the SSD, if the attribute is specified as `component` the URI is resolved against the (resolved) URI of the model element (e.g. component) source, or if the attribute is specified as `metaData` the URI is resolved against the (resolved) URI of the meta data source.
+The value `metaData` is only valid if the Signature element is contained within a MetaData element.
+|===
