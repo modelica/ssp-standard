@@ -79,26 +79,3 @@ The standard is comprised of a set of XML-based formats to describe a network of
 
 * The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in RFC 2119 [RFC2119].
 * Non-normative text is given in square brackets in italic font: [ _especially examples are defined in this style._ ].
-
-= What is new in SSP 2.0
-The SSP development group has provided this update to the SSP standard in reaction to the release of FMI 3.0 as well as to new end user requirements. 
-Even though SSP 2.0 is seen as a major version update, SSP 1.0 artifacts are still seen as fully compliant to the SSP 2.0 release. Naturally, however, SSP 2.0 compliant artifacts are not necesarali compliant to the SSP 1.0 schema.
-
-The SSP 2.0 release is primarily focused on supporting the updates of FMI 3.0; however, a number of minor but significant changes related to supporting, for example, incremental development as well non-fmi components are introduced. An overview of the changes are provided in the two bulleted lists below: the first aggregating features related to FMI 3.0 and the second to non-FMI related new requirements. 
-Many different advancements to the specification have been discussed; however, the SSP 2.0 specification has been deduced as a least-common denominator for the exchange of simulation packages that is able to provide value for both end-users and tool suppliers. 
-
-== FMI 3.0 related updates
-* Basic types, such as Float32.
-* Scheduled execution (component implementation attribute).
-* Clocked signals. 
-* Arrays. Support for expressing arrays in connectors in the SSD as well as in the SSV and SSB. 
-* The expression of annotations are aligned to that of FMI 3.0 and SSP Traceability. 
-
-== Non-FMI 3.0 related updates
-* Optional inner view connector coordinates. This feature enables more advanced graphical editing of SSP models. 
-* Initial meta-data support from "SSP Traceability" project. First step in aligning SSP with SSP Traceability. Allows the end user to capture, for example, life-cycle information in the SSP package.
-* Optional support for representing Modelica components and connectors in SSP. SSP is not FMI exclusive and SSP now nativly supports Modelica models as components.
-* The component source is made optional to support the usage of system structure descriptions for simulation architecture design without available component implementations. Furthermore, connectors with kind="local" are added to the specification. This, for example, further enriches SSP for architecting purposes.
-* General clarifications and bug fixes.
-* Constant and structuralParameter are added as allowed connector kinds. This expansion further aligns SSP 2.0 to FMI and its constructs. 
-
