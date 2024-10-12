@@ -50,6 +50,7 @@
                 <xs:element name="DictionaryEntry" minOccurs="0" maxOccurs="unbounded" type="ssb:TDictionaryEntry"/>
                 <xs:element name="Enumerations" minOccurs="0" type="ssc:TEnumerations"/>
                 <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
+                <xs:group ref="ssc:GMetaData"/>
                 <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">

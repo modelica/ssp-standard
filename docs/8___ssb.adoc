@@ -16,7 +16,7 @@ Any enumerations or units used in the DictionaryEntry elements *MUST* be declare
 
 === SignalDictionary
 
-image:images/image58.png[image,width=408,height=399]
+image:images/SystemStructureSignalDictionary_SignalDictionary.png[image,width=438,height=520]
 
 This element describes a signal dictionary, which consists of one or more dictionary entries, each describing one signal in the signal dictionary (see next section).
 
