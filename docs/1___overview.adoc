@@ -107,7 +107,7 @@ The SSP approach enables the sharing of standardized system structure descriptio
 === Feature Overview
 
 * Hierarchical (multi-level) description of systems of connected components
-* Use of different kind of components: FMUs and external SSPs/SSDs, extensible to other models
+* Use of different kind of components: FMUs, external SSPs/SSDs, Modelica models, extensible to other models
 * Binding of parameters both at component and system-level, including automatic unit-transformations and name-mapping
 * Signal dictionaries support cross-hierarchical signal pools (e.g for buses)
 * Packaging of SSDs, FMUs, Parameters, … into one bundle (SSP)
@@ -115,6 +115,8 @@ The SSP approach enables the sharing of standardized system structure descriptio
 (multiple SSDs sharing components, parameters, resources)
 * Optional exchange of graphical information (similar display across tools)
 * URI references to all resources: Integration with other systems via URIs and usage of subsystems in a read-only manner
+* Packaging of additional meta-data and digital signatures for traceability
+* Extensibility for additional features and tool-specific data via layered standards
 
 === Acknowledgements
 
@@ -122,11 +124,14 @@ This standard was developed as part of the Modelica Association Project “Syste
 The following companies and persons were involved in the creation of the standard as direct contributors to the standard document:
 
 * Christian Bertsch, Bosch
+* Thomas Beutlich
 * Dag Brück, Dassault Systèmes
 * Markus Deppe, dSpace
 * Hans-Martin Heinkel, Bosch
 * Maria Henningsson, Modelon
 * Jan-Niklas Jäschke, TLK-Thermo
+* Robert Hällqvist, SAAB Group
+* Ulrich Kiffmeier, dSpace
 * Jochen Köhler, ZF Friedrichshafen
 * Jürgen Krasser, AVL
 * Peter Lobner, eXXcellent solutions
@@ -135,6 +140,7 @@ The following companies and persons were involved in the creation of the standar
 * Joel Petersson, Modelon
 * Torsten Sommer, Dassault Systèmes
 * Klaus Schuch, AVL
+* Daniel Weil, Dassault Systèmes
 * Karl Wernersson, Dassault Systèmes
 * Ulrich Wurstbauer, TWT
 * Hang Yu, Pratt & Miller Engineering
