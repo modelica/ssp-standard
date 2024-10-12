@@ -56,11 +56,12 @@
             <xs:attribute name="version" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        Version of SSV format, 2.0-alpha for this release.
+                        Version of SSV format, 1.0 or 2.0-alpha for this release.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="1[.]0"/>
                         <xs:pattern value="2[.][0-9]+(-.+)"/>
                     </xs:restriction>
                 </xs:simpleType>
