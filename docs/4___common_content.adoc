@@ -312,7 +312,7 @@ The name *MUST* match the name of an Enumeration entry in the Enumerations XML e
 
 image:images/image17.png[image,width=319,height=114]
 
-This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [OSMP120].
+This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [OSMP150].
 
 [width="100%",cols="28%,72%",options="header",]
 |===
