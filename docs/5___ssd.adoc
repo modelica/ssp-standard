@@ -17,7 +17,7 @@ The root element of an SSD file *MUST* be a SystemStructureDescription element, 
 |Attribute |Description
 |version |This required attribute specifies the version of this specification that the system description conforms to.
 Only major and minor version number are included, the patch version number *MUST NOT* be included in this attribute.
-For the current release this *MUST* be 1.0.
+For the current release this *MUST* be either 1.0 or 2.0.
 |name |This required attribute provides a name, which can be used for purposes of presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 |===
 

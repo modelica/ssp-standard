@@ -14,6 +14,7 @@ History / Road Map
 |Version |Date |Remarks
 |1.0 |2019-03-05 |First Public Release of SSP
 |1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
+|2.0 | |Current Working Draft
 |===
 
 Please report issues that you find with this specification to map-ssp_projectlead@googlegroups.com.
