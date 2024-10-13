@@ -154,12 +154,12 @@ This major release of the SSP standard provides support for FMI 3.0, as well as 
 Even though SSP 2.0 is a major version release, all SSP 1.0 conforming artifacts are considered to be fully conforming to SSP 2.0.
 SSP 2.0 conforming artifacts are only compliant to the SSP 1.0 standard if they use a 1.0 version number and only use features available in SSP 1.0.
 
-The following changes were performed as part of the 2.0.0 major release:
+An overview of the changes in the 2.0.0 major release are provided in the bulleted lists below. Many different advancements to the specification have been discussed; however, the SSP 2.0 specification has, in its current status, been deduced as a feasible least-common denominator for the exchange of simulation packages that is able to provide value for both end-users and tool suppliers.
 
 * Support for FMI 3.0
   ** Support for the new basic data types: Float32/64, and [U]Int8/16/32/64.
-  ** Support for the new scheduled execution implementation kind in the component implementation attribute.
-  ** Support for clocks as a new connector kind, and clocked variables/connectors.
+  ** Support for the new scheduled execution implementation kind in the component implementation attribute. Scheduled execution enables, for example, enriched event controlled execution of SSP components.
+  ** Clocked signals were introduced to FMI 3.0 for more exactly control timing of events and evaluation of model partitions across FMUs. SSP 2.0 introduces clocks as a new connector kind, and clocked variables/connectors.
   ** Support for arrays in connectors and connections in the SSD, as well as in the SSV and SSB file formats.
   ** Support for structural parameters with the new connector kind `structuralParameter`.
   ** Support for the redesigned alias variable handling in FMI 3.0.
@@ -170,7 +170,7 @@ The following changes were performed as part of the 2.0.0 major release:
      This feature enables more advanced graphical editing of SSP models.
 * Traceability and meta-data features
   ** Integration of the `MetaData` element developed as part of the SSP Traceability layered standard into the core standard.
-     This allows the integration of arbitrary meta-data and digital signatures into the SSP file formats.
+     This allows the integration of arbitrary meta-data and digital signatures, such as life-cycle information, into the SSP file formats.
   ** Support for mixed content in annotations, as in FMI 3.0 and the SSP Traceability layered standard.
 * Support for Modelica
   ** Support in the core standard for Modelica models as components
@@ -181,18 +181,7 @@ The following changes were performed as part of the 2.0.0 major release:
   ** Clarify uniqueness of root SSDs in https://github.com/modelica/ssp-standard/pull/23
   ** Clarify hierarchical parameter name resolution in https://github.com/modelica/ssp-standard/pull/27
 
-=== Changes in 1.0.1
 
-The following changes were performed as part of the 1.0.1 maintenance release:
 
-* Correct version string for 1.0 release (Issue #54)
-* Clarify that GTypeChoice is optional for connectors (Issue #80)
-* Clarify use of binary connectors (Issue #98)
-* Clarify interaction with structured variable naming convention in FMI (Issue #59)
-* Clarify icon rotation specification (Issue #29)
-* Add non-normative comment on empty/missing source attribute of components (Issue #82)
-* Clarify connector geometry override (Issue #30)
-* Add further examples of graphical notation (Issue #42)
-* Minor typographical fixes (Issues #56, #57, #58)
 
-Note that there were no changes to the XML Schema files of the standard.
+
