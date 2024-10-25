@@ -12,11 +12,8 @@ https://semver.org/spec/v2.0.0.html
 [XML10] World Wide Web Consortium: *Extensible Markup Language (XML) 1.0 (Fifth Edition).* W3C Recommendation. 2008. +
 http://www.w3.org/TR/2008/REC-xml-20081126/
 
-[FMI20] Modelica Association: *Functional Mock-up Interface for Model Exchange and Co-Simulation, Version 2.0.4.* 2022. +
-https://github.com/modelica/fmi-standard/releases/download/v2.0.4/FMI-Specification-2.0.4.pdf
-
-[FMI30] Modelica Association: *Functional Mock-up Interface Specification, Version 3.0.1.* 2023. +
-https://fmi-standard.org/docs/3.0.1/
+[FMI20] Modelica Association: *Functional Mock-up Interface for Model Exchange and Co-Simulation, Version 2.0.3.* 2021. +
+https://github.com/modelica/fmi-standard/releases/download/v2.0.3/FMI-Specification-2.0.3.pdf
 
 [OSMP120] ASAM e.V.: *OSI Sensor Model Packaging Version 1.2.0.* 2021. +
 https://github.com/OpenSimulationInterface/osi-sensor-model-packaging/releases/tag/v1.2.0
