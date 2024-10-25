@@ -1,4 +1,8 @@
-This document is a current working draft of the System Structure and Parameterization Standard (SSP).
+Document version: 2.0-rc.1
+
+October 25, 2024
+
+This document is a release candidate of the System Structure and Parameterization Standard (SSP) 2.0.
 *It is unreleased, and does not constitute a standard of the Modelica Association.*
 
 // On the Downloads page (https://ssp-standard.org/downloads), this specification, as well as supporting XML schema files are provided.
@@ -14,7 +18,7 @@ History / Road Map
 |Version |Date |Remarks
 |1.0 |2019-03-05 |First Public Release of SSP
 |1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
-|2.0 | |Current Working Draft
+|2.0-rc.1 |2024-10-25 |First Release Candidate of SSP 2.0
 |===
 
 Please report issues that you find with this specification to map-ssp_projectlead@googlegroups.com.
@@ -73,8 +77,6 @@ This document defines the SSP standard as a tool-independent format for the desc
 The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parametrization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
 
 <<<
-
-*About SSP*
 
 *Conventions used in this Document*
 

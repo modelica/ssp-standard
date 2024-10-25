@@ -14,7 +14,7 @@
             as a non-normative alternative to the XML Schema 1.0 schema
             to support simpler cross-namespace validation of SSD files.
             
-            Version: 2.0-alpha
+            Version: 2.0-rc.1
 
             Copyright 2016 -- 2024 Modelica Association Project "SSP"
 
@@ -66,13 +66,13 @@
             <xs:attribute name="version" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        Version of SSD format, 1.0 or 2.0-alpha for this release.
+                        Version of SSD format, 1.0 or 2.0-rc.1 for this release.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:normalizedString">
                         <xs:pattern value="1[.]0"/>
-                        <xs:pattern value="2[.][0-9]+(-.+)"/>
+                        <xs:pattern value="2[.]0-rc[.]1"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
