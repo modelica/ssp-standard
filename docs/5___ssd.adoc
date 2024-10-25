@@ -42,7 +42,7 @@ image:images/image24.png[image,width=449,height=248]
 
 This element contains information of a default simulation setup that is supplied with the system definition for informational purposes.
 
-{empty}[ _Note that in contrast to FMI 2.0 only start and stop time are specified here, since values like step size or tolerance depend on the specific solver or master algorithms employed and are hence not specified in this global element._
+{empty}[ _Note that in contrast to FMI 2.0/3.0 only start and stop time are specified here, since values like step size or tolerance depend on the specific solver or master algorithms employed and are hence not specified in this global element._
 _Additional solver or master algorithm specific information can be supplied through the annotation mechanism, or using a future layered standard._ ]
 
 {empty}[ _The handling of systems comprising components with differing units for the independent variable depends on the implementation._
