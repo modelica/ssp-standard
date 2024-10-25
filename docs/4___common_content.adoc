@@ -519,7 +519,7 @@ If the attribute is missing or is specified as `file`, the source is resolved ag
 If the containing model element has a source attribute, the sourceBase attribute can be specified as `resource`.
 In this case the URI is resolved against the (resolved) source URI of the containing model element.
 
-The last option allows the specification of meta data sources that reside inside the component (for example an FMU) through relative URIs.
+The last option allows the specification of meta data sources that reside inside a resource (for example an FMU) through relative URIs.
 |===
 
 ===== Content
@@ -577,5 +577,5 @@ In this case the URI is resolved against the (resolved) source URI of the contai
 If the Signature element is contained within a MetaData element, the sourceBase attribute can be specified as `metaData`.
 In this case the URI is resolved against the (resolved) URI of the meta data source.
 
-The last two options allow the specification of signature sources that reside inside the component (for example an FMU), or the meta data through relative URIs.
+The last two options allow the specification of signature sources that reside inside a resource (for example an FMU), or the meta data through relative URIs.
 |===

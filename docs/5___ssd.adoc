@@ -436,7 +436,7 @@ If the attribute is missing or is specified as `SSD`, the source is resolved aga
 
 If the attribute is specified as `component` the URI is resolved against the (resolved) source URI of the component.
 
-The last option allows the specification of parameter sources that reside inside the component (for example an FMU) through relative URIs.
+The last option allows the specification of parameter sources that reside inside a resource (for example an FMU) through relative URIs.
 |prefix |Defines the optional prefix for name resolution and mapping purposes for this binding.
 If this attribute is empty or not supplied no prefix is used for name resolution and mapping, otherwise the specified prefix is prepended to all names in the parameter source prior to processing the normal name resolution or name mapping rules.
 This allows the user to apply a parameter set normally intended for a component (and thus containing bare parameter names) at a system level targeted to one element of the system by supplying the name of the element plus a dot as a prefix on the binding, thus causing all parameter names in the parameter set to be treated as if they were specified with proper hierarchical names.
@@ -484,7 +484,7 @@ If the attribute is missing or is specified as `SSD`, the source is resolved aga
 
 If the attribute is specified as `component` the URI is resolved against the (resolved) source URI of the component.
 
-The last option allows the specification of parameter mapping sources that reside inside the component (for example an FMU) through relative URIs.
+The last option allows the specification of parameter mapping sources that reside inside a resource (for example an FMU) through relative URIs.
 |===
 
 The contents of the element *MUST* be empty if the source attribute is present.

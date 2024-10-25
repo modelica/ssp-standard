@@ -330,7 +330,7 @@
                                 the containing model element.
 
                                 The last option allows the specification of meta data sources that
-                                reside inside the component (for example an FMU) through relative URIs.
+                                reside inside a resource (for example an FMU) through relative URIs.
                             </xs:documentation>
                         </xs:annotation>
                         <xs:simpleType>
@@ -413,7 +413,7 @@
                     of the meta data source.
 
                     The last two options allow the specification of signature sources that
-                    reside inside the component (for example an FMU), or the meta data
+                    reside inside a resource (for example an FMU), or the meta data
                     through relative URIs.
                 </xs:documentation>
             </xs:annotation>

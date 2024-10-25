@@ -968,7 +968,7 @@
                                             URI of the containing file.  If the attribute is specified as component
                                             the URI is resolved against the (resolved) source URI of the component.
                                             The last option allows the specification of parameter sources that
-                                            reside inside the component (for example an FMU) through relative URIs.
+                                            reside inside a resource (for example an FMU) through relative URIs.
                                         </xs:documentation>
                                     </xs:annotation>
                                     <xs:simpleType>
@@ -1015,7 +1015,7 @@
                                 URI of the containing file.  If the attribute is specified as component
                                 the URI is resolved against the (resolved) source URI of the component.
                                 The last option allows the specification of parameter mapping sources
-                                that reside inside the component (for example an FMU) through relative
+                                that reside inside a resource (for example an FMU) through relative
                                 URIs.
                             </xs:documentation>
                         </xs:annotation>
