@@ -136,7 +136,7 @@ The following XML child elements are specified for the Unit element:
 ===== BaseUnit
 
 This element defines the base unit of the given unit in SI units.
-This is completely aligned with the specification of base units in section 2.2.2 of the FMI 2.0 standard [FMI20].
+This is completely aligned with the specification of base units in section 2.4.3 of the FMI 3.0 standard [FMI30] and section 2.2.2 of the FMI 2.0 standard [FMI20].
 
 image:images/image10.png[image,width=263,height=771]
 
@@ -312,7 +312,7 @@ The name *MUST* match the name of an Enumeration entry in the Enumerations XML e
 
 image:images/image17.png[image,width=319,height=114]
 
-This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [OSMP120].
+This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [OSMP150].
 
 [width="100%",cols="28%,72%",options="header",]
 |===
@@ -466,13 +466,15 @@ This attribute references another connector by name, that gives the size of this
 
 image:images/SystemStructureCommon_GMetaData.png[image,width=597,height=196]
 
-The MetaData element allows the specification of additional meta data for a given model element.
-Multiple (or no) MetaData elements may be present in a given model element.
+The group GMetaData allows the specification of additional meta data and signatures for a given model element.
+Multiple (or no) MetaData and Signature elements may be present in a given model element.
 
 [width="100%",cols="33%,67%",options="header",]
 |===
-|Element  |Description
-|MetaData |One or more instances of this element *CAN* be present to specify meta data related to the containing model element.
+|Element   |Description
+|MetaData  |One or more instances of this element *CAN* be present to specify meta data related to the containing model element.
+See below for details.
+|Signature |One or more instances of this element *CAN* be present to specify signatures related to the containing model element.
 See below for details.
 |===
 

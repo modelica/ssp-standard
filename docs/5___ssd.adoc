@@ -42,7 +42,7 @@ image:images/image24.png[image,width=449,height=248]
 
 This element contains information of a default simulation setup that is supplied with the system definition for informational purposes.
 
-{empty}[ _Note that in contrast to FMI 2.0 only start and stop time are specified here, since values like step size or tolerance depend on the specific solver or master algorithms employed and are hence not specified in this global element._
+{empty}[ _Note that in contrast to FMI 2.0/3.0 only start and stop time are specified here, since values like step size or tolerance depend on the specific solver or master algorithms employed and are hence not specified in this global element._
 _Additional solver or master algorithm specific information can be supplied through the annotation mechanism, or using a future layered standard._ ]
 
 {empty}[ _The handling of systems comprising components with differing units for the independent variable depends on the implementation._
@@ -91,12 +91,12 @@ See below for details.
 image:images/image26.png[image,width=371,height=82]
 
 This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
-For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP120], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
+For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP150], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
 For FMI 3.0 FMUs, the connector name has to match either the name of the corresponding variable element, or one of its <Alias> elements.
 
 Names of variable elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
-Hence, several ScalarVariables might be grouped as a structure or an array.
-However, the name of a connector *MUST* match the name of a single <ScalarVariable>.
+Hence, several variables might be grouped as a structure or an array.
+However, the name of a connector *MUST* match the name of a single variable.
 
 Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation.
 At least those connectors *MUST* be present which are referenced in connections inside the SSD.
@@ -410,7 +410,7 @@ For structural parameters it is assumed that the parameterization is applied in 
 This means that variables eligible for parameterization are those with:
 
 * either causality = "input" or a start value for FMI 1.0
-* variability != "constant" and initial = "exact" or "approx" for FMI 2.0
+* variability != "constant" and initial = "exact" or "approx" for FMI 2.0/3.0
 
 All kinds of system connectors can be parameterized.
 In case the system level connectors are connected to FMU components, the parameterization *MUST* be compatible with the variable in the connected FMU.
