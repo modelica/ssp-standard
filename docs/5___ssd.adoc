@@ -28,8 +28,10 @@ The following XML child elements are specified for the SystemStructureDescriptio
 |===
 |Element |Description
 |System |This required element specifies the root system of the model, see <<System>>.
-|Enumerations |This optional element *MUST* contain definitions for all enumerations referenced in the system description file. See <<Enumerations>> for its definition.
-|Units |This optional element *MUST* contain definitions for all units referenced in the system description file. See <<Units>> for its definition.
+|Enumerations |This optional element *MUST* contain definitions for all enumerations referenced in the system description file.
+See <<Enumerations>> for its definition.
+|Units |This optional element *MUST* contain definitions for all units referenced in the system description file.
+See <<Units>> for its definition.
 |DefaultExperiment |This optional element *MAY* contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.
 |===
 
@@ -152,10 +154,13 @@ The following XML child elements are specified for the Connector element:
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *CAN* be present to specify the type of the Connector. See <<ssc_types>> for details.
-|Dimension |One or more of these optional elements specify the connector array dimensions, making the connector an array connector. See <<ssc_dimensions>> for details.
+Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *CAN* be present to specify the type of the Connector.
+See <<ssc_types>> for details.
+|Dimension |One or more of these optional elements specify the connector array dimensions, making the connector an array connector.
+See <<ssc_dimensions>> for details.
 |Clock |One or more of these optional elements associate the connector to a clock of the given name, which must be defined on the element that contains this connector.
-|ConnectorGeometry |This optional element defines the geometry information of the connector. See below for details.
+|ConnectorGeometry |This optional element defines the geometry information of the connector.
+See below for details.
 |===
 
 The type of the Connector is identified by the presence of one of the XML child elements Real, Float64, Float32, Integer, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Boolean, String, Enumeration, Binary, or Clock.
@@ -582,8 +587,11 @@ It is also implementation-defined whether and which connections between connecto
 
 The table below applies directly to connectors of type `Clock` with an `intervalVariability` of `triggered`.
 For connectors of type `Clock` with an `intervalVariability` that is not `triggered` the table applies with the following provisions:
+
 * The connector is treated as a connector of kind `output` for the purposes of determining permissible connections.
-* It is implementation-defined whether and which connections between two connectors of kind `input` with `intervalVariability` that is not `triggered` are allowed. Such connections are deemed to establish equality constraints on the clock ticks, where the resolution mechanism, including direction of resolution is implementation-defined.
+
+* It is implementation-defined whether and which connections between two connectors of kind `input` with `intervalVariability` that is not `triggered` are allowed.
+Such connections are deemed to establish equality constraints on the clock ticks, where the resolution mechanism, including direction of resolution is implementation-defined.
 
 For all connections of an element connector of type `Clock` to a system connector of type `Clock`, the `intervalVariability` of the two connectors must be identical.
 
@@ -640,7 +648,8 @@ The following XML child elements are specified for the Connection element:
 [width="100%",cols="42%,58%",options="header",]
 |===
 |Element |Description
-|LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation |Specifies an optional transformation for the connection. If any, exactly one of these elements *MUST* be present to specify the type of the transformation.
+|LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation |Specifies an optional transformation for the connection.
+If any, exactly one of these elements *MUST* be present to specify the type of the transformation.
 See <<Transformation Choice>> for details.
 |ConnectionGeometry |This optional element defines the geometry information of the connection.
 |===
@@ -696,7 +705,8 @@ No further types are currently defined, but can of course be added at a later da
 This attribute indicates the source of the signal dictionary as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
 
-If the source attribute is missing, the signal dictionary *MUST* be provided inline as contents of the SignalDictionary element, which *MUST* be empty otherwise. For the default type `application/x-ssp-signal-dictionary` such inline content *MUST* be a SignalDictionary from the SystemStructureSignalDictionary namespace.
+If the source attribute is missing, the signal dictionary *MUST* be provided inline as contents of the SignalDictionary element, which *MUST* be empty otherwise.
+For the default type `application/x-ssp-signal-dictionary` such inline content *MUST* be a SignalDictionary from the SystemStructureSignalDictionary namespace.
 See <<SSB>> for details.
 |===
 
@@ -838,7 +848,8 @@ A signal dictionary reference is an element of a system that references a signal
 |===
 |Attribute |Description
 |dictionary a|
-This required attribute gives the name of the signal dictionary that is to be referenced. Name lookups occur in hierarchical fashion, i.e. the name is first looked up in the system that contains a signal dictionary reference.
+This required attribute gives the name of the signal dictionary that is to be referenced.
+Name lookups occur in hierarchical fashion, i.e. the name is first looked up in the system that contains a signal dictionary reference.
 If that lookup yields no match, the lookup is performed on the enclosing system, etc., until a match is found.
 
 It is an error if no matching signal dictionary is found.
