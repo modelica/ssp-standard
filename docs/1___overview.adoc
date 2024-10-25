@@ -4,7 +4,7 @@ SSP is a tool-independent format for the description, packaging and exchange of 
 The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parametrization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
 This description is tool neutral and is intended to be used primarly as an exchange format of simulation system descriptions between different tools.
 
-SSP can be seen as an extension to the FMI (Functional Mockup Interface) standard [FMI20].
+SSP can be seen as an extension to the FMI (Functional Mockup Interface) standard [FMI20] [FMI30].
 FMI describes a tool independent standard to exchange single simulation models.
 Using SSP, complete systems consisting of multiple interconnected simulation models can be defined with the desired signal flow and also with the wanted parameterization of each single model as well as the parameters for the complete system.
 This system topology can include hierarchies of sub-systems for proper structuring of the overall system.
@@ -52,7 +52,6 @@ From a simulation perspective, each component has to be described with its input
 This can be done using SSP by defining the wrapper of this component with an empty Component element comprising the connectors for the inputs and outputs and the component's parameters.
 
 The interaction of the components is defined by the connections.
-Connections in SSP are always causal.
 Connections can be made directly between components or via signal dictionaries.
 A signal dictionary is a collection of signals similar to a bus concept (e.g. like a CAN bus).
 During the design phase of a system, a signal dictionary can be a good way to predefine the available signal connections.
@@ -123,10 +122,11 @@ The following companies and persons were involved in the creation of the standar
 
 * Christian Bertsch, Bosch
 * Dag Brück, Dassault Systèmes
-* Markus Deppe, dSpace
+* Markus Deppe, dSPACE
 * Hans-Martin Heinkel, Bosch
 * Maria Henningsson, Modelon
 * Jan-Niklas Jäschke, TLK-Thermo
+* Ulrich Kiffmeier, dSPACE
 * Jochen Köhler, ZF Friedrichshafen
 * Jürgen Krasser, AVL
 * Peter Lobner, eXXcellent solutions
