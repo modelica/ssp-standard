@@ -466,13 +466,15 @@ This attribute references another connector by name, that gives the size of this
 
 image:images/SystemStructureCommon_GMetaData.png[image,width=597,height=196]
 
-The MetaData element allows the specification of additional meta data for a given model element.
-Multiple (or no) MetaData elements may be present in a given model element.
+The group GMetaData allows the specification of additional meta data and signatures for a given model element.
+Multiple (or no) MetaData and Signature elements may be present in a given model element.
 
 [width="100%",cols="33%,67%",options="header",]
 |===
-|Element  |Description
-|MetaData |One or more instances of this element *CAN* be present to specify meta data related to the containing model element.
+|Element   |Description
+|MetaData  |One or more instances of this element *CAN* be present to specify meta data related to the containing model element.
+See below for details.
+|Signature |One or more instances of this element *CAN* be present to specify signatures related to the containing model element.
 See below for details.
 |===
 
