@@ -24,7 +24,7 @@ If the SSV is provided as a separate file, the root element *MUST* be a Paramete
 |Attribute |Description
 |version |This required attribute specifies the version of this specification that the parameter set conforms to.
 Only major and minor version number are included, the patch version number *MUST NOT* be included in this attribute.
-For the current release this *MUST* be either 1.0 or 2.0.
+For the current release this *MUST* be either 1.0 or 2.0-rc.1.
 If it is 1.0 the file *MUST* also conform fully to the 1.0 standard.
 |name |This required attribute provides a name which can be used for purposes of presenting the parameter set to the user.
 |===
