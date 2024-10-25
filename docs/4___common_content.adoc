@@ -174,7 +174,8 @@ The following XML child elements denote the data type of a connector or dictiona
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the element. See below for details.
+Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the element.
+See below for details.
 |===
 
 ===== Real
@@ -186,11 +187,15 @@ This type specifies that the connector in question represents an IEEE754 double 
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
-|unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
+|unit |This optional attribute gives the name of a unit.
+The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file.
+
 If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
-For systems, the units of connected underlying connectors could be used if unambiguous. +
-If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. +
+For systems, the units of connected underlying connectors could be used if unambiguous.
+
+If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error.
+
 Notwithstanding these mechanisms, unitless variables of type Real are supported.
 |===
 
@@ -203,11 +208,15 @@ This type specifies that the connector in question represents an IEEE754 double 
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
-|unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
+|unit |This optional attribute gives the name of a unit.
+The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file.
+
 If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
-For systems, the units of connected underlying connectors could be used if unambiguous. +
-If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. +
+For systems, the units of connected underlying connectors could be used if unambiguous.
+
+If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error.
+
 Notwithstanding these mechanisms, unitless variables of type Float64 are supported.
 |===
 
@@ -220,11 +229,15 @@ This type specifies that the connector in question represents an IEEE754 single 
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
-|unit |This optional attribute gives the name of a unit. The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file. +
+|unit |This optional attribute gives the name of a unit.
+The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file.
+
 If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
-For systems, the units of connected underlying connectors could be used if unambiguous. +
-If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error. +
+For systems, the units of connected underlying connectors could be used if unambiguous.
+
+If a unit (or its absence) cannot be deduced unambinguously, the user should be informed of this error.
+
 Notwithstanding these mechanisms, unitless variables of type Float32 are supported.
 |===
 
@@ -353,8 +366,10 @@ Linear transformations are only valid for connectors of Real, Float64 or Float32
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
-|factor |This attribute specifies an optional factor value to use in a linear transformation. The default is 1.
-|offset |This attribute specifies an optional offset value to use in a transformation. The default is 0.
+|factor |This attribute specifies an optional factor value to use in a linear transformation.
+The default is 1.
+|offset |This attribute specifies an optional offset value to use in a transformation.
+The default is 0.
 |===
 
 ===== BooleanMappingTransformation
