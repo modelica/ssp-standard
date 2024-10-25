@@ -508,14 +508,18 @@ This mandatory attribute specifies the MIME type of the meta data, which does no
 If no specific MIME type can be indicated, then the type `application/octet-stream` is to be used.
 |source a|
 Optional attribute indicating the source of the meta data as a URI (cf. RFC 3986).
-For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as `SSD`, and the URI of the containing model element (e.g. component) if the base attribute is specified as `component`.
-
-This allows the specification of meta data sources that reside inside the component (for example an FMU) through relative URIs.
+The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the meta data *MUST* be provided inline as contents of a Content element, which *MUST NOT* be present otherwise.
 |sourceBase a|
 Defines the base the source URI is resolved against:
-If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the SSD, if the attribute is specified as `component` the URI is resolved against the (resolved) URI of the model element (e.g. component) source.
+
+If the attribute is missing or is specified as `file`, the source is resolved against the URI of the containing file.
+
+If the containing model element has a source attribute, the sourceBase attribute can be specified as `resource`.
+In this case the URI is resolved against the (resolved) source URI of the containing model element.
+
+The last option allows the specification of meta data sources that reside inside the component (for example an FMU) through relative URIs.
 |===
 
 ===== Content
@@ -559,13 +563,19 @@ This mandatory attribute specifies the MIME type of the signature, which does no
 If no specific MIME type can be indicated, then the type `application/octet-stream` is to be used.
 |source a|
 Optional attribute indicating the source of the signature as a URI (cf. RFC 3986).
-For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as `SSD`, the URI of the containing model element (e.g. component) if the base attribute is specified as `component`, or the URI of the meta data source if the sourceBase attribute is specified as `metaData`.
-
-This allows the specification of signature sources that reside inside the component (for example an FMU), or the meta data through relative URIs.
+The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the signature *MUST* be provided inline as contents of a Content element, which *MUST NOT* be present otherwise.
 |sourceBase a|
 Defines the base the source URI is resolved against:
-If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the SSD, if the attribute is specified as `component` the URI is resolved against the (resolved) URI of the model element (e.g. component) source, or if the attribute is specified as `metaData` the URI is resolved against the (resolved) URI of the meta data source.
-The value `metaData` is only valid if the Signature element is contained within a MetaData element.
+
+If the attribute is missing or is specified as `file`, the source is resolved against the URI of the containing file.
+
+If the containing model element has a source attribute, the sourceBase attribute can be specified as `resource`.
+In this case the URI is resolved against the (resolved) source URI of the containing model element.
+
+If the Signature element is contained within a MetaData element, the sourceBase attribute can be specified as `metaData`.
+In this case the URI is resolved against the (resolved) URI of the meta data source.
+
+The last two options allow the specification of signature sources that reside inside the component (for example an FMU), or the meta data through relative URIs.
 |===
