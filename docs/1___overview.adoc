@@ -52,7 +52,6 @@ From a simulation perspective, each component has to be described with its input
 This can be done using SSP by defining the wrapper of this component with an empty Component element comprising the connectors for the inputs and outputs and the component's parameters.
 
 The interaction of the components is defined by the connections.
-Connections in SSP are always causal.
 Connections can be made directly between components or via signal dictionaries.
 A signal dictionary is a collection of signals similar to a bus concept (e.g. like a CAN bus).
 During the design phase of a system, a signal dictionary can be a good way to predefine the available signal connections.
