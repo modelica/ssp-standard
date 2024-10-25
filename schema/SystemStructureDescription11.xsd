@@ -899,12 +899,8 @@
                                     <xs:annotation>
                                         <xs:documentation xml:lang="en">
                                             This attribute indicates the source of the parameter mapping as a URI
-                                            (cf. RFC 3986).  For purposes of the resolution of relative URIs
-                                            the base URI is the URI of the SSD, if the sourcebase attribute
-                                            is not specified or is specified as SSD, and the URI of the
-                                            referenced component if the base attribute is specified as component.
-                                            This allows the specification of parameter mapping sources that reside
-                                            inside the component (e.g. an FMU) through relative URIs.
+                                            (cf. RFC 3986).  The base URI for the resolution of relative URIs is
+                                            determined by the sourceBase attribute.
                                             
                                             If the source attribute is missing, the parameter mapping is provided
                                             inline as contents of the ParameterMapping element, which must be
@@ -917,8 +913,10 @@
                                         <xs:documentation xml:lang="en">
                                             Defines the base the source URI is resolved against:  If the attribute
                                             is missing or is specified as SSD, the source is resolved against the
-                                            URI of the SSD, if the attribute is specified as component the URI is
-                                            resolved against the (resolved) URI of the component source.
+                                            URI of the containing file.  If the attribute is specified as component
+                                            the URI is resolved against the (resolved) source URI of the component.
+                                            The last option allows the specification of parameter sources that
+                                            reside inside a resource (for example an FMU) through relative URIs.
                                         </xs:documentation>
                                     </xs:annotation>
                                     <xs:simpleType>
@@ -948,15 +946,8 @@
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
                                 This attribute indicates the source of the parameters as a URI
-                                (cf. RFC 3986).  For purposes of the resolution of relative URIs
-                                the base URI is the URI of the SSD, if the sourcebase attribute
-                                is not specified or is specified as SSD, and the URI of the
-                                referenced component if the base attribute is specified as component.
-                                This allows the specification of parameter sources that reside inside
-                                the component (e.g. an FMU) through relative URIs.
-                                
-                                Access to parameter sets over the SSP Parameter Repository Protocol
-                                is mediated through URIs with the http or https scheme.
+                                (cf. RFC 3986).  The base URI for the resolution of relative URIs is
+                                determined by the sourceBase attribute.
                                 
                                 If the source attribute is missing, the parameter mapping is provided
                                 inline as contents of a ParameterValues element, which must not be
@@ -969,8 +960,11 @@
                             <xs:documentation xml:lang="en">
                                 Defines the base the source URI is resolved against:  If the attribute
                                 is missing or is specified as SSD, the source is resolved against the
-                                URI of the SSD, if the attribute is specified as component the URI is
-                                resolved against the (resolved) URI of the component source.
+                                URI of the containing file.  If the attribute is specified as component
+                                the URI is resolved against the (resolved) source URI of the component.
+                                The last option allows the specification of parameter mapping sources
+                                that reside inside a resource (for example an FMU) through relative
+                                URIs.
                             </xs:documentation>
                         </xs:annotation>
                         <xs:simpleType>

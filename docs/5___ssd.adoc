@@ -426,14 +426,17 @@ Therefore they take priority over any of the existing parameter bindings (for pa
 No further types are currently defined, but can of course be added at a later date, for pre-existing parameter file formats, like CDF, etc.
 |source a|
 Optional attribute indicating the source of the parameters as a URI (cf. RFC 3986).
-For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as SSD, and the URI of the referenced component if the base attribute is specified as component.
-
-This allows the specification of parameter sources that reside inside the component (for example an FMU) through relative URIs.
+The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the parameter set *MUST* be provided inline as contents of a ParameterValues element, which *MUST NOT* be present otherwise.
+|sourceBase a|
+Defines the base the source URI is resolved against:
 
-|sourceBase |Defines the base the source URI is resolved against:
-If the attribute is missing or is specified as SSD, the source is resolved against the URI of the SSD, if the attribute is specified as component the URI is resolved against the (resolved) URI of the component source.
+If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the containing file.
+
+If the attribute is specified as `component` the URI is resolved against the (resolved) source URI of the component.
+
+The last option allows the specification of parameter sources that reside inside a resource (for example an FMU) through relative URIs.
 |prefix |Defines the optional prefix for name resolution and mapping purposes for this binding.
 If this attribute is empty or not supplied no prefix is used for name resolution and mapping, otherwise the specified prefix is prepended to all names in the parameter source prior to processing the normal name resolution or name mapping rules.
 This allows the user to apply a parameter set normally intended for a component (and thus containing bare parameter names) at a system level targeted to one element of the system by supplying the name of the element plus a dot as a prefix on the binding, thus causing all parameter names in the parameter set to be treated as if they were specified with proper hierarchical names.
@@ -471,14 +474,17 @@ If no mapping is supplied, the parameter names of the parameter source are used 
 No further types are currently defined, but can of course be added at a later date.
 |source a|
 Optional attribute indicating the source of the parameter mapping as a URI (cf. RFC 3986).
-For purposes of the resolution of relative URIs the base URI is the URI of the SSD, if the sourceBase attribute is not specified or is specified as SSD, and the URI of the referenced component if the base attribute is specified as component.
-
-This allows the specification of parameter mapping sources that reside inside the component (for example an FMU) through relative URIs.
+The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the parameter mapping *MUST* be provided inline as contents of the ParameterMapping element, which *MUST* be empty otherwise.
+|sourceBase a|
+Defines the base the source URI is resolved against:
 
-|sourceBase |Defines the base the source URI is resolved against:
-If the attribute is missing or is specified as SSD, the source is resolved against the URI of the SSD, if the attribute is specified as component the URI is resolved against the (resolved) URI of the component source.
+If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the containing file.
+
+If the attribute is specified as `component` the URI is resolved against the (resolved) source URI of the component.
+
+The last option allows the specification of parameter mapping sources that reside inside a resource (for example an FMU) through relative URIs.
 |===
 
 The contents of the element *MUST* be empty if the source attribute is present.
