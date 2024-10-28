@@ -123,7 +123,6 @@ This standard was developed as part of the Modelica Association Project “Syste
 The following companies and persons were involved in the creation of the standard as direct contributors to the standard document:
 
 * Christian Bertsch, Bosch
-* Thomas Beutlich
 * Dag Brück, Dassault Systèmes
 * Markus Deppe, dSPACE
 * Hans-Martin Heinkel, Bosch
