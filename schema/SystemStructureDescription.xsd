@@ -52,6 +52,7 @@
                 <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
                 <xs:element name="DefaultExperiment" minOccurs="0" type="ssd:TDefaultExperiment"/>
                 <xs:group ref="ssc:GMetaData"/>
+                <xs:group ref="ssc:GSignature"/>
                 <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
@@ -147,6 +148,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:group ref="ssc:GMetaData"/>
+            <xs:group ref="ssc:GSignature"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
         <xs:attribute name="name" use="required">
@@ -299,11 +301,12 @@
                             -->
                             <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xs:choice>
-                        <!-- NOTE: In XML Schema 1.1 this sequence would also contain the following entry:
+                        <!-- NOTE: In XML Schema 1.1 this sequence would also contain the following entries:
 
                              <xs:group ref="ssc:GMetaData"/>
+                             <xs:group ref="ssc:GSignature"/>
 
-                             which specifies the proper way to add meta data.
+                             which specifies the proper way to add meta data and signatures.
 
                              Due to restrictions in XML Schema 1.0, this would lead to a violation of the
                              unique particle attribution schema component constraint, since the MetaData
@@ -931,11 +934,12 @@
                                         -->
                                         <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                                     </xs:choice>
-                                    <!-- NOTE: In XML Schema 1.1 this sequence would also contain the following entry:
+                                    <!-- NOTE: In XML Schema 1.1 this sequence would also contain the following entries:
 
                                          <xs:group ref="ssc:GMetaData"/>
+                                         <xs:group ref="ssc:GSignature"/>
 
-                                         which specifies the proper way to add meta data.
+                                         which specifies the proper way to add meta data and signatures.
 
                                          Due to restrictions in XML Schema 1.0, this would lead to a violation of the
                                          unique particle attribution schema component constraint, since the MetaData
@@ -982,6 +986,7 @@
                             </xs:complexType>
                         </xs:element>
                         <xs:group ref="ssc:GMetaData"/>
+                        <xs:group ref="ssc:GSignature"/>
                         <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
                     </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>

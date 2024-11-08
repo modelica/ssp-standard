@@ -274,7 +274,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="Signature" type="ssc:SignatureType" minOccurs="0" maxOccurs="unbounded">
+                        <xs:group ref="ssc:GSignature">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This element can contain digital signature information on the meta data referenced
@@ -282,7 +282,7 @@
                                     are used and/or available for now.  Multiple or no signature elements may be present.
                                 </xs:documentation>
                             </xs:annotation>
-                        </xs:element>
+                        </xs:group>
                     </xs:sequence>
                     <xs:attribute name="kind" use="required">
                         <xs:annotation>
@@ -343,6 +343,11 @@
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="GSignature">
+        <xs:sequence>
             <xs:element name="Signature" type="ssc:SignatureType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
@@ -354,7 +359,7 @@
             </xs:element>
         </xs:sequence>
     </xs:group>
-
+    
     <xs:complexType name="SignatureType">
         <xs:sequence>
             <xs:element name="Content" type="ssc:ContentType" minOccurs="0" maxOccurs="1"/>

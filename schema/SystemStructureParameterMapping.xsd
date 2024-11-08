@@ -49,6 +49,7 @@
             <xs:sequence>
                 <xs:element name="MappingEntry" minOccurs="0" maxOccurs="unbounded" type="ssm:TMappingEntry"/>
                 <xs:group ref="ssc:GMetaData"/>
+                <xs:group ref="ssc:GSignature"/>
                 <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
