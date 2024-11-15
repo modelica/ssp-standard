@@ -551,7 +551,7 @@ In that case there *SHOULD* be a layered specification that defines how embeddin
 
 image:images/SystemStructureCommon_GSignature.png[image,width=652,height=133]
 
-The group GSignautre allows the specification of digital signatures for a given model element.
+The group GSignature allows the specification of digital signatures for a given model element.
 Multiple (or no) Signature elements may be present in a given model element.
 
 [width="100%",cols="33%,67%",options="header",]
