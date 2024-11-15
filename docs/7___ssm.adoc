@@ -31,7 +31,7 @@ Implementations *CAN* map the same parameter to multiple names.
 |Attribute |Description
 |version |This required attribute specifies the version of this specification that the parameter mapping conforms to.
 Only major and minor version number are included, the patch version number *MUST NOT* be included in this attribute.
-For the current release this *MUST* be either 1.0 or 2.0-rc.1.
+For the current release this *MUST* be either 1.0 or 2.0-rc.2.
 If it is 1.0 the file *MUST* also conform fully to the 1.0 standard.
 |===
 
