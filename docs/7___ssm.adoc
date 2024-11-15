@@ -17,7 +17,7 @@ The root element of an SSM file *MUST* be a ParameterMapping element, which cont
 
 === ParameterMapping
 
-image:images/SystemStructureParameterMapping_ParameterMapping.png[image,width=450,height=412]
+image:images/SystemStructureParameterMapping_ParameterMapping.png[image,width=450,height=477]
 
 This element describes a parameter mapping, which consists of multiple mapping entries, each describing one parameter mapping (see next section).
 The parameter mapping *MUST* contain entries for all parameters that are going to be mapped.

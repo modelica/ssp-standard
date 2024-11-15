@@ -14,7 +14,7 @@ Except for this file extension recommendation the filename is arbitrary and is i
 
 === ParameterSet
 
-image:images/SystemStructureParameterValues_ParameterSet.png[image,width=405,height=574]
+image:images/SystemStructureParameterValues_ParameterSet.png[image,width=405,height=639]
 
 The ParameterSet element contains parameter and meta data information.
 If the SSV is provided as a separate file, the root element *MUST* be a ParameterSet element.

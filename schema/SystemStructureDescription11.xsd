@@ -61,6 +61,7 @@
                 <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
                 <xs:element name="DefaultExperiment" minOccurs="0" type="ssd:TDefaultExperiment"/>
                 <xs:group ref="ssc:GMetaData"/>
+                <xs:group ref="ssc:GSignature"/>
                 <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
@@ -156,6 +157,7 @@
                 </xs:annotation>
             </xs:element>
             <xs:group ref="ssc:GMetaData"/>
+            <xs:group ref="ssc:GSignature"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
         <xs:attribute name="name" use="required">
@@ -297,6 +299,7 @@
                             <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xs:choice>
                         <xs:group ref="ssc:GMetaData"/>
+                        <xs:group ref="ssc:GSignature"/>
                     </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                     <xs:attribute name="type" type="xs:string" use="optional" default="application/x-ssp-signal-dictionary"/>
@@ -892,6 +895,7 @@
                                         <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                                     </xs:choice>
                                     <xs:group ref="ssc:GMetaData"/>
+                                    <xs:group ref="ssc:GSignature"/>
                                 </xs:sequence>
                                 <xs:attributeGroup ref="ssc:ABaseElement"/>
                                 <xs:attribute name="type" type="xs:string" use="optional" default="application/x-ssp-parameter-mapping"/>
@@ -929,6 +933,7 @@
                             </xs:complexType>
                         </xs:element>
                         <xs:group ref="ssc:GMetaData"/>
+                        <xs:group ref="ssc:GSignature"/>
                         <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
                     </xs:sequence>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>

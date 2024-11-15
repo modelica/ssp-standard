@@ -479,23 +479,21 @@ This attribute references another connector by name, that gives the size of this
 [#ssc_metadata]
 ==== MetaData Sequence
 
-image:images/SystemStructureCommon_GMetaData.png[image,width=597,height=196]
+image:images/SystemStructureCommon_GMetaData.png[image,width=690,height=197]
 
-The group GMetaData allows the specification of additional meta data and signatures for a given model element.
-Multiple (or no) MetaData and Signature elements may be present in a given model element.
+The group GMetaData allows the specification of additional meta data for a given model element.
+Multiple (or no) MetaData elements may be present in a given model element.
 
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element   |Description
 |MetaData  |One or more instances of this element *CAN* be present to specify meta data related to the containing model element.
 See below for details.
-|Signature |One or more instances of this element *CAN* be present to specify signatures related to the containing model element.
-See below for details.
 |===
 
 ===== MetaData
 
-image:images/SystemStructureCommon_MetaData.png[image,width=369,height=543]
+image:images/SystemStructureCommon_MetaData.png[image,width=462,height=479]
 
 This element specifies a source of meta data related to the containing model element.
 
@@ -541,16 +539,31 @@ The last option allows the specification of meta data sources that reside inside
 
 ===== Content
 
-image:images/SystemStructureCommon_Content.png[image,width=377,height=306]
+image:images/SystemStructureCommon_Content.png[image,width=372,height=191]
 
 This element specifies the inlined content of the model element meta data.
 
 When this element is present, its contents *MUST* be an `srmd:SimulationResourceMetaData` element as specified by the SRMD schema of the SSP Traceability Specification, if the type attribute of the enclosing MetaData element is `application/x-srmd-meta-data`, or any other valid XML content if the type attribute references another MIME type.
 In that case there *SHOULD* be a layered specification that defines how embedding the content works for that MIME type.
 
+[#ssc_signature]
+==== Signature Sequence
+
+image:images/SystemStructureCommon_GSignature.png[image,width=652,height=133]
+
+The group GSignature allows the specification of digital signatures for a given model element.
+Multiple (or no) Signature elements may be present in a given model element.
+
+[width="100%",cols="33%,67%",options="header",]
+|===
+|Element   |Description
+|Signature |One or more instances of this element *CAN* be present to specify signatures related to the containing model element.
+See below for details.
+|===
+
 ===== Signature
 
-image:images/SystemStructureCommon_Signature.png[image,width=423,height=534]
+image:images/SystemStructureCommon_Signature.png[image,width=423,height=419]
 
 This element specifies digital signature information on the data or meta data referenced by the enclosing element:
 If the Signature element is contained within a MetaData element, it refers to the meta data referenced by the MetaData element.

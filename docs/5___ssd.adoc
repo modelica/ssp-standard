@@ -8,7 +8,7 @@ All SSD-specific elements live in the `http://ssp-standard.org/SSP1/SystemStruct
 
 === SystemStructureDescription
 
-image:images/image23.png[image,width=464,height=506]
+image:images/SystemStructureDescription_SystemStructureDescription.png[image,width=475,height=693]
 
 The root element of an SSD file *MUST* be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.
 
@@ -64,7 +64,7 @@ _This standard does not specify additional measures to deal with differing indep
 
 System, Component and SignalDictionaryReference XML elements are subtypes of a common TElement base type, that contains attributes and XML elements common to all kinds of model elements:
 
-image:images/image25.png[image,width=379,height=280]
+image:images/SystemStructureDescription_TElement.png[image,width=391,height=466]
 
 The following XML attributes are specified for the TElement type:
 
@@ -367,7 +367,7 @@ image:images/IconExample15.png[image,width=245,height=147]
 
 ==== ParameterBindings
 
-image:images/image32.png[image,width=646,height=470]
+image:images/SystemStructureDescription_ParameterBindings.png[image,width=746,height=719]
 
 The ParameterBindings element provides the parameter bindings for a component or system, where each binding is specified in a ParameterBinding element.
 A parameter binding applies a set of parameter values (a parameter set), supplied by a parameter source (for example a parameter file) to parametrize a component or system.
@@ -468,7 +468,7 @@ In that case there *SHOULD* be a layered specification that defines how embeddin
 
 ===== ParameterMapping
 
-image:images/image34.png[image,width=441,height=355]
+image:images/SystemStructureDescription_ParameterMapping.png[image,width=473,height=541]
 
 This element provides a parameter mapping, which specifies how the parameter names and values provided in the parameter source are to be mapped to the parameters of the component or system in question.
 If no mapping is supplied, the parameter names of the parameter source are used as is for name matching against the names of parameters in the component or system and the values of the parameter source are not transformed further before being applied.
@@ -499,7 +499,7 @@ In that case there *SHOULD* be a layered specification that defines how embeddin
 
 === System
 
-image:images/image35.png[image,width=452,height=641]
+image:images/SystemStructureDescription_System.png[image,width=463,height=827]
 
 This element describes a system, which can contain components, signal dictionary references and other systems as elements, connectors as an interface to the outside world, and connections connecting the connectors of itself and of its elements to one another.
 
@@ -687,7 +687,7 @@ image:images/image40.png[image,width=427,height=82]
 
 This optional element provides the set of defined signal dictionaries for the system.
 
-image:images/image41.png[image,width=415,height=336]
+image:images/SystemStructureDescription_SignalDictionary.png[image,width=447,height=522]
 
 A signal dictionary is a collection of signals which can be accessed in different systems at different levels of the hierarchy through signal dictionary references referencing the signal dictionary.
 
@@ -796,7 +796,7 @@ Inside the text attribute, newlines indicate paragraph breaks.
 
 === Component
 
-image:images/image45.png[image,width=470,height=588]
+image:images/SystemStructureDescription_Component.png[image,width=481,height=879]
 
 A component is an atomic element of a system (i.e. its internal structure is not specified).
 
@@ -840,7 +840,7 @@ It is an error if the specified type of FMU implementation is not present in the
 
 === SignalDictionaryReference
 
-image:images/image46.png[image,width=544,height=442]
+image:images/SystemStructureDescription_SignalDictionaryReference.png[image,width=555,height=733]
 
 A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the place-holder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which *MUST* reference signal dictionary entries.
 
