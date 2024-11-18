@@ -19,7 +19,7 @@ History / Road Map
 |1.0 |2019-03-05 |First Public Release of SSP
 |1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
 |2.0-rc.1 |2024-10-25 |First Release Candidate of SSP 2.0
-|2.0-rc.2 |2024-11-15 |Second Release Candidate of SSP 2.0
+|2.0-rc.2 |2024-11-18 |Second Release Candidate of SSP 2.0
 |===
 
 Please report issues that you find with this specification to map-ssp_projectlead@googlegroups.com.
