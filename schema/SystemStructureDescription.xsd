@@ -54,6 +54,92 @@
                 <xs:group ref="ssc:GMetaData"/>
                 <xs:group ref="ssc:GSignature"/>
                 <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+				<xs:element name="SSDVariant" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">
+							This optional element indicates that the given SSD is a variant of another
+							structural identical SSD (named the base SSD).
+							
+							This means the SSD variant has the same System Structure as the base SSD, but a
+							different parameterization and/or component implementation.
+							
+							Note that implementations are not required to support transitive SSD variants,
+							where the base SSD is a SSD variant itself.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="name" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									This attribute gives the SSD variant a name, which can be used
+									for the purpose of presenting the SSD variant to the user, e.g.
+									when selecting individual variants of a base SSD.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="baseSSD" type="xs:anyURI" use="required">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									This attribute indicates the base SSD this SSD variant is based on as
+									an URI (cf. RFC 3986). For purposes of the resolution of relative URIs
+									the base URI is the URI of the SSD variant. Therefore for SSD variants
+									that are located alongside the base SSD, relative URIs without scheme
+									and authority can and should be used to specify the base SSD. For
+									base SSDs that are packaged inside an SSP that contains this variant 
+									SSD, this is mandatory (in this way, the base SSD URIs remain valid
+									after unpacking the SSP into the filesystem).
+									
+									E.g. for a base SSD "SystemStructure.ssd", that is located in the
+									root directory of an SSP alongside the SSD variant, the correct URI
+									would be "SystemStructure.ssd".
+									
+									When referencing another SSP, by default the default SSD of the
+									SSP (i.e. SystemStructure.ssd) is referenced.  When a non-default
+									SSD should be selected, then the name of the non-default SSD must
+									be given through a fragment identifier, i.e. the URI
+									"resources/SubSSP.ssp#SSD_B.ssd" would reference the SSD_B.ssd
+									of SubSSP.ssp located in the resources directory relative to this SSD.
+									
+									Note that implementations are only required to support relative URIs
+									as specified above, and that especially relative URIs that move beyond
+									the baseURI (e.g. go "up" a level via ..) are not required to be
+									supported by implementations, and are in fact often not supported for
+									security or other reasons.  Implementations are also not required to
+									support any absolute URIs and any specific URI schemes (but are of
+									course allowed to support any and all kinds of URIs where useful).
+								</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="kind" use="required">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									This attribute specifies the kind of the given SSD variant,
+									which indicates whether the variant is a parameter variant,
+									an implementation variant or both aspects combined.
+									
+									Parameter variant means that the parameterization of
+									the SSD variant differs from the base SSD.
+									
+									Implementation variant means that the implementation source
+									of the components of the SSD variant differs from the base SSD
+									(e.g. high and low fidelity implementation)
+									
+									Parameter AND Implementation variant means that both the
+									parameterization and the component implementation of the SSD variant
+									differs from the base SSD.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="parameterVariant"/>
+									<xs:enumeration value="implementationVariant"/>
+									<xs:enumeration value="parameterAndImplementationVariant"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attributeGroup ref="ssc:ABaseElement"/>
+					</xs:complexType>
+				</xs:element>
             </xs:sequence>
             <xs:attribute name="version" use="required">
                 <xs:annotation>
