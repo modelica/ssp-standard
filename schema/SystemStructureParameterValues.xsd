@@ -361,7 +361,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                                 <xs:complexType>
-                                    <xs:attribute name="value" type="xs:string" use="required"/>
+                                    <xs:attribute name="value" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -417,7 +417,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                                 <xs:complexType>
-                                    <xs:attribute name="value" type="xs:hexBinary" use="required"/>
+                                    <xs:attribute name="value" type="xs:hexBinary"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
