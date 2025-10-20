@@ -2,7 +2,7 @@
 
 System Structure Package (file extension .ssp) files are specified to allow the packaging of System Structure Description (`*.ssd`) files together with related resources, like referenced FMUs, parameter files, etc.
 
-System Structure Package files *MUST* be valid ZIP archives as specified in [ZIP635] with the following restrictions:
+System Structure Package files *MUST* be valid ZIP archives as specified in [<<ZIP635>>] with the following restrictions:
 
 * All file entries *MUST* use either compression method 0 (stored) or 8 (deflated).
 * Encryption *MUST NOT* be used.

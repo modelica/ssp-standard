@@ -80,5 +80,5 @@ The standard is comprised of a set of XML-based formats to describe a network of
 
 *Conventions used in this Document*
 
-* The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in RFC 2119 [RFC2119].
+* The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in RFC 2119 [<<RFC2119>>].
 * Non-normative text is given in square brackets in italic font: [ _especially examples are defined in this style._ ].
