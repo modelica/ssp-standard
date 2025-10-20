@@ -42,7 +42,7 @@ The use of sub-directories beginning with `org.modelica` and `org.ssp-standard` 
 
 It is explicitly allowed for tools and users other than the original creator of an SSP to modify/add/delete entries in the `extra/` prefix without affecting the validity of SSP in all other aspects.
 Specifically all validation or digital signature schemes used to protect SSP content *SHOULD* take the variability of extra file content into account.
-[ _For example by by having seperate checksums/signatures for SSP core content and extra content, or not having signatures at all for extra content._ ]
+[ _For example by having separate checksums/signatures for SSP core content and extra content, or not having signatures at all for extra content._ ]
 
 The ZIP archive *MAY* contain additional entries with the prefix `documentation/` which can be used to store documentation on the package contents.
 If documentation is provided an entry with the name `documentation/index.html` *MUST* be provided which should be a useful entry point for the contained documentation.

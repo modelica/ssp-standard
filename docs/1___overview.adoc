@@ -1,8 +1,8 @@
 == Overview
 
 SSP is a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
-The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parametrization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
-This description is tool neutral and is intended to be used primarly as an exchange format of simulation system descriptions between different tools.
+The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parameterization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
+This description is tool neutral and is intended to be used primarily as an exchange format of simulation system descriptions between different tools.
 
 SSP can be seen as an extension to the FMI (Functional Mockup Interface) standard [FMI30].
 FMI describes a tool independent standard to exchange single simulation models.
@@ -77,7 +77,7 @@ Even traceability information can be retained this way.
 A good system design can be used for various applications.
 The structure keeps the same for all these applications.
 The parameter settings are used to differentiate the applications.
-Therefore a good parametrization concept is important to facilitate this reuse.
+Therefore a good parameterization concept is important to facilitate this reuse.
 SSP supports the creation of a central parameterization structure for entire systems.
 The SSP parameter data model can be used to integrate parameters from various sources, including external parameter databases, which can export their parameter data as SSV data sets.
 Through the URI-based addressing mechanism, tools can support direct access to such databases from system structure descriptions.
@@ -119,7 +119,7 @@ The SSP approach enables the sharing of standardized system structure descriptio
 
 === Acknowledgements
 
-This standard was developed as part of the Modelica Association Project “System Structure and Parametrization” (MAP SSP).
+This standard was developed as part of the Modelica Association Project “System Structure and Parameterization” (MAP SSP).
 The following companies and persons were involved in the creation of the standard as direct contributors to the standard document:
 
 * Christian Bertsch, Bosch
@@ -169,7 +169,7 @@ The following changes were performed as part of the 2.0.0 major release:
      This feature enables more advanced graphical editing of SSP models.
 * Traceability and meta-data features
   ** Integration of the `MetaData` element developed as part of the SSP Traceability layered standard into the core standard, supporting the integration of arbitrary meta-data and digital signatures into the SSP file formats.
-     
+
   ** Support for mixed content in annotations, as in FMI 3.0 and the SSP Traceability layered standard.
 * Support for Modelica
   ** Support in the core standard for Modelica models as components

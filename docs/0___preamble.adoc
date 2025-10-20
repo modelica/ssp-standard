@@ -74,7 +74,7 @@ ____
 *Abstract*
 
 This document defines the SSP standard as a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
-The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parametrization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
+The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parameterization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
 
 <<<
 

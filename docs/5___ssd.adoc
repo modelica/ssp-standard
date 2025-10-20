@@ -719,7 +719,7 @@ Different from ElementGeometry, where x1 > x2 and y1 > y2 indicate flipping, x1 
 
 If undefined, the system canvas extent defaults to the bounding box of all ElementGeometry elements of the child elements of the system.
 
-When displaying the content of a sub-system together with the enclosing parent system, the transformation of co-coordinates inside the sub-system to co-ordinates in the parent system is defined by the transformation from SystemGeometry.\{x1,y1,x2,y2} to ElementGeometry.\{x1',y1',x2',y2'}, where ElementGeometry.z' is the respective coordinate of the sub-system when instantiated in the parent system after rotation.
+When displaying the content of a sub-system together with the enclosing parent system, the transformation of co-coordinates inside the sub-system to co-ordinates in the parent system is defined by the transformation from SystemGeometry.{x1,y1,x2,y2} to ElementGeometry.{x1',y1',x2',y2'}, where ElementGeometry.z' is the respective coordinate of the sub-system when instantiated in the parent system after rotation.
 
 When importing or exporting systems, the nominal unit of the coordinates is 1 mm for all axis.
 The nominal unit is intended to ensure similar visual sizing and appearances when combining systems from different implementations.
@@ -842,7 +842,7 @@ It is an error if the specified type of FMU implementation is not present in the
 
 image:images/SystemStructureDescription_SignalDictionaryReference.png[image,width=555,height=733]
 
-A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the place-holder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which *MUST* reference signal dictionary entries.
+A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which *MUST* reference signal dictionary entries.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
