@@ -21,6 +21,6 @@ https://ssp-standard.org/[Releases] and the https://ssp-standard.org/docs/main/[
 
 == Copyright and License
 
-XML schemas and documentation copyright (C) 2016 - 2024 the Modelica Association Project SSP.
+XML schemas and documentation copyright (C) 2016 - 2025 the Modelica Association Project SSP.
 XML schemas released under the https://opensource.org/licenses/BSD-2-Clause[2-Clause BSD License].
 Documentation released under https://creativecommons.org/licenses/by-sa/4.0/[Attribution-ShareAlike 4.0 International].
