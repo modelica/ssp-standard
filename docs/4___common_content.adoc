@@ -463,7 +463,7 @@ If none of the attributes are present, then the size of the dimension is unspeci
 It is considered an error if both attributes are present.
 
 For signal dictionary and parameter value elements, only the size attribute can be used and therefore *MUST* be present on the element, indicating a fixed size.
-For those elements, it is considered an error if both attributes are present, or the size attribute is not present.
+For those elements, it is considered an error if the sizeConnector attribute is present.
 
 The following XML attributes are specified for the Dimension element:
 
