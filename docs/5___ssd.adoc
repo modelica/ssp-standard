@@ -819,6 +819,9 @@ For components that are packaged inside an SSP that contains this SSD, this is *
 When referencing another SSP, by default the default SSD of the SSP (i.e. `SystemStructure.ssd`) is referenced.
 When a non-default SSD should be selected, then the name of the non-default SSD *MUST* be given through a fragment identifier, i.e. the URI `resources/SubSSP.ssp#VariantB.ssd` would reference the `VariantB.ssd` of `SubSSP.ssp` located in the resources directory relative to this SSD.
 
+{empty}[ _An SSP may contain nested SSP files that conform to different SSP versions.
+Tools can safely load SSP files using the latest supported version due to backward compatibility._ ]
+
 When the URI is a same-document URI with a fragment identifier, for example `#other-system`, then the fragment identifier *MUST* identify a system element in this SSD document with an id attribute identical to the fragment identifier.
 This mechanism can be used to instantiate an embedded system definition multiple times through reference to its definition element.
 
