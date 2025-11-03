@@ -476,6 +476,8 @@ This attribute gives the size of this dimension of the array as a fixed, unchang
 This attribute references another connector by name, that gives the size of this dimension of the array connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.
 |===
 
+{empty}[ _SSP uses `size` where FMI uses `start` because SSP specifies structural dimension extents directly, while FMI's `start` denotes initial values that determine dimensions._ ]
+
 [#ssc_metadata]
 ==== MetaData Sequence
 
