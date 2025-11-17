@@ -5,7 +5,7 @@ The XML element can be inlined with its parent element or referenced from the pa
 
 For information on hierarchical naming structure and precedence rules, see <<ParameterBindings>>.
 
-An SSV file *MUST* be a well-formed XML 1.0 [XML10] file that conforms to the SystemStructureParameterValues XML Schema that is distributed as part of this standard.
+An SSV file *MUST* be a well-formed XML 1.0 [<<XML10>>] file that conforms to the SystemStructureParameterValues XML Schema that is distributed as part of this standard.
 The file *MUST* use the UTF-8 encoding.
 All SSV-specific elements live in the `http://ssp-standard.org/SSP1/SystemStructureParameterValues` namespace, nicknamed `ssv`.
 

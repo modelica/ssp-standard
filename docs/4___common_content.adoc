@@ -136,7 +136,7 @@ The following XML child elements are specified for the Unit element:
 ===== BaseUnit
 
 This element defines the base unit of the given unit in SI units.
-This is completely aligned with the specification of base units in section 2.4.3 of the FMI 3.0 standard [FMI30] and section 2.2.2 of the FMI 2.0 standard [FMI20].
+This is completely aligned with the specification of base units in section 2.4.3 of the FMI 3.0 standard [<<FMI30>>] and section 2.2.2 of the FMI 2.0 standard [<<FMI20>>].
 
 image:images/image10.png[image,width=263,height=771]
 
@@ -325,7 +325,7 @@ The name *MUST* match the name of an Enumeration entry in the Enumerations XML e
 
 image:images/image17.png[image,width=319,height=114]
 
-This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [OSMP150].
+This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [<<OSMP150>>].
 
 [width="100%",cols="28%,72%",options="header",]
 |===
