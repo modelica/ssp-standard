@@ -13,15 +13,15 @@ It is currently supported by [8](https://ssp-standard.org/tools/) tools and main
 
 ## Repository Structure
 
-- `docs` -- sources of the specification document
-- `schema` -- XML schemas of the specified file formats
-- [CONTRIBUTING.adoc](CONTRIBUTING.adoc) -- information on contributing to the project and building the specification document
-- [README.md](README.md) -- this document
+- `docs` &mdash; sources of the specification document
+- `schema` &mdash; XML schemas of the specified file formats
+- [CONTRIBUTING.adoc](CONTRIBUTING.adoc) &mdash; information on contributing to the project and building the specification document
+- [README.md](README.md) &mdash; this document
 
 ## Branches
 
-- `main` -- development of the next release
-- `support/v{1|2}.0.x` -- maintenance of the 1.0 and 2.0 releases
+- `main` &mdash; development of the next release
+- `support/v{1|2}.0.x` &mdash; maintenance of the 1.0 and 2.0 releases
 
 ## Copyright and License
 
