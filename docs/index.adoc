@@ -11,6 +11,7 @@
 :stem: latexmath
 :source-highlighter: highlightjs
 :nofooter:
+:favicon: images/favicon.ico
 :icons: font
 
 include::0___preamble.adoc[]
