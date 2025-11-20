@@ -2,7 +2,7 @@
 
 A System Structure Description describes a nested hierarchy of interconnected (sub-)systems and atomic components.
 
-A System Structure Description file (SSD, file extension .ssd) must be a well-formed XML 1.0 [<<XML10>>] file that conforms to the SystemStructureDescription XML Schema distributed as part of this standard.
+A System Structure Description file (SSD, file extension .ssd) must be a well-formed XML 1.0 <<XML10>> file that conforms to the SystemStructureDescription XML Schema distributed as part of this standard.
 The file must use the UTF-8 encoding.
 All SSD-specific elements live in the `http://ssp-standard.org/SSP1/SystemStructureDescription` namespace, nicknamed `ssd`.
 

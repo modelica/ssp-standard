@@ -39,7 +39,7 @@ In this fashion extension of SSP to support pre-existing, new or domain-specific
 
 === Versioning and Layered Standards
 
-The SSP standard uses semantic version numbers, as defined in [<<SV200>>], where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers.
+The SSP standard uses semantic version numbers, as defined in <<SV200>>, where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers.
 
 NOTE: Example: `1.2.3` for major version `1`, minor version `2` and patch version `3`.
 

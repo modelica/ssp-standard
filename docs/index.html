@@ -667,7 +667,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#literature">9. Literature</a></li>
+<li><a href="#literature">Literature</a></li>
 </ul>
 </div>
 </div>
@@ -809,7 +809,7 @@ The standard is comprised of a set of XML-based formats to describe a network of
 <div class="ulist">
 <ul>
 <li>
-<p>The key words <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>REQUIRED</strong>, <strong>SHALL</strong>, <strong>SHALL NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, <strong>RECOMMENDED</strong>, <strong>MAY</strong>, and <strong>OPTIONAL</strong> in this document are to be interpreted as described in RFC 2119 [<a href="#RFC2119">[RFC2119]</a>].</p>
+<p>The key words <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>REQUIRED</strong>, <strong>SHALL</strong>, <strong>SHALL NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, <strong>RECOMMENDED</strong>, <strong>MAY</strong>, and <strong>OPTIONAL</strong> in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a>.</p>
 </li>
 <li>
 <p>Non-normative text is given in a gray box like this one:</p>
@@ -839,7 +839,7 @@ The standard is comprised of a set of XML-based formats to describe a network of
 This description is tool neutral and is intended to be used primarily as an exchange format of simulation system descriptions between different tools.</p>
 </div>
 <div class="paragraph">
-<p>SSP can be seen as an extension to the FMI (Functional Mockup Interface) standard [<a href="#FMI30">[FMI30]</a>].
+<p>SSP can be seen as an extension to the FMI (Functional Mock-up Interface) standard <a href="#FMI30">[FMI30]</a>.
 FMI describes a tool independent standard to exchange single simulation models.
 Using SSP, complete systems consisting of multiple interconnected simulation models can be defined with the desired signal flow and also with the wanted parameterization of each single model as well as the parameters for the complete system.
 This system topology can include hierarchies of sub-systems for proper structuring of the overall system.
@@ -1245,7 +1245,7 @@ This feature enables more advanced graphical editing of SSP models.</p>
 <p>All XML-based file formats defined in the SSP standard allow optional ssc:Annotation elements to be inserted in all XML elements that represent entities of the underlying data model.
 This is achieved through the ssc:TAnnotations type defined in <a href="#common-xml-child-elements">Section 4.2</a>.
 Each ssc:Annotation element contains a required type attribute, which contains the namespace for that annotation, as defined in <a href="#extension-namespaces">Section 2.1.3</a>.
-The content of the ssc:Annotation element <strong>CAN</strong> be arbitrary XML data, and <strong>CAN</strong> make use of XML namespaces and XML schemas for combined validation where appropriate.</p>
+The content of the ssc:Annotation element can be arbitrary XML data, and can make use of XML namespaces and XML schemas for combined validation where appropriate.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1296,7 +1296,7 @@ The base standard specifies a minimum set of MIME types and related file formats
 <div class="sect2">
 <h3 id="versioning-and-layered-standards">2.2. Versioning and Layered Standards</h3>
 <div class="paragraph">
-<p>The SSP standard uses semantic version numbers, as defined in [<a href="#SV200">[SV200]</a>], where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers.</p>
+<p>The SSP standard uses semantic version numbers, as defined in <a href="#SV200">[SV200]</a>, where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1385,27 +1385,27 @@ Besides basic support for file-schema URIs, the set of schemas and transport mec
 <p>System Structure Package (file extension .ssp) files are specified to allow the packaging of System Structure Description (<code>*.ssd</code>) files together with related resources, like referenced FMUs, parameter files, etc.</p>
 </div>
 <div class="paragraph">
-<p>System Structure Package files <strong>MUST</strong> be valid ZIP archives as specified in [<a href="#ZIP635">[ZIP635]</a>] with the following restrictions:</p>
+<p>System Structure Package files must be valid ZIP archives as specified in <a href="#ZIP635">[ZIP635]</a> with the following restrictions:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>All file entries <strong>MUST</strong> use either compression method 0 (stored) or 8 (deflated).</p>
+<p>All file entries must use either compression method 0 (stored) or 8 (deflated).</p>
 </li>
 <li>
-<p>Encryption <strong>MUST NOT</strong> be used.</p>
+<p>Encryption must not be used.</p>
 </li>
 <li>
-<p>Splitting of ZIP archives into multiple files <strong>MUST NOT</strong> be used.</p>
+<p>Splitting of ZIP archives into multiple files must not be used.</p>
 </li>
 <li>
-<p>The maximum value for the version needed to extract field (section 4.4.3 of the ZIP specification) <strong>MUST NOT</strong> be larger than version 2.0 for all entries in the archive.</p>
+<p>The maximum value for the version needed to extract field (section 4.4.3 of the ZIP specification) must not be larger than version 2.0 for all entries in the archive.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>For maximum portability, it is <strong>RECOMMENDED</strong> to keep all zip file entry names to the ASCII character set, and keep the language encoding flag (EFS), i.e. bit 11 of the general purpose field as specified in section 4.4.4 of the ZIP specification, set to zero.
-If use of a larger character set is needed, it is <strong>RECOMMENDED</strong> to use the UTF-8 encoding option, as specified in appendix D of the ZIP specification, by setting the language encoding flag (EFS) to 1 and encoding all filename and comment fields as UTF-8.</p>
+<p>For maximum portability, it is recommended to keep all zip file entry names to the ASCII character set, and keep the language encoding flag (EFS), i.e. bit 11 of the general purpose field as specified in section 4.4.4 of the ZIP specification, set to zero.
+If use of a larger character set is needed, it is recommended to use the UTF-8 encoding option, as specified in appendix D of the ZIP specification, by setting the language encoding flag (EFS) to 1 and encoding all filename and comment fields as UTF-8.</p>
 </div>
 <div class="paragraph">
 <p>Use of other character sets and encodings is <strong>NOT RECOMMENDED</strong> and is likely to yield portability problems.</p>
@@ -1424,10 +1424,10 @@ It should also be noted that Unicode normalization issues that affect cross file
 </table>
 </div>
 <div class="paragraph">
-<p>The ZIP archive <strong>MUST</strong> contain an entry named SystemStructure.ssd at root level, containing a valid System Structure Description, as specified in <a href="#SSD">Section 5</a>.</p>
+<p>The ZIP archive must contain an entry named SystemStructure.ssd at root level, containing a valid System Structure Description, as specified in <a href="#SSD">Section 5</a>.</p>
 </div>
 <div class="paragraph">
-<p>Optionally the ZIP archive <strong>MAY</strong> contain multiple SSD file entries at root level, each with a different file name.</p>
+<p>Optionally the ZIP archive may contain multiple SSD file entries at root level, each with a different file name.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1443,11 +1443,11 @@ E.g. <code>SystemStructure.ssd</code>, <code>VarA.ssd</code>, <code>VarB.ssd</co
 </div>
 <div class="paragraph">
 <p>This allows the bundling of multiple variants of a system structure definition referencing a similar set of packaged resources as one SSP.
-There <strong>MUST</strong> still be one SSD file named SystemStructure.ssd at the root of the ZIP archive which is deemed to be the default variant.
-Tools not supporting variant-containing SSPs <strong>MUST</strong> deal with the given SSP by ignoring all contained SSD files except for the SystemStructure.ssd default file.</p>
+There must still be one SSD file named SystemStructure.ssd at the root of the ZIP archive which is deemed to be the default variant.
+Tools not supporting variant-containing SSPs must deal with the given SSP by ignoring all contained SSD files except for the SystemStructure.ssd default file.</p>
 </div>
 <div class="paragraph">
-<p>If the ZIP archive contains multiple SSD file entries at the root level, the <code>name</code> attribute of each such system structure definition <strong>MUST</strong> be different from any of the other root level system structure definitions.</p>
+<p>If the ZIP archive contains multiple SSD file entries at the root level, the <code>name</code> attribute of each such system structure definition must be different from any of the other root level system structure definitions.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1456,16 +1456,16 @@ Tools not supporting variant-containing SSPs <strong>MUST</strong> deal with the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Tools <strong>MAY</strong> want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement.
+Tools may want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Tools <strong>SHOULD</strong> use the name attribute of the root SystemStructureDescription element of the SSD files when presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.</p>
+<p>Tools should use the name attribute of the root SystemStructureDescription element of the SSD files when presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.</p>
 </div>
 <div class="paragraph">
-<p>The ZIP archive <strong>MAY</strong> contain additional entries with the prefix <code>resources/</code> which can be used to bundle resources referenced from the System Structure Description file(s) through relative URIs as specified in the sections below.</p>
+<p>The ZIP archive may contain additional entries with the prefix <code>resources/</code> which can be used to bundle resources referenced from the System Structure Description file(s) through relative URIs as specified in the sections below.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1482,8 +1482,8 @@ All stand-alone files are referenced by SSD files via (relative) URIs.
 </table>
 </div>
 <div class="paragraph">
-<p>The ZIP archive <strong>MAY</strong> contain additional entries with the prefix <code>extra/</code> which can be used to store additional data and meta-data.
-In order to ensure uniqueness the extra files <strong>SHOULD</strong> be provided in sub-directories using a reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the additional entries.</p>
+<p>The ZIP archive may contain additional entries with the prefix <code>extra/</code> which can be used to store additional data and meta-data.
+In order to ensure uniqueness the extra files should be provided in sub-directories using a reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the additional entries.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1498,11 +1498,11 @@ Cf. Java package names or Apple UTIs.
 </table>
 </div>
 <div class="paragraph">
-<p>The use of sub-directories beginning with <code>org.modelica</code> and <code>org.ssp-standard</code> is explicitly reserved for use by MAP SSP-defined layered standards (cf. <a href="#versioning-and-layered-standards">Section 2.2</a>), i.e. other uses <strong>MUST NOT</strong> use sub-directory names beginning with these prefixes.</p>
+<p>The use of sub-directories beginning with <code>org.modelica</code> and <code>org.ssp-standard</code> is explicitly reserved for use by MAP SSP-defined layered standards (cf. <a href="#versioning-and-layered-standards">Section 2.2</a>), i.e. other uses must not use sub-directory names beginning with these prefixes.</p>
 </div>
 <div class="paragraph">
 <p>It is explicitly allowed for tools and users other than the original creator of an SSP to modify/add/delete entries in the <code>extra/</code> prefix without affecting the validity of SSP in all other aspects.
-Specifically all validation or digital signature schemes used to protect SSP content <strong>SHOULD</strong> take the variability of extra file content into account.</p>
+Specifically all validation or digital signature schemes used to protect SSP content should take the variability of extra file content into account.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1517,8 +1517,8 @@ For example by having separate checksums/signatures for SSP core content and ext
 </table>
 </div>
 <div class="paragraph">
-<p>The ZIP archive <strong>MAY</strong> contain additional entries with the prefix <code>documentation/</code> which can be used to store documentation on the package contents.
-If documentation is provided an entry with the name <code>documentation/index.html</code> <strong>MUST</strong> be provided which should be a useful entry point for the contained documentation.</p>
+<p>The ZIP archive may contain additional entries with the prefix <code>documentation/</code> which can be used to store documentation on the package contents.
+If documentation is provided an entry with the name <code>documentation/index.html</code> must be provided which should be a useful entry point for the contained documentation.</p>
 </div>
 <div class="paragraph">
 <p>All other prefixes are currently reserved for future use.</p>
@@ -1600,7 +1600,7 @@ All Types and AttributeGroups live in the <code><a href="http://ssp-standard.org
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional element can be used to give additional information for any model entity.
-When it is present, it <strong>MUST</strong> contain 1 or more Annotation elements as specified below.</p></td>
+When it is present, it must contain 1 or more Annotation elements as specified below.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1611,7 +1611,7 @@ When it is present, it <strong>MUST</strong> contain 1 or more Annotation elemen
 <p><span class="image"><img src="images/image3.png" alt="image" width="310" height="137"></span></p>
 </div>
 <div class="paragraph">
-<p>In order to ensure uniqueness the annotation type <strong>SHOULD</strong> be provided in reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the annotation.</p>
+<p>In order to ensure uniqueness the annotation type should be provided in reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the annotation.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1626,9 +1626,9 @@ Cf. Java package names or Apple UTIs.
 </table>
 </div>
 <div class="paragraph">
-<p>For vendor-specific annotations this <strong>SHOULD</strong> be a domain controlled by the tool vendor.
-For MAP-SSP-defined annotations, this <strong>MUST</strong> be a domain under the org.modelica or org.ssp-standard prefixes.
-Annotations that are not defined by MAP SSP <strong>MUST NOT</strong> use these two prefixes,</p>
+<p>For vendor-specific annotations this should be a domain controlled by the tool vendor.
+For MAP-SSP-defined annotations, this must be a domain under the org.modelica or org.ssp-standard prefixes.
+Annotations that are not defined by MAP SSP must not use these two prefixes,</p>
 </div>
 <div class="paragraph">
 <p>This mechanism can be used both for tool-specific annotations, as well as for layered standards (see <a href="#versioning-and-layered-standards">Section 2.2</a>) and other agreed-upon extensions, and thus provides a generic extension mechanism.</p>
@@ -1697,7 +1697,7 @@ When processing information from multiple files, either from the same or separat
 <p><span class="image"><img src="images/image5.png" alt="image" width="397" height="47"></span></p>
 </div>
 <div class="paragraph">
-<p>This optional element <strong>MUST</strong> contain definitions for all enumerations referenced in a file.</p>
+<p>This optional element must contain definitions for all enumerations referenced in a file.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1732,7 +1732,7 @@ Upon import tools are free to merge unit information across files or separate th
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute provides a name, which <strong>MUST</strong> be unique within the set of enumerations in a given file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute provides a name, which must be unique within the set of enumerations in a given file.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1795,7 +1795,7 @@ Upon import tools are free to merge unit information across files or separate th
 <p><span class="image"><img src="images/image8.png" alt="image" width="315" height="47"></span></p>
 </div>
 <div class="paragraph">
-<p>This optional element <strong>MUST</strong> contain definitions for all units referenced in a file.</p>
+<p>This optional element must contain definitions for all units referenced in a file.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1830,7 +1830,7 @@ Upon import tools are free to merge unit information across files or separate th
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute provides a name, which <strong>MUST</strong> be unique within the set of units in a given file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute provides a name, which must be unique within the set of units in a given file.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1859,7 +1859,7 @@ Upon import tools are free to merge unit information across files or separate th
 <h5 id="baseunit">4.4.2.1. BaseUnit</h5>
 <div class="paragraph">
 <p>This element defines the base unit of the given unit in SI units.
-This is completely aligned with the specification of base units in section 2.4.3 of the FMI 3.0 standard [<a href="#FMI30">[FMI30]</a>] and section 2.2.2 of the FMI 2.0 standard [<a href="#FMI20">[FMI20]</a>].</p>
+This is completely aligned with the specification of base units in section 2.4.3 of the FMI 3.0 standard <a href="#FMI30">[FMI30]</a> and section 2.2.2 of the FMI 2.0 standard <a href="#FMI20">[FMI20]</a>.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/image10.png" alt="image" width="263" height="771"></span></p>
@@ -1964,7 +1964,7 @@ Note that in the case of connectors the use of a type element itself is optional
 Integer / Int8 / UInt8 / Int16 / UInt16 /<br>
 Int32 / UInt32 / Int64 / UInt64 /<br>
 Boolean / String / Enumeration / Binary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements <strong>MUST</strong> be present to specify the type of the element.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements must be present to specify the type of the element.
 See below for details.</p></td>
 </tr>
 </tbody>
@@ -1992,7 +1992,7 @@ See below for details.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute gives the name of a unit.
-The name <strong>MUST</strong> match the name of a Unit entry in the Units XML element of the top-level element of the file.</p>
+The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.</p>
 <p class="tableblock">If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
 For systems, the units of connected underlying connectors could be used if unambiguous.</p>
@@ -2025,7 +2025,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute gives the name of a unit.
-The name <strong>MUST</strong> match the name of a Unit entry in the Units XML element of the top-level element of the file.</p>
+The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.</p>
 <p class="tableblock">If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
 For systems, the units of connected underlying connectors could be used if unambiguous.</p>
@@ -2058,7 +2058,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute gives the name of a unit.
-The name <strong>MUST</strong> match the name of a Unit entry in the Units XML element of the top-level element of the file.</p>
+The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.</p>
 <p class="tableblock">If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
 For systems, the units of connected underlying connectors could be used if unambiguous.</p>
@@ -2191,7 +2191,7 @@ The underlying type of the connector is the same as for Integer.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute gives the name of an enumeration which references into the defined enumerations of a document.
-The name <strong>MUST</strong> match the name of an Enumeration entry in the Enumerations XML element of the top-level element of the file.</p></td>
+The name must match the name of an Enumeration entry in the Enumerations XML element of the top-level element of the file.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2202,7 +2202,7 @@ The name <strong>MUST</strong> match the name of an Enumeration entry in the Enu
 <p><span class="image"><img src="images/image17.png" alt="image" width="319" height="114"></span></p>
 </div>
 <div class="paragraph">
-<p>This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [<a href="#OSMP150">[OSMP150]</a>].</p>
+<p>This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification <a href="#OSMP150">[OSMP150]</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2220,11 +2220,11 @@ The name <strong>MUST</strong> match the name of an Enumeration entry in the Enu
 <td class="tableblock halign-left valign-top"><p class="tableblock">mime-type</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific application/octet-stream type.
-This information <strong>CAN</strong> be used by the implementation to detect mismatches between connected binary connectors, or provide automatic means of conversion between different formats.
-It should be noted that the implementation is <strong>not required</strong> to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors are connected.</p>
+This information can be used by the implementation to detect mismatches between connected binary connectors, or provide automatic means of conversion between different formats.
+It should be noted that the implementation is not required to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors are connected.</p>
 </div>
 <div class="paragraph">
-<p>The attribute value <strong>MUST</strong> be a valid MIME type as specified in RFC 2045; it <strong>CAN</strong> include additional arguments, etc., as specified in RFC 2045.</p>
+<p>The attribute value must be a valid MIME type as specified in RFC 2045; it can include additional arguments, etc., as specified in RFC 2045.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2314,8 +2314,8 @@ The default is 0.</p></td>
 <div class="paragraph">
 <p>This element provides for a transformation of Boolean values based on a mapping table and is valid for connectors of Boolean type.
 Each mapping table entry is provided by a MapEntry element.
-Mapping entries <strong>MUST</strong> be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value <strong>MUST</strong> be present.
-The mapping does not have to be complete, i.e. partial mappings <strong>CAN</strong> be specified.
+Mapping entries must be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value must be present.
+The mapping does not have to be complete, i.e. partial mappings can be specified.
 In that case values not mapped by a mapping entry are kept unchanged.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2349,18 +2349,18 @@ In that case values not mapped by a mapping entry are kept unchanged.</p>
 <div class="paragraph">
 <p>This element provides for a transformation of integer values based on a mapping table and is valid for connectors of all the integer types and Enumeration type.
 Each mapping table entry is provided by a MapEntry element.
-Mapping entries <strong>MUST</strong> be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value <strong>MUST</strong> be present.
-The mapping does not have to be complete, i.e. partial mappings <strong>CAN</strong> be specified.
+Mapping entries must be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value must be present.
+The mapping does not have to be complete, i.e. partial mappings can be specified.
 In that case values not mapped by a mapping entry are kept unchanged.</p>
 </div>
 <div class="paragraph">
-<p>When mapping to an Enumeration type, the target value <strong>MUST</strong> be a valid enumeration value for that type.
-When mapping from an Enumeration type, the source value <strong>MUST</strong> be a valid enumeration value for that type.
+<p>When mapping to an Enumeration type, the target value must be a valid enumeration value for that type.
+When mapping from an Enumeration type, the source value must be a valid enumeration value for that type.
 This transformation can be applied between connectors of different Enumeration types, as long as all resulting target values are valid in the target Enumeration type.</p>
 </div>
 <div class="paragraph">
-<p>The target values provided in transformation entries <strong>MUST</strong> be limited to the value space of the target connector.
-The source values provided in transformation entries <strong>CAN</strong> exceed the value space of the source connector.
+<p>The target values provided in transformation entries must be limited to the value space of the target connector.
+The source values provided in transformation entries can exceed the value space of the source connector.
 Such entries are ignored in the mapping process.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2394,13 +2394,13 @@ Such entries are ignored in the mapping process.</p>
 <div class="paragraph">
 <p>This element provides for a transformation of enumeration values based on a mapping table of their enumeration item names and is valid for connectors of Enumeration type.
 Each mapping table entry is provided by a MapEntry element.
-Mapping entries <strong>MUST</strong> be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value <strong>MUST</strong> be present.
-The mapping does not have to be complete, i.e. partial mappings <strong>CAN</strong> be specified.
+Mapping entries must be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value must be present.
+The mapping does not have to be complete, i.e. partial mappings can be specified.
 In that case values not mapped by a mapping entry are kept unchanged.</p>
 </div>
 <div class="paragraph">
-<p>When mapping to an Enumeration type, the target value <strong>MUST</strong> be a valid enumeration value for that type.
-When mapping from an Enumeration type, the source value <strong>MUST</strong> be a valid enumeration value for that type.
+<p>When mapping to an Enumeration type, the target value must be a valid enumeration value for that type.
+When mapping from an Enumeration type, the source value must be a valid enumeration value for that type.
 This transformation can be applied between connectors of different Enumeration types, as long as all resulting target values are valid in the target Enumeration type.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2449,7 +2449,7 @@ This transformation can be applied between connectors of different Enumeration t
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dimension</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element <strong>CAN</strong> be present to specify the dimensions of the containing model element.
+<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element can be present to specify the dimensions of the containing model element.
 If no instances are present, the containing model element is scalar.
 See below for details.</p></td>
 </tr>
@@ -2466,12 +2466,12 @@ If no dimension elements are present in a modeling element, it is a scalar model
 The number of dimension elements in a modeling element provides the dimensionality of the array.</p>
 </div>
 <div class="paragraph">
-<p>For connector elements, either the size or the sizeConnector attributes <strong>CAN</strong> be present on the element, indicating a fixed size, or a size that depends on the structural parameter or constant referenced by the sizeConnector attribute.
+<p>For connector elements, either the size or the sizeConnector attributes can be present on the element, indicating a fixed size, or a size that depends on the structural parameter or constant referenced by the sizeConnector attribute.
 If none of the attributes are present, then the size of the dimension is unspecified at the SSD level.
 It is considered an error if both attributes are present.</p>
 </div>
 <div class="paragraph">
-<p>For signal dictionary and parameter value elements, only the size attribute can be used and therefore <strong>MUST</strong> be present on the element, indicating a fixed size.
+<p>For signal dictionary and parameter value elements, only the size attribute can be used and therefore must be present on the element, indicating a fixed size.
 For those elements, it is considered an error if the sizeConnector attribute is present.</p>
 </div>
 <div class="paragraph">
@@ -2540,7 +2540,7 @@ Multiple (or no) MetaData elements may be present in a given model element.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MetaData</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element <strong>CAN</strong> be present to specify meta data related to the containing model element.
+<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element can be present to specify meta data related to the containing model element.
 See below for details.</p></td>
 </tr>
 </tbody>
@@ -2570,13 +2570,13 @@ See below for details.</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of this element <strong>CAN</strong> be present to contain inlined content of the model element meta data.
-If it is present, then the attribute <code>source</code> of the MetaData element <strong>MUST NOT</strong> be present.
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of this element can be present to contain inlined content of the model element meta data.
+If it is present, then the attribute <code>source</code> of the MetaData element must not be present.
 See below for details.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element <strong>CAN</strong> be present to specify digital signature information on the meta data referenced by the enclosing MetaData element.
+<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element can be present to specify digital signature information on the meta data referenced by the enclosing MetaData element.
 It is left unspecified what types of signatures are used and/or available for now.
 See below for details.</p></td>
 </tr>
@@ -2618,7 +2618,7 @@ If no specific MIME type can be indicated, then the type <code>application/octet
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.</p>
 </div>
 <div class="paragraph">
-<p>If the source attribute is missing, the meta data <strong>MUST</strong> be provided inline as contents of a Content element, which <strong>MUST NOT</strong> be present otherwise.</p>
+<p>If the source attribute is missing, the meta data must be provided inline as contents of a Content element, which must not be present otherwise.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2649,8 +2649,8 @@ In this case the URI is resolved against the (resolved) source URI of the contai
 <p>This element specifies the inlined content of the model element meta data.</p>
 </div>
 <div class="paragraph">
-<p>When this element is present, its contents <strong>MUST</strong> be an <code>srmd:SimulationResourceMetaData</code> element as specified by the SRMD schema of the SSP Traceability Specification, if the type attribute of the enclosing MetaData element is <code>application/x-srmd-meta-data</code>, or any other valid XML content if the type attribute references another MIME type.
-In that case there <strong>SHOULD</strong> be a layered specification that defines how embedding the content works for that MIME type.</p>
+<p>When this element is present, its contents must be an <code>srmd:SimulationResourceMetaData</code> element as specified by the SRMD schema of the SSP Traceability Specification, if the type attribute of the enclosing MetaData element is <code>application/x-srmd-meta-data</code>, or any other valid XML content if the type attribute references another MIME type.
+In that case there should be a layered specification that defines how embedding the content works for that MIME type.</p>
 </div>
 </div>
 </div>
@@ -2677,7 +2677,7 @@ Multiple (or no) Signature elements may be present in a given model element.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Signature</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element <strong>CAN</strong> be present to specify signatures related to the containing model element.
+<td class="tableblock halign-left valign-top"><p class="tableblock">One or more instances of this element can be present to specify signatures related to the containing model element.
 See below for details.</p></td>
 </tr>
 </tbody>
@@ -2709,8 +2709,8 @@ If the Signature element is contained within any other element, it refers to the
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of this element <strong>CAN</strong> be present to contain inlined content of the signature.
-If it is present, then the attribute <code>source</code> of the Signature element <strong>MUST NOT</strong> be present.
+<td class="tableblock halign-left valign-top"><p class="tableblock">An instance of this element can be present to contain inlined content of the signature.
+If it is present, then the attribute <code>source</code> of the Signature element must not be present.
 See below for details.</p></td>
 </tr>
 </tbody>
@@ -2752,7 +2752,7 @@ If no specific MIME type can be indicated, then the type <code>application/octet
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.</p>
 </div>
 <div class="paragraph">
-<p>If the source attribute is missing, the signature <strong>MUST</strong> be provided inline as contents of a Content element, which <strong>MUST NOT</strong> be present otherwise.</p>
+<p>If the source attribute is missing, the signature must be provided inline as contents of a Content element, which must not be present otherwise.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2789,8 +2789,8 @@ In this case the URI is resolved against the (resolved) URI of the meta data sou
 <p>A System Structure Description describes a nested hierarchy of interconnected (sub-)systems and atomic components.</p>
 </div>
 <div class="paragraph">
-<p>A System Structure Description file (SSD, file extension .ssd) <strong>MUST</strong> be a well-formed XML 1.0 [<a href="#XML10">[XML10]</a>] file that conforms to the SystemStructureDescription XML Schema distributed as part of this standard.
-The file <strong>MUST</strong> use the UTF-8 encoding.
+<p>A System Structure Description file (SSD, file extension .ssd) must be a well-formed XML 1.0 <a href="#XML10">[XML10]</a> file that conforms to the SystemStructureDescription XML Schema distributed as part of this standard.
+The file must use the UTF-8 encoding.
 All SSD-specific elements live in the <code><a href="http://ssp-standard.org/SSP1/SystemStructureDescription" class="bare">http://ssp-standard.org/SSP1/SystemStructureDescription</a></code> namespace, nicknamed <code>ssd</code>.</p>
 </div>
 <div class="sect2">
@@ -2799,7 +2799,7 @@ All SSD-specific elements live in the <code><a href="http://ssp-standard.org/SSP
 <p><span class="image"><img src="images/SystemStructureDescription_SystemStructureDescription.png" alt="image" width="475" height="693"></span></p>
 </div>
 <div class="paragraph">
-<p>The root element of an SSD file <strong>MUST</strong> be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.</p>
+<p>The root element of an SSD file must be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2816,9 +2816,9 @@ All SSD-specific elements live in the <code><a href="http://ssp-standard.org/SSP
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute specifies the version of this specification that the system description conforms to.
-Only major and minor version number are included, the patch version number <strong>MUST NOT</strong> be included in this attribute.
-For the current release this <strong>MUST</strong> be either 1.0 or 2.0.
-If it is 1.0 the file <strong>MUST</strong> also conform fully to the 1.0 standard.</p></td>
+Only major and minor version number are included, the patch version number must not be included in this attribute.
+For the current release this must be either 1.0 or 2.0.
+If it is 1.0 the file must also conform fully to the 1.0 standard.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
@@ -2847,17 +2847,17 @@ If it is 1.0 the file <strong>MUST</strong> also conform fully to the 1.0 standa
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enumerations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element <strong>MUST</strong> contain definitions for all enumerations referenced in the system description file.
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element must contain definitions for all enumerations referenced in the system description file.
 See <a href="#enumerations">Section 4.4.1</a> for its definition.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Units</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element <strong>MUST</strong> contain definitions for all units referenced in the system description file.
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element must contain definitions for all units referenced in the system description file.
 See <a href="#units">Section 4.4.2</a> for its definition.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DefaultExperiment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element <strong>MAY</strong> contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element may contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2865,7 +2865,7 @@ See <a href="#units">Section 4.4.2</a> for its definition.</p></td>
 <p>The root system of the model is specified through the required System element, see <a href="#system">Section 5.3</a>.</p>
 </div>
 <div class="paragraph">
-<p>Any enumerations and units referenced in the system description file <strong>MUST</strong> be provided through the optional Enumerations and Units elements, as described in <a href="#enumerations">Section 4.4.1</a> and <a href="#units">Section 4.4.2</a> respectively.</p>
+<p>Any enumerations and units referenced in the system description file must be provided through the optional Enumerations and Units elements, as described in <a href="#enumerations">Section 4.4.1</a> and <a href="#units">Section 4.4.2</a> respectively.</p>
 </div>
 <div class="sect3">
 <h4 id="default-experiment">5.1.1. Default Experiment</h4>
@@ -2953,8 +2953,8 @@ This standard does not specify additional measures to deal with differing indepe
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute gives the model element a name, which is used to identify the model element inside its parent system.
-The name <strong>MUST</strong> be unique within the directly enclosing parent system.
-The name <strong>MUST NOT</strong> be the empty string.</p></td>
+The name must be unique within the directly enclosing parent system.
+The name must not be the empty string.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2997,17 +2997,17 @@ See below for details.</p></td>
 </div>
 <div class="paragraph">
 <p>This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
-For components the set of connectors <strong>MUST</strong> match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding &lt;ScalarVariable&gt; element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP150], the name of a connector of type Binary has to match the name attribute of the corresponding &lt;osmp:osmp-binary-variable&gt;.
+For components the set of connectors must match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding &lt;ScalarVariable&gt; element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP150], the name of a connector of type Binary has to match the name attribute of the corresponding &lt;osmp:osmp-binary-variable&gt;.
 For FMI 3.0 FMUs, the connector name has to match either the name of the corresponding variable element, or one of its &lt;Alias&gt; elements.</p>
 </div>
 <div class="paragraph">
 <p>Names of variable elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
 Hence, several variables might be grouped as a structure or an array.
-However, the name of a connector <strong>MUST</strong> match the name of a single variable.</p>
+However, the name of a connector must match the name of a single variable.</p>
 </div>
 <div class="paragraph">
 <p>Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation.
-At least those connectors <strong>MUST</strong> be present which are referenced in connections inside the SSD.</p>
+At least those connectors must be present which are referenced in connections inside the SSD.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3044,12 +3044,12 @@ The same is true for variables/ports that are not referenced through a connector
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>This attribute gives the connector a name, which <strong>SHALL</strong> be unique within the given model element, and, for components, <strong>MUST</strong> match the name of a relevant variable/port in the underlying component implementation.
-In the case of referenced FMUs this <strong>MUST</strong> match the name of the relevant variable or alias in the referenced FMU.</p>
+<p>This attribute gives the connector a name, which shall be unique within the given model element, and, for components, must match the name of a relevant variable/port in the underlying component implementation.
+In the case of referenced FMUs this must match the name of the relevant variable or alias in the referenced FMU.</p>
 </div>
 <div class="paragraph">
 <p>Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation.
-At least those connectors <strong>MUST</strong> be present which are referenced in connections inside the SSD.</p>
+At least those connectors must be present which are referenced in connections inside the SSD.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3058,17 +3058,17 @@ At least those connectors <strong>MUST</strong> be present which are referenced 
 <p>This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), unspecified, a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).</p>
 </div>
 <div class="paragraph">
-<p>For components this <strong>MUST</strong> match the related kind of the underlying component implementation.
-For referenced FMUs it <strong>MUST</strong> match the combination of variability and causality:</p>
+<p>For components this must match the related kind of the underlying component implementation.
+For referenced FMUs it must match the combination of variability and causality:</p>
 </div>
 <div class="paragraph">
-<p>For FMI 2.0 and 3.0 this means that the causality of the variable <strong>MUST</strong> match the kind of the connector (with the kind inout not being valid for either FMI 3.0, 2.0, or 1.0).</p>
+<p>For FMI 2.0 and 3.0 this means that the causality of the variable must match the kind of the connector (with the kind inout not being valid for either FMI 3.0, 2.0, or 1.0).</p>
 </div>
 <div class="paragraph">
-<p>For FMI 1.0 this means that for connectors of kind input or output the causality of the variable <strong>MUST</strong> be input or output and the variability of the variable <strong>MUST</strong> be discrete or continuous (for outputs also constant and parameter are allowable).
-For connectors of kind parameter the causality of the FMI 1.0 variable <strong>MUST</strong> be input or internal and the variability <strong>MUST</strong> be parameter.
-For connectors of kind calculatedParameter the causality of the FMI 1.0 variable <strong>MUST</strong> be output and the variability <strong>MUST</strong> be parameter.
-For connectors of kind constant the causality of the FMI 1.0 variable <strong>MUST</strong> be output and the variability <strong>MUST</strong> be constant.</p>
+<p>For FMI 1.0 this means that for connectors of kind input or output the causality of the variable must be input or output and the variability of the variable must be discrete or continuous (for outputs also constant and parameter are allowable).
+For connectors of kind parameter the causality of the FMI 1.0 variable must be input or internal and the variability must be parameter.
+For connectors of kind calculatedParameter the causality of the FMI 1.0 variable must be output and the variability must be parameter.
+For connectors of kind constant the causality of the FMI 1.0 variable must be output and the variability must be constant.</p>
 </div>
 <div class="paragraph">
 <p>Connectors of kind <code>local</code> are used to define variables of the model element.
@@ -3106,7 +3106,7 @@ Such connectors can be connected to any other connector under the rules of the u
 Integer / Int8 / UInt8 / Int16 / UInt16 /<br>
 Int32 / UInt32 / Int64 / UInt64 /<br>
 Boolean / String / Enumeration / Binary / Clock</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements <strong>CAN</strong> be present to specify the type of the Connector.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements can be present to specify the type of the Connector.
 See <a href="#ssc_types">Section 4.5.1</a> for details.</p></td>
 </tr>
 <tr>
@@ -3318,7 +3318,7 @@ Sometimes such a counter clockwise orientation is also called a left rotation (x
 <div class="paragraph">
 <p>The optional attribute iconSource defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as defined in the relevant FMI standards).
-It is <strong>RECOMMENDED</strong> that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.</p>
+It is recommended that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.</p>
 </div>
 <div class="paragraph">
 <p>The optional attribute iconRotation defines the rotation (in degrees) of the icon.
@@ -3373,7 +3373,7 @@ If no explicit icon is given, the icon used by the tool to represent the system 
 <td class="tableblock halign-left valign-top"><p class="tableblock">iconSource</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional attribute defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as specified in the relevant FMI standards).
-It is <strong>RECOMMENDED</strong> that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.</p></td>
+It is recommended that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
@@ -3582,7 +3582,7 @@ Otherwise that parameter value is ignored.</p>
 Non-mapped parameter values are not applied in this case.</p>
 </div>
 <div class="paragraph">
-<p>For FMU components parameter values are applied to FMU variables based on the variables’ names in the FMU, i.e. it is <strong>not required</strong> (but allowed) that those variables are referenced in connectors in the system description.</p>
+<p>For FMU components parameter values are applied to FMU variables based on the variables’ names in the FMU, i.e. it is not required (but allowed) that those variables are referenced in connectors in the system description.</p>
 </div>
 <div class="paragraph">
 <p>For systems parameter values are applied using the hierarchical names of parameters or other variables in the system.</p>
@@ -3620,7 +3620,7 @@ The hierarchical name of those parameters inside system B are SP1 and C.P2 respe
 </div>
 <div class="paragraph">
 <p>Note that the hierarchical names of parameters or other variables do not have to be unique:
-If two or more variables end up with the same hierarchical name (due to so-called punning), then any parameter values being applied to that name <strong>MUST</strong> be applied to all of them.
+If two or more variables end up with the same hierarchical name (due to so-called punning), then any parameter values being applied to that name must be applied to all of them.
 If this is not wanted, then it is up to the generating implementation to ensure that no punning occurs, through proper choice of system and element names.</p>
 </div>
 <div class="admonitionblock note">
@@ -3664,7 +3664,7 @@ For structural parameters it is assumed that the parameterization is applied in 
 </div>
 <div class="paragraph">
 <p>All kinds of system connectors can be parameterized.
-In case the system level connectors are connected to FMU components, the parameterization <strong>MUST</strong> be compatible with the variable in the connected FMU.</p>
+In case the system level connectors are connected to FMU components, the parameterization must be compatible with the variable in the connected FMU.</p>
 </div>
 <div class="paragraph">
 <p>Parameter bindings that apply to a component that references another SSD/SSP are handled as if the top-level system of the SSD/SSP was present in the enclosing system instead of the component with one special case:
@@ -3695,7 +3695,7 @@ No further types are currently defined, but can of course be added at a later da
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.</p>
 </div>
 <div class="paragraph">
-<p>If the source attribute is missing, the parameter set <strong>MUST</strong> be provided inline as contents of a ParameterValues element, which <strong>MUST NOT</strong> be present otherwise.</p>
+<p>If the source attribute is missing, the parameter set must be provided inline as contents of a ParameterValues element, which must not be present otherwise.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3738,7 +3738,7 @@ This allows the user to apply a parameter set normally intended for a component 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ParameterValues</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element can be used to provide parameter values inline to the parameter binding, in which case the source attribute of the ParameterBinding element <strong>MUST</strong> be empty.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element can be used to provide parameter values inline to the parameter binding, in which case the source attribute of the ParameterBinding element must be empty.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ParameterMapping</p></td>
@@ -3754,8 +3754,8 @@ See below for details.</p></td>
 <p><span class="image"><img src="images/image33.png" alt="image" width="369" height="65"></span></p>
 </div>
 <div class="paragraph">
-<p>When this element is present, its contents <strong>MUST</strong> be an ssv:ParameterSet element as specified by the SystemStructureParameterValues schema, if the type attribute of the enclosing ParameterBinding element is application/x-ssp-parameter-set, or any other valid XML content if the type attribute references another MIME type.
-In that case there <strong>SHOULD</strong> be a layered specification that defines how embedding the content works for that MIME type.</p>
+<p>When this element is present, its contents must be an ssv:ParameterSet element as specified by the SystemStructureParameterValues schema, if the type attribute of the enclosing ParameterBinding element is application/x-ssp-parameter-set, or any other valid XML content if the type attribute references another MIME type.
+In that case there should be a layered specification that defines how embedding the content works for that MIME type.</p>
 </div>
 </div>
 <div class="sect4">
@@ -3791,7 +3791,7 @@ No further types are currently defined, but can of course be added at a later da
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.</p>
 </div>
 <div class="paragraph">
-<p>If the source attribute is missing, the parameter mapping <strong>MUST</strong> be provided inline as contents of the ParameterMapping element, which <strong>MUST</strong> be empty otherwise.</p>
+<p>If the source attribute is missing, the parameter mapping must be provided inline as contents of the ParameterMapping element, which must be empty otherwise.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3812,9 +3812,9 @@ The base URI for the resolution of relative URIs is determined by the sourceBase
 </tbody>
 </table>
 <div class="paragraph">
-<p>The contents of the element <strong>MUST</strong> be empty if the source attribute is present.
-If the source attribute is not present, the contents <strong>MUST</strong> be an ssm:ParameterMapping element, if the type attribute of this element is <code>application/x-ssp-parameter-mapping</code>, or any other valid XML content if the type attribute references another MIME type.
-In that case there <strong>SHOULD</strong> be a layered specification that defines how embedding the content works for that MIME type.</p>
+<p>The contents of the element must be empty if the source attribute is present.
+If the source attribute is not present, the contents must be an ssm:ParameterMapping element, if the type attribute of this element is <code>application/x-ssp-parameter-mapping</code>, or any other valid XML content if the type attribute references another MIME type.
+In that case there should be a layered specification that defines how embedding the content works for that MIME type.</p>
 </div>
 </div>
 </div>
@@ -3977,8 +3977,8 @@ With suppressUnitConversion = true, the linear transformation is performed inste
 Note that source and destination in the following table indicate the resulting data flow and are unrelated to the start and end designation of a connection, as described above.</p>
 </div>
 <div class="paragraph">
-<p>Implementations <strong>MUST NOT</strong> specify connections that are not of one of the allowed combinations in the following table.
-Implementations <strong>MUST</strong> ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout, parameter, or structuralParameter connector of an element, or a local, constant, calculatedParameter, or output connector of an enclosing system.</p>
+<p>Implementations must not specify connections that are not of one of the allowed combinations in the following table.
+Implementations must ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout, parameter, or structuralParameter connector of an element, or a local, constant, calculatedParameter, or output connector of an enclosing system.</p>
 </div>
 <div class="paragraph">
 <p>For connectors of kind unspecified it is ultimately implementation-defined whether and how connections are allowed, as the exact semantics depend on the underlying modeling language.
@@ -4305,7 +4305,7 @@ Such connections are deemed to establish equality constraints on the clock ticks
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies an optional transformation for the connection.
-If any, exactly one of these elements <strong>MUST</strong> be present to specify the type of the transformation.
+If any, exactly one of these elements must be present to specify the type of the transformation.
 See <a href="#ssc_transformations">Section 4.5.2</a> for details.</p></td>
 </tr>
 <tr>
@@ -4422,8 +4422,8 @@ No further types are currently defined, but can of course be added at a later da
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.</p>
 </div>
 <div class="paragraph">
-<p>If the source attribute is missing, the signal dictionary <strong>MUST</strong> be provided inline as contents of the SignalDictionary element, which <strong>MUST</strong> be empty otherwise.
-For the default type <code>application/x-ssp-signal-dictionary</code> such inline content <strong>MUST</strong> be a SignalDictionary from the SystemStructureSignalDictionary namespace.
+<p>If the source attribute is missing, the signal dictionary must be provided inline as contents of the SignalDictionary element, which must be empty otherwise.
+For the default type <code>application/x-ssp-signal-dictionary</code> such inline content must be a SignalDictionary from the SystemStructureSignalDictionary namespace.
 See <a href="#SSB">Section 8</a> for details.</p>
 </div></div></td>
 </tr>
@@ -4437,7 +4437,7 @@ See <a href="#SSB">Section 8</a> for details.</p>
 </div>
 <div class="paragraph">
 <p>This element defines the extent of the system canvas. (x1,y1) and (x2,y2) define the lower-left and upper-right corner, respectively.
-Different from ElementGeometry, where x1 &gt; x2 and y1 &gt; y2 indicate flipping, x1 &lt; x2 and y1 &lt; y2 <strong>MUST</strong> hold here.</p>
+Different from ElementGeometry, where x1 &gt; x2 and y1 &gt; y2 indicate flipping, x1 &lt; x2 and y1 &lt; y2 must hold here.</p>
 </div>
 <div class="paragraph">
 <p>If undefined, the system canvas extent defaults to the bounding box of all ElementGeometry elements of the child elements of the system.</p>
@@ -4660,8 +4660,8 @@ For type <code>text/x-modelica</code>, a media type parameter <code>path</code> 
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
-Therefore for components that are located alongside the SSD, relative URIs without scheme and authority <strong>CAN</strong> and <strong>SHOULD</strong> be used to specify the component sources.
-For components that are packaged inside an SSP that contains this SSD, this is <strong>REQUIRED</strong> (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).</p>
+Therefore for components that are located alongside the SSD, relative URIs without scheme and authority can and should be used to specify the component sources.
+For components that are packaged inside an SSP that contains this SSD, this is required (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4677,24 +4677,24 @@ For example for an FMU called MyDemoFMU.fmu, that is located in the resources di
 </div>
 <div class="paragraph">
 <p>When referencing another SSP, by default the default SSD of the SSP (i.e. <code>SystemStructure.ssd</code>) is referenced.
-When a non-default SSD should be selected, then the name of the non-default SSD <strong>MUST</strong> be given through a fragment identifier, i.e. the URI <code>resources/SubSSP.ssp#VariantB.ssd</code> would reference the <code>VariantB.ssd</code> of <code>SubSSP.ssp</code> located in the resources directory relative to this SSD.</p>
+When a non-default SSD should be selected, then the name of the non-default SSD must be given through a fragment identifier, i.e. the URI <code>resources/SubSSP.ssp#VariantB.ssd</code> would reference the <code>VariantB.ssd</code> of <code>SubSSP.ssp</code> located in the resources directory relative to this SSD.</p>
 </div>
 <div class="paragraph">
-<p>When the URI is a same-document URI with a fragment identifier, for example <code>#other-system</code>, then the fragment identifier <strong>MUST</strong> identify a system element in this SSD document with an id attribute identical to the fragment identifier.
+<p>When the URI is a same-document URI with a fragment identifier, for example <code>#other-system</code>, then the fragment identifier must identify a system element in this SSD document with an id attribute identical to the fragment identifier.
 This mechanism can be used to instantiate an embedded system definition multiple times through reference to its definition element.</p>
 </div>
 <div class="paragraph">
-<p>Note that implementations are only <strong>REQUIRED</strong> to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go up a level via <code>..</code>) are <strong>not required</strong> to be supported by implementations, and are in fact often not supported for security or other reasons.
-Implementations are also <strong>not required</strong> to support any absolute URIs and any specific URI schemes, but are of course allowed to support any and all kinds of URIs where this is considered useful.</p>
+<p>Note that implementations are only required to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go up a level via <code>..</code>) are not required to be supported by implementations, and are in fact often not supported for security or other reasons.
+Implementations are also not required to support any absolute URIs and any specific URI schemes, but are of course allowed to support any and all kinds of URIs where this is considered useful.</p>
 </div>
 <div class="paragraph">
 <p>If the source attribute is missing, this indicates that there is no provided source for the component, indicating a simulation architecture design without complete executable implementation.
-Implementations <strong>CAN</strong> take any specified type attribute into account when handling such components.
-In any other regard implementations <strong>CAN</strong> treat such components as equivalent to an empty system with the same connectors and other properties as specified for the component.</p>
+Implementations can take any specified type attribute into account when handling such components.
+In any other regard implementations can treat such components as equivalent to an empty system with the same connectors and other properties as specified for the component.</p>
 </div>
 <div class="paragraph">
 <p>Note that not specifying a source attribute is not the same as specifying a source attribute with an emtpy string value, as that is considered a valid relative URI.
-Implementations <strong>MUST NOT</strong> specify an empty relative URI to indicate a missing implementation.</p>
+Implementations must not specify an empty relative URI to indicate a missing implementation.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -4702,7 +4702,7 @@ Implementations <strong>MUST NOT</strong> specify an empty relative URI to indic
 <td class="tableblock halign-left valign-top"><p class="tableblock">When the referenced component is an FMU that contains multiple implementations, this optional attribute can be used to determine which FMU implementation should be employed.</p>
 <p class="tableblock">NOTE: For example Co-Simulation and Model Exchange.</p>
 <p class="tableblock">If the attribute is missing or uses the default value any, the importing tool is free to choose what kind of FMU implementation to use.
-If the value is CoSimulation, ModelExchange, or ScheduledExecution the corresponding FMU implementation <strong>MUST</strong> be used.
+If the value is CoSimulation, ModelExchange, or ScheduledExecution the corresponding FMU implementation must be used.
 It is an error if the specified type of FMU implementation is not present in the FMU.</p></td>
 </tr>
 </tbody>
@@ -4714,7 +4714,7 @@ It is an error if the specified type of FMU implementation is not present in the
 <p><span class="image"><img src="images/SystemStructureDescription_SignalDictionaryReference.png" alt="image" width="555" height="733"></span></p>
 </div>
 <div class="paragraph">
-<p>A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which <strong>MUST</strong> reference signal dictionary entries.</p>
+<p>A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which must reference signal dictionary entries.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -4755,12 +4755,12 @@ The XML element can be inlined with its parent element or referenced from the pa
 <p>For information on hierarchical naming structure and precedence rules, see <a href="#parameterbindings">Section 5.2.3</a>.</p>
 </div>
 <div class="paragraph">
-<p>An SSV file <strong>MUST</strong> be a well-formed XML 1.0 [<a href="#XML10">[XML10]</a>] file that conforms to the SystemStructureParameterValues XML Schema that is distributed as part of this standard.
-The file <strong>MUST</strong> use the UTF-8 encoding.
+<p>An SSV file must be a well-formed XML 1.0 <a href="#XML10">[XML10]</a> file that conforms to the SystemStructureParameterValues XML Schema that is distributed as part of this standard.
+The file must use the UTF-8 encoding.
 All SSV-specific elements live in the <code><a href="http://ssp-standard.org/SSP1/SystemStructureParameterValues" class="bare">http://ssp-standard.org/SSP1/SystemStructureParameterValues</a></code> namespace, nicknamed <code>ssv</code>.</p>
 </div>
 <div class="paragraph">
-<p>It is <strong>RECOMMENDED</strong> that the file extension <code>.ssv</code> be used for stand-alone SSV files.
+<p>It is recommended that the file extension <code>.ssv</code> be used for stand-alone SSV files.
 Except for this file extension recommendation the filename is arbitrary and is independent of variant handling or the names of SSD files.</p>
 </div>
 <div class="sect2">
@@ -4770,7 +4770,7 @@ Except for this file extension recommendation the filename is arbitrary and is i
 </div>
 <div class="paragraph">
 <p>The ParameterSet element contains parameter and meta data information.
-If the SSV is provided as a separate file, the root element <strong>MUST</strong> be a ParameterSet element.</p>
+If the SSV is provided as a separate file, the root element must be a ParameterSet element.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -4787,9 +4787,9 @@ If the SSV is provided as a separate file, the root element <strong>MUST</strong
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute specifies the version of this specification that the parameter set conforms to.
-Only major and minor version number are included, the patch version number <strong>MUST NOT</strong> be included in this attribute.
-For the current release this <strong>MUST</strong> be either 1.0 or 2.0.
-If it is 1.0 the file <strong>MUST</strong> also conform fully to the 1.0 standard.</p></td>
+Only major and minor version number are included, the patch version number must not be included in this attribute.
+For the current release this must be either 1.0 or 2.0.
+If it is 1.0 the file must also conform fully to the 1.0 standard.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
@@ -4819,12 +4819,12 @@ See below for details.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enumerations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element <strong>MUST</strong> contain definitions for all enumerations referenced in the parameter set.
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element must contain definitions for all enumerations referenced in the parameter set.
 See <a href="#enumerations">Section 4.4.1</a> for its definition.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Units</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element <strong>MUST</strong> contain definitions for all units referenced in the parameter set.
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element must contain definitions for all units referenced in the parameter set.
 See <a href="#units">Section 4.4.2</a> for its definition.</p></td>
 </tr>
 </tbody>
@@ -4837,10 +4837,10 @@ See <a href="#units">Section 4.4.2</a> for its definition.</p></td>
 </div>
 <div class="paragraph">
 <p>The Parameters element contains a list of individual parameters.
-If the list is empty, the parameter set <strong>SHALL</strong> not have any effect on any system or component it is applied to.</p>
+If the list is empty, the parameter set shall not have any effect on any system or component it is applied to.</p>
 </div>
 <div class="paragraph">
-<p>It is <strong>not required</strong> that all parameters included in the Parameters element correspond to parameters available in the components or systems the parameter set is applied to (through ParameterBinding elements in the system structure description).
+<p>It is not required that all parameters included in the Parameters element correspond to parameters available in the components or systems the parameter set is applied to (through ParameterBinding elements in the system structure description).
 This allows the definition of large parameter data sets out of which only a subset is applied in a given case.
 See <a href="#parameterbindings">Section 5.2.3</a> for the semantic defintion of parameter bindings.</p>
 </div>
@@ -4865,7 +4865,7 @@ See <a href="#parameterbindings">Section 5.2.3</a> for the semantic defintion of
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute specifies the name of the parameter in the parameter set.
-The name <strong>MUST</strong> be unique within the parameter set.</p></td>
+The name must be unique within the parameter set.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4889,7 +4889,7 @@ The name <strong>MUST</strong> be unique within the parameter set.</p></td>
 Integer / Int8 / UInt8 / Int16 / UInt16 /<br>
 Int32 / UInt32 / Int64 / UInt64 /<br>
 Boolean / String / Enumeration / Binary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements <strong>MUST</strong> be present to specify the type of the parameter.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements must be present to specify the type of the parameter.
 See below for details on each type.</p></td>
 </tr>
 <tr>
@@ -4930,7 +4930,7 @@ See <a href="#ssc_dimensions">Section 4.5.3</a> for details.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute gives the name of the unit of the parameter.
-The name <strong>MUST</strong> match the name of a unit defined in the Units element in the ParameterSet root element.</p></td>
+The name must match the name of a unit defined in the Units element in the ParameterSet root element.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4965,7 +4965,7 @@ The name <strong>MUST</strong> match the name of a unit defined in the Units ele
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute gives the name of the unit of the parameter.
-The name <strong>MUST</strong> match the name of a unit defined in the Units element in the ParameterSet root element.</p></td>
+The name must match the name of a unit defined in the Units element in the ParameterSet root element.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5000,7 +5000,7 @@ The name <strong>MUST</strong> match the name of a unit defined in the Units ele
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute gives the name of the unit of the parameter.
-The name <strong>MUST</strong> match the name of a unit defined in the Units element in the ParameterSet root element.</p></td>
+The name must match the name of a unit defined in the Units element in the ParameterSet root element.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5362,7 +5362,7 @@ The name <strong>MUST</strong> match the name of a unit defined in the Units ele
 <p>For scalar parameters, or array parameters with a single element, either way of specifying the singular value can be used.</p>
 </div>
 <div class="paragraph">
-<p>For array parameters with more than one element, values <strong>MUST</strong> be specified as child elements, with each element providing one element value in row-major order, as specified in FMI.</p>
+<p>For array parameters with more than one element, values must be specified as child elements, with each element providing one element value in row-major order, as specified in FMI.</p>
 </div>
 </div>
 <div class="sect3">
@@ -5394,13 +5394,13 @@ Note that the actual numeric value this value is mapped to at run time will depe
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>This optional attribute specifies the name of the enumeration type that the parameter references.
-If it is supplied, the name <strong>MUST</strong> match the name of an enumeration type defined in the Enumerations element in the ParameterSet root element.</p>
+If it is supplied, the name must match the name of an enumeration type defined in the Enumerations element in the ParameterSet root element.</p>
 </div>
 <div class="paragraph">
 <p>This attribute is optional; if it is not specified, then the list of valid enumeration items with their names and values is not specified, and the interpretation of the enumeration value is left solely to the variables that are being parameterized.</p>
 </div>
 <div class="paragraph">
-<p>If the attribute is specified, implementations <strong>MAY</strong> use that information for user interface purposes, and/or for additional consistency checking.</p>
+<p>If the attribute is specified, implementations may use that information for user interface purposes, and/or for additional consistency checking.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -5445,7 +5445,7 @@ Note: the level of consistency checking is left optional by design, since mandat
 <p>For scalar parameters, or array parameters with a single element, either way of specifying the singular value can be used.</p>
 </div>
 <div class="paragraph">
-<p>For array parameters with more than one element, values <strong>MUST</strong> be specified as child elements, with each element providing one element value in row-major order, as specified in FMI.</p>
+<p>For array parameters with more than one element, values must be specified as child elements, with each element providing one element value in row-major order, as specified in FMI.</p>
 </div>
 </div>
 <div class="sect3">
@@ -5476,7 +5476,7 @@ Note: the level of consistency checking is left optional by design, since mandat
 <td class="tableblock halign-left valign-top"><p class="tableblock">mime-type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific <code>application/octet-stream</code> type.
 This information can be used by the implementation to detect mismatches between binary parameters, or to provide automatic conversions between different formats.
-It should be noted that the implementation is <strong>not required</strong> to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors/parameters are connected.</p></td>
+It should be noted that the implementation is not required to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors/parameters are connected.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5508,7 +5508,7 @@ It should be noted that the implementation is <strong>not required</strong> to p
 <p>For scalar parameters, or array parameters with a single element, either way of specifying the singular value can be used.</p>
 </div>
 <div class="paragraph">
-<p>For array parameters with more than one element, values <strong>MUST</strong> be specified as child elements, with each element providing one element value in row-major order, as specified in FMI.</p>
+<p>For array parameters with more than one element, values must be specified as child elements, with each element providing one element value in row-major order, as specified in FMI.</p>
 </div>
 </div>
 </div>
@@ -5526,16 +5526,16 @@ It can also optionally provide for transformations that are to be applied on the
 <p>A parameter mapping can be provided either as a stand-alone XML file (an SSM file), which can be referenced from SSD files, or it can be embedded in an ssd:ParameterMapping element of the SSD directly (see <a href="#parametermapping">Section 5.2.3.2</a>).</p>
 </div>
 <div class="paragraph">
-<p>An SSM file <strong>MUST</strong> be a well-formed XML 1.0 [<a href="#XML10">[XML10]</a>] file that conforms to the SystemStructureParameterMapping XML Schema that is distributed as part of this standard.
-The file <strong>MUST</strong> use the UTF-8 encoding.
+<p>An SSM file must be a well-formed XML 1.0 <a href="#XML10">[XML10]</a> file that conforms to the SystemStructureParameterMapping XML Schema that is distributed as part of this standard.
+The file must use the UTF-8 encoding.
 All SSM-specific elements live in the <code><a href="http://ssp-standard.org/SSP1/SystemStructureParameterMapping" class="bare">http://ssp-standard.org/SSP1/SystemStructureParameterMapping</a></code> namespace, nicknamed <code>ssm</code>.</p>
 </div>
 <div class="paragraph">
-<p>It is <strong>RECOMMENDED</strong> that the file extension <code>.ssm</code> be used for stand-alone SSM files.
+<p>It is recommended that the file extension <code>.ssm</code> be used for stand-alone SSM files.
 Except for this file extension recommendation the filename is arbitrary and is independent of variant handling or the names of SSD files.</p>
 </div>
 <div class="paragraph">
-<p>The root element of an SSM file <strong>MUST</strong> be a ParameterMapping element, which contains an arbitrary number of MappingEntry elements.</p>
+<p>The root element of an SSM file must be a ParameterMapping element, which contains an arbitrary number of MappingEntry elements.</p>
 </div>
 <div class="sect2">
 <h3 id="parametermapping-2">7.1. ParameterMapping</h3>
@@ -5544,11 +5544,11 @@ Except for this file extension recommendation the filename is arbitrary and is i
 </div>
 <div class="paragraph">
 <p>This element describes a parameter mapping, which consists of multiple mapping entries, each describing one parameter mapping (see next section).
-The parameter mapping <strong>MUST</strong> contain entries for all parameters that are going to be mapped.
+The parameter mapping must contain entries for all parameters that are going to be mapped.
 All parameters of the parameter source which are not referenced in a mapping entry will not be applied.
 All parameters that are referenced in a mapping entry will only be applied using the name they are mapped to, i.e. any original name is disregarded for applying parameters.
-Implementations <strong>MUST NOT</strong> map multiple parameters to the same name.
-Implementations <strong>CAN</strong> map the same parameter to multiple names.</p>
+Implementations must not map multiple parameters to the same name.
+Implementations can map the same parameter to multiple names.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -5565,9 +5565,9 @@ Implementations <strong>CAN</strong> map the same parameter to multiple names.</
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute specifies the version of this specification that the parameter mapping conforms to.
-Only major and minor version number are included, the patch version number <strong>MUST NOT</strong> be included in this attribute.
-For the current release this <strong>MUST</strong> be either 1.0 or 2.0.
-If it is 1.0 the file <strong>MUST</strong> also conform fully to the 1.0 standard.</p></td>
+Only major and minor version number are included, the patch version number must not be included in this attribute.
+For the current release this must be either 1.0 or 2.0.
+If it is 1.0 the file must also conform fully to the 1.0 standard.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5627,7 +5627,7 @@ In that case the specified transformation will be done after any unit conversion
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies an optional transformation for the mapping.
-If any, exactly one of these elements <strong>MUST</strong> be present to specify the type of the transformation.
+If any, exactly one of these elements must be present to specify the type of the transformation.
 See <a href="#ssc_transformations">Section 4.5.2</a> for details.</p></td>
 </tr>
 </tbody>
@@ -5646,17 +5646,17 @@ See <a href="#ssc_transformations">Section 4.5.2</a> for details.</p></td>
 <p>A signal dictionary can be provided either as a stand-alone XML file (an SSB file), which can be referenced from SSD files, or it can be embedded in an ssd:SignalDictionary element of the SSD directly (see <a href="#signaldictionaries">Section 5.3.3</a>).</p>
 </div>
 <div class="paragraph">
-<p>An SSB file <strong>MUST</strong> be a well-formed XML 1.0 [<a href="#XML10">[XML10]</a>] file that conforms to the SystemStructureSignalDictionary XML Schema that is distributed as part of this standard.
-The file <strong>MUST</strong> use the UTF-8 encoding.
+<p>An SSB file must be a well-formed XML 1.0 <a href="#XML10">[XML10]</a> file that conforms to the SystemStructureSignalDictionary XML Schema that is distributed as part of this standard.
+The file must use the UTF-8 encoding.
 All SSB-specific elements live in the <code><a href="http://ssp-standard.org/SSP1/SystemStructureSignalDictionary" class="bare">http://ssp-standard.org/SSP1/SystemStructureSignalDictionary</a></code> namespace, nicknamed <code>ssb</code>.</p>
 </div>
 <div class="paragraph">
-<p>It is <strong>RECOMMENDED</strong> that the file extension <code>.ssb</code> be used for stand-alone SSB files.
+<p>It is recommended that the file extension <code>.ssb</code> be used for stand-alone SSB files.
 Except for this file extension recommendation the filename is arbitrary and is independent of variant handling or the names of SSD files.</p>
 </div>
 <div class="paragraph">
-<p>The root element of an SSB file <strong>MUST</strong> be a SignalDictionary element, which contains an arbitrary number of DictionaryEntry elements.
-Any enumerations or units used in the DictionaryEntry elements <strong>MUST</strong> be declared within the Enumerations and Units child elements of the SignalDictionary.</p>
+<p>The root element of an SSB file must be a SignalDictionary element, which contains an arbitrary number of DictionaryEntry elements.
+Any enumerations or units used in the DictionaryEntry elements must be declared within the Enumerations and Units child elements of the SignalDictionary.</p>
 </div>
 <div class="sect2">
 <h3 id="signaldictionary">8.1. SignalDictionary</h3>
@@ -5681,9 +5681,9 @@ Any enumerations or units used in the DictionaryEntry elements <strong>MUST</str
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This required attribute specifies the version of this specification that the parameter mapping conforms to.
-Only major and minor version number are included, the patch version number <strong>MUST NOT</strong> be included in this attribute.
-For the current release this <strong>MUST</strong> be either 1.0 or 2.0.
-If it is 1.0 the file <strong>MUST</strong> also conform fully to the 1.0 standard.</p></td>
+Only major and minor version number are included, the patch version number must not be included in this attribute.
+For the current release this must be either 1.0 or 2.0.
+If it is 1.0 the file must also conform fully to the 1.0 standard.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5711,12 +5711,12 @@ If it is 1.0 the file <strong>MUST</strong> also conform fully to the 1.0 standa
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enumerations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element <strong>MUST</strong> contain definitions for all enumerations referenced in the signal dictionary.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element must contain definitions for all enumerations referenced in the signal dictionary.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Units</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element <strong>MUST</strong> contain definitions for all units referenced in the signal dictionary.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional element must contain definitions for all units referenced in the signal dictionary.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -5767,7 +5767,7 @@ If it is 1.0 the file <strong>MUST</strong> also conform fully to the 1.0 standa
 Integer / Int8 / UInt8 / Int16 / UInt16 /<br>
 Int32 / UInt32 / Int64 / UInt64 /<br>
 Boolean / String / Enumeration / Binary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements <strong>MUST</strong> be present to specify the type of the signal dictionary entry.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exactly one of these elements must be present to specify the type of the signal dictionary entry.
 See <a href="#ssc_types">Section 4.5.1</a> for details.</p></td>
 </tr>
 <tr>
@@ -5782,34 +5782,34 @@ See <a href="#ssc_dimensions">Section 4.5.3</a> for details.</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="literature">9. Literature</h2>
+<h2 id="literature">Literature</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>[<a id="RFC2119"></a>] IETF: <strong>RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels.</strong> IETF Best Current Practice BCP 14. 1997.<br>
+<p><a id="RFC2119"></a> IETF: <strong>RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels.</strong> IETF Best Current Practice BCP 14. 1997.<br>
 <a href="https://www.ietf.org/rfc/rfc2119.txt" class="bare">https://www.ietf.org/rfc/rfc2119.txt</a></p>
 </div>
 <div class="paragraph">
-<p>[<a id="ZIP635"></a>] PKWARE Inc.: <strong>APPNOTE.TXT - .ZIP File Format Specification, Version 6.3.5.</strong> 2018.<br>
+<p><a id="ZIP635"></a> PKWARE Inc.: <strong>APPNOTE.TXT - .ZIP File Format Specification, Version 6.3.5.</strong> 2018.<br>
 <a href="https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.3.5.TXT" class="bare">https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.3.5.TXT</a></p>
 </div>
 <div class="paragraph">
-<p>[<a id="SV200"></a>] Preston-Werner, T.: <strong>Semantic Versioning 2.0.0.</strong> 2013.<br>
+<p><a id="SV200"></a> Preston-Werner, T.: <strong>Semantic Versioning 2.0.0.</strong> 2013.<br>
 <a href="https://semver.org/spec/v2.0.0.html" class="bare">https://semver.org/spec/v2.0.0.html</a></p>
 </div>
 <div class="paragraph">
-<p>[<a id="XML10"></a>] World Wide Web Consortium: <strong>Extensible Markup Language (XML) 1.0 (Fifth Edition).</strong> W3C Recommendation. 2008.<br>
+<p><a id="XML10"></a> World Wide Web Consortium: <strong>Extensible Markup Language (XML) 1.0 (Fifth Edition).</strong> W3C Recommendation. 2008.<br>
 <a href="http://www.w3.org/TR/2008/REC-xml-20081126/" class="bare">http://www.w3.org/TR/2008/REC-xml-20081126/</a></p>
 </div>
 <div class="paragraph">
-<p>[<a id="FMI20"></a>] Modelica Association: <strong>Functional Mock-up Interface for Model Exchange and Co-Simulation, Version 2.0.5.</strong> 2024.<br>
+<p><a id="FMI20"></a> Modelica Association: <strong>Functional Mock-up Interface for Model Exchange and Co-Simulation, Version 2.0.5.</strong> 2024.<br>
 <a href="https://github.com/modelica/fmi-standard/releases/download/v2.0.5/FMI-Specification-2.0.5.pdf" class="bare">https://github.com/modelica/fmi-standard/releases/download/v2.0.5/FMI-Specification-2.0.5.pdf</a></p>
 </div>
 <div class="paragraph">
-<p>[<a id="FMI30"></a>] Modelica Association: <strong>Functional Mock-up Interface Specification, Version 3.0.2.</strong> 2024.<br>
+<p><a id="FMI30"></a> Modelica Association: <strong>Functional Mock-up Interface Specification, Version 3.0.2.</strong> 2024.<br>
 <a href="https://fmi-standard.org/docs/3.0.2/" class="bare">https://fmi-standard.org/docs/3.0.2/</a></p>
 </div>
 <div class="paragraph">
-<p>[<a id="OSMP150"></a>] ASAM e.V.: <strong>OSI Sensor Model Packaging Version 1.5.0.</strong> 2024.<br>
+<p><a id="OSMP150"></a> ASAM e.V.: <strong>OSI Sensor Model Packaging Version 1.5.0.</strong> 2024.<br>
 <a href="https://github.com/OpenSimulationInterface/osi-sensor-model-packaging/releases/tag/v1.5.0" class="bare">https://github.com/OpenSimulationInterface/osi-sensor-model-packaging/releases/tag/v1.5.0</a></p>
 </div>
 </div>
