@@ -2,23 +2,23 @@
 
 A System Structure Description describes a nested hierarchy of interconnected (sub-)systems and atomic components.
 
-A System Structure Description file (SSD, file extension .ssd) *MUST* be a well-formed XML 1.0 [<<XML10>>] file that conforms to the SystemStructureDescription XML Schema distributed as part of this standard.
-The file *MUST* use the UTF-8 encoding.
+A System Structure Description file (SSD, file extension .ssd) must be a well-formed XML 1.0 [<<XML10>>] file that conforms to the SystemStructureDescription XML Schema distributed as part of this standard.
+The file must use the UTF-8 encoding.
 All SSD-specific elements live in the `http://ssp-standard.org/SSP1/SystemStructureDescription` namespace, nicknamed `ssd`.
 
 === SystemStructureDescription
 
 image:images/SystemStructureDescription_SystemStructureDescription.png[image,width=475,height=693]
 
-The root element of an SSD file *MUST* be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.
+The root element of an SSD file must be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
 |version |This required attribute specifies the version of this specification that the system description conforms to.
-Only major and minor version number are included, the patch version number *MUST NOT* be included in this attribute.
-For the current release this *MUST* be either 1.0 or 2.0.
-If it is 1.0 the file *MUST* also conform fully to the 1.0 standard.
+Only major and minor version number are included, the patch version number must not be included in this attribute.
+For the current release this must be either 1.0 or 2.0.
+If it is 1.0 the file must also conform fully to the 1.0 standard.
 |name |This required attribute provides a name, which can be used for purposes of presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 |===
 
@@ -28,16 +28,16 @@ The following XML child elements are specified for the SystemStructureDescriptio
 |===
 |Element |Description
 |System |This required element specifies the root system of the model, see <<System>>.
-|Enumerations |This optional element *MUST* contain definitions for all enumerations referenced in the system description file.
+|Enumerations |This optional element must contain definitions for all enumerations referenced in the system description file.
 See <<Enumerations>> for its definition.
-|Units |This optional element *MUST* contain definitions for all units referenced in the system description file.
+|Units |This optional element must contain definitions for all units referenced in the system description file.
 See <<Units>> for its definition.
-|DefaultExperiment |This optional element *MAY* contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.
+|DefaultExperiment |This optional element may contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.
 |===
 
 The root system of the model is specified through the required System element, see <<System>>.
 
-Any enumerations and units referenced in the system description file *MUST* be provided through the optional Enumerations and Units elements, as described in <<Enumerations>> and <<Units>> respectively.
+Any enumerations and units referenced in the system description file must be provided through the optional Enumerations and Units elements, as described in <<Enumerations>> and <<Units>> respectively.
 
 ==== Default Experiment
 
@@ -72,8 +72,8 @@ The following XML attributes are specified for the TElement type:
 |===
 |Attribute |Description
 |name |This required attribute gives the model element a name, which is used to identify the model element inside its parent system.
-The name *MUST* be unique within the directly enclosing parent system.
-The name *MUST NOT* be the empty string.
+The name must be unique within the directly enclosing parent system.
+The name must not be the empty string.
 |===
 
 The following XML child elements are specified for the TElement type:
@@ -94,15 +94,15 @@ See below for details.
 image:images/image26.png[image,width=371,height=82]
 
 This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
-For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP150], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
+For components the set of connectors must match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP150], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
 For FMI 3.0 FMUs, the connector name has to match either the name of the corresponding variable element, or one of its <Alias> elements.
 
 Names of variable elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
 Hence, several variables might be grouped as a structure or an array.
-However, the name of a connector *MUST* match the name of a single variable.
+However, the name of a connector must match the name of a single variable.
 
 Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation.
-At least those connectors *MUST* be present which are referenced in connections inside the SSD.
+At least those connectors must be present which are referenced in connections inside the SSD.
 
 NOTE: Note that connectors do not have to be referenced in connections.
 Unreferenced connectors will yield the behavior that is specified for the underlying component variables/ports, e.g. an unconnected FMU input variable will remain at its default value during the whole simulation.
@@ -116,24 +116,24 @@ The following XML attributes are specified for the Connector element:
 |===
 |Attribute |Description
 |name a|
-This attribute gives the connector a name, which *SHALL* be unique within the given model element, and, for components, *MUST* match the name of a relevant variable/port in the underlying component implementation.
-In the case of referenced FMUs this *MUST* match the name of the relevant variable or alias in the referenced FMU.
+This attribute gives the connector a name, which shall be unique within the given model element, and, for components, must match the name of a relevant variable/port in the underlying component implementation.
+In the case of referenced FMUs this must match the name of the relevant variable or alias in the referenced FMU.
 
 Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation.
-At least those connectors *MUST* be present which are referenced in connections inside the SSD.
+At least those connectors must be present which are referenced in connections inside the SSD.
 
 |kind a|
 This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), unspecified, a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
 
-For components this *MUST* match the related kind of the underlying component implementation.
-For referenced FMUs it *MUST* match the combination of variability and causality:
+For components this must match the related kind of the underlying component implementation.
+For referenced FMUs it must match the combination of variability and causality:
 
-For FMI 2.0 and 3.0 this means that the causality of the variable *MUST* match the kind of the connector (with the kind inout not being valid for either FMI 3.0, 2.0, or 1.0).
+For FMI 2.0 and 3.0 this means that the causality of the variable must match the kind of the connector (with the kind inout not being valid for either FMI 3.0, 2.0, or 1.0).
 
-For FMI 1.0 this means that for connectors of kind input or output the causality of the variable *MUST* be input or output and the variability of the variable *MUST* be discrete or continuous (for outputs also constant and parameter are allowable).
-For connectors of kind parameter the causality of the FMI 1.0 variable *MUST* be input or internal and the variability *MUST* be parameter.
-For connectors of kind calculatedParameter the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be parameter.
-For connectors of kind constant the causality of the FMI 1.0 variable *MUST* be output and the variability *MUST* be constant.
+For FMI 1.0 this means that for connectors of kind input or output the causality of the variable must be input or output and the variability of the variable must be discrete or continuous (for outputs also constant and parameter are allowable).
+For connectors of kind parameter the causality of the FMI 1.0 variable must be input or internal and the variability must be parameter.
+For connectors of kind calculatedParameter the causality of the FMI 1.0 variable must be output and the variability must be parameter.
+For connectors of kind constant the causality of the FMI 1.0 variable must be output and the variability must be constant.
 
 Connectors of kind `local` are used to define variables of the model element.
 Such a variable is not intended to be used for connections.
@@ -155,7 +155,7 @@ The following XML child elements are specified for the Connector element:
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *CAN* be present to specify the type of the Connector.
+Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements can be present to specify the type of the Connector.
 See <<ssc_types>> for details.
 |Dimension |One or more of these optional elements specify the connector array dimensions, making the connector an array connector.
 See <<ssc_dimensions>> for details.
@@ -238,7 +238,7 @@ NOTE: Sometimes such a counter clockwise orientation is also called a left rotat
 
 The optional attribute iconSource defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as defined in the relevant FMI standards).
-It is *RECOMMENDED* that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.
+It is recommended that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.
 
 The optional attribute iconRotation defines the rotation (in degrees) of the icon.
 The optional attribute iconFixedAspectRatio defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) and iconRotation with fixed aspect ratio.
@@ -256,7 +256,7 @@ NOTE: If no explicit icon is given, the icon used by the tool to represent the s
 |rotation |Optional attribute defines an additional rotation in degrees that is to be applied after any flipping, where positive numbers indicate left rotation (x→y).
 |iconSource |Optional attribute defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as specified in the relevant FMI standards).
-It is *RECOMMENDED* that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.
+It is recommended that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.
 |iconRotation |Optional attribute defines the rotation (in degrees) of the icon, where positive numbers indicate left rotation (x→y).
 |iconFlip |Optional attribute defines whether any flipping indicated by (x1,y1), (x2,y2) shall be applied to the icon graphics, too, or not.
 |iconFixedAspectRatio |Optional attribute defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) with a fixed aspect ratio, or without keeping the aspect ratio fixed.
@@ -390,7 +390,7 @@ Otherwise that parameter value is ignored.
 When a parameter mapping is specified as part of the binding, then only the mapped parameter values are applied, using their mapped-to names.
 Non-mapped parameter values are not applied in this case.
 
-For FMU components parameter values are applied to FMU variables based on the variables’ names in the FMU, i.e. it is *not required* (but allowed) that those variables are referenced in connectors in the system description.
+For FMU components parameter values are applied to FMU variables based on the variables’ names in the FMU, i.e. it is not required (but allowed) that those variables are referenced in connectors in the system description.
 
 For systems parameter values are applied using the hierarchical names of parameters or other variables in the system.
 
@@ -408,7 +408,7 @@ Therefore a parameter binding on element C shall reference the parameter P2 usin
 ====
 
 Note that the hierarchical names of parameters or other variables do not have to be unique:
-If two or more variables end up with the same hierarchical name (due to so-called punning), then any parameter values being applied to that name *MUST* be applied to all of them.
+If two or more variables end up with the same hierarchical name (due to so-called punning), then any parameter values being applied to that name must be applied to all of them.
 If this is not wanted, then it is up to the generating implementation to ensure that no punning occurs, through proper choice of system and element names.
 
 NOTE: For example, for a system A containing a system B with component C and variable D, and system A also containing a component called B.C and variable D, both variables will have the hierarchical name A.B.C.D.
@@ -430,7 +430,7 @@ This means that variables eligible for parameterization are those with:
 * variability != "constant" and initial = "exact" or "approx" for FMI 2.0/3.0
 
 All kinds of system connectors can be parameterized.
-In case the system level connectors are connected to FMU components, the parameterization *MUST* be compatible with the variable in the connected FMU.
+In case the system level connectors are connected to FMU components, the parameterization must be compatible with the variable in the connected FMU.
 
 Parameter bindings that apply to a component that references another SSD/SSP are handled as if the top-level system of the SSD/SSP was present in the enclosing system instead of the component with one special case:
 Any parameter bindings in the component are treated as if they were present in the top-level system of the SSP/SSD after all parameter bindings of the system.
@@ -445,7 +445,7 @@ No further types are currently defined, but can of course be added at a later da
 Optional attribute indicating the source of the parameters as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
-If the source attribute is missing, the parameter set *MUST* be provided inline as contents of a ParameterValues element, which *MUST NOT* be present otherwise.
+If the source attribute is missing, the parameter set must be provided inline as contents of a ParameterValues element, which must not be present otherwise.
 |sourceBase a|
 Defines the base the source URI is resolved against:
 
@@ -464,7 +464,7 @@ The following XML child elements are specified for the ParameterBinding element:
 [width="100%",cols="23%,77%",options="header",]
 |===
 |Element |Description
-|ParameterValues |This optional element can be used to provide parameter values inline to the parameter binding, in which case the source attribute of the ParameterBinding element *MUST* be empty.
+|ParameterValues |This optional element can be used to provide parameter values inline to the parameter binding, in which case the source attribute of the ParameterBinding element must be empty.
 |ParameterMapping |This optional element provides an optional parameter mapping, which specifies how the parameter names and values provided in the parameter source are to be mapped to the parameters of the component or system in question.
 If no mapping is supplied, the parameter names of the parameter source are used as is for name matching against the names of parameters in the component or system and the values of the parameter source are not transformed further before being applied.
 See below for details.
@@ -474,8 +474,8 @@ See below for details.
 
 image:images/image33.png[image,width=369,height=65]
 
-When this element is present, its contents *MUST* be an ssv:ParameterSet element as specified by the SystemStructureParameterValues schema, if the type attribute of the enclosing ParameterBinding element is application/x-ssp-parameter-set, or any other valid XML content if the type attribute references another MIME type.
-In that case there *SHOULD* be a layered specification that defines how embedding the content works for that MIME type.
+When this element is present, its contents must be an ssv:ParameterSet element as specified by the SystemStructureParameterValues schema, if the type attribute of the enclosing ParameterBinding element is application/x-ssp-parameter-set, or any other valid XML content if the type attribute references another MIME type.
+In that case there should be a layered specification that defines how embedding the content works for that MIME type.
 
 ===== ParameterMapping
 
@@ -493,7 +493,7 @@ No further types are currently defined, but can of course be added at a later da
 Optional attribute indicating the source of the parameter mapping as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
-If the source attribute is missing, the parameter mapping *MUST* be provided inline as contents of the ParameterMapping element, which *MUST* be empty otherwise.
+If the source attribute is missing, the parameter mapping must be provided inline as contents of the ParameterMapping element, which must be empty otherwise.
 |sourceBase a|
 Defines the base the source URI is resolved against:
 
@@ -504,9 +504,9 @@ If the attribute is specified as `component` the URI is resolved against the (re
 The last option allows the specification of parameter mapping sources that reside inside a resource (for example an FMU) through relative URIs.
 |===
 
-The contents of the element *MUST* be empty if the source attribute is present.
-If the source attribute is not present, the contents *MUST* be an ssm:ParameterMapping element, if the type attribute of this element is `application/x-ssp-parameter-mapping`, or any other valid XML content if the type attribute references another MIME type.
-In that case there *SHOULD* be a layered specification that defines how embedding the content works for that MIME type.
+The contents of the element must be empty if the source attribute is present.
+If the source attribute is not present, the contents must be an ssm:ParameterMapping element, if the type attribute of this element is `application/x-ssp-parameter-mapping`, or any other valid XML content if the type attribute references another MIME type.
+In that case there should be a layered specification that defines how embedding the content works for that MIME type.
 
 === System
 
@@ -583,8 +583,8 @@ With suppressUnitConversion = true, the linear transformation is performed inste
 The following table specifies all allowed connections, depending on the owner of the connectors (connector of element or connector of the enclosing system) and the kind of the connectors being connected.
 Note that source and destination in the following table indicate the resulting data flow and are unrelated to the start and end designation of a connection, as described above.
 
-Implementations *MUST NOT* specify connections that are not of one of the allowed combinations in the following table.
-Implementations *MUST* ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout, parameter, or structuralParameter connector of an element, or a local, constant, calculatedParameter, or output connector of an enclosing system.
+Implementations must not specify connections that are not of one of the allowed combinations in the following table.
+Implementations must ensure that data flow is specified unambiguously, including ensuring that not multiple connections with inbound data flow enter into a connector signifying an input, inout, parameter, or structuralParameter connector of an element, or a local, constant, calculatedParameter, or output connector of an enclosing system.
 
 For connectors of kind unspecified it is ultimately implementation-defined whether and how connections are allowed, as the exact semantics depend on the underlying modeling language.
 For the purposes of the following table, connectors of kind unspecified are treated as connectors of whatever kind is needed to make the connection allowed, i.e. they serve a wild-card role.
@@ -660,7 +660,7 @@ The following XML child elements are specified for the Connection element:
 |===
 |Element |Description
 |LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation |Specifies an optional transformation for the connection.
-If any, exactly one of these elements *MUST* be present to specify the type of the transformation.
+If any, exactly one of these elements must be present to specify the type of the transformation.
 See <<Transformation Choice>> for details.
 |ConnectionGeometry |This optional element defines the geometry information of the connection.
 |===
@@ -719,8 +719,8 @@ No further types are currently defined, but can of course be added at a later da
 This attribute indicates the source of the signal dictionary as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
 
-If the source attribute is missing, the signal dictionary *MUST* be provided inline as contents of the SignalDictionary element, which *MUST* be empty otherwise.
-For the default type `application/x-ssp-signal-dictionary` such inline content *MUST* be a SignalDictionary from the SystemStructureSignalDictionary namespace.
+If the source attribute is missing, the signal dictionary must be provided inline as contents of the SignalDictionary element, which must be empty otherwise.
+For the default type `application/x-ssp-signal-dictionary` such inline content must be a SignalDictionary from the SystemStructureSignalDictionary namespace.
 See <<SSB>> for details.
 |===
 
@@ -729,7 +729,7 @@ See <<SSB>> for details.
 image:images/image42.png[image,width=293,height=257]
 
 This element defines the extent of the system canvas. (x1,y1) and (x2,y2) define the lower-left and upper-right corner, respectively.
-Different from ElementGeometry, where x1 > x2 and y1 > y2 indicate flipping, x1 < x2 and y1 < y2 *MUST* hold here.
+Different from ElementGeometry, where x1 > x2 and y1 > y2 indicate flipping, x1 < x2 and y1 < y2 must hold here.
 
 If undefined, the system canvas extent defaults to the bounding box of all ElementGeometry elements of the child elements of the system.
 
@@ -836,33 +836,33 @@ NOTE: Example: `type="text/x-modelica; path=Modelica.Mechanics.Rotational.Interf
 |source a|
 Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
-Therefore for components that are located alongside the SSD, relative URIs without scheme and authority *CAN* and *SHOULD* be used to specify the component sources.
-For components that are packaged inside an SSP that contains this SSD, this is *REQUIRED* (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).
+Therefore for components that are located alongside the SSD, relative URIs without scheme and authority can and should be used to specify the component sources.
+For components that are packaged inside an SSP that contains this SSD, this is required (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).
 
 NOTE: For example for an FMU called MyDemoFMU.fmu, that is located in the resources directory of an SSP, the correct URI would be resources/MyDemoFMU.fmu.
 
 When referencing another SSP, by default the default SSD of the SSP (i.e. `SystemStructure.ssd`) is referenced.
-When a non-default SSD should be selected, then the name of the non-default SSD *MUST* be given through a fragment identifier, i.e. the URI `resources/SubSSP.ssp#VariantB.ssd` would reference the `VariantB.ssd` of `SubSSP.ssp` located in the resources directory relative to this SSD.
+When a non-default SSD should be selected, then the name of the non-default SSD must be given through a fragment identifier, i.e. the URI `resources/SubSSP.ssp#VariantB.ssd` would reference the `VariantB.ssd` of `SubSSP.ssp` located in the resources directory relative to this SSD.
 
-When the URI is a same-document URI with a fragment identifier, for example `#other-system`, then the fragment identifier *MUST* identify a system element in this SSD document with an id attribute identical to the fragment identifier.
+When the URI is a same-document URI with a fragment identifier, for example `#other-system`, then the fragment identifier must identify a system element in this SSD document with an id attribute identical to the fragment identifier.
 This mechanism can be used to instantiate an embedded system definition multiple times through reference to its definition element.
 
-Note that implementations are only *REQUIRED* to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go up a level via `..`) are *not required* to be supported by implementations, and are in fact often not supported for security or other reasons.
-Implementations are also *not required* to support any absolute URIs and any specific URI schemes, but are of course allowed to support any and all kinds of URIs where this is considered useful.
+Note that implementations are only required to support relative URIs as specified above, and that especially relative URIs that move beyond the baseURI (i.e. go up a level via `..`) are not required to be supported by implementations, and are in fact often not supported for security or other reasons.
+Implementations are also not required to support any absolute URIs and any specific URI schemes, but are of course allowed to support any and all kinds of URIs where this is considered useful.
 
 If the source attribute is missing, this indicates that there is no provided source for the component, indicating a simulation architecture design without complete executable implementation.
-Implementations *CAN* take any specified type attribute into account when handling such components.
-In any other regard implementations *CAN* treat such components as equivalent to an empty system with the same connectors and other properties as specified for the component.
+Implementations can take any specified type attribute into account when handling such components.
+In any other regard implementations can treat such components as equivalent to an empty system with the same connectors and other properties as specified for the component.
 
 Note that not specifying a source attribute is not the same as specifying a source attribute with an emtpy string value, as that is considered a valid relative URI.
-Implementations *MUST NOT* specify an empty relative URI to indicate a missing implementation.
+Implementations must not specify an empty relative URI to indicate a missing implementation.
 
 |implementation |When the referenced component is an FMU that contains multiple implementations, this optional attribute can be used to determine which FMU implementation should be employed.
 
 NOTE: For example Co-Simulation and Model Exchange.
 
 If the attribute is missing or uses the default value any, the importing tool is free to choose what kind of FMU implementation to use.
-If the value is CoSimulation, ModelExchange, or ScheduledExecution the corresponding FMU implementation *MUST* be used.
+If the value is CoSimulation, ModelExchange, or ScheduledExecution the corresponding FMU implementation must be used.
 It is an error if the specified type of FMU implementation is not present in the FMU.
 |===
 
@@ -870,7 +870,7 @@ It is an error if the specified type of FMU implementation is not present in the
 
 image:images/SystemStructureDescription_SignalDictionaryReference.png[image,width=555,height=733]
 
-A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which *MUST* reference signal dictionary entries.
+A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which must reference signal dictionary entries.
 
 [width="100%",cols="28%,72%",options="header",]
 |===

@@ -9,7 +9,7 @@ The SSP standard allows the set of data and meta-data stored and transported via
 All XML-based file formats defined in the SSP standard allow optional ssc:Annotation elements to be inserted in all XML elements that represent entities of the underlying data model.
 This is achieved through the ssc:TAnnotations type defined in <<Common XML Child Elements>>.
 Each ssc:Annotation element contains a required type attribute, which contains the namespace for that annotation, as defined in <<Extension Namespaces>>.
-The content of the ssc:Annotation element *CAN* be arbitrary XML data, and *CAN* make use of XML namespaces and XML schemas for combined validation where appropriate.
+The content of the ssc:Annotation element can be arbitrary XML data, and can make use of XML namespaces and XML schemas for combined validation where appropriate.
 
 ==== Extra Files Mechanism
 

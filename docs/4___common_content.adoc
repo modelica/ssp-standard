@@ -26,20 +26,20 @@ image:images/image2.png[image,width=324,height=35]
 |===
 |Element |Description
 |Annotations |This optional element can be used to give additional information for any model entity.
-When it is present, it *MUST* contain 1 or more Annotation elements as specified below.
+When it is present, it must contain 1 or more Annotation elements as specified below.
 |===
 
 Each annotation is encapsulated in an Annotation element, with a required type attribute specifying the type of the annotation, and arbitrary XML content from arbitrary namespaces.
 
 image:images/image3.png[image,width=310,height=137]
 
-In order to ensure uniqueness the annotation type *SHOULD* be provided in reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the annotation.
+In order to ensure uniqueness the annotation type should be provided in reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the annotation.
 
 NOTE: Cf. Java package names or Apple UTIs.
 
-For vendor-specific annotations this *SHOULD* be a domain controlled by the tool vendor.
-For MAP-SSP-defined annotations, this *MUST* be a domain under the org.modelica or org.ssp-standard prefixes.
-Annotations that are not defined by MAP SSP *MUST NOT* use these two prefixes,
+For vendor-specific annotations this should be a domain controlled by the tool vendor.
+For MAP-SSP-defined annotations, this must be a domain under the org.modelica or org.ssp-standard prefixes.
+Annotations that are not defined by MAP SSP must not use these two prefixes,
 
 This mechanism can be used both for tool-specific annotations, as well as for layered standards (see <<Versioning and Layered Standards>>) and other agreed-upon extensions, and thus provides a generic extension mechanism.
 
@@ -72,7 +72,7 @@ When processing information from multiple files, either from the same or separat
 
 image:images/image5.png[image,width=397,height=47]
 
-This optional element *MUST* contain definitions for all enumerations referenced in a file.
+This optional element must contain definitions for all enumerations referenced in a file.
 
 NOTE: As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities.
 Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit.
@@ -84,7 +84,7 @@ Each enumeration is defined through an Enumeration XML element:
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
-|name |This required attribute provides a name, which *MUST* be unique within the set of enumerations in a given file.
+|name |This required attribute provides a name, which must be unique within the set of enumerations in a given file.
 |===
 
 The following XML child elements are specified for the Enumeration element:
@@ -112,7 +112,7 @@ For each item in the enumeration there is one Item XML element with the followin
 
 image:images/image8.png[image,width=315,height=47]
 
-This optional element *MUST* contain definitions for all units referenced in a file.
+This optional element must contain definitions for all units referenced in a file.
 
 NOTE: As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities.
 Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit.
@@ -124,7 +124,7 @@ Each unit is defined through a Unit XML element:
 [width="100%",cols="28%,72%",options="header",]
 |===
 |Attribute |Description
-|name |This required attribute provides a name, which *MUST* be unique within the set of units in a given file.
+|name |This required attribute provides a name, which must be unique within the set of units in a given file.
 |===
 
 The following XML child elements are specified for the Unit element:
@@ -177,7 +177,7 @@ NOTE: Note that in the case of connectors the use of a type element itself is op
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the element.
+Boolean / String / Enumeration / Binary |Exactly one of these elements must be present to specify the type of the element.
 See below for details.
 |===
 
@@ -191,7 +191,7 @@ This type specifies that the connector in question represents an IEEE754 double 
 |===
 |Attribute |Description
 |unit |This optional attribute gives the name of a unit.
-The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file.
+The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.
 
 If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
@@ -212,7 +212,7 @@ This type specifies that the connector in question represents an IEEE754 double 
 |===
 |Attribute |Description
 |unit |This optional attribute gives the name of a unit.
-The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file.
+The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.
 
 If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
@@ -233,7 +233,7 @@ This type specifies that the connector in question represents an IEEE754 single 
 |===
 |Attribute |Description
 |unit |This optional attribute gives the name of a unit.
-The name *MUST* match the name of a Unit entry in the Units XML element of the top-level element of the file.
+The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.
 
 If the attribute is not supplied, the unit is determined through default mechanisms:
 For FMU components, the unit of the underlying variable would be used, or no unit, if no unit is specified.
@@ -321,7 +321,7 @@ The underlying type of the connector is the same as for Integer.
 |===
 |Attribute |Description
 |name |This required attribute gives the name of an enumeration which references into the defined enumerations of a document.
-The name *MUST* match the name of an Enumeration entry in the Enumerations XML element of the top-level element of the file.
+The name must match the name of an Enumeration entry in the Enumerations XML element of the top-level element of the file.
 |===
 
 ===== Binary
@@ -335,10 +335,10 @@ This type specifies that the connector in question represents a length-terminate
 |Attribute |Description
 |mime-type a|
 This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific application/octet-stream type.
-This information *CAN* be used by the implementation to detect mismatches between connected binary connectors, or provide automatic means of conversion between different formats.
-It should be noted that the implementation is *not required* to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors are connected.
+This information can be used by the implementation to detect mismatches between connected binary connectors, or provide automatic means of conversion between different formats.
+It should be noted that the implementation is not required to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors are connected.
 
-The attribute value *MUST* be a valid MIME type as specified in RFC 2045; it *CAN* include additional arguments, etc., as specified in RFC 2045.
+The attribute value must be a valid MIME type as specified in RFC 2045; it can include additional arguments, etc., as specified in RFC 2045.
 |===
 
 [#ssc_transformations]
@@ -381,8 +381,8 @@ image:images/image20.png[image,width=579,height=155]
 
 This element provides for a transformation of Boolean values based on a mapping table and is valid for connectors of Boolean type.
 Each mapping table entry is provided by a MapEntry element.
-Mapping entries *MUST* be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value *MUST* be present.
-The mapping does not have to be complete, i.e. partial mappings *CAN* be specified.
+Mapping entries must be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value must be present.
+The mapping does not have to be complete, i.e. partial mappings can be specified.
 In that case values not mapped by a mapping entry are kept unchanged.
 
 [width="100%",cols="28%,72%",options="header",]
@@ -398,16 +398,16 @@ image:images/image21.png[image,width=546,height=155]
 
 This element provides for a transformation of integer values based on a mapping table and is valid for connectors of all the integer types and Enumeration type.
 Each mapping table entry is provided by a MapEntry element.
-Mapping entries *MUST* be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value *MUST* be present.
-The mapping does not have to be complete, i.e. partial mappings *CAN* be specified.
+Mapping entries must be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value must be present.
+The mapping does not have to be complete, i.e. partial mappings can be specified.
 In that case values not mapped by a mapping entry are kept unchanged.
 
-When mapping to an Enumeration type, the target value *MUST* be a valid enumeration value for that type.
-When mapping from an Enumeration type, the source value *MUST* be a valid enumeration value for that type.
+When mapping to an Enumeration type, the target value must be a valid enumeration value for that type.
+When mapping from an Enumeration type, the source value must be a valid enumeration value for that type.
 This transformation can be applied between connectors of different Enumeration types, as long as all resulting target values are valid in the target Enumeration type.
 
-The target values provided in transformation entries *MUST* be limited to the value space of the target connector.
-The source values provided in transformation entries *CAN* exceed the value space of the source connector.
+The target values provided in transformation entries must be limited to the value space of the target connector.
+The source values provided in transformation entries can exceed the value space of the source connector.
 Such entries are ignored in the mapping process.
 
 [width="100%",cols="28%,72%",options="header",]
@@ -423,12 +423,12 @@ image:images/image22.png[image,width=588,height=155]
 
 This element provides for a transformation of enumeration values based on a mapping table of their enumeration item names and is valid for connectors of Enumeration type.
 Each mapping table entry is provided by a MapEntry element.
-Mapping entries *MUST* be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value *MUST* be present.
-The mapping does not have to be complete, i.e. partial mappings *CAN* be specified.
+Mapping entries must be unambiguous, i.e. for a given source value at a maximum one entry specifying that source value must be present.
+The mapping does not have to be complete, i.e. partial mappings can be specified.
 In that case values not mapped by a mapping entry are kept unchanged.
 
-When mapping to an Enumeration type, the target value *MUST* be a valid enumeration value for that type.
-When mapping from an Enumeration type, the source value *MUST* be a valid enumeration value for that type.
+When mapping to an Enumeration type, the target value must be a valid enumeration value for that type.
+When mapping from an Enumeration type, the source value must be a valid enumeration value for that type.
 This transformation can be applied between connectors of different Enumeration types, as long as all resulting target values are valid in the target Enumeration type.
 
 [width="100%",cols="28%,72%",options="header",]
@@ -448,7 +448,7 @@ The Dimension element is used to specify the dimensions of array connectors, sig
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element |Description
-|Dimension |One or more instances of this element *CAN* be present to specify the dimensions of the containing model element.
+|Dimension |One or more instances of this element can be present to specify the dimensions of the containing model element.
 If no instances are present, the containing model element is scalar.
 See below for details.
 |===
@@ -461,11 +461,11 @@ This element specifies one dimension of a potentially multi-dimensional array co
 If no dimension elements are present in a modeling element, it is a scalar modeling element.
 The number of dimension elements in a modeling element provides the dimensionality of the array.
 
-For connector elements, either the size or the sizeConnector attributes *CAN* be present on the element, indicating a fixed size, or a size that depends on the structural parameter or constant referenced by the sizeConnector attribute.
+For connector elements, either the size or the sizeConnector attributes can be present on the element, indicating a fixed size, or a size that depends on the structural parameter or constant referenced by the sizeConnector attribute.
 If none of the attributes are present, then the size of the dimension is unspecified at the SSD level.
 It is considered an error if both attributes are present.
 
-For signal dictionary and parameter value elements, only the size attribute can be used and therefore *MUST* be present on the element, indicating a fixed size.
+For signal dictionary and parameter value elements, only the size attribute can be used and therefore must be present on the element, indicating a fixed size.
 For those elements, it is considered an error if the sizeConnector attribute is present.
 
 The following XML attributes are specified for the Dimension element:
@@ -492,7 +492,7 @@ Multiple (or no) MetaData elements may be present in a given model element.
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element   |Description
-|MetaData  |One or more instances of this element *CAN* be present to specify meta data related to the containing model element.
+|MetaData  |One or more instances of this element can be present to specify meta data related to the containing model element.
 See below for details.
 |===
 
@@ -507,10 +507,10 @@ The MetaData element is structured by the following subordinated elements.
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element  |Description
-|Content  |An instance of this element *CAN* be present to contain inlined content of the model element meta data.
-If it is present, then the attribute `source` of the MetaData element *MUST NOT* be present.
+|Content  |An instance of this element can be present to contain inlined content of the model element meta data.
+If it is present, then the attribute `source` of the MetaData element must not be present.
 See below for details.
-|Signature|One or more instances of this element *CAN* be present to specify digital signature information on the meta data referenced by the enclosing MetaData element.
+|Signature|One or more instances of this element can be present to specify digital signature information on the meta data referenced by the enclosing MetaData element.
 It is left unspecified what types of signatures are used and/or available for now.
 See below for details.
 |===
@@ -530,7 +530,7 @@ If no specific MIME type can be indicated, then the type `application/octet-stre
 Optional attribute indicating the source of the meta data as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
-If the source attribute is missing, the meta data *MUST* be provided inline as contents of a Content element, which *MUST NOT* be present otherwise.
+If the source attribute is missing, the meta data must be provided inline as contents of a Content element, which must not be present otherwise.
 |sourceBase a|
 Defines the base the source URI is resolved against:
 
@@ -548,8 +548,8 @@ image:images/SystemStructureCommon_Content.png[image,width=372,height=191]
 
 This element specifies the inlined content of the model element meta data.
 
-When this element is present, its contents *MUST* be an `srmd:SimulationResourceMetaData` element as specified by the SRMD schema of the SSP Traceability Specification, if the type attribute of the enclosing MetaData element is `application/x-srmd-meta-data`, or any other valid XML content if the type attribute references another MIME type.
-In that case there *SHOULD* be a layered specification that defines how embedding the content works for that MIME type.
+When this element is present, its contents must be an `srmd:SimulationResourceMetaData` element as specified by the SRMD schema of the SSP Traceability Specification, if the type attribute of the enclosing MetaData element is `application/x-srmd-meta-data`, or any other valid XML content if the type attribute references another MIME type.
+In that case there should be a layered specification that defines how embedding the content works for that MIME type.
 
 [#ssc_signature]
 ==== Signature Sequence
@@ -562,7 +562,7 @@ Multiple (or no) Signature elements may be present in a given model element.
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element   |Description
-|Signature |One or more instances of this element *CAN* be present to specify signatures related to the containing model element.
+|Signature |One or more instances of this element can be present to specify signatures related to the containing model element.
 See below for details.
 |===
 
@@ -579,8 +579,8 @@ The Signature element is structured by the following subordinated elements.
 [width="100%",cols="33%,67%",options="header",]
 |===
 |Element  |Description
-|Content  |An instance of this element *CAN* be present to contain inlined content of the signature.
-If it is present, then the attribute `source` of the Signature element *MUST NOT* be present.
+|Content  |An instance of this element can be present to contain inlined content of the signature.
+If it is present, then the attribute `source` of the Signature element must not be present.
 See below for details.
 |===
 
@@ -600,7 +600,7 @@ If no specific MIME type can be indicated, then the type `application/octet-stre
 Optional attribute indicating the source of the signature as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
-If the source attribute is missing, the signature *MUST* be provided inline as contents of a Content element, which *MUST NOT* be present otherwise.
+If the source attribute is missing, the signature must be provided inline as contents of a Content element, which must not be present otherwise.
 |sourceBase a|
 Defines the base the source URI is resolved against:
 
