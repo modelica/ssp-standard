@@ -314,7 +314,7 @@ This attribute is optional; if it is not specified, then the list of valid enume
 
 If the attribute is specified, implementations *MAY* use that information for user interface purposes, and/or for additional consistency checking.
 
-{empty}[ _Note: the level of consistency checking is left optional by design, since mandating consistency checking across files requires unified types across files coming potentially from different sources, which is not always realistically possible._ ]
+NOTE: Note: the level of consistency checking is left optional by design, since mandating consistency checking across files requires unified types across files coming potentially from different sources, which is not always realistically possible.
 |===
 
 The value of the parameter can alternatively be specified using one or more Value child elements:
