@@ -25,8 +25,8 @@ The originator of a specification for additional data specifies a domain name un
 The namespace is used in reverse domain notation for the type attributes in the annotation mechanism and as part of the file entry prefix under `extra/` in the extra files mechanism.
 All namespaces under both the `org.modelica` and `org.ssp-standard` domains are reserved for use in future layered standards (see below).
 
-{empty}[ _For example, extensions defined by the Modelica Association might make use of the `org.modelica.ssp` namespace._
-_This could lead to annotations with a type attribute of `org.modelica.ssp.something`, and/or extra files under the `extra/org.modelica.ssp.something` sub-directory._ ]
+NOTE: For example, extensions defined by the Modelica Association might make use of the `org.modelica.ssp` namespace.
+This could lead to annotations with a type attribute of `org.modelica.ssp.something`, and/or extra files under the `extra/org.modelica.ssp.something` sub-directory.
 
 ==== MIME-type based format dispatch
 
@@ -39,7 +39,9 @@ In this fashion extension of SSP to support pre-existing, new or domain-specific
 
 === Versioning and Layered Standards
 
-The SSP standard uses semantic version numbers, as defined in [<<SV200>>], where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers [ _e.g. 1.2.3 for major version 1, minor version 2 and patch version 3_ ].
+The SSP standard uses semantic version numbers, as defined in [<<SV200>>], where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers.
+
+NOTE: Example: `1.2.3` for major version `1`, minor version `2` and patch version `3`.
 
 * Major versions will introduce changes that are neither backward nor forward-compatible, including changes to the XML schemas to include new non-ignorable content.
 * Minor versions will only contain clarifications and include new layered standards, which may add new ignorable XML content, as defined below, into the core standard document, indicating that the standard needs to be supported by all conforming implementations.
@@ -62,7 +64,9 @@ Layered standards can fall into three categories:
 === Content addressing
 
 All references between files using file formats defined in the SSP standard are expressed through URIs.
-Usually those references make use of relative URIs, where the base URI that those relative URIs are resolved against are specified in the SSP standard [ _e.g. for SSDs, relative URIs to other content are usually resolved against the URI of the SSD, but can optionally also be resolved against the URI of referenced components, e.g. in order to reference a file inside a referenced FMU._ ].
+Usually those references make use of relative URIs, where the base URI that those relative URIs are resolved against are specified in the SSP standard.
+
+NOTE: E.g. for SSDs, relative URIs to other content are usually resolved against the URI of the SSD, but can optionally also be resolved against the URI of referenced components, e.g. in order to reference a file inside a referenced FMU.
 
 However the SSP syntax is not restricted to relative URIs, and allows both absolute URIs, and URIs of any schema to be used to identify and/or locate referenced content.
 Besides basic support for file-schema URIs, the set of schemas and transport mechanisms supported are up to the implementation.

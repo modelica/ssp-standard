@@ -33,8 +33,10 @@ Each annotation is encapsulated in an Annotation element, with a required type a
 
 image:images/image3.png[image,width=310,height=137]
 
-In order to ensure uniqueness the annotation type *SHOULD* be provided in reverse domain name notation [ _cf.
-Java package names or Apple UTIs_ ] of a domain that is controlled by the entity defining the semantics and content of the annotation.
+In order to ensure uniqueness the annotation type *SHOULD* be provided in reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the annotation.
+
+NOTE: Cf. Java package names or Apple UTIs.
+
 For vendor-specific annotations this *SHOULD* be a domain controlled by the tool vendor.
 For MAP-SSP-defined annotations, this *MUST* be a domain under the org.modelica or org.ssp-standard prefixes.
 Annotations that are not defined by MAP SSP *MUST NOT* use these two prefixes,
@@ -72,8 +74,8 @@ image:images/image5.png[image,width=397,height=47]
 
 This optional element *MUST* contain definitions for all enumerations referenced in a file.
 
-{empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities._
-_Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
+NOTE: As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities.
+Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit.
 
 image:images/image6.png[image,width=441,height=273]
 
@@ -112,8 +114,8 @@ image:images/image8.png[image,width=315,height=47]
 
 This optional element *MUST* contain definitions for all units referenced in a file.
 
-{empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities._
-_Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
+NOTE: As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities.
+Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit.
 
 image:images/image9.png[image,width=380,height=273]
 
@@ -166,7 +168,8 @@ They are used inside elements to select one of multiple child elements, or provi
 image:images/image11.png[image,width=312,height=203]
 
 The following XML child elements denote the data type of a connector or dictionary entry.
-[ _Note that in the case of connectors the use of a type element itself is optional, in the case of dictionary entries it is required_ ].
+
+NOTE: Note that in the case of connectors the use of a type element itself is optional, in the case of dictionary entries it is required.
 
 [width="100%",cols="33%,67%",options="header",]
 |===
@@ -476,7 +479,7 @@ This attribute gives the size of this dimension of the array as a fixed, unchang
 This attribute references another connector by name, that gives the size of this dimension of the array connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.
 |===
 
-{empty}[ _SSP uses `size` where FMI uses `start` because SSP specifies structural dimension extents directly._ ]
+NOTE: SSP uses `size` where FMI uses `start` because SSP specifies structural dimension extents directly.
 
 [#ssc_metadata]
 ==== MetaData Sequence

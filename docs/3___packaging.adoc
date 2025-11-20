@@ -14,41 +14,48 @@ If use of a larger character set is needed, it is *RECOMMENDED* to use the UTF-8
 
 Use of other character sets and encodings is *NOT RECOMMENDED* and is likely to yield portability problems.
 
-{empty}[ _It should be noted that some common implementations of ZIP archivers erroneously encode characters beyond the Unicode Basic Multilingual Plane (BMP), i.e. code point U+10000 and above, using UTF-8 encoded surrogate pairs, yielding the CESU-8 encoding, instead of correctly encoding those codepoints directly using UTF-8._
-_It should also be noted that Unicode normalization issues that affect cross filesystem/OS compatibility might need to be addressed, since those issues are not addressed in the ZIP specification._ ]
+NOTE: It should be noted that some common implementations of ZIP archivers erroneously encode characters beyond the Unicode Basic Multilingual Plane (BMP), i.e. code point U+10000 and above, using UTF-8 encoded surrogate pairs, yielding the CESU-8 encoding, instead of correctly encoding those codepoints directly using UTF-8.
+It should also be noted that Unicode normalization issues that affect cross filesystem/OS compatibility might need to be addressed, since those issues are not addressed in the ZIP specification.
 
 The ZIP archive *MUST* contain an entry named SystemStructure.ssd at root level, containing a valid System Structure Description, as specified in <<SSD>>.
 
-Optionally the ZIP archive *MAY* contain multiple SSD file entries at root level, each with a different file name [ _e.g. SystemStructure.ssd, VarA.ssd, VarB.ssd_ ].
+Optionally the ZIP archive *MAY* contain multiple SSD file entries at root level, each with a different file name.
+
+NOTE: E.g. `SystemStructure.ssd`, `VarA.ssd`, `VarB.ssd`.
+
 This allows the bundling of multiple variants of a system structure definition referencing a similar set of packaged resources as one SSP.
 There *MUST* still be one SSD file named SystemStructure.ssd at the root of the ZIP archive which is deemed to be the default variant.
 Tools not supporting variant-containing SSPs *MUST* deal with the given SSP by ignoring all contained SSD files except for the SystemStructure.ssd default file.
 
 If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such system structure definition *MUST* be different from any of the other root level system structure definitions.
 
-{empty}[ _Tools *MAY* want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement._ ]
+NOTE: Tools *MAY* want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement.
 
 Tools *SHOULD* use the name attribute of the root SystemStructureDescription element of the SSD files when presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 
 The ZIP archive *MAY* contain additional entries with the prefix `resources/` which can be used to bundle resources referenced from the System Structure Description file(s) through relative URIs as specified in the sections below.
 
-{empty}[ _Note: These additional entries may include additional files describing Parameter Values (`*.ssv`), Parameter Mappings (`*.ssm`) or Signal Dictionaries (`*.ssb`)._
-_The names of these files, like all other additional files, are arbitrary and are independent of variant handling or the names of the referencing SSD files themselves._
-_All stand-alone files are referenced by SSD files via (relative) URIs._ ]
+NOTE: Note: These additional entries may include additional files describing Parameter Values (`*.ssv`), Parameter Mappings (`*.ssm`) or Signal Dictionaries (`*.ssb`).
+The names of these files, like all other additional files, are arbitrary and are independent of variant handling or the names of the referencing SSD files themselves.
+All stand-alone files are referenced by SSD files via (relative) URIs.
 
 The ZIP archive *MAY* contain additional entries with the prefix `extra/` which can be used to store additional data and meta-data.
-In order to ensure uniqueness the extra files *SHOULD* be provided in sub-directories using a reverse domain name notation [ _cf. Java package names or Apple UTIs_ ] of a domain that is controlled by the entity defining the semantics and content of the additional entries.
+In order to ensure uniqueness the extra files *SHOULD* be provided in sub-directories using a reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the additional entries.
+
+NOTE: Cf. Java package names or Apple UTIs.
+
 The use of sub-directories beginning with `org.modelica` and `org.ssp-standard` is explicitly reserved for use by MAP SSP-defined layered standards (cf. <<Versioning and Layered Standards>>), i.e. other uses *MUST NOT* use sub-directory names beginning with these prefixes.
 
 It is explicitly allowed for tools and users other than the original creator of an SSP to modify/add/delete entries in the `extra/` prefix without affecting the validity of SSP in all other aspects.
 Specifically all validation or digital signature schemes used to protect SSP content *SHOULD* take the variability of extra file content into account.
-[ _For example by having separate checksums/signatures for SSP core content and extra content, or not having signatures at all for extra content._ ]
+
+NOTE: For example by having separate checksums/signatures for SSP core content and extra content, or not having signatures at all for extra content.
 
 The ZIP archive *MAY* contain additional entries with the prefix `documentation/` which can be used to store documentation on the package contents.
 If documentation is provided an entry with the name `documentation/index.html` *MUST* be provided which should be a useful entry point for the contained documentation.
 
 All other prefixes are currently reserved for future use.
 
-{empty}[ _Note: The ZIP specification specifies clearly that the directory separator for ZIP entries is the forward slash regardless of operating system._
-_Similarly the specification does not assign special meaning to directory parts named `.` or `..`, hence an entry named `./foo.txt` and an entry named `foo.txt` are distinct entries and specify separate files._
-_Implementations are well-advised to take common vulnerabilities around ZIP handling, like e.g. the Zip Slip Vulnerability into account when processing SSP archives from untrusted sources._ ]
+NOTE: Note: The ZIP specification specifies clearly that the directory separator for ZIP entries is the forward slash regardless of operating system.
+Similarly the specification does not assign special meaning to directory parts named `.` or `..`, hence an entry named `./foo.txt` and an entry named `foo.txt` are distinct entries and specify separate files.
+Implementations are well-advised to take common vulnerabilities around ZIP handling, like e.g. the Zip Slip Vulnerability into account when processing SSP archives from untrusted sources.

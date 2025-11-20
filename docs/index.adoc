@@ -1,18 +1,22 @@
 = System Structure and Parameterization
-:doctype: book
 :sectnums:
 :sectnumlevels: 5
 :toc: left
 :toc-title: Contents
 :toclevels: 5
+:idprefix:
+:idseparator: -
 :xrefstyle: short
 :docinfo: shared
-:stylesheet: ssp-spec.css
+:docinfodir: theme/docinfo
 :stem: latexmath
 :source-highlighter: highlightjs
+:highlightjs-theme: github
 :nofooter:
 :favicon: images/favicon.ico
 :icons: font
+:repo-url: https://github.com/modelica/ssp-standard
+:logo: SSP
 
 include::0___preamble.adoc[]
 

@@ -45,13 +45,13 @@ image:images/image24.png[image,width=449,height=248]
 
 This element contains information of a default simulation setup that is supplied with the system definition for informational purposes.
 
-{empty}[ _Note that in contrast to FMI 2.0/3.0 only start and stop time are specified here, since values like step size or tolerance depend on the specific solver or master algorithms employed and are hence not specified in this global element._
-_Additional solver or master algorithm specific information can be supplied through the annotation mechanism, or using a future layered standard._ ]
+NOTE: Note that in contrast to FMI 2.0/3.0 only start and stop time are specified here, since values like step size or tolerance depend on the specific solver or master algorithms employed and are hence not specified in this global element.
+Additional solver or master algorithm specific information can be supplied through the annotation mechanism, or using a future layered standard.
 
-{empty}[ _The handling of systems comprising components with differing units for the independent variable depends on the implementation._
-_It should be noted that since FMI 2.0 the unit of the independent variable for FMUs is clearly specified:_
-_It defaults to seconds, however other units can be specified by explicitly defining the independent variable._
-_This standard does not specify additional measures to deal with differing independent variable units, but leaves this to the implementation._ ]
+NOTE: The handling of systems comprising components with differing units for the independent variable depends on the implementation.
+It should be noted that since FMI 2.0 the unit of the independent variable for FMUs is clearly specified:
+It defaults to seconds, however other units can be specified by explicitly defining the independent variable.
+This standard does not specify additional measures to deal with differing independent variable units, but leaves this to the implementation.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
@@ -103,9 +103,10 @@ However, the name of a connector *MUST* match the name of a single variable.
 
 Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation.
 At least those connectors *MUST* be present which are referenced in connections inside the SSD.
-[ _Note that connectors do not have to be referenced in connections._
-_Unreferenced connectors will yield the behavior that is specified for the underlying component variables/ports, e.g. an unconnected FMU input variable will remain at its default value during the whole simulation._
-_The same is true for variables/ports that are not referenced through a connector at all._ ]
+
+NOTE: Note that connectors do not have to be referenced in connections.
+Unreferenced connectors will yield the behavior that is specified for the underlying component variables/ports, e.g. an unconnected FMU input variable will remain at its default value during the whole simulation.
+The same is true for variables/ports that are not referenced through a connector at all.
 
 image:images/image27.png[image,width=396,height=986]
 
@@ -190,7 +191,7 @@ Modelica connectors of more advanced types are currently mapped in the following
 * The media type is `text/x-modelica` and the `path` parameter of the media type designates the path of the Modelica connector.
 * Acausal Modelica connector types are mapped to connectors of kind unspecified.
 
-_[ Note that the current opaque mapping of more advanced types to Binary connectors is a temporary solution, and a more detailed mapping may be provided in future versions of the standard supporting more complex data types. ]_
+NOTE: Note that the current opaque mapping of more advanced types to Binary connectors is a temporary solution, and a more detailed mapping may be provided in future versions of the standard supporting more complex data types.
 
 ===== ConnectorGeometry
 
@@ -217,9 +218,12 @@ Any inside view is not overridden.
 |systemInnerY |Optional attribute giving a separate y coordinate of the connector for the inside view of a system.
 |===
 
-[ _Graphical example for a ConnectorGeometry:_
+[NOTE]
+====
+Graphical example for a ConnectorGeometry:
+
 image:images/ConnectorGeometryExample.png[image]
-]
+====
 
 ==== ElementGeometry
 
@@ -230,7 +234,7 @@ If x1>x2 this indicates horizontal flipping, y1>y2 indicates vertical flipping.
 
 The optional attribute rotation (in degrees) defines an additional rotation (applied after flipping), where positive numbers indicate a counter clockwise rotation.
 
-{empty}[_Sometimes such a counter clockwise orientation is also called a left rotation (x→y), with the coordinate system orientation: x → right, y → up)_]
+NOTE: Sometimes such a counter clockwise orientation is also called a left rotation (x→y), with the coordinate system orientation: x → right, y → up)
 
 The optional attribute iconSource defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as defined in the relevant FMI standards).
@@ -240,7 +244,7 @@ The optional attribute iconRotation defines the rotation (in degrees) of the ico
 The optional attribute iconFixedAspectRatio defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) and iconRotation with fixed aspect ratio.
 The optional attribute iconFlip defines whether any flipping indicated by (x1,y1), (x2,y2) shall be applied to the icon graphics, too.
 
-{empty}[_If no explicit icon is given, the icon used by the tool to represent the system should be rotated accordingly._]
+NOTE: If no explicit icon is given, the icon used by the tool to represent the system should be rotated accordingly.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
@@ -258,20 +262,25 @@ It is *RECOMMENDED* that implementations that support graphical presentation sup
 |iconFixedAspectRatio |Optional attribute defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) with a fixed aspect ratio, or without keeping the aspect ratio fixed.
 |===
 
-[ _Graphical example for an ElementGeometry:_
+[NOTE]
+====
+Graphical example for an ElementGeometry:
+
 image:images/ElementGeometryExample.png[image]
-]
+====
 
-[_The next examples show the effects of attributes of the ElementGeometry on the visual representation of a reference element:_
+[NOTE]
+====
+The next examples show the effects of attributes of the ElementGeometry on the visual representation of a reference element:
 
-_*Non-transformed reference* (icon fills rectangle, left 2 inputs, right 1 output)_
+*Non-transformed reference* (icon fills rectangle, left 2 inputs, right 1 output)
 
 image:images/IconExampleBase.png[image,width=245,height=86]
 
-*_Coordinate systems:_*
+*Coordinate systems:*
 
-_Red: ConnectorGeometry +
-Blue: ElementGeometry_
+Red: ConnectorGeometry +
+Blue: ElementGeometry
 
 __*Example 1: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**0** +
 __iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**IGNORED** (relevant only if element is flipped)__
@@ -362,8 +371,7 @@ __*Example 15: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ r
 **__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true, **__iconFlip__=**false**__
 
 image:images/IconExample15.png[image,width=245,height=147]
-
-]
+====
 
 ==== ParameterBindings
 
@@ -391,18 +399,21 @@ The hierarchical names of the parameters or other variables of a system are form
 * Any variables of the system exposed through connectors of the system have the name of the connector as their name.
 * For all elements of the system, the hierarchical names of the variables of those elements are formed by prepending the element name and a dot to the hierarchical names of the variables in that element.
 
-{empty}[ _For example for a system A containing a system B which contains an exposed parameter named SP1 and an element C with a parameter P2, the hierarchical names of the parameters in system A are B.SP1 and B.C.P2 respectively._
-_The hierarchical name of those parameters inside system B are SP1 and C.P2 respectively, and the hierarchical name of P2 inside element C is just P2._
+[NOTE]
+====
+For example for a system A containing a system B which contains an exposed parameter named SP1 and an element C with a parameter P2, the hierarchical names of the parameters in system A are B.SP1 and B.C.P2 respectively.
+The hierarchical name of those parameters inside system B are SP1 and C.P2 respectively, and the hierarchical name of P2 inside element C is just P2.
 
-_Therefore a parameter binding on element C shall reference the parameter P2 using its local name P2, not the hierarchical name C.P2, which would be valid for a parameter binding on system B._ ]
+Therefore a parameter binding on element C shall reference the parameter P2 using its local name P2, not the hierarchical name C.P2, which would be valid for a parameter binding on system B.
+====
 
 Note that the hierarchical names of parameters or other variables do not have to be unique:
 If two or more variables end up with the same hierarchical name (due to so-called punning), then any parameter values being applied to that name *MUST* be applied to all of them.
 If this is not wanted, then it is up to the generating implementation to ensure that no punning occurs, through proper choice of system and element names.
 
-{empty}[ _For example, for a system A containing a system B with component C and variable D, and system A also containing a component called B.C and variable D, both variables will have the hierarchical name A.B.C.D._
-_If this is not wanted, then proper care should be taken in naming component B.C and system B/component C in non-conflicting ways._
-_The standard allows such punning, because the ability to have a . in the name of systems or components allows for example the replacement of a monolithic component with a system of components, or vice-versa, while keeping parameter names identical._ ]
+NOTE: For example, for a system A containing a system B with component C and variable D, and system A also containing a component called B.C and variable D, both variables will have the hierarchical name A.B.C.D.
+If this is not wanted, then proper care should be taken in naming component B.C and system B/component C in non-conflicting ways.
+The standard allows such punning, because the ability to have a . in the name of systems or components allows for example the replacement of a monolithic component with a system of components, or vice-versa, while keeping parameter names identical.
 
 More than one ParameterBinding can be supplied.
 In this case all of the parameters found will be used to parametrize the component, with parameter values in ParameterBinding sources appearing at a succeeding position in the element order taking priority over prior sources at the same hierarchy level, should a parameter be included in more than one ParameterBinding source.
@@ -670,9 +681,12 @@ Note that x and y coordinates are in the coordinate system of the enclosing syst
 |pointsY |Required attribute giving a list of y coordinates of the intermediate waypoints.
 |===
 
-[ _Graphical example for a ConnectionGeometry:_
+[NOTE]
+====
+Graphical example for a ConnectionGeometry:
+
 image:images/ConnectionGeometryExample.png[image]
-]
+====
 
 ==== SignalDictionaries
 
@@ -724,11 +738,11 @@ When displaying the content of a sub-system together with the enclosing parent s
 When importing or exporting systems, the nominal unit of the coordinates is 1 mm for all axis.
 The nominal unit is intended to ensure similar visual sizing and appearances when combining systems from different implementations.
 
-{empty}[ _The visual appearance of a length of 1 should be (roughly) 1 mm._
-_Importing and exporting tools that support a graphical representation might use different coordinate systems.
-This common unit for coordinates is defined to allow a seamless integration of SSPs from different sources._
-_Without such a common unit, an SSP exported in one tool might appear huge or tiny in the other tool._
-_Hence, the exporting tool has to scale from its own coordinate system when exporting and the importing tool has to scale to its own coordinate system when importing an SSP._ ]
+NOTE: The visual appearance of a length of 1 should be (roughly) 1 mm.
+Importing and exporting tools that support a graphical representation might use different coordinate systems.
+This common unit for coordinates is defined to allow a seamless integration of SSPs from different sources.
+Without such a common unit, an SSP exported in one tool might appear huge or tiny in the other tool.
+Hence, the exporting tool has to scale from its own coordinate system when exporting and the importing tool has to scale to its own coordinate system when importing an SSP.
 
 [width="100%",cols="28%,72%",options="header",]
 |===
@@ -739,31 +753,40 @@ _Hence, the exporting tool has to scale from its own coordinate system when expo
 |y2 |Required attribute giving the y coordinate of the upper-right corner of the system canvas.
 |===
 
-[ _Graphical example for a SystemGeometry:_
+[NOTE]
+====
+Graphical example for a SystemGeometry:
+
 image:images/SystemGeometryExample.png[image]
-]
+====
 
-[ _Graphical example showing the interplay of SystemGeometry, ElementGeometry, ConnectorGeometry, and ConnectionGeometry:_
+[NOTE]
+====
+Graphical example showing the interplay of SystemGeometry, ElementGeometry, ConnectorGeometry, and ConnectionGeometry:
+
 image:images/GeometryInterplayExample.png[image]
-]
+====
 
-[ _Example how the given Geometries can be used to transform coordinates to show elements on different hierarchy levels in a single graphic:_
+[NOTE]
+====
+Example how the given Geometries can be used to transform coordinates to show elements on different hierarchy levels in a single graphic:
 
-_Subsystem A is an element with an ElementGeometry (x1_Ae, y1_Ae, x2_Ae, y2_Ae) and a SystemGeometry (x1_As, y1_As, x2_As, y2_As)._
+Subsystem A is an element with an ElementGeometry (x1_Ae, y1_Ae, x2_Ae, y2_Ae) and a SystemGeometry (x1_As, y1_As, x2_As, y2_As).
 
-_B is an element in subystem A with an ElementGeometry coordinates (x1_Be, y1_Be, x2_Be, y2_Be)._
+B is an element in subystem A with an ElementGeometry coordinates (x1_Be, y1_Be, x2_Be, y2_Be).
 
 image:images/GeometryInterplayCoordinates.png[image]
 
-_To plot the element B in the system where A is located, use the following coordinate transformation:_
+To plot the element B in the system where A is located, use the following coordinate transformation:
 
-_x1_Be -> (x1_Ae + (x1_Be - x1_As) * (x2_Ae - x1_Ae) / (x2_As - x1_As))_
+x1_Be -> (x1_Ae + (x1_Be - x1_As) * (x2_Ae - x1_Ae) / (x2_As - x1_As))
 
-_y1_Be -> (y1_Ae + (y1_Be - y1_As) * (y2_Ae - y1_Ae) / (y2_As - y1_As))_
+y1_Be -> (y1_Ae + (y1_Be - y1_As) * (y2_Ae - y1_Ae) / (y2_As - y1_As))
 
-_x2_Be -> (x1_Ae + (x2_Be - x1_As) * (x2_Ae - x1_Ae) / (x2_As - x1_As))_
+x2_Be -> (x1_Ae + (x2_Be - x1_As) * (x2_Ae - x1_Ae) / (x2_As - x1_As))
 
-_y2_Be -> (y1_Ae + (y2_Be - y1_As) * (y2_Ae - y1_Ae) / (y2_As - y1_As))_ ]
+y2_Be -> (y1_Ae + (y2_Be - y1_As) * (y2_Ae - y1_Ae) / (y2_As - y1_As))
+====
 
 ==== GraphicalElements
 
@@ -807,14 +830,16 @@ A component is an atomic element of a system (i.e. its internal structure is not
 Valid further types are `application/x-ssp-definition` for system structure description files, `application/x-ssp-package` for system structure package files, and `text/x-modelica` for Modelica models.
 No further types are currently defined.
 For type `text/x-modelica`, a media type parameter `path` specifies the full path of the Modelica class.
-{empty}[ _Example: `type="text/x-modelica; path=Modelica.Mechanics.Rotational.Interface.Flange_A"`._ ]
+
+NOTE: Example: `type="text/x-modelica; path=Modelica.Mechanics.Rotational.Interface.Flange_A"`.
+
 |source a|
 Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
 Therefore for components that are located alongside the SSD, relative URIs without scheme and authority *CAN* and *SHOULD* be used to specify the component sources.
 For components that are packaged inside an SSP that contains this SSD, this is *REQUIRED* (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).
 
-{empty}[ _For example for an FMU called MyDemoFMU.fmu, that is located in the resources directory of an SSP, the correct URI would be resources/MyDemoFMU.fmu._ ]
+NOTE: For example for an FMU called MyDemoFMU.fmu, that is located in the resources directory of an SSP, the correct URI would be resources/MyDemoFMU.fmu.
 
 When referencing another SSP, by default the default SSD of the SSP (i.e. `SystemStructure.ssd`) is referenced.
 When a non-default SSD should be selected, then the name of the non-default SSD *MUST* be given through a fragment identifier, i.e. the URI `resources/SubSSP.ssp#VariantB.ssd` would reference the `VariantB.ssd` of `SubSSP.ssp` located in the resources directory relative to this SSD.
@@ -832,7 +857,10 @@ In any other regard implementations *CAN* treat such components as equivalent to
 Note that not specifying a source attribute is not the same as specifying a source attribute with an emtpy string value, as that is considered a valid relative URI.
 Implementations *MUST NOT* specify an empty relative URI to indicate a missing implementation.
 
-|implementation |When the referenced component is an FMU that contains multiple implementations [ _for example Co-Simulation and Model Exchange_], this optional attribute can be used to determine which FMU implementation should be employed.
+|implementation |When the referenced component is an FMU that contains multiple implementations, this optional attribute can be used to determine which FMU implementation should be employed.
+
+NOTE: For example Co-Simulation and Model Exchange.
+
 If the attribute is missing or uses the default value any, the importing tool is free to choose what kind of FMU implementation to use.
 If the value is CoSimulation, ModelExchange, or ScheduledExecution the corresponding FMU implementation *MUST* be used.
 It is an error if the specified type of FMU implementation is not present in the FMU.

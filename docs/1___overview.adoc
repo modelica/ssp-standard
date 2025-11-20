@@ -16,16 +16,16 @@ While SSP is closely aligned to FMI it can also be used with components of other
 
 This section introduces the basic properties and guiding principles that underly the design of the SSP standard:
 
-_Tool independence_: The core intent of SSP is to enable the exchange of partial and complete simulation systems between tools.
+Tool independence:: The core intent of SSP is to enable the exchange of partial and complete simulation systems between tools.
 In consequence any tool-specific data is not stored in the standard schema and will be lost during transfer between implementations.
 However specific data can be stored in customized annotations for reuse in the same tool.
 Additional common data for use across tools can also be standardized as layered standards (cf. <<Annotation Mechanism>>).
 
-_Simplicity_: SSP is focused on the possibility to exchange complete or partial topologies and parameters between different tools as simply as possible, while retaining essential information.
+Simplicity:: SSP is focused on the possibility to exchange complete or partial topologies and parameters between different tools as simply as possible, while retaining essential information.
 This optionally also includes basic graphical information, to ensure basic recognizability, while eschewing the complexities of full and exact graphical model exchange.
 This approach also differentiates SSP from systems engineering standards like SysML: By focusing on simplicity and simulation-related features, SSP avoids the complexities that have plagued the tool-independent exchange of SysML models, enabling a wider adoption across the tool landscape.
 
-_Maximum Reuseability:_ SSP contributes to maximizing reusability of models and parameters across tools and use cases.
+Maximum Reuseability:: SSP contributes to maximizing reusability of models and parameters across tools and use cases.
 SSP can be used to specify required interfaces of a single component without the need to build a running model.
 Such an interface specification can be used as a template for the implementation of a model.
 In consequence compatibility between different implementations can be guaranteed, ensuring that these implementations will fit into the overall system structure.
