@@ -4,7 +4,7 @@ A signal dictionary is a collection of signals defined through its DictionaryEnt
 
 A signal dictionary can be provided either as a stand-alone XML file (an SSB file), which can be referenced from SSD files, or it can be embedded in an ssd:SignalDictionary element of the SSD directly (see <<SignalDictionaries>>).
 
-An SSB file must be a well-formed XML 1.0 [<<XML10>>] file that conforms to the SystemStructureSignalDictionary XML Schema that is distributed as part of this standard.
+An SSB file must be a well-formed XML 1.0 <<XML10>> file that conforms to the SystemStructureSignalDictionary XML Schema that is distributed as part of this standard.
 The file must use the UTF-8 encoding.
 All SSB-specific elements live in the `http://ssp-standard.org/SSP1/SystemStructureSignalDictionary` namespace, nicknamed `ssb`.
 
