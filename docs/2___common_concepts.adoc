@@ -41,7 +41,7 @@ In this fashion extension of SSP to support pre-existing, new or domain-specific
 
 The SSP standard uses semantic version numbers, as defined in <<SV200>>, where the standard version consists of a triple of version numbers, consisting of major version, minor version, and patch version numbers.
 
-NOTE: Example: `1.2.3` for major version `1`, minor version `2` and patch version `3`.
+NOTE: Example: `1.2.3` for major version 1, minor version 2 and patch version 3.
 
 * Major versions will introduce changes that are neither backward nor forward-compatible, including changes to the XML schemas to include new non-ignorable content.
 * Minor versions will only contain clarifications and include new layered standards, which may add new ignorable XML content, as defined below, into the core standard document, indicating that the standard needs to be supported by all conforming implementations.

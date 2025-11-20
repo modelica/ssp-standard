@@ -23,11 +23,9 @@ History / Road Map
 
 Please report issues that you find with this specification to map-ssp_projectlead@googlegroups.com.
 
-<<<
-
 *License of this document*
 
-Copyright © 2016 – 2025 Modelica Association Project “SSP”
+Copyright &copy; 2016-2025 Modelica Association Project "SSP"
 
 This document is provided “as is” without any warranty.
 It is licensed under the CC-BY-SA (Creative Commons Attribution-Sharealike 4.0 International) license, which is the license used by Wikipedia.
@@ -52,9 +50,7 @@ You may do so in any reasonable manner, but not in any way that suggests the lic
 *Share Alike* — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 ____
 
-The legal license text and disclaimer is available at:
-
-http://creativecommons.org/licenses/by-sa/4.0/legalcode
+The legal license text and disclaimer is available at http://creativecommons.org/licenses/by-sa/4.0/legalcode.
 
 *Note:*
 
@@ -69,14 +65,10 @@ Modelica Association shall not be held responsible for identifying such patent r
 If you have improvement suggestions, please send them to the SSP development group at map-ssp_projectlead@googlegroups.com.
 ____
 
-<<<
-
 *Abstract*
 
 This document defines the SSP standard as a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
 The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parameterization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
-
-<<<
 
 *Conventions used in this Document*
 
