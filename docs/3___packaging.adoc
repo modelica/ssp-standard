@@ -2,57 +2,57 @@
 
 System Structure Package (file extension .ssp) files are specified to allow the packaging of System Structure Description (`*.ssd`) files together with related resources, like referenced FMUs, parameter files, etc.
 
-System Structure Package files *MUST* be valid ZIP archives as specified in [<<ZIP635>>] with the following restrictions:
+System Structure Package files must be valid ZIP archives as specified in [<<ZIP635>>] with the following restrictions:
 
-* All file entries *MUST* use either compression method 0 (stored) or 8 (deflated).
-* Encryption *MUST NOT* be used.
-* Splitting of ZIP archives into multiple files *MUST NOT* be used.
-* The maximum value for the version needed to extract field (section 4.4.3 of the ZIP specification) *MUST NOT* be larger than version 2.0 for all entries in the archive.
+* All file entries must use either compression method 0 (stored) or 8 (deflated).
+* Encryption must not be used.
+* Splitting of ZIP archives into multiple files must not be used.
+* The maximum value for the version needed to extract field (section 4.4.3 of the ZIP specification) must not be larger than version 2.0 for all entries in the archive.
 
-For maximum portability, it is *RECOMMENDED* to keep all zip file entry names to the ASCII character set, and keep the language encoding flag (EFS), i.e. bit 11 of the general purpose field as specified in section 4.4.4 of the ZIP specification, set to zero.
-If use of a larger character set is needed, it is *RECOMMENDED* to use the UTF-8 encoding option, as specified in appendix D of the ZIP specification, by setting the language encoding flag (EFS) to 1 and encoding all filename and comment fields as UTF-8.
+For maximum portability, it is recommended to keep all zip file entry names to the ASCII character set, and keep the language encoding flag (EFS), i.e. bit 11 of the general purpose field as specified in section 4.4.4 of the ZIP specification, set to zero.
+If use of a larger character set is needed, it is recommended to use the UTF-8 encoding option, as specified in appendix D of the ZIP specification, by setting the language encoding flag (EFS) to 1 and encoding all filename and comment fields as UTF-8.
 
 Use of other character sets and encodings is *NOT RECOMMENDED* and is likely to yield portability problems.
 
 NOTE: It should be noted that some common implementations of ZIP archivers erroneously encode characters beyond the Unicode Basic Multilingual Plane (BMP), i.e. code point U+10000 and above, using UTF-8 encoded surrogate pairs, yielding the CESU-8 encoding, instead of correctly encoding those codepoints directly using UTF-8.
 It should also be noted that Unicode normalization issues that affect cross filesystem/OS compatibility might need to be addressed, since those issues are not addressed in the ZIP specification.
 
-The ZIP archive *MUST* contain an entry named SystemStructure.ssd at root level, containing a valid System Structure Description, as specified in <<SSD>>.
+The ZIP archive must contain an entry named SystemStructure.ssd at root level, containing a valid System Structure Description, as specified in <<SSD>>.
 
-Optionally the ZIP archive *MAY* contain multiple SSD file entries at root level, each with a different file name.
+Optionally the ZIP archive may contain multiple SSD file entries at root level, each with a different file name.
 
 NOTE: E.g. `SystemStructure.ssd`, `VarA.ssd`, `VarB.ssd`.
 
 This allows the bundling of multiple variants of a system structure definition referencing a similar set of packaged resources as one SSP.
-There *MUST* still be one SSD file named SystemStructure.ssd at the root of the ZIP archive which is deemed to be the default variant.
-Tools not supporting variant-containing SSPs *MUST* deal with the given SSP by ignoring all contained SSD files except for the SystemStructure.ssd default file.
+There must still be one SSD file named SystemStructure.ssd at the root of the ZIP archive which is deemed to be the default variant.
+Tools not supporting variant-containing SSPs must deal with the given SSP by ignoring all contained SSD files except for the SystemStructure.ssd default file.
 
-If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such system structure definition *MUST* be different from any of the other root level system structure definitions.
+If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such system structure definition must be different from any of the other root level system structure definitions.
 
-NOTE: Tools *MAY* want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement.
+NOTE: Tools may want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement.
 
-Tools *SHOULD* use the name attribute of the root SystemStructureDescription element of the SSD files when presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
+Tools should use the name attribute of the root SystemStructureDescription element of the SSD files when presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 
-The ZIP archive *MAY* contain additional entries with the prefix `resources/` which can be used to bundle resources referenced from the System Structure Description file(s) through relative URIs as specified in the sections below.
+The ZIP archive may contain additional entries with the prefix `resources/` which can be used to bundle resources referenced from the System Structure Description file(s) through relative URIs as specified in the sections below.
 
 NOTE: Note: These additional entries may include additional files describing Parameter Values (`*.ssv`), Parameter Mappings (`*.ssm`) or Signal Dictionaries (`*.ssb`).
 The names of these files, like all other additional files, are arbitrary and are independent of variant handling or the names of the referencing SSD files themselves.
 All stand-alone files are referenced by SSD files via (relative) URIs.
 
-The ZIP archive *MAY* contain additional entries with the prefix `extra/` which can be used to store additional data and meta-data.
-In order to ensure uniqueness the extra files *SHOULD* be provided in sub-directories using a reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the additional entries.
+The ZIP archive may contain additional entries with the prefix `extra/` which can be used to store additional data and meta-data.
+In order to ensure uniqueness the extra files should be provided in sub-directories using a reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the additional entries.
 
 NOTE: Cf. Java package names or Apple UTIs.
 
-The use of sub-directories beginning with `org.modelica` and `org.ssp-standard` is explicitly reserved for use by MAP SSP-defined layered standards (cf. <<Versioning and Layered Standards>>), i.e. other uses *MUST NOT* use sub-directory names beginning with these prefixes.
+The use of sub-directories beginning with `org.modelica` and `org.ssp-standard` is explicitly reserved for use by MAP SSP-defined layered standards (cf. <<Versioning and Layered Standards>>), i.e. other uses must not use sub-directory names beginning with these prefixes.
 
 It is explicitly allowed for tools and users other than the original creator of an SSP to modify/add/delete entries in the `extra/` prefix without affecting the validity of SSP in all other aspects.
-Specifically all validation or digital signature schemes used to protect SSP content *SHOULD* take the variability of extra file content into account.
+Specifically all validation or digital signature schemes used to protect SSP content should take the variability of extra file content into account.
 
 NOTE: For example by having separate checksums/signatures for SSP core content and extra content, or not having signatures at all for extra content.
 
-The ZIP archive *MAY* contain additional entries with the prefix `documentation/` which can be used to store documentation on the package contents.
-If documentation is provided an entry with the name `documentation/index.html` *MUST* be provided which should be a useful entry point for the contained documentation.
+The ZIP archive may contain additional entries with the prefix `documentation/` which can be used to store documentation on the package contents.
+If documentation is provided an entry with the name `documentation/index.html` must be provided which should be a useful entry point for the contained documentation.
 
 All other prefixes are currently reserved for future use.
 
