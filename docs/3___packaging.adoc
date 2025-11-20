@@ -12,7 +12,7 @@ System Structure Package files must be valid ZIP archives as specified in <<ZIP6
 For maximum portability, it is recommended to keep all zip file entry names to the ASCII character set, and keep the language encoding flag (EFS), i.e. bit 11 of the general purpose field as specified in section 4.4.4 of the ZIP specification, set to zero.
 If use of a larger character set is needed, it is recommended to use the UTF-8 encoding option, as specified in appendix D of the ZIP specification, by setting the language encoding flag (EFS) to 1 and encoding all filename and comment fields as UTF-8.
 
-Use of other character sets and encodings is *NOT RECOMMENDED* and is likely to yield portability problems.
+Use of other character sets and encodings is not recommended and is likely to yield portability problems.
 
 NOTE: It should be noted that some common implementations of ZIP archivers erroneously encode characters beyond the Unicode Basic Multilingual Plane (BMP), i.e. code point U+10000 and above, using UTF-8 encoded surrogate pairs, yielding the CESU-8 encoding, instead of correctly encoding those codepoints directly using UTF-8.
 It should also be noted that Unicode normalization issues that affect cross filesystem/OS compatibility might need to be addressed, since those issues are not addressed in the ZIP specification.
