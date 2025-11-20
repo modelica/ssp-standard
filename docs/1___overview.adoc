@@ -175,10 +175,10 @@ The following changes were performed as part of the 2.0.0 major release:
   ** Support in the core standard for Modelica models as components
   ** Support for the mapping of complex Modelica types in interfaces to binary connectors in SSP
 * General clarifications and bug fixes
-  ** Fix missing type of Connector name attribute in https://github.com/modelica/ssp-standard/pull/4
-  ** Clarify type conversion handling in https://github.com/modelica/ssp-standard/pull/21
-  ** Clarify uniqueness of root SSDs in https://github.com/modelica/ssp-standard/pull/23
-  ** Clarify hierarchical parameter name resolution in https://github.com/modelica/ssp-standard/pull/27
+  ** Fix missing type of Connector name attribute in https://github.com/modelica/ssp-standard/pull/4[PR #4]
+  ** Clarify type conversion handling in https://github.com/modelica/ssp-standard/pull/21[PR #21]
+  ** Clarify uniqueness of root SSDs in https://github.com/modelica/ssp-standard/pull/23[PR #23]
+  ** Clarify hierarchical parameter name resolution in https://github.com/modelica/ssp-standard/pull/27[PR #27]
 
 === Changes in 1.0.1
 
