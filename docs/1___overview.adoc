@@ -117,34 +117,6 @@ The SSP approach enables the sharing of standardized system structure descriptio
 * Packaging of additional meta-data and digital signatures for traceability
 * Extensibility for additional features and tool-specific data via layered standards
 
-=== Acknowledgements
-
-This standard was developed as part of the Modelica Association Project “System Structure and Parameterization” (MAP SSP).
-The following companies and persons were involved in the creation of the standard as direct contributors to the standard document:
-
-* Christian Bertsch, Bosch
-* Dag Brück, Dassault Systèmes
-* Markus Deppe, dSPACE
-* Hans-Martin Heinkel, Bosch
-* Maria Henningsson, Modelon
-* Jan-Niklas Jäschke, TLK-Thermo
-* Robert Hällqvist, SAAB Group
-* Ulrich Kiffmeier, dSPACE
-* Jochen Köhler, ZF Friedrichshafen
-* Jürgen Krasser, AVL
-* Peter Lobner, eXXcellent solutions
-* Pierre R. Mai, PMSF IT Consulting
-* Masoud Najafi, Altair
-* Joel Petersson, Modelon
-* Torsten Sommer, Dassault Systèmes
-* Klaus Schuch, AVL
-* Daniel Weil, Dassault Systèmes
-* Karl Wernersson, Dassault Systèmes
-* Ulrich Wurstbauer, TWT
-* Hang Yu, Pratt & Miller Engineering
-
-We would also like to thank all persons that provided feedback during the internal and public feedback periods, as well as prototype implementations and public presentations furthering the aims of this standard.
-
 === Changes in 2.0.0
 
 This major release of the SSP standard provides support for FMI 3.0, as well as other enhancements in response to new end-user requirements for architectural design, traceability, incremental development, and support of Modelica models as components.

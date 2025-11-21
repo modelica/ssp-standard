@@ -1,69 +1,26 @@
-Document version: 2.0
+System Structure and Parameterization (SSP) is a tool independent standard to define complete systems consisting of one or more component models, including FMUs and their parameterization that can be transferred between simulation tools.
 
-December 20, 2024
+This specification, as well as supporting XML schema files, is provided on https://ssp-standard.org/[ssp-standard.org].
+https://github.com/modelica/ssp-standard/releases[Releases] and https://github.com/modelica/ssp-standard/issues[issues] can be found on https://github.com/modelica/ssp-standard[github.com/modelica/ssp-standard]. You can contact the SSP development group at map-ssp_projectlead@googlegroups.com.
 
-This document is release 2.0 of the System Structure and Parameterization Standard (SSP).
-
-This specification, as well as supporting XML schema files, is provided on the SSP site (https://ssp-standard.org/).
-https://github.com/modelica/ssp-standard/releases[Releases] and https://github.com/modelica/ssp-standard/issues[issues] can be found on https://github.com/modelica/ssp-standard[github.com/modelica/ssp-standard].
-
-Contact the SSP development group at map-ssp_projectlead@googlegroups.com.
-
-<<<
-
-History / Road Map
+*History*
 
 [width="100%",cols="18%,12%,70%",]
 |===
-|Version |Date |Remarks
-|1.0 |2019-03-05 |First Public Release of SSP
-|1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
-|2.0 |2024-12-20 |Public Release of SSP 2.0
-|===
+|Version |Date       |Remarks
 
-Please report issues that you find with this specification to map-ssp_projectlead@googlegroups.com.
+|1.0     |2019-03-05 |First Public Release of SSP
+|1.0.1   |2022-07-25 |Public Release of SSP 1.0.1
+|2.0     |2024-12-20 |Public Release of SSP 2.0
+|===
 
 *License of this document*
 
-Copyright &copy; 2016-2025 Modelica Association Project "SSP"
+Copyright &copy; 2016-2025 The Modelica Association Project "SSP".
 
-This document is provided “as is” without any warranty.
-It is licensed under the CC-BY-SA (Creative Commons Attribution-Sharealike 4.0 International) license, which is the license used by Wikipedia.
-The human-readable summary of the license text from http://creativecommons.org/licenses/by-sa/4.0/ is as follows:
-
-You are free to:
-
-____
-*Share* — copy and redistribute the material in any medium or format
-
-*Remix* — remix, transform, and build upon the material for any purpose, even commercially.
-
-The licensor cannot revoke these freedoms as long as you follow the license terms.
-____
-
-Under the following terms:
-
-____
-*Attribution* — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-
-*Share Alike* — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-____
-
-The legal license text and disclaimer is available at http://creativecommons.org/licenses/by-sa/4.0/legalcode.
-
-*Note:*
-
-____
-Article (3a) of this license requires that modifications of this work must clearly label, demarcate or otherwise identify that changes were made.
-
-The XML schema files that accompany this document are available under the BSD 2-Clause license (https://opensource.org/license/bsd-2-clause/).
-
-Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights.
-Modelica Association shall not be held responsible for identifying such patent rights.
-
-If you have improvement suggestions, please send them to the SSP development group at map-ssp_projectlead@googlegroups.com.
-____
+This document is licensed under the http://creativecommons.org/licenses/by-sa/4.0/[CC-BY-SA] (Creative Commons Attribution-Sharealike 4.0 International) license.
+The XML schema files that accompany this document are licensed under the https://opensource.org/license/bsd-2-clause/[BSD 2-Clause license].
+The licenses text can be found in the link:LICENSE.txt[LICENSE.txt] file that accompanies this distribution.
 
 *Abstract*
 
