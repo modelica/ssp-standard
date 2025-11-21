@@ -18,22 +18,22 @@
 :repo-url: https://github.com/modelica/ssp-standard
 :logo: SSP
 
-include::0___preamble.adoc[]
+include::0_preamble.adoc[]
 
-include::1___overview.adoc[]
+include::1_overview.adoc[]
 
-include::2___common_concepts.adoc[]
+include::2_common_concepts.adoc[]
 
-include::3___packaging.adoc[]
+include::3_packaging.adoc[]
 
-include::4___common_content.adoc[]
+include::4_common_content.adoc[]
 
-include::5___ssd.adoc[]
+include::5_ssd.adoc[]
 
-include::6___ssv.adoc[]
+include::6_ssv.adoc[]
 
-include::7___ssm.adoc[]
+include::7_ssm.adoc[]
 
-include::8___ssb.adoc[]
+include::8_ssb.adoc[]
 
-include::9___appendix.adoc[]
+include::9_appendix.adoc[]
