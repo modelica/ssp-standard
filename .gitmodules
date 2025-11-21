@@ -1,0 +1,3 @@
+[submodule "docs/theme"]
+	path = docs/theme
+	url = git@github.com:modelica/ma-asciidoctor-theme.git

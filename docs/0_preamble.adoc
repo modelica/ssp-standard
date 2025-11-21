@@ -1,0 +1,36 @@
+System Structure and Parameterization (SSP) is a tool independent standard to define complete systems consisting of one or more component models, including FMUs and their parameterization that can be transferred between simulation tools.
+
+This specification, as well as supporting XML schema files, is provided on https://ssp-standard.org/[ssp-standard.org].
+https://github.com/modelica/ssp-standard/releases[Releases] and https://github.com/modelica/ssp-standard/issues[issues] can be found on https://github.com/modelica/ssp-standard[github.com/modelica/ssp-standard]. You can contact the SSP development group at map-ssp_projectlead@googlegroups.com.
+
+*History*
+
+[cols="1,1,5"]
+|===
+|Version |Date       |Remarks
+
+|1.0     |2019-03-05 |First Public Release of SSP
+|1.0.1   |2022-07-25 |Public Release of SSP 1.0.1
+|2.0     |2024-12-20 |Public Release of SSP 2.0
+|===
+
+*License of this document*
+
+Copyright &copy; 2016-2025 The Modelica Association Project "SSP".
+
+This document is licensed under the http://creativecommons.org/licenses/by-sa/4.0/[CC-BY-SA] (Creative Commons Attribution-Sharealike 4.0 International) license.
+The XML schema files that accompany this document are licensed under the https://opensource.org/license/bsd-2-clause/[BSD 2-Clause license].
+The licenses text can be found in the link:LICENSE.txt[LICENSE.txt] file that accompanies this distribution.
+
+*Abstract*
+
+This document defines the SSP standard as a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
+The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parameterization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.
+
+*Conventions used in this Document*
+
+* The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in <<RFC2119,RFC 2119>> (regardless of formatting and capitalization).
+
+* Non-normative text is given in a gray box like this one:
++
+NOTE: Especially examples are defined in this style.
