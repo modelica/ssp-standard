@@ -13,7 +13,7 @@
 :source-highlighter: highlightjs
 :highlightjs-theme: github
 :nofooter:
-:favicon: images/favicon.ico
+:favicon: theme/images/SSP-favicon.svg
 :icons: font
 :repo-url: https://github.com/modelica/ssp-standard
 :logo: SSP
