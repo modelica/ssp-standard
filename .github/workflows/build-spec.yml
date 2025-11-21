@@ -92,6 +92,8 @@ jobs:
         cp docs/images/* build/images
         mkdir -p build/theme/css
         cp docs/theme/css/*.css build/theme/css
+        mkdir -p build/theme/images
+        cp docs/theme/images/*.svg build/theme/images
         mkdir -p build/theme/js
         cp docs/theme/js/*.js build/theme/js
 
