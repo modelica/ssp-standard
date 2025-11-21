@@ -726,12 +726,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Please report issues that you find with this specification to <a href="mailto:map-ssp_projectlead@googlegroups.com">map-ssp_projectlead@googlegroups.com</a>.</p>
 </div>
-<div style="page-break-after: always;"></div>
 <div class="paragraph">
 <p><strong>License of this document</strong></p>
 </div>
 <div class="paragraph">
-<p>Copyright © 2016 – 2025 Modelica Association Project “SSP”</p>
+<p>Copyright &copy; 2016-2025 Modelica Association Project "SSP"</p>
 </div>
 <div class="paragraph">
 <p>This document is provided “as is” without any warranty.
@@ -769,10 +768,7 @@ You may do so in any reasonable manner, but not in any way that suggests the lic
 </blockquote>
 </div>
 <div class="paragraph">
-<p>The legal license text and disclaimer is available at:</p>
-</div>
-<div class="paragraph">
-<p><a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode" class="bare">http://creativecommons.org/licenses/by-sa/4.0/legalcode</a></p>
+<p>The legal license text and disclaimer is available at <a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode" class="bare">http://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Note:</strong></p>
@@ -794,7 +790,6 @@ Modelica Association shall not be held responsible for identifying such patent r
 </div>
 </blockquote>
 </div>
-<div style="page-break-after: always;"></div>
 <div class="paragraph">
 <p><strong>Abstract</strong></p>
 </div>
@@ -802,14 +797,13 @@ Modelica Association shall not be held responsible for identifying such patent r
 <p>This document defines the SSP standard as a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
 The standard is comprised of a set of XML-based formats to describe a network of component models with their signal flow and parameterization, as well as a ZIP-based packaging format for efficient distribution of entire systems, including any referenced models and other resources.</p>
 </div>
-<div style="page-break-after: always;"></div>
 <div class="paragraph">
 <p><strong>Conventions used in this Document</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The key words <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>REQUIRED</strong>, <strong>SHALL</strong>, <strong>SHALL NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, <strong>RECOMMENDED</strong>, <strong>MAY</strong>, and <strong>OPTIONAL</strong> in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a>.</p>
+<p>The key words <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>REQUIRED</strong>, <strong>SHALL</strong>, <strong>SHALL NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, <strong>RECOMMENDED</strong>, <strong>MAY</strong>, and <strong>OPTIONAL</strong> in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a> (regardless of formatting and capitalization).</p>
 </li>
 <li>
 <p>Non-normative text is given in a gray box like this one:</p>
@@ -1305,7 +1299,7 @@ The base standard specifies a minimum set of MIME types and related file formats
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Example: <code>1.2.3</code> for major version <code>1</code>, minor version <code>2</code> and patch version <code>3</code>.
+Example: <code>1.2.3</code> for major version 1, minor version 2 and patch version 3.
 </td>
 </tr>
 </table>
@@ -1408,7 +1402,7 @@ Besides basic support for file-schema URIs, the set of schemas and transport mec
 If use of a larger character set is needed, it is recommended to use the UTF-8 encoding option, as specified in appendix D of the ZIP specification, by setting the language encoding flag (EFS) to 1 and encoding all filename and comment fields as UTF-8.</p>
 </div>
 <div class="paragraph">
-<p>Use of other character sets and encodings is <strong>NOT RECOMMENDED</strong> and is likely to yield portability problems.</p>
+<p>Use of other character sets and encodings is not recommended and is likely to yield portability problems.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1552,7 +1546,7 @@ All Types and AttributeGroups live in the <code><a href="http://ssp-standard.org
 <p>All XML elements that correspond to an entity of the system model will have the following set of common XML attributes, as defined in the ssc:ABaseElement attribute group:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image1.png" alt="image" width="261" height="101"></span></p>
+<p><span class="image"><img src="images/image1.png" alt="image1"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1583,7 +1577,7 @@ All Types and AttributeGroups live in the <code><a href="http://ssp-standard.org
 <p>All XML elements that correspond to an entity of the system model will have the following set of common child elements:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image2.png" alt="image" width="324" height="35"></span></p>
+<p><span class="image"><img src="images/image2.png" alt="image2"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1608,7 +1602,7 @@ When it is present, it must contain 1 or more Annotation elements as specified b
 <p>Each annotation is encapsulated in an Annotation element, with a required type attribute specifying the type of the annotation, and arbitrary XML content from arbitrary namespaces.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image3.png" alt="image" width="310" height="137"></span></p>
+<p><span class="image"><img src="images/image3.png" alt="image3"></span></p>
 </div>
 <div class="paragraph">
 <p>In order to ensure uniqueness the annotation type should be provided in reverse domain name notation of a domain that is controlled by the entity defining the semantics and content of the annotation.</p>
@@ -1640,7 +1634,7 @@ Annotations that are not defined by MAP SSP must not use these two prefixes,</p>
 <p>Top-level attributes are optional meta-data attributes common to all top-level container elements of all defined file formats.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image4.png" alt="image" width="348" height="317"></span></p>
+<p><span class="image"><img src="images/image4.png" alt="image4"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1694,7 +1688,7 @@ When processing information from multiple files, either from the same or separat
 <div class="sect3">
 <h4 id="enumerations">4.4.1. Enumerations</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image5.png" alt="image" width="397" height="47"></span></p>
+<p><span class="image"><img src="images/image5.png" alt="image5"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element must contain definitions for all enumerations referenced in a file.</p>
@@ -1713,7 +1707,7 @@ Upon import tools are free to merge unit information across files or separate th
 </table>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image6.png" alt="image" width="441" height="273"></span></p>
+<p><span class="image"><img src="images/image6.png" alt="image6"></span></p>
 </div>
 <div class="paragraph">
 <p>Each enumeration is defined through an Enumeration XML element:</p>
@@ -1760,7 +1754,7 @@ Upon import tools are free to merge unit information across files or separate th
 <div class="sect4">
 <h5 id="item">4.4.1.1. Item</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image7.png" alt="image" width="225" height="149"></span></p>
+<p><span class="image"><img src="images/image7.png" alt="image7"></span></p>
 </div>
 <div class="paragraph">
 <p>For each item in the enumeration there is one Item XML element with the following attributes:</p>
@@ -1792,7 +1786,7 @@ Upon import tools are free to merge unit information across files or separate th
 <div class="sect3">
 <h4 id="units">4.4.2. Units</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image8.png" alt="image" width="315" height="47"></span></p>
+<p><span class="image"><img src="images/image8.png" alt="image8"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element must contain definitions for all units referenced in a file.</p>
@@ -1811,7 +1805,7 @@ Upon import tools are free to merge unit information across files or separate th
 </table>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image9.png" alt="image" width="380" height="273"></span></p>
+<p><span class="image"><img src="images/image9.png" alt="image9"></span></p>
 </div>
 <div class="paragraph">
 <p>Each unit is defined through a Unit XML element:</p>
@@ -1862,7 +1856,7 @@ Upon import tools are free to merge unit information across files or separate th
 This is completely aligned with the specification of base units in section 2.4.3 of the FMI 3.0 standard <a href="#FMI30">[FMI30]</a> and section 2.2.2 of the FMI 2.0 standard <a href="#FMI20">[FMI20]</a>.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image10.png" alt="image" width="263" height="771"></span></p>
+<p><span class="image"><img src="images/image10.png" alt="image10"></span></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1930,7 +1924,7 @@ They are used inside elements to select one of multiple child elements, or provi
 <div class="sect3">
 <h4 id="ssc_types">4.5.1. Type Choice</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image11.png" alt="image" width="312" height="203"></span></p>
+<p><span class="image"><img src="images/image11.png" alt="image11"></span></p>
 </div>
 <div class="paragraph">
 <p>The following XML child elements denote the data type of a connector or dictionary entry.</p>
@@ -1972,7 +1966,7 @@ See below for details.</p></td>
 <div class="sect4">
 <h5 id="real">4.5.1.1. Real</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image12.png" alt="image" width="226" height="95"></span></p>
+<p><span class="image"><img src="images/image12.png" alt="image12"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents an IEEE754 double precision floating point number.</p>
@@ -2005,7 +1999,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="float64">4.5.1.2. Float64</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image12.png" alt="image" width="226" height="95"></span></p>
+<p><span class="image"><img src="images/image12.png" alt="image12"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents an IEEE754 double precision floating point number.</p>
@@ -2038,7 +2032,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="float32">4.5.1.3. Float32</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image12.png" alt="image" width="226" height="95"></span></p>
+<p><span class="image"><img src="images/image12.png" alt="image12"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents an IEEE754 single precision floating point number.</p>
@@ -2071,7 +2065,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="integer">4.5.1.4. Integer</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 32-bit signed integer number.</p>
@@ -2080,7 +2074,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="int8">4.5.1.5. Int8</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 8-bit signed integer number.</p>
@@ -2089,7 +2083,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="uint8">4.5.1.6. UInt8</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 8-bit unsigned integer number.</p>
@@ -2098,7 +2092,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="int16">4.5.1.7. Int16</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 16-bit signed integer number.</p>
@@ -2107,7 +2101,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="uint16">4.5.1.8. UInt16</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 16-bit unsigned integer number.</p>
@@ -2116,7 +2110,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="int32">4.5.1.9. Int32</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 32-bit signed integer number.</p>
@@ -2125,7 +2119,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="uint32">4.5.1.10. UInt32</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 32-bit unsigned integer number.</p>
@@ -2134,7 +2128,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="int64">4.5.1.11. Int64</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 64-bit signed integer number.</p>
@@ -2143,7 +2137,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="uint64">4.5.1.12. UInt64</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image13.png" alt="image" width="56" height="28"></span></p>
+<p><span class="image"><img src="images/image13.png" alt="image13"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a 64-bit unsigned integer number.</p>
@@ -2152,7 +2146,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="boolean">4.5.1.13. Boolean</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image14.png" alt="image" width="62" height="28"></span></p>
+<p><span class="image"><img src="images/image14.png" alt="image14"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a Boolean value.</p>
@@ -2161,7 +2155,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="string">4.5.1.14. String</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image15.png" alt="image" width="51" height="28"></span></p>
+<p><span class="image"><img src="images/image15.png" alt="image15"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a zero-terminated UTF-8 encoded string.</p>
@@ -2170,7 +2164,7 @@ For systems, the units of connected underlying connectors could be used if unamb
 <div class="sect4">
 <h5 id="enumeration">4.5.1.15. Enumeration</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image16.png" alt="image" width="264" height="95"></span></p>
+<p><span class="image"><img src="images/image16.png" alt="image16"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents an enumeration value, as specified by the enumeration definition.
@@ -2199,7 +2193,7 @@ The name must match the name of an Enumeration entry in the Enumerations XML ele
 <div class="sect4">
 <h5 id="binary">4.5.1.16. Binary</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image17.png" alt="image" width="319" height="114"></span></p>
+<p><span class="image"><img src="images/image17.png" alt="image17"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification <a href="#OSMP150">[OSMP150]</a>.</p>
@@ -2234,7 +2228,7 @@ It should be noted that the implementation is not required to provide this servi
 <div class="sect3">
 <h4 id="ssc_transformations">4.5.2. Transformation Choice</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image18.png" alt="image" width="474" height="133"></span></p>
+<p><span class="image"><img src="images/image18.png" alt="image18"></span></p>
 </div>
 <div class="paragraph">
 <p>The following XML child elements specify a transformation to be applied to a value prior to its use in a connection or parameter mapping:</p>
@@ -2272,7 +2266,7 @@ It should be noted that the implementation is not required to provide this servi
 <div class="sect4">
 <h5 id="lineartransformation">4.5.2.1. LinearTransformation</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image19.png" alt="image" width="323" height="187"></span></p>
+<p><span class="image"><img src="images/image19.png" alt="image19"></span></p>
 </div>
 <div class="paragraph">
 <p>This element provides for a linear transformation of the source value to the target value, i.e. in the calculation target = factor * source + offset.</p>
@@ -2309,7 +2303,7 @@ The default is 0.</p></td>
 <div class="sect4">
 <h5 id="booleanmappingtransformation">4.5.2.2. BooleanMappingTransformation</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image20.png" alt="image" width="579" height="155"></span></p>
+<p><span class="image"><img src="images/image20.png" alt="image20"></span></p>
 </div>
 <div class="paragraph">
 <p>This element provides for a transformation of Boolean values based on a mapping table and is valid for connectors of Boolean type.
@@ -2344,7 +2338,7 @@ In that case values not mapped by a mapping entry are kept unchanged.</p>
 <div class="sect4">
 <h5 id="integermappingtransformation">4.5.2.3. IntegerMappingTransformation</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image21.png" alt="image" width="546" height="155"></span></p>
+<p><span class="image"><img src="images/image21.png" alt="image21"></span></p>
 </div>
 <div class="paragraph">
 <p>This element provides for a transformation of integer values based on a mapping table and is valid for connectors of all the integer types and Enumeration type.
@@ -2389,7 +2383,7 @@ Such entries are ignored in the mapping process.</p>
 <div class="sect4">
 <h5 id="enumerationmappingtransformation">4.5.2.4. EnumerationMappingTransformation</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image22.png" alt="image" width="588" height="155"></span></p>
+<p><span class="image"><img src="images/image22.png" alt="image22"></span></p>
 </div>
 <div class="paragraph">
 <p>This element provides for a transformation of enumeration values based on a mapping table of their enumeration item names and is valid for connectors of Enumeration type.
@@ -2430,7 +2424,7 @@ This transformation can be applied between connectors of different Enumeration t
 <div class="sect3">
 <h4 id="ssc_dimensions">4.5.3. Dimension Sequence</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image61.png" alt="image" width="535" height="153"></span></p>
+<p><span class="image"><img src="images/image61.png" alt="image61"></span></p>
 </div>
 <div class="paragraph">
 <p>The Dimension element is used to specify the dimensions of array connectors, signal dictionary entries, or parameter values.</p>
@@ -2458,7 +2452,7 @@ See below for details.</p></td>
 <div class="sect4">
 <h5 id="dimension">4.5.3.1. Dimension</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image60.png" alt="image" width="295" height="149"></span></p>
+<p><span class="image"><img src="images/image60.png" alt="image60"></span></p>
 </div>
 <div class="paragraph">
 <p>This element specifies one dimension of a potentially multi-dimensional array connector, signal dictionary entry, or parameter value (modeling element).
@@ -2520,7 +2514,7 @@ SSP uses <code>size</code> where FMI uses <code>start</code> because SSP specifi
 <div class="sect3">
 <h4 id="ssc_metadata">4.5.4. MetaData Sequence</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureCommon_GMetaData.png" alt="image" width="690" height="197"></span></p>
+<p><span class="image"><img src="images/SystemStructureCommon_GMetaData.png" alt="SystemStructureCommon GMetaData"></span></p>
 </div>
 <div class="paragraph">
 <p>The group GMetaData allows the specification of additional meta data for a given model element.
@@ -2548,7 +2542,7 @@ See below for details.</p></td>
 <div class="sect4">
 <h5 id="metadata">4.5.4.1. MetaData</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureCommon_MetaData.png" alt="image" width="462" height="479"></span></p>
+<p><span class="image"><img src="images/SystemStructureCommon_MetaData.png" alt="SystemStructureCommon MetaData"></span></p>
 </div>
 <div class="paragraph">
 <p>This element specifies a source of meta data related to the containing model element.</p>
@@ -2643,7 +2637,7 @@ In this case the URI is resolved against the (resolved) source URI of the contai
 <div class="sect4">
 <h5 id="content">4.5.4.2. Content</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureCommon_Content.png" alt="image" width="372" height="191"></span></p>
+<p><span class="image"><img src="images/SystemStructureCommon_Content.png" alt="SystemStructureCommon Content"></span></p>
 </div>
 <div class="paragraph">
 <p>This element specifies the inlined content of the model element meta data.</p>
@@ -2657,7 +2651,7 @@ In that case there should be a layered specification that defines how embedding 
 <div class="sect3">
 <h4 id="ssc_signature">4.5.5. Signature Sequence</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureCommon_GSignature.png" alt="image" width="652" height="133"></span></p>
+<p><span class="image"><img src="images/SystemStructureCommon_GSignature.png" alt="SystemStructureCommon GSignature"></span></p>
 </div>
 <div class="paragraph">
 <p>The group GSignature allows the specification of digital signatures for a given model element.
@@ -2685,7 +2679,7 @@ See below for details.</p></td>
 <div class="sect4">
 <h5 id="signature">4.5.5.1. Signature</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureCommon_Signature.png" alt="image" width="423" height="419"></span></p>
+<p><span class="image"><img src="images/SystemStructureCommon_Signature.png" alt="SystemStructureCommon Signature"></span></p>
 </div>
 <div class="paragraph">
 <p>This element specifies digital signature information on the data or meta data referenced by the enclosing element:
@@ -2796,7 +2790,7 @@ All SSD-specific elements live in the <code><a href="http://ssp-standard.org/SSP
 <div class="sect2">
 <h3 id="systemstructuredescription">5.1. SystemStructureDescription</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_SystemStructureDescription.png" alt="image" width="475" height="693"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_SystemStructureDescription.png" alt="SystemStructureDescription SystemStructureDescription"></span></p>
 </div>
 <div class="paragraph">
 <p>The root element of an SSD file must be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.</p>
@@ -2870,7 +2864,7 @@ See <a href="#units">Section 4.4.2</a> for its definition.</p></td>
 <div class="sect3">
 <h4 id="default-experiment">5.1.1. Default Experiment</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image24.png" alt="image" width="449" height="248"></span></p>
+<p><span class="image"><img src="images/image24.png" alt="image24"></span></p>
 </div>
 <div class="paragraph">
 <p>This element contains information of a default simulation setup that is supplied with the system definition for informational purposes.</p>
@@ -2933,7 +2927,7 @@ This standard does not specify additional measures to deal with differing indepe
 <p>System, Component and SignalDictionaryReference XML elements are subtypes of a common TElement base type, that contains attributes and XML elements common to all kinds of model elements:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_TElement.png" alt="image" width="391" height="466"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_TElement.png" alt="SystemStructureDescription TElement"></span></p>
 </div>
 <div class="paragraph">
 <p>The following XML attributes are specified for the TElement type:</p>
@@ -2993,7 +2987,7 @@ See below for details.</p></td>
 <div class="sect3">
 <h4 id="connectors">5.2.1. Connectors</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image26.png" alt="image" width="371" height="82"></span></p>
+<p><span class="image"><img src="images/image26.png" alt="image26"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
@@ -3024,7 +3018,7 @@ The same is true for variables/ports that are not referenced through a connector
 </table>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image27.png" alt="image" width="396" height="986"></span></p>
+<p><span class="image"><img src="images/image27.png" alt="image27"></span></p>
 </div>
 <div class="paragraph">
 <p>The following XML attributes are specified for the Connector element:</p>
@@ -3224,7 +3218,7 @@ Note that the current opaque mapping of more advanced types to Binary connectors
 <div class="sect4">
 <h5 id="connectorgeometry">5.2.1.1. ConnectorGeometry</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image28.png" alt="image" width="307" height="149"></span></p>
+<p><span class="image"><img src="images/image28.png" alt="image28"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional XML element gives the geometry information of the connector.
@@ -3294,7 +3288,7 @@ Any inside view is not overridden.</p>
 <div class="sect3">
 <h4 id="elementgeometry">5.2.2. ElementGeometry</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image29.png" alt="image" width="339" height="603"></span></p>
+<p><span class="image"><img src="images/image29.png" alt="image29"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional XML element defines the geometry information of the model element, where (x1,y1) and (x2,y2) define the positions of the lower-left and upper-right corners of the model element in the coordinate system of its parent system.
@@ -3420,7 +3414,7 @@ It is recommended that implementations that support graphical presentation suppo
 <p><strong>Non-transformed reference</strong> (icon fills rectangle, left 2 inputs, right 1 output)</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExampleBase.png" alt="image" width="245" height="86"></span></p>
+<p><span class="image"><img src="images/IconExampleBase.png" alt="IconExampleBase"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>Coordinate systems:</strong></p>
@@ -3434,14 +3428,14 @@ Blue: ElementGeometry</p>
 </em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>IGNORED</strong> (relevant only if element is flipped)</em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample1.png" alt="image" width="367" height="215"></span></p>
+<p><span class="image"><img src="images/IconExample1.png" alt="IconExample1"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 2: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>0</strong><br>
 </em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>false, </strong></em>iconFlip<em>=<strong>IGNORED</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample2.png" alt="image" width="245" height="143"></span></p>
+<p><span class="image"><img src="images/IconExample2.png" alt="IconExample2"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>_<br>
@@ -3452,14 +3446,14 @@ _</strong></p>
 </em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample3.png" alt="image" width="367" height="215"></span></p>
+<p><span class="image"><img src="images/IconExample3.png" alt="IconExample3"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 4: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>ϕ<br>
 </strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>false</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample4.png" alt="image" width="249" height="147"></span></p>
+<p><span class="image"><img src="images/IconExample4.png" alt="IconExample4"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>_<br>
@@ -3470,14 +3464,14 @@ _</strong></p>
 </em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample5.png" alt="image" width="367" height="215"></span></p>
+<p><span class="image"><img src="images/IconExample5.png" alt="IconExample5"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 6: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
 </em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>false</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample6.png" alt="image" width="249" height="147"></span></p>
+<p><span class="image"><img src="images/IconExample6.png" alt="IconExample6"></span></p>
 </div>
 <div class="paragraph">
 <p>_<br>
@@ -3488,21 +3482,21 @@ _</p>
 </em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>true</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample7.png" alt="image" width="367" height="215"></span></p>
+<p><span class="image"><img src="images/IconExample7.png" alt="IconExample7"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 8: Horizontal flip* (</em>x1<em>&gt;</em>x2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
 </em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>false</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample8.png" alt="image" width="241" height="143"></span></p>
+<p><span class="image"><img src="images/IconExample8.png" alt="IconExample8"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 9: Horizontal flip* (</em>x1<em>&gt;</em>x2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
 </em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample9.png" alt="image" width="245" height="147"></span></p>
+<p><span class="image"><img src="images/IconExample9.png" alt="IconExample9"></span></p>
 </div>
 <div class="paragraph">
 <p>_<br>
@@ -3513,21 +3507,21 @@ _</p>
 </strong></em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample10.png" alt="image" width="367" height="215"></span></p>
+<p><span class="image"><img src="images/IconExample10.png" alt="IconExample10"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 11: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>0<br>
 </strong></em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample11.png" alt="image" width="367" height="215"></span></p>
+<p><span class="image"><img src="images/IconExample11.png" alt="IconExample11"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 12: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>)*, *</em>rotation<em>=<strong>0<br>
 </strong></em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true,</strong></em> iconFlip<em>=<strong>true</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample12.png" alt="image" width="249" height="147"></span></p>
+<p><span class="image"><img src="images/IconExample12.png" alt="IconExample12"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>_<br>
@@ -3538,21 +3532,21 @@ _</strong></p>
 </strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>true</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample13.png" alt="image" width="367" height="215"></span></p>
+<p><span class="image"><img src="images/IconExample13.png" alt="IconExample13"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 14: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>ϕ<br>
 </strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>false, </strong></em>iconFlip<em>=<strong>true</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample14.png" alt="image" width="249" height="147"></span></p>
+<p><span class="image"><img src="images/IconExample14.png" alt="IconExample14"></span></p>
 </div>
 <div class="paragraph">
 <p><em>*Example 15: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>ϕ<br>
 </strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true, </strong></em>iconFlip<em>=<strong>false</strong></em></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample15.png" alt="image" width="245" height="147"></span></p>
+<p><span class="image"><img src="images/IconExample15.png" alt="IconExample15"></span></p>
 </div>
 </td>
 </tr>
@@ -3562,7 +3556,7 @@ _</strong></p>
 <div class="sect3">
 <h4 id="parameterbindings">5.2.3. ParameterBindings</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_ParameterBindings.png" alt="image" width="746" height="719"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_ParameterBindings.png" alt="SystemStructureDescription ParameterBindings"></span></p>
 </div>
 <div class="paragraph">
 <p>The ParameterBindings element provides the parameter bindings for a component or system, where each binding is specified in a ParameterBinding element.
@@ -3751,7 +3745,7 @@ See below for details.</p></td>
 <div class="sect4">
 <h5 id="parametervalues">5.2.3.1. ParameterValues</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image33.png" alt="image" width="369" height="65"></span></p>
+<p><span class="image"><img src="images/image33.png" alt="image33"></span></p>
 </div>
 <div class="paragraph">
 <p>When this element is present, its contents must be an ssv:ParameterSet element as specified by the SystemStructureParameterValues schema, if the type attribute of the enclosing ParameterBinding element is application/x-ssp-parameter-set, or any other valid XML content if the type attribute references another MIME type.
@@ -3761,7 +3755,7 @@ In that case there should be a layered specification that defines how embedding 
 <div class="sect4">
 <h5 id="parametermapping">5.2.3.2. ParameterMapping</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_ParameterMapping.png" alt="image" width="473" height="541"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_ParameterMapping.png" alt="SystemStructureDescription ParameterMapping"></span></p>
 </div>
 <div class="paragraph">
 <p>This element provides a parameter mapping, which specifies how the parameter names and values provided in the parameter source are to be mapped to the parameters of the component or system in question.
@@ -3822,7 +3816,7 @@ In that case there should be a layered specification that defines how embedding 
 <div class="sect2">
 <h3 id="system">5.3. System</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_System.png" alt="image" width="463" height="827"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_System.png" alt="SystemStructureDescription System"></span></p>
 </div>
 <div class="paragraph">
 <p>This element describes a system, which can contain components, signal dictionary references and other systems as elements, connectors as an interface to the outside world, and connections connecting the connectors of itself and of its elements to one another.</p>
@@ -3867,7 +3861,7 @@ In that case there should be a layered specification that defines how embedding 
 <div class="sect3">
 <h4 id="elements">5.3.1. Elements</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image36.png" alt="image" width="501" height="157"></span></p>
+<p><span class="image"><img src="images/image36.png" alt="image36"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element contains one or more components, signal dictionary references or systems that are the internal content of the given system.</p>
@@ -3905,13 +3899,13 @@ In that case there should be a layered specification that defines how embedding 
 <div class="sect3">
 <h4 id="connections">5.3.2. Connections</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image37.png" alt="image" width="314" height="37"></span></p>
+<p><span class="image"><img src="images/image37.png" alt="image37"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element provides the connections between connectors of the system, connectors of its elements and inbetween those connectors.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image38.png" alt="image" width="503" height="762"></span></p>
+<p><span class="image"><img src="images/image38.png" alt="image38"></span></p>
 </div>
 <div class="paragraph">
 <p>This element specifies a connection between two connectors, either of the system or its directly contained elements.
@@ -4318,7 +4312,7 @@ See <a href="#ssc_transformations">Section 4.5.2</a> for details.</p></td>
 <div class="sect4">
 <h5 id="connectiongeometry">5.3.2.2. ConnectionGeometry</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image39.png" alt="image" width="348" height="149"></span></p>
+<p><span class="image"><img src="images/image39.png" alt="image39"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element defines the geometry information of the connection.
@@ -4379,13 +4373,13 @@ When a large number of signals have to be handled, signal dictionaries can help 
 <p>Another benefit of signal dictionaries is the possibility to define a mapping between two or more signal dictionaries that may differ by names or units, which is a common case when components are integrated into a system that come from different sources without a common design or architecture.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image40.png" alt="image" width="427" height="82"></span></p>
+<p><span class="image"><img src="images/image40.png" alt="image40"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element provides the set of defined signal dictionaries for the system.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_SignalDictionary.png" alt="image" width="447" height="522"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_SignalDictionary.png" alt="SystemStructureDescription SignalDictionary"></span></p>
 </div>
 <div class="paragraph">
 <p>A signal dictionary is a collection of signals which can be accessed in different systems at different levels of the hierarchy through signal dictionary references referencing the signal dictionary.</p>
@@ -4433,7 +4427,7 @@ See <a href="#SSB">Section 8</a> for details.</p>
 <div class="sect3">
 <h4 id="systemgeometry">5.3.4. SystemGeometry</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image42.png" alt="image" width="293" height="257"></span></p>
+<p><span class="image"><img src="images/image42.png" alt="image42"></span></p>
 </div>
 <div class="paragraph">
 <p>This element defines the extent of the system canvas. (x1,y1) and (x2,y2) define the lower-left and upper-right corner, respectively.
@@ -4571,7 +4565,7 @@ Hence, the exporting tool has to scale from its own coordinate system when expor
 <div class="sect3">
 <h4 id="graphicalelements">5.3.5. GraphicalElements</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image43.png" alt="image" width="382" height="37"></span></p>
+<p><span class="image"><img src="images/image43.png" alt="image43"></span></p>
 </div>
 <div class="paragraph">
 <p>This optional element contains the set of purely graphical elements that are contained in the system, like notes, which have no semantic impact on the system but aid in presentation of the system in graphical user interfaces.</p>
@@ -4582,7 +4576,7 @@ Hence, the exporting tool has to scale from its own coordinate system when expor
 <div class="sect4">
 <h5 id="note">5.3.5.1. Note</h5>
 <div class="paragraph">
-<p><span class="image"><img src="images/image44.png" alt="image" width="232" height="311"></span></p>
+<p><span class="image"><img src="images/image44.png" alt="image44"></span></p>
 </div>
 <div class="paragraph">
 <p>This element defines a graphical note to be placed on the canvas of the enclosing system.
@@ -4630,7 +4624,7 @@ Inside the text attribute, newlines indicate paragraph breaks.</p>
 <div class="sect2">
 <h3 id="component">5.4. Component</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_Component.png" alt="image" width="481" height="879"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_Component.png" alt="SystemStructureDescription Component"></span></p>
 </div>
 <div class="paragraph">
 <p>A component is an atomic element of a system (i.e. its internal structure is not specified).</p>
@@ -4711,7 +4705,7 @@ It is an error if the specified type of FMU implementation is not present in the
 <div class="sect2">
 <h3 id="signaldictionaryreference">5.5. SignalDictionaryReference</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureDescription_SignalDictionaryReference.png" alt="image" width="555" height="733"></span></p>
+<p><span class="image"><img src="images/SystemStructureDescription_SignalDictionaryReference.png" alt="SystemStructureDescription SignalDictionaryReference"></span></p>
 </div>
 <div class="paragraph">
 <p>A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which must reference signal dictionary entries.</p>
@@ -4766,7 +4760,7 @@ Except for this file extension recommendation the filename is arbitrary and is i
 <div class="sect2">
 <h3 id="parameterset">6.1. ParameterSet</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureParameterValues_ParameterSet.png" alt="image" width="405" height="639"></span></p>
+<p><span class="image"><img src="images/SystemStructureParameterValues_ParameterSet.png" alt="SystemStructureParameterValues ParameterSet"></span></p>
 </div>
 <div class="paragraph">
 <p>The ParameterSet element contains parameter and meta data information.
@@ -4833,7 +4827,7 @@ See <a href="#units">Section 4.4.2</a> for its definition.</p></td>
 <div class="sect2">
 <h3 id="parameters">6.2. Parameters</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/image48.png" alt="image" width="428" height="94"></span></p>
+<p><span class="image"><img src="images/image48.png" alt="image48"></span></p>
 </div>
 <div class="paragraph">
 <p>The Parameters element contains a list of individual parameters.
@@ -4845,7 +4839,7 @@ This allows the definition of large parameter data sets out of which only a subs
 See <a href="#parameterbindings">Section 5.2.3</a> for the semantic defintion of parameter bindings.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/image49.png" alt="image" width="458" height="891"></span></p>
+<p><span class="image"><img src="images/image49.png" alt="image49"></span></p>
 </div>
 <div class="paragraph">
 <p>The following XML attributes are specified for the Parameter element:</p>
@@ -4906,7 +4900,7 @@ See <a href="#ssc_dimensions">Section 4.5.3</a> for details.</p></td>
 <div class="sect3">
 <h4 id="real-2">6.2.1. Real</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image50.png" alt="image" width="231" height="149"></span></p>
+<p><span class="image"><img src="images/image50.png" alt="image50"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents an IEEE754 double precision floating point number, or an array of such values.</p>
@@ -4941,7 +4935,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="float64-2">6.2.2. Float64</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image50.png" alt="image" width="231" height="149"></span></p>
+<p><span class="image"><img src="images/image50.png" alt="image50"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents an IEEE754 double precision floating point number, or an array of such values.</p>
@@ -4976,7 +4970,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="float32-2">6.2.3. Float32</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image50.png" alt="image" width="231" height="149"></span></p>
+<p><span class="image"><img src="images/image50.png" alt="image50"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents an IEEE754 single precision floating point number, or an array of such values.</p>
@@ -5011,7 +5005,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="integer-2">6.2.4. Integer</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 32-bit signed integer, or an array of such values.</p>
@@ -5041,7 +5035,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="int8-2">6.2.5. Int8</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 8-bit signed integer, or an array of such values.</p>
@@ -5071,7 +5065,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="uint8-2">6.2.6. UInt8</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 8-bit unsigned integer, or an array of such values.</p>
@@ -5101,7 +5095,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="int16-2">6.2.7. Int16</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 16-bit signed integer, or an array of such values.</p>
@@ -5131,7 +5125,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="uint16-2">6.2.8. UInt16</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 16-bit unsigned integer, or an array of such values.</p>
@@ -5161,7 +5155,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="int32-2">6.2.9. Int32</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 32-bit signed integer, or an array of such values.</p>
@@ -5191,7 +5185,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="uint32-2">6.2.10. UInt32</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 32-bit unsigned integer, or an array of such values.</p>
@@ -5221,7 +5215,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="int64-2">6.2.11. Int64</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 64-bit signed integer, or an array of such values.</p>
@@ -5251,7 +5245,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="uint64-2">6.2.12. UInt64</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image51.png" alt="image" width="222" height="95"></span></p>
+<p><span class="image"><img src="images/image51.png" alt="image51"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a 64-bit unsigned integer, or an array of such values.</p>
@@ -5281,7 +5275,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="boolean-2">6.2.13. Boolean</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image52.png" alt="image" width="255" height="95"></span></p>
+<p><span class="image"><img src="images/image52.png" alt="image52"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a Boolean value, or an array of such values.</p>
@@ -5311,7 +5305,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="string-2">6.2.14. String</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image53.png" alt="image" width="426" height="201"></span></p>
+<p><span class="image"><img src="images/image53.png" alt="image53"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a zero-terminated UTF-8 encoded string, or an array of such values.</p>
@@ -5368,7 +5362,7 @@ The name must match the name of a unit defined in the Units element in the Param
 <div class="sect3">
 <h4 id="enumeration-2">6.2.15. Enumeration</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image54.png" alt="image" width="458" height="255"></span></p>
+<p><span class="image"><img src="images/image54.png" alt="image54"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents an enumeration value, or an array of such values, as specified by an enumeration definition.</p>
@@ -5451,7 +5445,7 @@ Note: the level of consistency checking is left optional by design, since mandat
 <div class="sect3">
 <h4 id="binary-2">6.2.16. Binary</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image55.png" alt="image" width="451" height="274"></span></p>
+<p><span class="image"><img src="images/image55.png" alt="image55"></span></p>
 </div>
 <div class="paragraph">
 <p>This type specifies a parameter that represents a length-terminated binary data type, or an array of such values.</p>
@@ -5540,7 +5534,7 @@ Except for this file extension recommendation the filename is arbitrary and is i
 <div class="sect2">
 <h3 id="parametermapping-2">7.1. ParameterMapping</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureParameterMapping_ParameterMapping.png" alt="image" width="450" height="477"></span></p>
+<p><span class="image"><img src="images/SystemStructureParameterMapping_ParameterMapping.png" alt="SystemStructureParameterMapping ParameterMapping"></span></p>
 </div>
 <div class="paragraph">
 <p>This element describes a parameter mapping, which consists of multiple mapping entries, each describing one parameter mapping (see next section).
@@ -5574,7 +5568,7 @@ If it is 1.0 the file must also conform fully to the 1.0 standard.</p></td>
 <div class="sect3">
 <h4 id="mappingentry">7.1.1. MappingEntry</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image57.png" alt="image" width="577" height="556"></span></p>
+<p><span class="image"><img src="images/image57.png" alt="image57"></span></p>
 </div>
 <div class="paragraph">
 <p>This element specifies a single mapping between a parameter in the source and a parameter of the system or component being parameterized.
@@ -5661,7 +5655,7 @@ Any enumerations or units used in the DictionaryEntry elements must be declared 
 <div class="sect2">
 <h3 id="signaldictionary">8.1. SignalDictionary</h3>
 <div class="paragraph">
-<p><span class="image"><img src="images/SystemStructureSignalDictionary_SignalDictionary.png" alt="image" width="438" height="585"></span></p>
+<p><span class="image"><img src="images/SystemStructureSignalDictionary_SignalDictionary.png" alt="SystemStructureSignalDictionary SignalDictionary"></span></p>
 </div>
 <div class="paragraph">
 <p>This element describes a signal dictionary, which consists of one or more dictionary entries, each describing one signal in the signal dictionary (see next section).</p>
@@ -5724,7 +5718,7 @@ If it is 1.0 the file must also conform fully to the 1.0 standard.</p></td>
 <div class="sect3">
 <h4 id="dictionaryentry">8.1.1. DictionaryEntry</h4>
 <div class="paragraph">
-<p><span class="image"><img src="images/image59.png" alt="image" width="485" height="923"></span></p>
+<p><span class="image"><img src="images/image59.png" alt="image59"></span></p>
 </div>
 <div class="paragraph">
 <p>A dictionary entry defines a single signal in the signal dictionary.</p>
