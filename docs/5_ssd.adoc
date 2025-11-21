@@ -222,7 +222,7 @@ Any inside view is not overridden.
 ====
 Graphical example for a ConnectorGeometry:
 
-image:images/ConnectorGeometryExample.png[image]
+image:images/ConnectorGeometryExample.png[width=500]
 ====
 
 ==== ElementGeometry
@@ -266,7 +266,7 @@ It is recommended that implementations that support graphical presentation suppo
 ====
 Graphical example for an ElementGeometry:
 
-image:images/ElementGeometryExample.png[image]
+image:images/ElementGeometryExample.png[width=500]
 ====
 
 [NOTE]
@@ -275,7 +275,7 @@ The next examples show the effects of attributes of the ElementGeometry on the v
 
 *Non-transformed reference* (icon fills rectangle, left 2 inputs, right 1 output)
 
-image:images/IconExampleBase.png[]
+image:images/IconExampleBase.png[width=500]
 
 *Coordinate systems:*
 
@@ -285,12 +285,12 @@ Blue: ElementGeometry
 __*Example 1: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**0** +
 __iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**IGNORED** (relevant only if element is flipped)__
 
-image:images/IconExample1.png[]
+image:images/IconExample1.png[width=500]
 
 __*Example 2: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**0** +
 __iconRotation__=**0**,__ iconFixedAspectRatio__=**false, **__iconFlip__=**IGNORED**__
 
-image:images/IconExample2.png[]
+image:images/IconExample2.png[width=500]
 
 *_ +
 _*
@@ -298,12 +298,12 @@ _*
 __*Example 3: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ** +
 __iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**IGNORED**__
 
-image:images/IconExample3.png[]
+image:images/IconExample3.png[width=500]
 
 __*Example 4: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ +
 **__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**false**,__ iconFlip__=**IGNORED**__
 
-image:images/IconExample4.png[]
+image:images/IconExample4.png[width=500]
 
 *_ +
 _*
@@ -311,12 +311,12 @@ _*
 __*Example 5: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ** +
 __iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**IGNORED**__
 
-image:images/IconExample5.png[]
+image:images/IconExample5.png[width=500]
 
 __*Example 6: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ** +
 __iconRotation__=**0**,__ iconFixedAspectRatio__=**false**,__ iconFlip__=**IGNORED**__
 
-image:images/IconExample6.png[]
+image:images/IconExample6.png[width=500]
 
 _ +
 _
@@ -324,17 +324,17 @@ _
 __*Example 7: Horizontal flip* (__x1__>__x2__),__ rotation__=**ϕ** +
 __iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**true**__
 
-image:images/IconExample7.png[]
+image:images/IconExample7.png[width=500]
 
 __*Example 8: Horizontal flip* (__x1__>__x2__),__ rotation__=**ϕ** +
 __iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**false**,__ iconFlip__=**false**__
 
-image:images/IconExample8.png[]
+image:images/IconExample8.png[width=500]
 
 __*Example 9: Horizontal flip* (__x1__>__x2__),__ rotation__=**ϕ** +
 __iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**false**__
 
-image:images/IconExample9.png[]
+image:images/IconExample9.png[width=500]
 
 _ +
 _
@@ -342,17 +342,17 @@ _
 __*Example 10: Vertical flip* (__y1__>__y2__),__ rotation__=**0 +
 **__iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**false**__
 
-image:images/IconExample10.png[]
+image:images/IconExample10.png[width=500]
 
 __*Example 11: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**0 +
 **__iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**false**__
 
-image:images/IconExample11.png[]
+image:images/IconExample11.png[width=500]
 
 __*Example 12: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__)*, *__rotation__=**0 +
 **__iconRotation__=**0**,__ iconFixedAspectRatio__=**true,**__ iconFlip__=**true**__
 
-image:images/IconExample12.png[]
+image:images/IconExample12.png[width=500]
 
 *_ +
 _*
@@ -360,17 +360,17 @@ _*
 __*Example 13: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**ϕ +
 **__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**true**__
 
-image:images/IconExample13.png[]
+image:images/IconExample13.png[width=500]
 
 __*Example 14: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**ϕ +
 **__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**false, **__iconFlip__=**true**__
 
-image:images/IconExample14.png[]
+image:images/IconExample14.png[width=500]
 
 __*Example 15: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**ϕ +
 **__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true, **__iconFlip__=**false**__
 
-image:images/IconExample15.png[]
+image:images/IconExample15.png[width=500]
 ====
 
 ==== ParameterBindings
@@ -685,7 +685,7 @@ Note that x and y coordinates are in the coordinate system of the enclosing syst
 ====
 Graphical example for a ConnectionGeometry:
 
-image:images/ConnectionGeometryExample.png[image]
+image:images/ConnectionGeometryExample.png[width=600]
 ====
 
 ==== SignalDictionaries
@@ -757,14 +757,14 @@ Hence, the exporting tool has to scale from its own coordinate system when expor
 ====
 Graphical example for a SystemGeometry:
 
-image:images/SystemGeometryExample.png[image]
+image:images/SystemGeometryExample.png[width=600]
 ====
 
 [NOTE]
 ====
 Graphical example showing the interplay of SystemGeometry, ElementGeometry, ConnectorGeometry, and ConnectionGeometry:
 
-image:images/GeometryInterplayExample.png[image]
+image:images/GeometryInterplayExample.png[width=800]
 ====
 
 [NOTE]
@@ -775,7 +775,7 @@ Subsystem A is an element with an ElementGeometry (x1_Ae, y1_Ae, x2_Ae, y2_Ae) a
 
 B is an element in subystem A with an ElementGeometry coordinates (x1_Be, y1_Be, x2_Be, y2_Be).
 
-image:images/GeometryInterplayCoordinates.png[image]
+image:images/GeometryInterplayCoordinates.png[width=800]
 
 To plot the element B in the system where A is located, use the following coordinate transformation:
 
