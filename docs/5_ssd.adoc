@@ -12,27 +12,39 @@ image:images/SystemStructureDescription_SystemStructureDescription.png[]
 
 The root element of an SSD file must be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|version |This required attribute specifies the version of this specification that the system description conforms to.
+
+|version
+|This required attribute specifies the version of this specification that the system description conforms to.
 Only major and minor version number are included, the patch version number must not be included in this attribute.
 For the current release this must be either 1.0 or 2.0.
 If it is 1.0 the file must also conform fully to the 1.0 standard.
-|name |This required attribute provides a name, which can be used for purposes of presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
+
+|name
+|This required attribute provides a name, which can be used for purposes of presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 |===
 
 The following XML child elements are specified for the SystemStructureDescription element:
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|System |This required element specifies the root system of the model, see <<System>>.
-|Enumerations |This optional element must contain definitions for all enumerations referenced in the system description file.
+
+|System
+|This required element specifies the root system of the model, see <<System>>.
+
+|Enumerations
+|This optional element must contain definitions for all enumerations referenced in the system description file.
 See <<Enumerations>> for its definition.
-|Units |This optional element must contain definitions for all units referenced in the system description file.
+
+|Units
+|This optional element must contain definitions for all units referenced in the system description file.
 See <<Units>> for its definition.
-|DefaultExperiment |This optional element may contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.
+
+|DefaultExperiment
+|This optional element may contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.
 |===
 
 The root system of the model is specified through the required System element, see <<System>>.
@@ -53,11 +65,15 @@ It should be noted that since FMI 2.0 the unit of the independent variable for F
 It defaults to seconds, however other units can be specified by explicitly defining the independent variable.
 This standard does not specify additional measures to deal with differing independent variable units, but leaves this to the implementation.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|startTime |This optional attribute gives the start time of the simulation.
-|stopTime |This optional attribute gives the stop time of the simulation.
+
+|startTime
+|This optional attribute gives the start time of the simulation.
+
+|stopTime
+|This optional attribute gives the stop time of the simulation.
 |===
 
 === Common Model Element Type
@@ -68,24 +84,32 @@ image:images/SystemStructureDescription_TElement.png[]
 
 The following XML attributes are specified for the TElement type:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |This required attribute gives the model element a name, which is used to identify the model element inside its parent system.
+
+|name
+|This required attribute gives the model element a name, which is used to identify the model element inside its parent system.
 The name must be unique within the directly enclosing parent system.
 The name must not be the empty string.
 |===
 
 The following XML child elements are specified for the TElement type:
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Connectors |This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
+
+|Connectors
+|This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
 See below for details.
-|ElementGeometry |This optional element defines the geometry information of the component.
+
+|ElementGeometry
+|This optional element defines the geometry information of the component.
 See below for details.
-|ParameterBindings |This optional element specifies the set of parameter bindings of this model element.
+
+|ParameterBindings
+|This optional element specifies the set of parameter bindings of this model element.
 See below for details.
 |===
 
@@ -94,7 +118,7 @@ See below for details.
 image:images/image26.png[]
 
 This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
-For components the set of connectors must match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP150], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
+For components the set of connectors must match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification <<OSMP150>>, the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
 For FMI 3.0 FMUs, the connector name has to match either the name of the corresponding variable element, or one of its <Alias> elements.
 
 Names of variable elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
@@ -112,18 +136,19 @@ image:images/image27.png[]
 
 The following XML attributes are specified for the Connector element:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name a|
-This attribute gives the connector a name, which shall be unique within the given model element, and, for components, must match the name of a relevant variable/port in the underlying component implementation.
+
+|name
+|This attribute gives the connector a name, which shall be unique within the given model element, and, for components, must match the name of a relevant variable/port in the underlying component implementation.
 In the case of referenced FMUs this must match the name of the relevant variable or alias in the referenced FMU.
 
 Note that there is no requirement that connectors have to be present for all variables/ports of an underlying component implementation.
 At least those connectors must be present which are referenced in connections inside the SSD.
 
-|kind a|
-This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), unspecified, a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
+|kind 
+|This attribute specifies the kind of the given connector, which indicates whether the connector is an input, an output, both (inout), unspecified, a local variable, a constant, a parameter, a calculated parameter (i.e. a parameter that is calculated by the component during initialization), or a structural parameter (i.e. a parameter that can be set during (re-)configuration mode).
 
 For components this must match the related kind of the underlying component implementation.
 For referenced FMUs it must match the combination of variability and causality:
@@ -144,23 +169,27 @@ This can be used for example to allow a connector to function as both an input a
 
 Connectors of kind `unspecified` are used to define connectors for which the flow of information is either not yet specified, or is determined at runtime, for example for acausal connections of Modelica models.
 Such connectors can be connected to any other connector under the rules of the underlying modeling language.
-
 |===
 
 The following XML child elements are specified for the Connector element:
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Real / Float64 / Float32 / +
-Integer / Int8 / UInt8 / Int16 / UInt16 / +
-Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements can be present to specify the type of the Connector.
+
+|Real / Float64 / Float32 / Integer / Int8 / UInt8 / Int16 / UInt16 / Int32 / UInt32 / Int64 / UInt64 / Boolean / String / Enumeration / Binary / Clock
+|Exactly one of these elements can be present to specify the type of the Connector.
 See <<ssc_types>> for details.
-|Dimension |One or more of these optional elements specify the connector array dimensions, making the connector an array connector.
+
+|Dimension
+|One or more of these optional elements specify the connector array dimensions, making the connector an array connector.
 See <<ssc_dimensions>> for details.
-|Clock |One or more of these optional elements associate the connector to a clock of the given name, which must be defined on the element that contains this connector.
-|ConnectorGeometry |This optional element defines the geometry information of the connector.
+
+|Clock
+|One or more of these optional elements associate the connector to a clock of the given name, which must be defined on the element that contains this connector.
+
+|ConnectorGeometry
+|This optional element defines the geometry information of the connector.
 See below for details.
 |===
 
@@ -172,17 +201,41 @@ The association of a connector to a clock is given by the presence of one or mor
 
 When Modelica models are represented in SSP, built-in input and output connectors shall be mapped as follows:
 
-[width="100%",cols="25%,25%,50%",options="header",]
+[cols="1,1,2"]
 |===
 |Modelica Type |SSP Type |SSP Kind
-|RealInput |ssc:Real |input
-|RealOutput |ssc:Real |output
-|IntegerInput |ssc:Integer |input
-|IntegerOutput |ssc:Integer |output
-|BooleanInput |ssc:Boolean |input
-|BooleanOutput |ssc:Boolean |output
-|StringInput |ssc:String |input
-|StringOutput |ssc:String |output
+
+|RealInput
+|ssc:Real
+|input
+
+|RealOutput
+|ssc:Real
+|output
+
+|IntegerInput
+|ssc:Integer
+|input
+
+|IntegerOutput
+|ssc:Integer
+|output
+
+|BooleanInput
+|ssc:Boolean
+|input
+
+|BooleanOutput
+|ssc:Boolean
+|output
+
+|StringInput
+|ssc:String
+|input
+
+|StringOutput
+|ssc:String
+|output
 |===
 
 Modelica connectors of more advanced types are currently mapped in the following way:
@@ -209,13 +262,21 @@ This enables preserving the inside system layout when integrating a system in a 
 If defined, this ConnectorGeometry overrides any ConnectorGeometry of a System in a referenced SSD file or any port location defined by an FMU (as defined in the relevant FMI standards) for the x and y coordinates of the outside view.
 Any inside view is not overridden.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|x |Required attribute giving the x coordinate of the connector inside the connector coordinate system.
-|y |Required attribute giving the y coordinate of the connector inside the connector coordinate system.
-|systemInnerX |Optional attribute giving a separate x coordinate of the connector for the inside view of a system.
-|systemInnerY |Optional attribute giving a separate y coordinate of the connector for the inside view of a system.
+
+|x
+|Required attribute giving the x coordinate of the connector inside the connector coordinate system.
+
+|y
+|Required attribute giving the y coordinate of the connector inside the connector coordinate system.
+
+|systemInnerX
+|Optional attribute giving a separate x coordinate of the connector for the inside view of a system.
+
+|systemInnerY
+|Optional attribute giving a separate y coordinate of the connector for the inside view of a system.
 |===
 
 [NOTE]
@@ -245,20 +306,38 @@ The optional attribute iconFlip defines whether any flipping indicated by (x1,y1
 
 NOTE: If no explicit icon is given, the icon used by the tool to represent the system should be rotated accordingly.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|x1 |Required attribute giving the x coordinate of the lower left corner of the model element inside the coordinate system of its parent system.
-|y1 |Required attribute giving the y coordinate of the lower left corner of the model element inside the coordinate system of its parent system.
-|x2 |Required attribute giving the x coordinate of the upper right corner of the model element inside the coordinate system of its parent system.
-|y2 |Required attribute giving the y coordinate of the upper right corner of the model element inside the coordinate system of its parent system.
-|rotation |Optional attribute defines an additional rotation in degrees that is to be applied after any flipping, where positive numbers indicate left rotation (x→y).
-|iconSource |Optional attribute defines an icon URI with the same semantics as for the source attribute of the Component element.
+
+|x1
+|Required attribute giving the x coordinate of the lower left corner of the model element inside the coordinate system of its parent system.
+
+|y1
+|Required attribute giving the y coordinate of the lower left corner of the model element inside the coordinate system of its parent system.
+
+|x2
+|Required attribute giving the x coordinate of the upper right corner of the model element inside the coordinate system of its parent system.
+
+|y2
+|Required attribute giving the y coordinate of the upper right corner of the model element inside the coordinate system of its parent system.
+
+|rotation
+|Optional attribute defines an additional rotation in degrees that is to be applied after any flipping, where positive numbers indicate left rotation (x→y).
+
+|iconSource
+|Optional attribute defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as specified in the relevant FMI standards).
 It is recommended that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.
-|iconRotation |Optional attribute defines the rotation (in degrees) of the icon, where positive numbers indicate left rotation (x→y).
-|iconFlip |Optional attribute defines whether any flipping indicated by (x1,y1), (x2,y2) shall be applied to the icon graphics, too, or not.
-|iconFixedAspectRatio |Optional attribute defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) with a fixed aspect ratio, or without keeping the aspect ratio fixed.
+
+|iconRotation
+|Optional attribute defines the rotation (in degrees) of the icon, where positive numbers indicate left rotation (x→y).
+
+|iconFlip
+|Optional attribute defines whether any flipping indicated by (x1,y1), (x2,y2) shall be applied to the icon graphics, too, or not.
+
+|iconFixedAspectRatio
+|Optional attribute defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) with a fixed aspect ratio, or without keeping the aspect ratio fixed.
 |===
 
 [NOTE]
@@ -284,11 +363,19 @@ Blue: ElementGeometry
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` < `x2`, `y1` < `y2`
-|rotation             |`0`
-|iconRatio            |`0`
-|iconFixedAspectRatio |`true`
-|iconFlip             |ignored
+|Coordinates |`x1` < `x2`, `y1` < `y2`
+
+|rotation
+|`0`
+
+|iconRatio
+|`0`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|ignored
 |===
 
 image:images/IconExample1.png[width=600]
@@ -297,11 +384,19 @@ image:images/IconExample1.png[width=600]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` < `x2`, `y1` < `y2`
-|rotation             |`0`
-|iconRotation         |`0`
-|iconFixedAspectRatio |`false`
-|iconFlip             |ignored
+|Coordinates|`x1` < `x2`, `y1` < `y2`
+
+|rotation
+|`0`
+
+|iconRotation
+|`0`
+
+|iconFixedAspectRatio
+|`false`
+
+|iconFlip
+|ignored
 |===
 
 image:images/IconExample2.png[width=300]
@@ -310,11 +405,19 @@ image:images/IconExample2.png[width=300]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` < `x2`, `y1` < `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`true`
-|iconFlip             |ignored
+|Coordinates |`x1` < `x2`, `y1` < `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|ignored
 |===
 
 image:images/IconExample3.png[width=600]
@@ -323,11 +426,19 @@ image:images/IconExample3.png[width=600]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` < `x2`, `y1` < `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`false`
-|iconFlip             |ignored
+|Coordinates |`x1` < `x2`, `y1` < `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`false`
+
+|iconFlip
+|ignored
 |===
 
 image:images/IconExample4.png[width=300]
@@ -336,11 +447,19 @@ image:images/IconExample4.png[width=300]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` < `x2`, `y1` < `y2`
-|rotation             |`ϕ`
-|iconRotation         |`0`
-|iconFixedAspectRatio |`true`
-|iconFlip             |ignored
+|Coordinates |`x1` < `x2`, `y1` < `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`0`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|ignored
 |===
 
 image:images/IconExample5.png[width=600]
@@ -349,11 +468,19 @@ image:images/IconExample5.png[width=600]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` < `x2`, `y1` < `y2`
-|rotation             |`ϕ`
-|iconRotation         |`0`
-|iconFixedAspectRatio |`false`
-|iconFlip             |ignored
+|Coordinates |`x1` < `x2`, `y1` < `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`0`
+
+|iconFixedAspectRatio
+|`false`
+
+|iconFlip
+|ignored
 |===
 
 image:images/IconExample6.png[width=300]
@@ -362,11 +489,19 @@ image:images/IconExample6.png[width=300]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` < `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`true`
-|iconFlip             |`true`
+|Coordinates |`x1` > `x2`, `y1` < `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|`true`
 |===
 
 image:images/IconExample7.png[width=600]
@@ -375,11 +510,19 @@ image:images/IconExample7.png[width=600]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` < `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`false`
-|iconFlip             |`false`
+|Coordinates |`x1` > `x2`, `y1` < `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`false`
+
+|iconFlip
+|`false`
 |===
 
 image:images/IconExample8.png[width=300]
@@ -388,11 +531,19 @@ image:images/IconExample8.png[width=300]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` < `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`true`
-|iconFlip             |`false`
+|Coordinates |`x1` > `x2`, `y1` < `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|`false`
 |===
 
 image:images/IconExample9.png[width=300]
@@ -401,11 +552,19 @@ image:images/IconExample9.png[width=300]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` < `x2`, `y1` > `y2`
-|rotation             |`0`
-|iconRotation         |`0`
-|iconFixedAspectRatio |`true`
-|iconFlip             |`false`
+|Coordinates |`x1` < `x2`, `y1` > `y2`
+
+|rotation
+|`0`
+
+|iconRotation
+|`0`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|`false`
 |===
 
 image:images/IconExample10.png[width=600]
@@ -414,11 +573,19 @@ image:images/IconExample10.png[width=600]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` > `y2`
-|rotation             |`0`
-|iconRotation         |`0`
-|iconFixedAspectRatio |`true`
-|iconFlip             |`false`
+|Coordinates |`x1` > `x2`, `y1` > `y2`
+
+|rotation
+|`0`
+
+|iconRotation
+|`0`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|`false`
 |===
 
 image:images/IconExample11.png[width=600]
@@ -427,11 +594,19 @@ image:images/IconExample11.png[width=600]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` > `y2`
-|rotation             |`0`
-|iconRotation         |`0`
-|iconFixedAspectRatio |`true`
-|iconFlip             |`true`
+|Coordinates |`x1` > `x2`, `y1` > `y2`
+
+|rotation
+|`0`
+
+|iconRotation
+|`0`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|`true`
 |===
 
 image:images/IconExample12.png[width=300]
@@ -440,11 +615,19 @@ image:images/IconExample12.png[width=300]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` > `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`true`
-|iconFlip             |`true`
+|Coordinates |`x1` > `x2`, `y1` > `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|`true`
 |===
 
 image:images/IconExample13.png[width=600]
@@ -453,11 +636,19 @@ image:images/IconExample13.png[width=600]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` > `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`false`
-|iconFlip             |`true`
+|Coordinates |`x1` > `x2`, `y1` > `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`false`
+
+|iconFlip
+|`true`
 |===
 
 image:images/IconExample14.png[width=300]
@@ -466,11 +657,19 @@ image:images/IconExample14.png[width=300]
 
 [cols="1,2"]
 |===
-|Coordinates          |`x1` > `x2`, `y1` > `y2`
-|rotation             |`ϕ`
-|iconRotation         |`ϕ`
-|iconFixedAspectRatio |`true`
-|iconFlip             |`false`
+|Coordinates |`x1` > `x2`, `y1` > `y2`
+
+|rotation
+|`ϕ`
+
+|iconRotation
+|`ϕ`
+
+|iconFixedAspectRatio
+|`true`
+
+|iconFlip
+|`false`
 |===
 
 image:images/IconExample15.png[width=300]
@@ -539,36 +738,46 @@ Parameter bindings that apply to a component that references another SSD/SSP are
 Any parameter bindings in the component are treated as if they were present in the top-level system of the SSP/SSD after all parameter bindings of the system.
 Therefore they take priority over any of the existing parameter bindings (for parameters with identical names).
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|type |Optional attribute giving the MIME type of the parameter source, which defaults to application/x-ssp-parameter-set to indicate the SSP parameter set file format.
+
+|type
+|Optional attribute giving the MIME type of the parameter source, which defaults to application/x-ssp-parameter-set to indicate the SSP parameter set file format.
 No further types are currently defined, but can of course be added at a later date, for pre-existing parameter file formats, like CDF, etc.
-|source a|
-Optional attribute indicating the source of the parameters as a URI (cf. RFC 3986).
+
+|source
+|Optional attribute indicating the source of the parameters as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the parameter set must be provided inline as contents of a ParameterValues element, which must not be present otherwise.
-|sourceBase a|
-Defines the base the source URI is resolved against:
+
+|sourceBase
+|Defines the base the source URI is resolved against:
 
 If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the containing file.
 
 If the attribute is specified as `component` the URI is resolved against the (resolved) source URI of the component.
 
 The last option allows the specification of parameter sources that reside inside a resource (for example an FMU) through relative URIs.
-|prefix |Defines the optional prefix for name resolution and mapping purposes for this binding.
+
+|prefix
+|Defines the optional prefix for name resolution and mapping purposes for this binding.
 If this attribute is empty or not supplied no prefix is used for name resolution and mapping, otherwise the specified prefix is prepended to all names in the parameter source prior to processing the normal name resolution or name mapping rules.
 This allows the user to apply a parameter set normally intended for a component (and thus containing bare parameter names) at a system level targeted to one element of the system by supplying the name of the element plus a dot as a prefix on the binding, thus causing all parameter names in the parameter set to be treated as if they were specified with proper hierarchical names.
 |===
 
 The following XML child elements are specified for the ParameterBinding element:
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|ParameterValues |This optional element can be used to provide parameter values inline to the parameter binding, in which case the source attribute of the ParameterBinding element must be empty.
-|ParameterMapping |This optional element provides an optional parameter mapping, which specifies how the parameter names and values provided in the parameter source are to be mapped to the parameters of the component or system in question.
+
+|ParameterValues
+|This optional element can be used to provide parameter values inline to the parameter binding, in which case the source attribute of the ParameterBinding element must be empty.
+
+|ParameterMapping
+|This optional element provides an optional parameter mapping, which specifies how the parameter names and values provided in the parameter source are to be mapped to the parameters of the component or system in question.
 If no mapping is supplied, the parameter names of the parameter source are used as is for name matching against the names of parameters in the component or system and the values of the parameter source are not transformed further before being applied.
 See below for details.
 |===
@@ -587,18 +796,22 @@ image:images/SystemStructureDescription_ParameterMapping.png[]
 This element provides a parameter mapping, which specifies how the parameter names and values provided in the parameter source are to be mapped to the parameters of the component or system in question.
 If no mapping is supplied, the parameter names of the parameter source are used as is for name matching against the names of parameters in the component or system and the values of the parameter source are not transformed further before being applied.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|type |Optional attribute giving the MIME type of the parameter mapping, which defaults to `application/x-ssp-parameter-mapping` to indicate the SSP parameter mapping file format.
+
+|type
+|Optional attribute giving the MIME type of the parameter mapping, which defaults to `application/x-ssp-parameter-mapping` to indicate the SSP parameter mapping file format.
 No further types are currently defined, but can of course be added at a later date.
-|source a|
-Optional attribute indicating the source of the parameter mapping as a URI (cf. RFC 3986).
+
+|source
+|Optional attribute indicating the source of the parameter mapping as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the parameter mapping must be provided inline as contents of the ParameterMapping element, which must be empty otherwise.
-|sourceBase a|
-Defines the base the source URI is resolved against:
+
+|sourceBase
+|Defines the base the source URI is resolved against:
 
 If the attribute is missing or is specified as `SSD`, the source is resolved against the URI of the containing file.
 
@@ -619,14 +832,24 @@ This element describes a system, which can contain components, signal dictionary
 
 The following XML child elements are specified for the System element:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Elements |This optional element provides the elements contained in this system, see specification below.
-|Connections |This optional element provides the connections between connectors of the system, connectors of its elements and inbetween those connectors.
-|SignalDictionaries |This optional element provides the set of defined signal dictionaries for the system.
-|SystemGeometry |This optional element defines the extent of the system canvas for the system.
-|GraphicalElements |This optional element contains the set of purely graphical elements that are contained in the system, like notes, which have no semantic impact on the system but aid in presentation of the system in graphical user interfaces.
+
+|Elements
+|This optional element provides the elements contained in this system, see specification below.
+
+|Connections
+|This optional element provides the connections between connectors of the system, connectors of its elements and inbetween those connectors.
+
+|SignalDictionaries
+|This optional element provides the set of defined signal dictionaries for the system.
+
+|SystemGeometry
+|This optional element defines the extent of the system canvas for the system.
+
+|GraphicalElements
+|This optional element contains the set of purely graphical elements that are contained in the system, like notes, which have no semantic impact on the system but aid in presentation of the system in graphical user interfaces.
 |===
 
 ==== Elements
@@ -637,12 +860,18 @@ This optional element contains one or more components, signal dictionary referen
 
 The following XML child elements are specified for the Elements element:
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Component |A component, see <<Component>>.
-|SignalDictionaryReference |A reference to a signal dictionary, see <<SignalDictionaryReference>>.
-|System |A nested system, see <<System>>.
+
+|Component
+|A component, see <<Component>>.
+
+|SignalDictionaryReference
+|A reference to a signal dictionary, see <<SignalDictionaryReference>>.
+
+|System
+|A nested system, see <<System>>.
 |===
 
 ==== Connections
@@ -658,22 +887,36 @@ Note that only connections between certain kinds of connectors are allowed, as s
 Note also that the terms start and end in the attribute names of the connector, like startElement or endConnector, do not denote directionality of the data flow implied by the connector.
 That is determined by the combination of the semantics of the actual connectors (variables/ports) connected and their kind attributes.
 
-[width="100%",cols="30%,70%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|startElement |Optional attribute giving the the name of the element that contains the connector given as startConnector.
+
+|startElement
+|Optional attribute giving the the name of the element that contains the connector given as startConnector.
 If the attribute is not present, then the startConnector names a connector on this system.
-|startConnector |Required attribute giving the name of the connector that is the start of the connection.
+
+|startConnector
+|Required attribute giving the name of the connector that is the start of the connection.
 If startElement is not supplied this indicates a connector on this system, otherwise the connector is to be found on the given element.
-|startIndices |Optional attribute giving the list of indices of an array connector that this connection is restricted to.
+
+|startIndices
+|Optional attribute giving the list of indices of an array connector that this connection is restricted to.
 If not supplied this indicates that this connection applies to the whole connector, not just a single element.
-|endElement |Optional attribute giving the name of the element that contains the connector given as endConnector.
+
+|endElement
+|Optional attribute giving the name of the element that contains the connector given as endConnector.
 If the attribute is not present, then the endConnector names a connector on this system.
-|endConnector |Required attribute giving the name of the connector that is the end of the connection.
+
+|endConnector
+|Required attribute giving the name of the connector that is the end of the connection.
 If endElement is not supplied this indicates a connector on this system, otherwise the connector is to be found on the given element.
-|endIndices |Optional attribute giving the list of indices of an array connector that this connection is restricted to.
+
+|endIndices
+|Optional attribute giving the list of indices of an array connector that this connection is restricted to.
 If not supplied this indicates that this connection applies to the whole connector, not just a single element.
-|suppressUnitConversion |Optional attribute specifying whether automatic conversions between start and end connector are performed using unit information potentially available for both start and end definitions.
+
+|suppressUnitConversion
+|Optional attribute specifying whether automatic conversions between start and end connector are performed using unit information potentially available for both start and end definitions.
 
 If this attribute is supplied and its value is true, then the environment will not perform any automatic unit conversions, otherwise automatic unit conversions can be performed.
 
@@ -709,63 +952,236 @@ Such connections are deemed to establish equality constraints on the clock ticks
 
 For all connections of an element connector of type `Clock` to a system connector of type `Clock`, the `intervalVariability` of the two connectors must be identical.
 
-[width="100%",cols="22%,32%,21%,25%",options="header",]
+[cols="1,1,1,1"]
 |===
-|Source | |Destination |
+2+^|Source 2+^|Destination
+
 |*Owner* |*Kind* |*Owner* |*Kind*
-|System |structuralParameter |System |calculatedParameter
-|System |structuralParameter |System |output
-|System |structuralParameter |System |local
-|System |parameter |System |calculatedParameter
-|System |parameter |System |output
-|System |parameter |System |local
-|System |input |System |output
-|System |input |System |local
-|System |structuralParameter |Element |structuralParameter
-|System |structuralParameter |Element |parameter
-|System |structuralParameter |Element |input
-|System |structuralParameter |Element |inout
-|System |parameter |Element |parameter
-|System |parameter |Element |input
-|System |parameter |Element |inout
-|System |input |Element |input
-|System |input |Element |inout
-|Element |constant |Element |structuralParameter
-|Element |constant |Element |parameter
-|Element |constant |Element |input
-|Element |constant |Element |inout
-|Element |calculatedParameter |Element |parameter
-|Element |calculatedParameter |Element |input
-|Element |calculatedParameter |Element |inout
-|Element |output |Element |input
-|Element |output |Element |inout
-|Element |local  |Element |input
-|Element |local  |Element |inout
-|Element |inout |Element |input
-|Element |constant |System |constant
-|Element |constant |System |calculatedParameter
-|Element |constant |System |output
-|Element |constant |System |local
-|Element |calculatedParameter |System |calculatedParameter
-|Element |calculatedParameter |System |output
-|Element |calculatedParameter |System |local
-|Element |output |System |output
-|Element |output |System |local
-|Element |local  |System |output
-|Element |local  |System |local
-|Element |inout |System |output
-|Element |inout |System |local
+
+|System
+|structuralParameter
+|System
+|calculatedParameter
+
+|System
+|structuralParameter
+|System
+|output
+
+|System
+|structuralParameter
+|System
+|local
+
+|System
+|parameter
+|System
+|calculatedParameter
+
+|System
+|parameter
+|System
+|output
+
+|System
+|parameter
+|System
+|local
+
+|System
+|input
+|System
+|output
+
+|System
+|input
+|System
+|local
+
+|System
+|structuralParameter
+|Element
+|structuralParameter
+
+|System
+|structuralParameter
+|Element
+|parameter
+
+|System
+|structuralParameter
+|Element
+|input
+
+|System
+|structuralParameter
+|Element
+|inout
+
+|System
+|parameter
+|Element
+|parameter
+
+|System
+|parameter
+|Element
+|input
+
+|System
+|parameter
+|Element
+|inout
+
+|System
+|input
+|Element
+|input
+
+|System
+|input
+|Element
+|inout
+
+|Element
+|constant
+|Element
+|structuralParameter
+
+|Element
+|constant
+|Element
+|parameter
+
+|Element
+|constant
+|Element
+|input
+
+|Element
+|constant
+|Element
+|inout
+
+|Element
+|calculatedParameter
+|Element
+|parameter
+
+|Element
+|calculatedParameter
+|Element
+|input
+
+|Element
+|calculatedParameter
+|Element
+|inout
+
+|Element
+|output
+|Element
+|input
+
+|Element
+|output
+|Element
+|inout
+
+|Element
+|local
+|Element
+|input
+
+|Element
+|local
+|Element
+|inout
+
+|Element
+|inout
+|Element
+|input
+
+|Element
+|constant
+|System
+|constant
+
+|Element
+|constant
+|System
+|calculatedParameter
+
+|Element
+|constant
+|System
+|output
+
+|Element
+|constant
+|System
+|local
+
+|Element
+|calculatedParameter
+|System
+|calculatedParameter
+
+|Element
+|calculatedParameter
+|System
+|output
+
+|Element
+|calculatedParameter
+|System
+|local
+
+|Element
+|output
+|System
+|output
+
+|Element
+|output
+|System
+|local
+
+|Element
+|local
+|System
+|output
+
+|Element
+|local
+|System
+|local
+
+|Element
+|inout
+|System
+|output
+
+|Element
+|inout
+|System
+|local
 |===
 
 The following XML child elements are specified for the Connection element:
 
-[width="100%",cols="42%,58%",options="header",]
+[cols="1,2"]
 |===
 |Element |Description
-|LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation |Specifies an optional transformation for the connection.
+
+|LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation
+|Specifies an optional transformation for the connection.
 If any, exactly one of these elements must be present to specify the type of the transformation.
 See <<Transformation Choice>> for details.
-|ConnectionGeometry |This optional element defines the geometry information of the connection.
+
+|ConnectionGeometry
+|This optional element defines the geometry information of the connection.
 |===
 
 ===== ConnectionGeometry
@@ -777,11 +1193,15 @@ The start and end coordinates of the connection are derived automatically throug
 The only relevant geometry information provided by the connection geometry is a, by default empty, list of intermediate waypoint coordinates, which are to be interpreted as for the svg:polyline primitive, i.e. as waypoints for straight line segments, with the first and last points added automatically based on the translated coordinates of the start and end connectors.
 Note that x and y coordinates are in the coordinate system of the enclosing system.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|pointsX |Required attribute giving a list of x coordinates of the intermediate waypoints.
-|pointsY |Required attribute giving a list of y coordinates of the intermediate waypoints.
+
+|pointsX
+|Required attribute giving a list of x coordinates of the intermediate waypoints.
+
+|pointsY
+|Required attribute giving a list of y coordinates of the intermediate waypoints.
 |===
 
 [NOTE]
@@ -807,18 +1227,23 @@ image:images/SystemStructureDescription_SignalDictionary.png[]
 
 A signal dictionary is a collection of signals which can be accessed in different systems at different levels of the hierarchy through signal dictionary references referencing the signal dictionary.
 
-[width="100%",cols="26%,74%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |Required attribute giving the signal dictionary a name, which shall be unique within the directly enclosing system.
+
+|name
+|Required attribute giving the signal dictionary a name, which shall be unique within the directly enclosing system.
 The name is used for purposes of specifying the signal dictionary referenced by a signal dictionary reference.
 Name lookups occur in hierarchical fashion, i.e. the name is first looked up in the system that contains a signal dictionary reference.
 If that lookup yields no match, the lookup is performed on the enclosing system, etc., until a match is found.
 It is an error if no matching signal dictionary is found.
-|type |Optional attribute giving the MIME type of the signal dictionary, which defaults to `application/x-ssp-signal-dictionary` to indicate the SSP signal dictionary file format.
+
+|type
+|Optional attribute giving the MIME type of the signal dictionary, which defaults to `application/x-ssp-signal-dictionary` to indicate the SSP signal dictionary file format.
 No further types are currently defined, but can of course be added at a later date.
-|source a|
-This attribute indicates the source of the signal dictionary as a URI (cf. RFC 3986).
+
+|source
+|This attribute indicates the source of the signal dictionary as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
 
 If the source attribute is missing, the signal dictionary must be provided inline as contents of the SignalDictionary element, which must be empty otherwise.
@@ -846,13 +1271,21 @@ This common unit for coordinates is defined to allow a seamless integration of S
 Without such a common unit, an SSP exported in one tool might appear huge or tiny in the other tool.
 Hence, the exporting tool has to scale from its own coordinate system when exporting and the importing tool has to scale to its own coordinate system when importing an SSP.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|x1 |Required attribute giving the x coordinate of the lower-left corner of the system canvas.
-|y1 |Required attribute giving the y coordinate of the lower-left corner of the system canvas.
-|x2 |Required attribute giving the x coordinate of the upper-right corner of the system canvas.
-|y2 |Required attribute giving the y coordinate of the upper-right corner of the system canvas.
+
+|x1
+|Required attribute giving the x coordinate of the lower-left corner of the system canvas.
+
+|y1
+|Required attribute giving the y coordinate of the lower-left corner of the system canvas.
+
+|x2
+|Required attribute giving the x coordinate of the upper-right corner of the system canvas.
+
+|y2
+|Required attribute giving the y coordinate of the upper-right corner of the system canvas.
 |===
 
 [NOTE]
@@ -908,13 +1341,21 @@ The presentation expectation is that the text is automatically sized and wrapped
 If this would lead to too small text, it might be necessary to provide an interactive method (like expanding triangle, or popup, or other means) to show the remainder of the note text.
 Inside the text attribute, newlines indicate paragraph breaks.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|x1 |Required attribute giving the x coordinate of the lower-left corner of the note.
-|y1 |Required attribute giving the y coordinate of the lower-left corner of the note.
-|x2 |Required attribute giving the x coordinate of the upper-right corner of the note.
-|y2 |Required attribute giving the y coordinate of the upper-right corner of the note.
+
+|x1
+|Required attribute giving the x coordinate of the lower-left corner of the note.
+
+|y1
+|Required attribute giving the y coordinate of the lower-left corner of the note.
+
+|x2
+|Required attribute giving the x coordinate of the upper-right corner of the note.
+
+|y2
+|Required attribute giving the y coordinate of the upper-right corner of the note.
 |===
 
 === Component
@@ -923,18 +1364,20 @@ image:images/SystemStructureDescription_Component.png[]
 
 A component is an atomic element of a system (i.e. its internal structure is not specified).
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1a,4a"]
 |===
 |Attribute |Description
-|type |Optional attribute giving the MIME type of the component, which defaults to `application/x-fmu-sharedlibrary` to indicate the type of the component.
+
+|type
+|Optional attribute giving the MIME type of the component, which defaults to `application/x-fmu-sharedlibrary` to indicate the type of the component.
 Valid further types are `application/x-ssp-definition` for system structure description files, `application/x-ssp-package` for system structure package files, and `text/x-modelica` for Modelica models.
 No further types are currently defined.
 For type `text/x-modelica`, a media type parameter `path` specifies the full path of the Modelica class.
 
 NOTE: Example: `type="text/x-modelica; path=Modelica.Mechanics.Rotational.Interface.Flange_A"`.
 
-|source a|
-Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
+|source
+|Optional attribute indicating the source of the component as a URI (cf. RFC 3986).
 For purposes of the resolution of relative URIs the base URI is the URI of the SSD.
 Therefore for components that are located alongside the SSD, relative URIs without scheme and authority can and should be used to specify the component sources.
 For components that are packaged inside an SSP that contains this SSD, this is required (in this way, the SSD URIs remain valid after unpacking the SSP into the filesystem).
@@ -957,7 +1400,8 @@ In any other regard implementations can treat such components as equivalent to a
 Note that not specifying a source attribute is not the same as specifying a source attribute with an emtpy string value, as that is considered a valid relative URI.
 Implementations must not specify an empty relative URI to indicate a missing implementation.
 
-|implementation |When the referenced component is an FMU that contains multiple implementations, this optional attribute can be used to determine which FMU implementation should be employed.
+|implementation
+|When the referenced component is an FMU that contains multiple implementations, this optional attribute can be used to determine which FMU implementation should be employed.
 
 NOTE: For example Co-Simulation and Model Exchange.
 
@@ -972,11 +1416,12 @@ image:images/SystemStructureDescription_SignalDictionaryReference.png[]
 
 A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which must reference signal dictionary entries.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|dictionary a|
-This required attribute gives the name of the signal dictionary that is to be referenced.
+
+|dictionary
+|This required attribute gives the name of the signal dictionary that is to be referenced.
 Name lookups occur in hierarchical fashion, i.e. the name is first looked up in the system that contains a signal dictionary reference.
 If that lookup yields no match, the lookup is performed on the enclosing system, etc., until a match is found.
 

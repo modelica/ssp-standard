@@ -9,11 +9,15 @@ All XML elements that correspond to an entity of the system model will have the 
 
 image:images/image1.png[]
 
-[width="100%",cols="18%,82%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|id |This optional attribute gives the model entity a file-wide unique id which can be referenced from other entities or via URI fragment identifier.
-|description |This optional attribute gives a human readable longer description of the model entity, which can be shown to the user where appropriate.
+
+|id
+|This optional attribute gives the model entity a file-wide unique id which can be referenced from other entities or via URI fragment identifier.
+
+|description
+|This optional attribute gives a human readable longer description of the model entity, which can be shown to the user where appropriate.
 |===
 
 === Common XML Child Elements
@@ -22,10 +26,12 @@ All XML elements that correspond to an entity of the system model will have the 
 
 image:images/image2.png[]
 
-[width="100%",cols="18%,82%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Annotations |This optional element can be used to give additional information for any model entity.
+
+|Annotations
+|This optional element can be used to give additional information for any model entity.
 When it is present, it must contain 1 or more Annotation elements as specified below.
 |===
 
@@ -49,15 +55,27 @@ Top-level attributes are optional meta-data attributes common to all top-level c
 
 image:images/image4.png[]
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|author |Optional attribute giving the name and/or organization of the author of the contents of this file.
-|fileversion |Optional attribute giving the version of the contents of this file.
-|copyright |Optional attribute giving information about copyrights of the contents of this file.
-|license |Optional attribute giving information about licensing of the contents of this file.
-|generationTool |Optional attribute giving information about the tool used to generate this file.
-|generationDateAndTime |Optional attribute giving the date and time this file was generated.
+
+|author
+|Optional attribute giving the name and/or organization of the author of the contents of this file.
+
+|fileversion
+|Optional attribute giving the version of the contents of this file.
+
+|copyright
+|Optional attribute giving information about copyrights of the contents of this file.
+
+|license
+|Optional attribute giving information about licensing of the contents of this file.
+
+|generationTool
+|Optional attribute giving information about the tool used to generate this file.
+
+|generationDateAndTime
+|Optional attribute giving the date and time this file was generated.
 |===
 
 === Top-Level XML Child Elements
@@ -81,18 +99,22 @@ image:images/image6.png[]
 
 Each enumeration is defined through an Enumeration XML element:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |This required attribute provides a name, which must be unique within the set of enumerations in a given file.
+
+|name
+|This required attribute provides a name, which must be unique within the set of enumerations in a given file.
 |===
 
 The following XML child elements are specified for the Enumeration element:
 
-[width="100%",cols="18%,82%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Item |One or more elements specifying the items of the enumeration.
+
+|Item
+|One or more elements specifying the items of the enumeration.
 |===
 
 ===== Item
@@ -101,11 +123,15 @@ image:images/image7.png[]
 
 For each item in the enumeration there is one Item XML element with the following attributes:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |This required attribute provides a name for the enumeration item.
-|value |This required attribute provides a value for the enumeration item.
+
+|name
+|This required attribute provides a name for the enumeration item.
+
+|value
+|This required attribute provides a value for the enumeration item.
 |===
 
 ==== Units
@@ -121,18 +147,22 @@ image:images/image9.png[]
 
 Each unit is defined through a Unit XML element:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |This required attribute provides a name, which must be unique within the set of units in a given file.
+
+|name
+|This required attribute provides a name, which must be unique within the set of units in a given file.
 |===
 
 The following XML child elements are specified for the Unit element:
 
-[width="100%",cols="18%,82%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|BaseUnit |Required element defining the base unit of the given unit in SI units, see below.
+
+|BaseUnit
+|Required element defining the base unit of the given unit in SI units, see below.
 |===
 
 ===== BaseUnit
@@ -142,19 +172,38 @@ This is completely aligned with the specification of base units in section 2.4.3
 
 image:images/image10.png[]
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|kg |Optional attribute specifying the exponent of SI base unit kg, defaults to 0.
-|m |Optional attribute specifying the exponent of SI base unit m, defaults to 0.
-|s |Optional attribute specifying the exponent of SI base unit s, defaults to 0.
-|A |Optional attribute specifying the exponent of SI base unit A, defaults to 0.
-|K |Optional attribute specifying the exponent of SI base unit K, defaults to 0.
-|mol |Optional attribute specifying the exponent of SI base unit mol, defaults to 0.
-|cd |Optional attribute specifying the exponent of SI base unit cd, defaults to 0.
-|rad |Optional attribute specifying the exponent of SI base unit rad, defaults to 0.
-|factor |Optional attribute specifying an optional factor, defaults to 1.
-|offset |Optional attribute specifying an optional offset, defaults to 0.
+
+|kg
+|Optional attribute specifying the exponent of SI base unit kg, defaults to 0.
+
+|m
+|Optional attribute specifying the exponent of SI base unit m, defaults to 0.
+
+|s
+|Optional attribute specifying the exponent of SI base unit s, defaults to 0.
+
+|A|Optional attribute specifying the exponent of SI base unit A, defaults to 0.
+
+|K
+|Optional attribute specifying the exponent of SI base unit K, defaults to 0.
+
+|mol
+|Optional attribute specifying the exponent of SI base unit mol, defaults to 0.
+
+|cd
+|Optional attribute specifying the exponent of SI base unit cd, defaults to 0.
+
+|rad
+|Optional attribute specifying the exponent of SI base unit rad, defaults to 0.
+
+|factor
+|Optional attribute specifying an optional factor, defaults to 1.
+
+|offset
+|Optional attribute specifying an optional offset, defaults to 0.
 |===
 
 === XML Element Groups
@@ -171,13 +220,12 @@ The following XML child elements denote the data type of a connector or dictiona
 
 NOTE: Note that in the case of connectors the use of a type element itself is optional, in the case of dictionary entries it is required.
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,2"]
 |===
 |Element |Description
-|Real / Float64 / Float32 / +
-Integer / Int8 / UInt8 / Int16 / UInt16 / +
-Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements must be present to specify the type of the element.
+
+|Real / Float64 / Float32 / Integer / Int8 / UInt8 / Int16 / UInt16 / Int32 / UInt32 / Int64 / UInt64 / Boolean / String / Enumeration / Binary
+|Exactly one of these elements must be present to specify the type of the element.
 See below for details.
 |===
 
@@ -187,10 +235,12 @@ image:images/image12.png[]
 
 This type specifies that the connector in question represents an IEEE754 double precision floating point number.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|unit |This optional attribute gives the name of a unit.
+
+|unit
+|This optional attribute gives the name of a unit.
 The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.
 
 If the attribute is not supplied, the unit is determined through default mechanisms:
@@ -208,10 +258,12 @@ image:images/image12.png[]
 
 This type specifies that the connector in question represents an IEEE754 double precision floating point number.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|unit |This optional attribute gives the name of a unit.
+
+|unit
+|This optional attribute gives the name of a unit.
 The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.
 
 If the attribute is not supplied, the unit is determined through default mechanisms:
@@ -229,10 +281,12 @@ image:images/image12.png[]
 
 This type specifies that the connector in question represents an IEEE754 single precision floating point number.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|unit |This optional attribute gives the name of a unit.
+
+|unit
+|This optional attribute gives the name of a unit.
 The name must match the name of a Unit entry in the Units XML element of the top-level element of the file.
 
 If the attribute is not supplied, the unit is determined through default mechanisms:
@@ -317,10 +371,12 @@ image:images/image16.png[]
 This type specifies that the connector in question represents an enumeration value, as specified by the enumeration definition.
 The underlying type of the connector is the same as for Integer.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |This required attribute gives the name of an enumeration which references into the defined enumerations of a document.
+
+|name
+|This required attribute gives the name of an enumeration which references into the defined enumerations of a document.
 The name must match the name of an Enumeration entry in the Enumerations XML element of the top-level element of the file.
 |===
 
@@ -330,11 +386,12 @@ image:images/image17.png[]
 
 This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification <<OSMP150>>.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|mime-type a|
-This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific application/octet-stream type.
+
+|mime-type
+|This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific application/octet-stream type.
 This information can be used by the implementation to detect mismatches between connected binary connectors, or provide automatic means of conversion between different formats.
 It should be noted that the implementation is not required to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors are connected.
 
@@ -348,13 +405,21 @@ image:images/image18.png[]
 
 The following XML child elements specify a transformation to be applied to a value prior to its use in a connection or parameter mapping:
 
-[width="100%",cols="42%,58%",options="header",]
+[cols="1,3"]
 |===
 |Element |Description
-|LinearTransformation |Specifies a linear transformation to be performed on the connection values.
-|BooleanMappingTransformation |Specifies a boolean mapping transformation to be performed on the connection values.
-|IntegerMappingTransformation |Specifies an integer mapping transformation to be performed on the connection values.
-|EnumerationMappingTransformation |Specifies an enumeration mapping transformation to be performed on the connection values.
+
+|LinearTransformation
+|Specifies a linear transformation to be performed on the connection values.
+
+|BooleanMappingTransformation
+|Specifies a boolean mapping transformation to be performed on the connection values.
+
+|IntegerMappingTransformation
+|Specifies an integer mapping transformation to be performed on the connection values.
+
+|EnumerationMappingTransformation
+|Specifies an enumeration mapping transformation to be performed on the connection values.
 |===
 
 ===== LinearTransformation
@@ -366,12 +431,16 @@ This element provides for a linear transformation of the source value to the tar
 Note that conversions based on different units are performed, unless prevented by suppressUnitConversion, prior to the application of the linear transformation, i.e. the value of source is already converted to the target unit in the formula above.
 Linear transformations are only valid for connectors of Real, Float64 or Float32 type.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|factor |This attribute specifies an optional factor value to use in a linear transformation.
+
+|factor
+|This attribute specifies an optional factor value to use in a linear transformation.
 The default is 1.
-|offset |This attribute specifies an optional offset value to use in a transformation.
+
+|offset
+|This attribute specifies an optional offset value to use in a transformation.
 The default is 0.
 |===
 
@@ -385,11 +454,15 @@ Mapping entries must be unambiguous, i.e. for a given source value at a maximum 
 The mapping does not have to be complete, i.e. partial mappings can be specified.
 In that case values not mapped by a mapping entry are kept unchanged.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|source |This attribute gives the source value that this entry applies to.
-|target |This attribute gives the value to use instead of the source value when applying it to the system or component.
+
+|source
+|This attribute gives the source value that this entry applies to.
+
+|target
+|This attribute gives the value to use instead of the source value when applying it to the system or component.
 |===
 
 ===== IntegerMappingTransformation
@@ -410,11 +483,15 @@ The target values provided in transformation entries must be limited to the valu
 The source values provided in transformation entries can exceed the value space of the source connector.
 Such entries are ignored in the mapping process.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|source |This attribute gives the source value that this entry applies to.
-|target |This attribute gives the value to use instead of the source value when applying it to the system or component.
+
+|source
+|This attribute gives the source value that this entry applies to.
+
+|target
+|This attribute gives the value to use instead of the source value when applying it to the system or component.
 |===
 
 ===== EnumerationMappingTransformation
@@ -431,11 +508,15 @@ When mapping to an Enumeration type, the target value must be a valid enumeratio
 When mapping from an Enumeration type, the source value must be a valid enumeration value for that type.
 This transformation can be applied between connectors of different Enumeration types, as long as all resulting target values are valid in the target Enumeration type.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|source |This attribute gives the source value that this entry applies to.
-|target |This attribute gives the value to use instead of the source value when applying it to the system or component.
+
+|source
+|This attribute gives the source value that this entry applies to.
+
+|target
+|This attribute gives the value to use instead of the source value when applying it to the system or component.
 |===
 
 [#ssc_dimensions]
@@ -445,10 +526,12 @@ image:images/image61.png[]
 
 The Dimension element is used to specify the dimensions of array connectors, signal dictionary entries, or parameter values.
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Dimension |One or more instances of this element can be present to specify the dimensions of the containing model element.
+
+|Dimension
+|One or more instances of this element can be present to specify the dimensions of the containing model element.
 If no instances are present, the containing model element is scalar.
 See below for details.
 |===
@@ -470,13 +553,15 @@ For those elements, it is considered an error if the sizeConnector attribute is 
 
 The following XML attributes are specified for the Dimension element:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|size a|
-This attribute gives the size of this dimension of the array as a fixed, unchangeable number.
-|sizeConnector a|
-This attribute references another connector by name, that gives the size of this dimension of the array connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.
+
+|size
+|This attribute gives the size of this dimension of the array as a fixed, unchangeable number.
+
+|sizeConnector
+|This attribute references another connector by name, that gives the size of this dimension of the array connector, e.g. a structural parameter or a constant of the underlying component that gives the dimension size.
 |===
 
 NOTE: SSP uses `size` where FMI uses `start` because SSP specifies structural dimension extents directly.
@@ -489,10 +574,12 @@ image:images/SystemStructureCommon_GMetaData.png[]
 The group GMetaData allows the specification of additional meta data for a given model element.
 Multiple (or no) MetaData elements may be present in a given model element.
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,4"]
 |===
-|Element   |Description
-|MetaData  |One or more instances of this element can be present to specify meta data related to the containing model element.
+|Element |Description
+
+|MetaData
+|One or more instances of this element can be present to specify meta data related to the containing model element.
 See below for details.
 |===
 
@@ -504,35 +591,43 @@ This element specifies a source of meta data related to the containing model ele
 
 The MetaData element is structured by the following subordinated elements.
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,4"]
 |===
-|Element  |Description
-|Content  |An instance of this element can be present to contain inlined content of the model element meta data.
+|Element |Description
+
+|Content
+|An instance of this element can be present to contain inlined content of the model element meta data.
 If it is present, then the attribute `source` of the MetaData element must not be present.
 See below for details.
-|Signature|One or more instances of this element can be present to specify digital signature information on the meta data referenced by the enclosing MetaData element.
+
+|Signature
+|One or more instances of this element can be present to specify digital signature information on the meta data referenced by the enclosing MetaData element.
 It is left unspecified what types of signatures are used and/or available for now.
 See below for details.
 |===
 
 The following XML attributes are specified for the MetaData element:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|kind a|
-This attribute indicates the kind of model element meta data that is referenced, i.e. what role it plays in relation to the model element being described.
+
+|kind
+a|This attribute indicates the kind of model element meta data that is referenced, i.e. what role it plays in relation to the model element being described.
 The kind can be `general` or `quality`, indicating general meta data or quality related meta data, respectively.
-|type a|
-This mandatory attribute specifies the MIME type of the meta data, which does not have a default value.
+
+|type 
+|This mandatory attribute specifies the MIME type of the meta data, which does not have a default value.
 If no specific MIME type can be indicated, then the type `application/octet-stream` is to be used.
-|source a|
-Optional attribute indicating the source of the meta data as a URI (cf. RFC 3986).
+
+|source 
+|Optional attribute indicating the source of the meta data as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the meta data must be provided inline as contents of a Content element, which must not be present otherwise.
-|sourceBase a|
-Defines the base the source URI is resolved against:
+
+|sourceBase
+|Defines the base the source URI is resolved against:
 
 If the attribute is missing or is specified as `file`, the source is resolved against the URI of the containing file.
 
@@ -559,10 +654,12 @@ image:images/SystemStructureCommon_GSignature.png[]
 The group GSignature allows the specification of digital signatures for a given model element.
 Multiple (or no) Signature elements may be present in a given model element.
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,4"]
 |===
-|Element   |Description
-|Signature |One or more instances of this element can be present to specify signatures related to the containing model element.
+|Element |Description
+
+|Signature
+|One or more instances of this element can be present to specify signatures related to the containing model element.
 See below for details.
 |===
 
@@ -576,33 +673,39 @@ If the Signature element is contained within any other element, it refers to the
 
 The Signature element is structured by the following subordinated elements.
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,4"]
 |===
-|Element  |Description
-|Content  |An instance of this element can be present to contain inlined content of the signature.
+|Element |Description
+
+|Content
+|An instance of this element can be present to contain inlined content of the signature.
 If it is present, then the attribute `source` of the Signature element must not be present.
 See below for details.
 |===
 
 The following XML attributes are specified for the Signature element:
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|role a|
-This mandatory attribute specifies the role this signature has in the overall process.
+
+|role
+|This mandatory attribute specifies the role this signature has in the overall process.
 It indicates whether the digital signature is intended to just convey the authenticity of the information (value `authenticity`), or whether a claim for suitability of the information for certain purposes is made (value `suitability`).
 In the latter case, the digital signature format should include detailed information about what suitability claims are being made.
-|type a|
-This mandatory attribute specifies the MIME type of the signature, which does not have a default value.
+
+|type
+|This mandatory attribute specifies the MIME type of the signature, which does not have a default value.
 If no specific MIME type can be indicated, then the type `application/octet-stream` is to be used.
-|source a|
-Optional attribute indicating the source of the signature as a URI (cf. RFC 3986).
+
+|source
+|Optional attribute indicating the source of the signature as a URI (cf. RFC 3986).
 The base URI for the resolution of relative URIs is determined by the sourceBase attribute.
 
 If the source attribute is missing, the signature must be provided inline as contents of a Content element, which must not be present otherwise.
-|sourceBase a|
-Defines the base the source URI is resolved against:
+
+|sourceBase
+|Defines the base the source URI is resolved against:
 
 If the attribute is missing or is specified as `file`, the source is resolved against the URI of the containing file.
 

@@ -26,10 +26,12 @@ All parameters that are referenced in a mapping entry will only be applied using
 Implementations must not map multiple parameters to the same name.
 Implementations can map the same parameter to multiple names.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|version |This required attribute specifies the version of this specification that the parameter mapping conforms to.
+
+|version
+|This required attribute specifies the version of this specification that the parameter mapping conforms to.
 Only major and minor version number are included, the patch version number must not be included in this attribute.
 For the current release this must be either 1.0 or 2.0.
 If it is 1.0 the file must also conform fully to the 1.0 standard.
@@ -42,12 +44,18 @@ image:images/image57.png[]
 This element specifies a single mapping between a parameter in the source and a parameter of the system or component being parameterized.
 Through its optional GTransformationChoice element a transformation can be specified that is to be applied to the parameter value prior to its application to its target parameter.
 
-[width="100%",cols="30%,70%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|source |This required attribute specifies the name of the parameter in the parameter source that is to be mapped to a new name and/or provided with a transformation in this mapping entry.
-|target |This required attribute specifies the name of the parameter in the system or component that is to be parameterized, i.e. that is the target of this mapping entry.
-|suppressUnitConversion |This optional attribute specifies whether automatic conversions between parameter source and its target are performed using unit information potentially available for both value and target definitions.
+
+|source
+|This required attribute specifies the name of the parameter in the parameter source that is to be mapped to a new name and/or provided with a transformation in this mapping entry.
+
+|target
+|This required attribute specifies the name of the parameter in the system or component that is to be parameterized, i.e. that is the target of this mapping entry.
+
+|suppressUnitConversion
+|This optional attribute specifies whether automatic conversions between parameter source and its target are performed using unit information potentially available for both value and target definitions.
 If this attribute is supplied and its value is true, then the environment will not perform any automatic unit conversions, otherwise automatic unit conversions can be performed.
 
 This is also important in conjunction with the optional linear transformation supplied via the LinearTransformation element: With suppressUnitConversion = true, the linear transformation is performed instead of any unit conversions, whereas otherwise the linear transformation is performed in addition to any unit conversions.
@@ -56,10 +64,12 @@ In that case the specified transformation will be done after any unit conversion
 
 The following XML child elements are specified for the MappingEntry element:
 
-[width="100%",cols="42%,58%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation |Specifies an optional transformation for the mapping.
+
+|LinearTransformation / BooleanMappingTransformation / IntegerMappingTransformation / EnumerationMappingTransformation
+|Specifies an optional transformation for the mapping.
 If any, exactly one of these elements must be present to specify the type of the transformation.
 See <<Transformation Choice>> for details.
 |===

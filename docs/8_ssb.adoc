@@ -20,10 +20,12 @@ image:images/SystemStructureSignalDictionary_SignalDictionary.png[]
 
 This element describes a signal dictionary, which consists of one or more dictionary entries, each describing one signal in the signal dictionary (see next section).
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|version |This required attribute specifies the version of this specification that the parameter mapping conforms to.
+
+|version
+|This required attribute specifies the version of this specification that the parameter mapping conforms to.
 Only major and minor version number are included, the patch version number must not be included in this attribute.
 For the current release this must be either 1.0 or 2.0.
 If it is 1.0 the file must also conform fully to the 1.0 standard.
@@ -31,12 +33,18 @@ If it is 1.0 the file must also conform fully to the 1.0 standard.
 
 The following XML child elements are specified for the SignalDictionary element:
 
-[width="100%",cols="34%,66%,",options="header",]
+[cols="1,4"]
 |===
-|Element |Description |
-|DictionaryEntry |One or more entries of the signal dictionary. |
-|Enumerations |This optional element must contain definitions for all enumerations referenced in the signal dictionary. |
-|Units |This optional element must contain definitions for all units referenced in the signal dictionary. |
+|Element |Description
+
+|DictionaryEntry
+|One or more entries of the signal dictionary.
+
+|Enumerations
+|This optional element must contain definitions for all enumerations referenced in the signal dictionary.
+
+|Units
+|This optional element must contain definitions for all units referenced in the signal dictionary.
 |===
 
 ==== DictionaryEntry
@@ -45,22 +53,24 @@ image:images/image59.png[]
 
 A dictionary entry defines a single signal in the signal dictionary.
 
-[width="100%",cols="28%,72%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |Required attribute giving the signal dictionary entry a name, which shall be unique within the signal dictionary.
+
+|name
+|Required attribute giving the signal dictionary entry a name, which shall be unique within the signal dictionary.
 |===
 
 The following XML child elements are specified for the DictionaryEntry element:
 
-[width="100%",cols="33%,67%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Real / Float64 / Float32 / +
-Integer / Int8 / UInt8 / Int16 / UInt16 / +
-Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements must be present to specify the type of the signal dictionary entry.
+
+|Real / Float64 / Float32 / Integer / Int8 / UInt8 / Int16 / UInt16 / Int32 / UInt32 / Int64 / UInt64 / Boolean / String / Enumeration / Binary |Exactly one of these elements must be present to specify the type of the signal dictionary entry.
 See <<ssc_types>> for details.
-|Dimension |One or more of these optional elements define the signal dictionary entry array dimensions, making the signal dictionary entry an array signal dictionary entry.
+
+|Dimension
+|One or more of these optional elements define the signal dictionary entry array dimensions, making the signal dictionary entry an array signal dictionary entry.
 See <<ssc_dimensions>> for details.
 |===

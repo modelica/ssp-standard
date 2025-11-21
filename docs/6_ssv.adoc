@@ -19,26 +19,36 @@ image:images/SystemStructureParameterValues_ParameterSet.png[]
 The ParameterSet element contains parameter and meta data information.
 If the SSV is provided as a separate file, the root element must be a ParameterSet element.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|version |This required attribute specifies the version of this specification that the parameter set conforms to.
+
+|version
+|This required attribute specifies the version of this specification that the parameter set conforms to.
 Only major and minor version number are included, the patch version number must not be included in this attribute.
 For the current release this must be either 1.0 or 2.0.
 If it is 1.0 the file must also conform fully to the 1.0 standard.
-|name |This required attribute provides a name which can be used for purposes of presenting the parameter set to the user.
+
+|name
+|This required attribute provides a name which can be used for purposes of presenting the parameter set to the user.
 |===
 
 The following child elements are specified for the ParameterSet element:
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Parameters |This required element specifies the parameters in the parameter set.
+
+|Parameters
+|This required element specifies the parameters in the parameter set.
 See below for details.
-|Enumerations |This optional element must contain definitions for all enumerations referenced in the parameter set.
+
+|Enumerations
+|This optional element must contain definitions for all enumerations referenced in the parameter set.
 See <<Enumerations>> for its definition.
-|Units |This optional element must contain definitions for all units referenced in the parameter set.
+
+|Units
+|This optional element must contain definitions for all units referenced in the parameter set.
 See <<Units>> for its definition.
 |===
 
@@ -57,24 +67,27 @@ image:images/image49.png[]
 
 The following XML attributes are specified for the Parameter element:
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|name |This required attribute specifies the name of the parameter in the parameter set.
+
+|name
+|This required attribute specifies the name of the parameter in the parameter set.
 The name must be unique within the parameter set.
 |===
 
 The following XML child elements are specified for the Parameter element:
 
-[width="100%",cols="31%,69%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Real / Float64 / Float32 / +
-Integer / Int8 / UInt8 / Int16 / UInt16 / +
-Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements must be present to specify the type of the parameter.
+
+|Real / Float64 / Float32 / Integer / Int8 / UInt8 / Int16 / UInt16 / Int32 / UInt32 / Int64 / UInt64 / Boolean / String / Enumeration / Binary
+|Exactly one of these elements must be present to specify the type of the parameter.
 See below for details on each type.
-|Dimension |One or more of these optional elements specify the parameter array dimensions, making the parameter an array parameter.
+
+|Dimension
+|One or more of these optional elements specify the parameter array dimensions, making the parameter an array parameter.
 The dimensions of the parameter array must be fixed.
 See <<ssc_dimensions>> for details.
 |===
@@ -87,11 +100,15 @@ image:images/image50.png[]
 
 This type specifies a parameter that represents an IEEE754 double precision floating point number, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
-|unit |This optional attribute gives the name of the unit of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
+
+|unit
+|This optional attribute gives the name of the unit of the parameter.
 The name must match the name of a unit defined in the Units element in the ParameterSet root element.
 |===
 
@@ -103,11 +120,15 @@ image:images/image50.png[]
 
 This type specifies a parameter that represents an IEEE754 double precision floating point number, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
-|unit |This optional attribute gives the name of the unit of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
+
+|unit
+|This optional attribute gives the name of the unit of the parameter.
 The name must match the name of a unit defined in the Units element in the ParameterSet root element.
 |===
 
@@ -119,11 +140,15 @@ image:images/image50.png[]
 
 This type specifies a parameter that represents an IEEE754 single precision floating point number, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
-|unit |This optional attribute gives the name of the unit of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
+
+|unit
+|This optional attribute gives the name of the unit of the parameter.
 The name must match the name of a unit defined in the Units element in the ParameterSet root element.
 |===
 
@@ -135,10 +160,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 32-bit signed integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -149,10 +176,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 8-bit signed integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -163,10 +192,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 8-bit unsigned integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -177,10 +208,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 16-bit signed integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -191,10 +224,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 16-bit unsigned integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -205,10 +240,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 32-bit signed integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -219,10 +256,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 32-bit unsigned integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -233,10 +272,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 64-bit signed integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -247,10 +288,12 @@ image:images/image51.png[]
 
 This type specifies a parameter that represents a 64-bit unsigned integer, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -261,10 +304,12 @@ image:images/image52.png[]
 
 This type specifies a parameter that represents a Boolean value, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 For array parameters, values are specified as a space-separated list of values in row-major order, as specified in FMI.
@@ -275,18 +320,22 @@ image:images/image53.png[]
 
 This type specifies a parameter that represents a zero-terminated UTF-8 encoded string, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter.
+
+|value
+|This required attribute specifies the value of the parameter.
 |===
 
 The value of the parameter can alternatively be specified using one or more Value child elements:
 
-[width="100%",cols="31%,69%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Value |One or more of these optional elements provide individual parameter values, as an alternative to the singular value attribute on the String element.
+
+|Value
+|One or more of these optional elements provide individual parameter values, as an alternative to the singular value attribute on the String element.
 |===
 
 It is an error if both value attribute and Value child elements are present.
@@ -301,13 +350,16 @@ image:images/image54.png[]
 
 This type specifies a parameter that represents an enumeration value, or an array of such values, as specified by an enumeration definition.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1a,4a"]
 |===
 |Attribute |Description
-|value |This required attribute specifies the value of the parameter as the enumeration item name.
+
+|value
+|This required attribute specifies the value of the parameter as the enumeration item name.
 Note that the actual numeric value this value is mapped to at run time will depend on the item mapping of the enumeration type of the variables being parameterized.
-|name a|
-This optional attribute specifies the name of the enumeration type that the parameter references.
+
+|name
+|This optional attribute specifies the name of the enumeration type that the parameter references.
 If it is supplied, the name must match the name of an enumeration type defined in the Enumerations element in the ParameterSet root element.
 
 This attribute is optional; if it is not specified, then the list of valid enumeration items with their names and values is not specified, and the interpretation of the enumeration value is left solely to the variables that are being parameterized.
@@ -319,10 +371,12 @@ NOTE: Note: the level of consistency checking is left optional by design, since 
 
 The value of the parameter can alternatively be specified using one or more Value child elements:
 
-[width="100%",cols="31%,69%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Value |One or more of these optional elements provide individual parameter values, as an alternative to the singular value attribute on the Enumeration element.
+
+|Value
+|One or more of these optional elements provide individual parameter values, as an alternative to the singular value attribute on the Enumeration element.
 |===
 
 It is an error if both value attribute and Value child elements are present.
@@ -337,21 +391,27 @@ image:images/image55.png[]
 
 This type specifies a parameter that represents a length-terminated binary data type, or an array of such values.
 
-[width="100%",cols="23%,77%",options="header",]
+[cols="1,4"]
 |===
 |Attribute |Description
-|value |This attribute gives the value of the parameter as a hex-encoded binary value.
-|mime-type |This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific `application/octet-stream` type.
+
+|value
+|This attribute gives the value of the parameter as a hex-encoded binary value.
+
+|mime-type
+|This optional attribute specifies the MIME type of the underlying binary data, which defaults to the non-specific `application/octet-stream` type.
 This information can be used by the implementation to detect mismatches between binary parameters, or to provide automatic conversions between different formats.
 It should be noted that the implementation is not required to provide this service, i.e. it remains the responsibility of the operator to ensure only compatible binary connectors/parameters are connected.
 |===
 
 The value of the parameter can alternatively be specified using one or more Value child elements:
 
-[width="100%",cols="31%,69%",options="header",]
+[cols="1,4"]
 |===
 |Element |Description
-|Value |One or more of these optional elements provide individual parameter values, as an alternative to the singular value attribute on the Binary element.
+
+|Value
+|One or more of these optional elements provide individual parameter values, as an alternative to the singular value attribute on the Binary element.
 |===
 
 It is an error if both value attribute and Value child elements are present.
