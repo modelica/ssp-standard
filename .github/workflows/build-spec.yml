@@ -20,7 +20,9 @@ jobs:
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.1.7
+      with:
+        submodules: recursive
 
     - name: List variables
       run: |
@@ -88,9 +90,13 @@ jobs:
         cp LICENSE.txt build
         cp schema/*.xsd build/schema
         cp docs/images/* build/images
+        mkdir -p build/theme/css
+        cp docs/theme/css/*.css build/theme/css
+        mkdir -p build/theme/js
+        cp docs/theme/js/*.js build/theme/js
 
     - name: Create ZIP archive
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v4.4.0
       with:
         name: SSP-Specification
         path: build/*
