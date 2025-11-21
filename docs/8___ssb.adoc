@@ -16,7 +16,7 @@ Any enumerations or units used in the DictionaryEntry elements must be declared 
 
 === SignalDictionary
 
-image:images/SystemStructureSignalDictionary_SignalDictionary.png[image,width=438,height=585]
+image:images/SystemStructureSignalDictionary_SignalDictionary.png[]
 
 This element describes a signal dictionary, which consists of one or more dictionary entries, each describing one signal in the signal dictionary (see next section).
 
@@ -41,7 +41,7 @@ The following XML child elements are specified for the SignalDictionary element:
 
 ==== DictionaryEntry
 
-image:images/image59.png[image,width=485,height=923]
+image:images/image59.png[]
 
 A dictionary entry defines a single signal in the signal dictionary.
 

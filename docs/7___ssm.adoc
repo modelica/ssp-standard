@@ -17,7 +17,7 @@ The root element of an SSM file must be a ParameterMapping element, which contai
 
 === ParameterMapping
 
-image:images/SystemStructureParameterMapping_ParameterMapping.png[image,width=450,height=477]
+image:images/SystemStructureParameterMapping_ParameterMapping.png[]
 
 This element describes a parameter mapping, which consists of multiple mapping entries, each describing one parameter mapping (see next section).
 The parameter mapping must contain entries for all parameters that are going to be mapped.
@@ -37,7 +37,7 @@ If it is 1.0 the file must also conform fully to the 1.0 standard.
 
 ==== MappingEntry
 
-image:images/image57.png[image,width=577,height=556]
+image:images/image57.png[]
 
 This element specifies a single mapping between a parameter in the source and a parameter of the system or component being parameterized.
 Through its optional GTransformationChoice element a transformation can be specified that is to be applied to the parameter value prior to its application to its target parameter.
