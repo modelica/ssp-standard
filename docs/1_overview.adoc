@@ -127,7 +127,7 @@ SSP 2.0 conforming artifacts are only conforming to the SSP 1.0 standard if they
 The following changes were performed as part of the 2.0.0 major release:
 
 * Support for FMI 3.0
-  ** Support for the new basic data types: Float32/64, and [U]Int8/16/32/64.
+  ** Support for the new basic data types: Float{32|64}, and [U]Int{8|16|32|64}.
      The binary data type was already supported in SSP 1.0.
   ** Support for the new scheduled execution implementation kind in the component implementation attribute.
   ** Support for clocks as a new connector kind, and clocked variables/connectors.
@@ -147,10 +147,10 @@ The following changes were performed as part of the 2.0.0 major release:
   ** Support in the core standard for Modelica models as components
   ** Support for the mapping of complex Modelica types in interfaces to binary connectors in SSP
 * General clarifications and bug fixes
-  ** Fix missing type of Connector name attribute in https://github.com/modelica/ssp-standard/pull/4[PR #4]
-  ** Clarify type conversion handling in https://github.com/modelica/ssp-standard/pull/21[PR #21]
-  ** Clarify uniqueness of root SSDs in https://github.com/modelica/ssp-standard/pull/23[PR #23]
-  ** Clarify hierarchical parameter name resolution in https://github.com/modelica/ssp-standard/pull/27[PR #27]
+  ** Fix missing type of Connector name attribute (in PR #4)
+  ** Clarify type conversion handling (PR #21)
+  ** Clarify uniqueness of root SSDs (PR #23)
+  ** Clarify hierarchical parameter name resolution (PR #27)
 
 === Changes in 1.0.1
 

@@ -5,7 +5,7 @@ https://github.com/modelica/ssp-standard/releases[Releases] and https://github.c
 
 *History*
 
-[width="100%",cols="18%,12%,70%",]
+[cols="1,1,5"]
 |===
 |Version |Date       |Remarks
 
