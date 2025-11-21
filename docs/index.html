@@ -3140,9 +3140,7 @@ Any inside view is not overridden.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Graphical example for a ConnectorGeometry:</p>
-</div>
-<div class="paragraph">
+<div class="title">Graphical example for a ConnectorGeometry</div>
 <p><span class="image"><img src="images/ConnectorGeometryExample.png" alt="ConnectorGeometryExample" width="500"></span></p>
 </div>
 </td>
@@ -3257,10 +3255,8 @@ It is recommended that implementations that support graphical presentation suppo
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Graphical example for an ElementGeometry:</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/ElementGeometryExample.png" alt="ElementGeometryExample" width="500"></span></p>
+<div class="title">Graphical example for an ElementGeometry</div>
+<p><span class="image"><img src="images/ElementGeometryExample.png" alt="ElementGeometryExample" width="600"></span></p>
 </div>
 </td>
 </tr>
@@ -3280,7 +3276,7 @@ It is recommended that implementations that support graphical presentation suppo
 <p><strong>Non-transformed reference</strong> (icon fills rectangle, left 2 inputs, right 1 output)</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExampleBase.png" alt="IconExampleBase" width="500"></span></p>
+<p><span class="image"><img src="images/IconExampleBase.png" alt="IconExampleBase" width="300"></span></p>
 </div>
 <div class="paragraph">
 <p><strong>Coordinate systems:</strong></p>
@@ -3290,129 +3286,514 @@ It is recommended that implementations that support graphical presentation suppo
 Blue: ElementGeometry</p>
 </div>
 <div class="paragraph">
-<p><em>*Example 1: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>0</strong><br>
-</em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>IGNORED</strong> (relevant only if element is flipped)</em></p>
+<p><strong>Example 1: No flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &lt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignored</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample1.png" alt="IconExample1" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample1.png" alt="IconExample1" width="500"></span></p>
+<p><strong>Example 2: No flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &lt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignored</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample2.png" alt="IconExample2" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><em>*Example 2: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>0</strong><br>
-</em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>false, </strong></em>iconFlip<em>=<strong>IGNORED</strong></em></p>
+<p><strong>Example 3: No flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &lt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignored</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample3.png" alt="IconExample3" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample2.png" alt="IconExample2" width="500"></span></p>
+<p><strong>Example 4: No flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &lt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignored</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample4.png" alt="IconExample4" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><strong>_<br>
-_</strong></p>
+<p><strong>Example 5: No flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &lt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignored</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample5.png" alt="IconExample5" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p><em>*Example 3: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
-</em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
+<p><strong>Example 6: No flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &lt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignored</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample6.png" alt="IconExample6" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample3.png" alt="IconExample3" width="500"></span></p>
+<p><strong>Example 7: Horizontal flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample7.png" alt="IconExample7" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p><em>*Example 4: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>ϕ<br>
-</strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>false</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
+<p><strong>Example 8: Horizontal flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample8.png" alt="IconExample8" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample4.png" alt="IconExample4" width="500"></span></p>
+<p><strong>Example 9: Horizontal flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &lt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample9.png" alt="IconExample9" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><strong>_<br>
-_</strong></p>
+<p><strong>Example 10: Vertical flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &lt; <code>x2</code>, <code>y1</code> &gt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample10.png" alt="IconExample10" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p><em>*Example 5: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
-</em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
+<p><strong>Example 11: Horizontal and vertical flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &gt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample11.png" alt="IconExample11" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample5.png" alt="IconExample5" width="500"></span></p>
+<p><strong>Example 12: Horizontal and vertical flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &gt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample12.png" alt="IconExample12" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p><em>*Example 6: No flip* (</em>x1<em>&lt;</em>x2<em>,</em> y1<em>&lt;</em>y2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
-</em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>false</strong>,</em> iconFlip<em>=<strong>IGNORED</strong></em></p>
+<p><strong>Example 13: Horizontal and vertical flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &gt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample13.png" alt="IconExample13" width="600"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="images/IconExample6.png" alt="IconExample6" width="500"></span></p>
+<p><strong>Example 14: Horizontal and vertical flip</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &gt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="images/IconExample14.png" alt="IconExample14" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p>_<br>
-_</p>
+<p><strong>Example 15: Horizontal and vertical flip</strong></p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>x1</code> &gt; <code>x2</code>, <code>y1</code> &gt; <code>y2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ϕ</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFixedAspectRatio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iconFlip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p><em>*Example 7: Horizontal flip* (</em>x1<em>&gt;</em>x2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
-</em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>true</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample7.png" alt="IconExample7" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p><em>*Example 8: Horizontal flip* (</em>x1<em>&gt;</em>x2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
-</em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>false</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample8.png" alt="IconExample8" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p><em>*Example 9: Horizontal flip* (</em>x1<em>&gt;</em>x2<em>),</em> rotation<em>=<strong>ϕ</strong><br>
-</em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample9.png" alt="IconExample9" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p>_<br>
-_</p>
-</div>
-<div class="paragraph">
-<p><em>*Example 10: Vertical flip* (</em>y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>0<br>
-</strong></em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample10.png" alt="IconExample10" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p><em>*Example 11: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>0<br>
-</strong></em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>false</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample11.png" alt="IconExample11" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p><em>*Example 12: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>)*, *</em>rotation<em>=<strong>0<br>
-</strong></em>iconRotation<em>=<strong>0</strong>,</em> iconFixedAspectRatio<em>=<strong>true,</strong></em> iconFlip<em>=<strong>true</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample12.png" alt="IconExample12" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p><strong>_<br>
-_</strong></p>
-</div>
-<div class="paragraph">
-<p><em>*Example 13: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>ϕ<br>
-</strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true</strong>,</em> iconFlip<em>=<strong>true</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample13.png" alt="IconExample13" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p><em>*Example 14: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>ϕ<br>
-</strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>false, </strong></em>iconFlip<em>=<strong>true</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample14.png" alt="IconExample14" width="500"></span></p>
-</div>
-<div class="paragraph">
-<p><em>*Example 15: Horizontal and vertical flip* (</em>x1<em>&gt;</em>x2<em>,</em> y1<em>&gt;</em>y2<em>),</em> rotation<em>=<strong>ϕ<br>
-</strong></em>iconRotation<em>=<strong>ϕ</strong>,</em> iconFixedAspectRatio<em>=<strong>true, </strong></em>iconFlip<em>=<strong>false</strong></em></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/IconExample15.png" alt="IconExample15" width="500"></span></p>
+<p><span class="image"><img src="images/IconExample15.png" alt="IconExample15" width="300"></span></p>
 </div>
 </td>
 </tr>
@@ -4216,9 +4597,7 @@ Note that x and y coordinates are in the coordinate system of the enclosing syst
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Graphical example for a ConnectionGeometry:</p>
-</div>
-<div class="paragraph">
+<div class="title">Graphical example for a ConnectionGeometry</div>
 <p><span class="image"><img src="images/ConnectionGeometryExample.png" alt="ConnectionGeometryExample" width="600"></span></p>
 </div>
 </td>
@@ -4363,9 +4742,7 @@ Hence, the exporting tool has to scale from its own coordinate system when expor
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Graphical example for a SystemGeometry:</p>
-</div>
-<div class="paragraph">
+<div class="title">Graphical example for a SystemGeometry</div>
 <p><span class="image"><img src="images/SystemGeometryExample.png" alt="SystemGeometryExample" width="600"></span></p>
 </div>
 </td>
@@ -4380,9 +4757,7 @@ Hence, the exporting tool has to scale from its own coordinate system when expor
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Graphical example showing the interplay of SystemGeometry, ElementGeometry, ConnectorGeometry, and ConnectionGeometry:</p>
-</div>
-<div class="paragraph">
+<div class="title">Graphical example showing the interplay of SystemGeometry, ElementGeometry, ConnectorGeometry, and ConnectionGeometry</div>
 <p><span class="image"><img src="images/GeometryInterplayExample.png" alt="GeometryInterplayExample" width="800"></span></p>
 </div>
 </td>
