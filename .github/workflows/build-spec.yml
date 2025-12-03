@@ -92,7 +92,7 @@ jobs:
 
     - name: Replace ULRs
       run: |
-        uv run docs/theme/update_urls.py
+        sudo uv run docs/theme/update_urls.py
 
     - name: Create build directory
       run: |
