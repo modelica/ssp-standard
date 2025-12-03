@@ -121,7 +121,7 @@ This optional element specifies the set of connectors of this model element, whi
 For components the set of connectors must match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification <<OSMP150>>, the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
 For FMI 3.0 FMUs, the connector name has to match either the name of the corresponding variable element, or one of its <Alias> elements.
 
-Names of variable elements of an FMU might follow the “Variable Naming Conventions” specification as defined by the FMI standard.
+Names of variable elements of an FMU might follow the "Variable Naming Conventions" specification as defined by the FMI standard.
 Hence, several variables might be grouped as a structure or an array.
 However, the name of a connector must match the name of a single variable.
 
@@ -294,7 +294,7 @@ If x1>x2 this indicates horizontal flipping, y1>y2 indicates vertical flipping.
 
 The optional attribute rotation (in degrees) defines an additional rotation (applied after flipping), where positive numbers indicate a counter clockwise rotation.
 
-NOTE: Sometimes such a counter clockwise orientation is also called a left rotation (x→y), with the coordinate system orientation: x → right, y → up)
+NOTE: Sometimes such a counter clockwise orientation is also called a left rotation (x->y), with the coordinate system orientation: x -> right, y -> up)
 
 The optional attribute iconSource defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as defined in the relevant FMI standards).
@@ -323,7 +323,7 @@ NOTE: If no explicit icon is given, the icon used by the tool to represent the s
 |Required attribute giving the y coordinate of the upper right corner of the model element inside the coordinate system of its parent system.
 
 |rotation
-|Optional attribute defines an additional rotation in degrees that is to be applied after any flipping, where positive numbers indicate left rotation (x→y).
+|Optional attribute defines an additional rotation in degrees that is to be applied after any flipping, where positive numbers indicate left rotation (x->y).
 
 |iconSource
 |Optional attribute defines an icon URI with the same semantics as for the source attribute of the Component element.
@@ -331,7 +331,7 @@ If defined, this icon overrides any icon that may be defined in an .fmu file (as
 It is recommended that implementations that support graphical presentation support at least PNG and SVG file formats for the icon.
 
 |iconRotation
-|Optional attribute defines the rotation (in degrees) of the icon, where positive numbers indicate left rotation (x→y).
+|Optional attribute defines the rotation (in degrees) of the icon, where positive numbers indicate left rotation (x->y).
 
 |iconFlip
 |Optional attribute defines whether any flipping indicated by (x1,y1), (x2,y2) shall be applied to the icon graphics, too, or not.
@@ -1213,7 +1213,7 @@ image:images/ConnectionGeometryExample.png[width=600]
 ==== SignalDictionaries
 
 Signal dictionaries can be seen as a description of a collection of signals.
-Such collections can also be seen as a “signal bus” (like a CAN-bus in embedded systems).
+Such collections can also be seen as a "signal bus" (like a CAN-bus in embedded systems).
 One can use a signal dictionary as a specification of how a collection of signals shall look like with definition of signal names and their units during a design phase.
 When a large number of signals have to be handled, signal dictionaries can help to keep a system description clearly represented.
 
