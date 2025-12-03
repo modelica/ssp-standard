@@ -90,7 +90,7 @@ jobs:
 
     - name: Replace ULRs
       run: |
-        uv run theme/update_urls.py
+        uv run docs/theme/update_urls.py
 
     - name: Copy resources
       run: |
