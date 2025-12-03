@@ -105,7 +105,6 @@ jobs:
 
     - name: Copy resources
       run: |
-        cp index.html build
         cp LICENSE.txt build
         cp schema/*.xsd build/schema
         cp docs/images/* build/images
