@@ -19,8 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Install uv
-      uses: astral-sh/setup-uv@v7
+    - uses: actions/setup-python@v6
+      with:
+        python-version: '3.13'
 
     - name: Checkout
       uses: actions/checkout@v4.1.7
@@ -91,8 +92,7 @@ jobs:
     - run: tree
 
     - name: Replace ULRs
-      run: |
-        sudo uv run docs/theme/update_urls.py
+      run: python docs/theme/update_urls.py
 
     - name: Create build directory
       run: |
