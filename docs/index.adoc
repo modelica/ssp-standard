@@ -17,6 +17,7 @@
 :icons: font
 :repo-url: https://github.com/modelica/ssp-standard
 :logo: SSP
+:stylesdir: ./foobar
 
 include::0_preamble.adoc[]
 
