@@ -88,6 +88,8 @@ jobs:
       with:
         program: "asciidoctor --destination-dir=build --backend=html5 --attribute=revnumber=${{env.REVNUMBER}} --attribute=revdate=$(date +%F) docs/index.adoc"
 
+    - run: tree
+
     - name: Replace ULRs
       run: |
         uv run docs/theme/update_urls.py
