@@ -102,7 +102,6 @@ jobs:
         mkdir -p build/theme/css
         mkdir -p build/theme/images
         mkdir -p build/theme/js
-        mkdir -p build/theme/js/config
 
     - name: Copy resources
       run: |
@@ -112,7 +111,6 @@ jobs:
         cp docs/theme/css/*.css build/theme/css
         cp docs/theme/images/*.svg build/theme/images
         cp docs/theme/js/*.js build/theme/js
-        cp docs/theme/js/config/*.js build/theme/js/config
 
     - name: Create ZIP archive
       uses: actions/upload-artifact@v4.4.0
