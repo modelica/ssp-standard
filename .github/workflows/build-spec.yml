@@ -19,10 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/setup-python@v6
-      with:
-        python-version: '3.13'
-
     - name: Checkout
       uses: actions/checkout@v4.1.7
       with:
@@ -88,11 +84,6 @@ jobs:
       uses: avattathil/asciidoctor-action@master
       with:
         program: "asciidoctor --attribute=revnumber=${{env.REVNUMBER}} --attribute=revdate=$(date +%F) docs/index.adoc"
-
-    - run: tree
-
-    - name: Replace ULRs
-      run: python docs/theme/update_urls.py
 
     - name: Create build directory
       run: |
