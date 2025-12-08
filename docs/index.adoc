@@ -15,6 +15,7 @@
 :nofooter:
 :favicon: theme/images/SSP-favicon.svg
 :icons: font
+:website-url: https://ssp-standard.org/
 :repo-url: https://github.com/modelica/ssp-standard
 :logo: SSP
 :stylesdir: ./foobar
