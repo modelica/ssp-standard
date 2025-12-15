@@ -8,7 +8,7 @@ All SSD-specific elements live in the `http://ssp-standard.org/SSP1/SystemStruct
 
 === SystemStructureDescription
 
-image:images/SystemStructureDescription_SystemStructureDescription.png[image,width=475,height=693]
+image:images/SystemStructureDescription_SystemStructureDescription.svg[image]
 
 The root element of an SSD file *MUST* be a SystemStructureDescription element, which gives overall information about the system hierarchy described in this SSD file, including common meta-data, and acts as a bracket for the root system and its unit and enumeration definitions.
 
@@ -41,7 +41,7 @@ Any enumerations and units referenced in the system description file *MUST* be p
 
 ==== Default Experiment
 
-image:images/image24.png[image,width=449,height=248]
+image:images/SystemStructureDescription_DefaultExperiment.svg[image]
 
 This element contains information of a default simulation setup that is supplied with the system definition for informational purposes.
 
@@ -64,7 +64,7 @@ _This standard does not specify additional measures to deal with differing indep
 
 System, Component and SignalDictionaryReference XML elements are subtypes of a common TElement base type, that contains attributes and XML elements common to all kinds of model elements:
 
-image:images/SystemStructureDescription_TElement.png[image,width=391,height=466]
+image:images/SystemStructureDescription_TElement.svg[image]
 
 The following XML attributes are specified for the TElement type:
 
@@ -91,7 +91,7 @@ See below for details.
 
 ==== Connectors
 
-image:images/image26.png[image,width=371,height=82]
+image:images/SystemStructureDescription_Connectors.svg[image]
 
 This optional element specifies the set of connectors of this model element, which represent the interface of the model element to the outside world.
 For components the set of connectors *MUST* match variables/ports of the underlying component implementation, e.g., for referenced FMI 2.0 FMUs, the name of a connector has to match the name attribute of the corresponding <ScalarVariable> element; for referenced FMUs that follow the OSI Sensor Model Packaging specification [OSMP150], the name of a connector of type Binary has to match the name attribute of the corresponding <osmp:osmp-binary-variable>.
@@ -107,7 +107,7 @@ At least those connectors *MUST* be present which are referenced in connections 
 _Unreferenced connectors will yield the behavior that is specified for the underlying component variables/ports, e.g. an unconnected FMU input variable will remain at its default value during the whole simulation._
 _The same is true for variables/ports that are not referenced through a connector at all._ ]
 
-image:images/image27.png[image,width=396,height=986]
+image:images/SystemStructureDescription_Connector.svg[image]
 
 The following XML attributes are specified for the Connector element:
 
@@ -194,7 +194,8 @@ _[ Note that the current opaque mapping of more advanced types to Binary connect
 
 ===== ConnectorGeometry
 
-image:images/image28.png[image,width=307,height=149]
+image:images/SystemStructureDescription_ConnectorGeometry.svg[image]
+
 
 This optional XML element gives the geometry information of the connector.
 Note that x and y coordinates are in a normalized connector coordinate system, where 0,0 is the lower-left corner of the containing model element, and 1,1 is the upper-right corner of the model element, regardless of aspect ratio.
@@ -223,7 +224,7 @@ image:images/ConnectorGeometryExample.png[image]
 
 ==== ElementGeometry
 
-image:images/image29.png[image,width=339,height=603]
+image:images/SystemStructureDescription_ElementGeometry.svg[image]
 
 This optional XML element defines the geometry information of the model element, where (x1,y1) and (x2,y2) define the positions of the lower-left and upper-right corners of the model element in the coordinate system of its parent system.
 If x1>x2 this indicates horizontal flipping, y1>y2 indicates vertical flipping.
@@ -367,7 +368,7 @@ image:images/IconExample15.png[image,width=245,height=147]
 
 ==== ParameterBindings
 
-image:images/SystemStructureDescription_ParameterBindings.png[image,width=746,height=719]
+image:images/SystemStructureDescription_ParameterBindings.svg[image]
 
 The ParameterBindings element provides the parameter bindings for a component or system, where each binding is specified in a ParameterBinding element.
 A parameter binding applies a set of parameter values (a parameter set), supplied by a parameter source (for example a parameter file) to parametrize a component or system.
@@ -461,14 +462,14 @@ See below for details.
 
 ===== ParameterValues
 
-image:images/image33.png[image,width=369,height=65]
+image:images/SystemStructureDescription_ParameterValues.svg[image]
 
 When this element is present, its contents *MUST* be an ssv:ParameterSet element as specified by the SystemStructureParameterValues schema, if the type attribute of the enclosing ParameterBinding element is application/x-ssp-parameter-set, or any other valid XML content if the type attribute references another MIME type.
 In that case there *SHOULD* be a layered specification that defines how embedding the content works for that MIME type.
 
 ===== ParameterMapping
 
-image:images/SystemStructureDescription_ParameterMapping.png[image,width=473,height=541]
+image:images/SystemStructureDescription_ParameterMapping.svg[image]
 
 This element provides a parameter mapping, which specifies how the parameter names and values provided in the parameter source are to be mapped to the parameters of the component or system in question.
 If no mapping is supplied, the parameter names of the parameter source are used as is for name matching against the names of parameters in the component or system and the values of the parameter source are not transformed further before being applied.
@@ -499,7 +500,7 @@ In that case there *SHOULD* be a layered specification that defines how embeddin
 
 === System
 
-image:images/SystemStructureDescription_System.png[image,width=463,height=827]
+image:images/SystemStructureDescription_System.svg[image]
 
 This element describes a system, which can contain components, signal dictionary references and other systems as elements, connectors as an interface to the outside world, and connections connecting the connectors of itself and of its elements to one another.
 
@@ -517,7 +518,7 @@ The following XML child elements are specified for the System element:
 
 ==== Elements
 
-image:images/image36.png[image,width=501,height=157]
+image:images/SystemStructureDescription_Elements.svg[image]
 
 This optional element contains one or more components, signal dictionary references or systems that are the internal content of the given system.
 
@@ -533,11 +534,11 @@ The following XML child elements are specified for the Elements element:
 
 ==== Connections
 
-image:images/image37.png[image,width=314,height=37]
+image:images/SystemStructureDescription_Connections.svg[image]
 
 This optional element provides the connections between connectors of the system, connectors of its elements and inbetween those connectors.
 
-image:images/image38.png[image,width=503,height=762]
+image:images/SystemStructureDescription_Connection.svg[image]
 
 This element specifies a connection between two connectors, either of the system or its directly contained elements.
 Note that only connections between certain kinds of connectors are allowed, as specified in <<Allowed Connections>>.
@@ -656,7 +657,7 @@ See <<Transformation Choice>> for details.
 
 ===== ConnectionGeometry
 
-image:images/image39.png[image,width=348,height=149]
+image:images/SystemStructureDescription_ConnectionGeometry.svg[image]
 
 This optional element defines the geometry information of the connection.
 The start and end coordinates of the connection are derived automatically through the coordinates of the corresponding connectors.
@@ -683,12 +684,11 @@ When a large number of signals have to be handled, signal dictionaries can help 
 
 Another benefit of signal dictionaries is the possibility to define a mapping between two or more signal dictionaries that may differ by names or units, which is a common case when components are integrated into a system that come from different sources without a common design or architecture.
 
-image:images/image40.png[image,width=427,height=82]
+image:images/SystemStructureDescription_SignalDictionaries.svg[image]
 
 This optional element provides the set of defined signal dictionaries for the system.
 
-image:images/SystemStructureDescription_SignalDictionary.png[image,width=447,height=522]
-
+image:images/SystemStructureDescription_SignalDictionary.svg[image]
 A signal dictionary is a collection of signals which can be accessed in different systems at different levels of the hierarchy through signal dictionary references referencing the signal dictionary.
 
 [width="100%",cols="26%,74%",options="header",]
@@ -712,7 +712,7 @@ See <<SSB>> for details.
 
 ==== SystemGeometry
 
-image:images/image42.png[image,width=293,height=257]
+image:images/SystemStructureDescription_SystemGeometry.svg[image]
 
 This element defines the extent of the system canvas. (x1,y1) and (x2,y2) define the lower-left and upper-right corner, respectively.
 Different from ElementGeometry, where x1 > x2 and y1 > y2 indicate flipping, x1 < x2 and y1 < y2 *MUST* hold here.
@@ -767,7 +767,7 @@ _y2_Be -> (y1_Ae + (y2_Be - y1_As) * (y2_Ae - y1_Ae) / (y2_As - y1_As))_ ]
 
 ==== GraphicalElements
 
-image:images/image43.png[image,width=382,height=37]
+image:images/SystemStructureDescription_GraphicalElements.svg[image]
 
 This optional element contains the set of purely graphical elements that are contained in the system, like notes, which have no semantic impact on the system but aid in presentation of the system in graphical user interfaces.
 
@@ -775,7 +775,7 @@ Currently the only graphical element defined is the Note element, which allows f
 
 ===== Note
 
-image:images/image44.png[image,width=232,height=311]
+image:images/SystemStructureDescription_Note.svg[image]
 
 This element defines a graphical note to be placed on the canvas of the enclosing system.
 It is sized using the attributes so that the coordinates (x1,y1) and (x2,y2) define the positions of the lower-left and upper-right corners of the note in the coordinate system of the parent.
@@ -796,7 +796,7 @@ Inside the text attribute, newlines indicate paragraph breaks.
 
 === Component
 
-image:images/SystemStructureDescription_Component.png[image,width=481,height=879]
+image:images/SystemStructureDescription_Component.svg[image]
 
 A component is an atomic element of a system (i.e. its internal structure is not specified).
 
@@ -840,7 +840,7 @@ It is an error if the specified type of FMU implementation is not present in the
 
 === SignalDictionaryReference
 
-image:images/SystemStructureDescription_SignalDictionaryReference.png[image,width=555,height=733]
+image:images/SystemStructureDescription_SignalDictionaryReference.svg[image]
 
 A signal dictionary reference is an element of a system that references a signal dictionary, i.e. it is the placeholder of the signal dictionary that allows access to the contents of the signal dictionary through its connectors, which *MUST* reference signal dictionary entries.
 

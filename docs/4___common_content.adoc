@@ -7,7 +7,7 @@ All Types and AttributeGroups live in the `http://ssp-standard.org/SSP1/SystemSt
 
 All XML elements that correspond to an entity of the system model will have the following set of common XML attributes, as defined in the ssc:ABaseElement attribute group:
 
-image:images/image1.png[image,width=261,height=101]
+image:images/SystemStructureCommon_ABaseElement.svg[image]
 
 [width="100%",cols="18%,82%",options="header",]
 |===
@@ -20,7 +20,7 @@ image:images/image1.png[image,width=261,height=101]
 
 All XML elements that correspond to an entity of the system model will have the following set of common child elements:
 
-image:images/image2.png[image,width=324,height=35]
+image:images/SystemStructureCommon_TAnnotations.svg[image]
 
 [width="100%",cols="18%,82%",options="header",]
 |===
@@ -31,8 +31,8 @@ When it is present, it *MUST* contain 1 or more Annotation elements as specified
 
 Each annotation is encapsulated in an Annotation element, with a required type attribute specifying the type of the annotation, and arbitrary XML content from arbitrary namespaces.
 
-image:images/image3.png[image,width=310,height=137]
-
+image:images/SystemStructureCommon_Annotation.svg[image]
+    
 In order to ensure uniqueness the annotation type *SHOULD* be provided in reverse domain name notation [ _cf.
 Java package names or Apple UTIs_ ] of a domain that is controlled by the entity defining the semantics and content of the annotation.
 For vendor-specific annotations this *SHOULD* be a domain controlled by the tool vendor.
@@ -45,7 +45,7 @@ This mechanism can be used both for tool-specific annotations, as well as for la
 
 Top-level attributes are optional meta-data attributes common to all top-level container elements of all defined file formats.
 
-image:images/image4.png[image,width=348,height=317]
+image:images/SystemStructureCommon_ATopLevelMetaData.svg[image]
 
 [width="100%",cols="28%,72%",options="header",]
 |===
@@ -68,14 +68,14 @@ When processing information from multiple files, either from the same or separat
 
 ==== Enumerations
 
-image:images/image5.png[image,width=397,height=47]
+image:images/SystemStructureCommon_TEnumerations.svg[image]
 
 This optional element *MUST* contain definitions for all enumerations referenced in a file.
 
 {empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities._
 _Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
 
-image:images/image6.png[image,width=441,height=273]
+image:images/SystemStructureCommon_Enumeration.svg[image]
 
 Each enumeration is defined through an Enumeration XML element:
 
@@ -95,7 +95,7 @@ The following XML child elements are specified for the Enumeration element:
 
 ===== Item
 
-image:images/image7.png[image,width=225,height=149]
+image:images/SystemStructureCommon_Item.svg[image]
 
 For each item in the enumeration there is one Item XML element with the following attributes:
 
@@ -108,14 +108,14 @@ For each item in the enumeration there is one Item XML element with the followin
 
 ==== Units
 
-image:images/image8.png[image,width=315,height=47]
+image:images/SystemStructureCommon_TUnits.svg[image]
 
 This optional element *MUST* contain definitions for all units referenced in a file.
 
 {empty}[ _As a file-based interchange standard, the natural scope for units and enumerations is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities._
 _Upon import tools are free to merge unit information across files or separate them between hierarchy layers as they see fit._ ]
 
-image:images/image9.png[image,width=380,height=273]
+image:images/SystemStructureCommon_Unit.svg[image]
 
 Each unit is defined through a Unit XML element:
 
@@ -138,7 +138,7 @@ The following XML child elements are specified for the Unit element:
 This element defines the base unit of the given unit in SI units.
 This is completely aligned with the specification of base units in section 2.4.3 of the FMI 3.0 standard [<<FMI30>>] and section 2.2.2 of the FMI 2.0 standard [<<FMI20>>].
 
-image:images/image10.png[image,width=263,height=771]
+image:images/SystemStructureCommon_BaseUnit.svg[image]
 
 [width="100%",cols="28%,72%",options="header",]
 |===
@@ -163,7 +163,7 @@ They are used inside elements to select one of multiple child elements, or provi
 [#ssc_types]
 ==== Type Choice
 
-image:images/image11.png[image,width=312,height=203]
+image:images/SystemStructureCommon_GTypeChoice.svg[image]
 
 The following XML child elements denote the data type of a connector or dictionary entry.
 [ _Note that in the case of connectors the use of a type element itself is optional, in the case of dictionary entries it is required_ ].
@@ -174,13 +174,13 @@ The following XML child elements denote the data type of a connector or dictiona
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the element.
+Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *MUST* be present to specify the type of the element.
 See below for details.
 |===
 
 ===== Real
 
-image:images/image12.png[image,width=226,height=95]
+image:images/SystemStructureCommon_Real.svg[image]
 
 This type specifies that the connector in question represents an IEEE754 double precision floating point number.
 
@@ -201,7 +201,7 @@ Notwithstanding these mechanisms, unitless variables of type Real are supported.
 
 ===== Float64
 
-image:images/image12.png[image,width=226,height=95]
+image:images/SystemStructureCommon_Float64.svg[image]
 
 This type specifies that the connector in question represents an IEEE754 double precision floating point number.
 
@@ -222,7 +222,7 @@ Notwithstanding these mechanisms, unitless variables of type Float64 are support
 
 ===== Float32
 
-image:images/image12.png[image,width=226,height=95]
+image:images/SystemStructureCommon_Float32.svg[image]
 
 This type specifies that the connector in question represents an IEEE754 single precision floating point number.
 
@@ -243,73 +243,73 @@ Notwithstanding these mechanisms, unitless variables of type Float32 are support
 
 ===== Integer
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_Integer.svg[image]
 
 This type specifies that the connector in question represents a 32-bit signed integer number.
 
 ===== Int8
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_Int8.svg[image]
 
 This type specifies that the connector in question represents a 8-bit signed integer number.
 
 ===== UInt8
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_UInt8.svg[image]
 
 This type specifies that the connector in question represents a 8-bit unsigned integer number.
 
 ===== Int16
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_Int16.svg[image]
 
 This type specifies that the connector in question represents a 16-bit signed integer number.
 
 ===== UInt16
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_UInt16.svg[image]
 
 This type specifies that the connector in question represents a 16-bit unsigned integer number.
 
 ===== Int32
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_Int32.svg[image]
 
 This type specifies that the connector in question represents a 32-bit signed integer number.
 
 ===== UInt32
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_UInt32.svg[image]
 
 This type specifies that the connector in question represents a 32-bit unsigned integer number.
 
 ===== Int64
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_Int64.svg[image]
 
 This type specifies that the connector in question represents a 64-bit signed integer number.
 
 ===== UInt64
 
-image:images/image13.png[image,width=56,height=28]
+image:images/SystemStructureCommon_UInt64.svg[image]
 
 This type specifies that the connector in question represents a 64-bit unsigned integer number.
 
 ===== Boolean
 
-image:images/image14.png[image,width=62,height=28]
+image:images/SystemStructureCommon_Boolean.svg[image]
 
 This type specifies that the connector in question represents a Boolean value.
 
 ===== String
 
-image:images/image15.png[image,width=51,height=28]
+image:images/SystemStructureCommon_String.svg[image]
 
 This type specifies that the connector in question represents a zero-terminated UTF-8 encoded string.
 
 ===== Enumeration
 
-image:images/image16.png[image,width=264,height=95]
+image:images/SystemStructureCommon_GTypeChoice_Enumeration.svg[image]
 
 This type specifies that the connector in question represents an enumeration value, as specified by the enumeration definition.
 The underlying type of the connector is the same as for Integer.
@@ -323,7 +323,7 @@ The name *MUST* match the name of an Enumeration entry in the Enumerations XML e
 
 ===== Binary
 
-image:images/image17.png[image,width=319,height=114]
+image:images/SystemStructureCommon_Binary.svg[image]
 
 This type specifies that the connector in question represents a length-terminated binary data type, like the binary type defined for the FMI 3.0 standard, or substitute types like the binary type defined via the OSI Sensor Model Packaging specification [<<OSMP150>>].
 
@@ -338,10 +338,51 @@ It should be noted that the implementation is *not required* to provide this ser
 The attribute value *MUST* be a valid MIME type as specified in RFC 2045; it *CAN* include additional arguments, etc., as specified in RFC 2045.
 |===
 
+===== Clock
+
+image:images/SystemStructureCommon_Clock.svg[image]
+
+This type specifies that the connector represents a clock signal, compatible with the clock type defined in the FMI 3.0 standard.
+For detailed clock semantics and behavior, refer to the FMI 3.0 specification.
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+
+|intervalVariability
+a|This optional attribute specifies the interval variability of the clock signal.
+Valid values are: `constant`, `fixed`, `tunable`, `changing`, `countdown`, `triggered`.
+
+|intervalDecimal
+a|This optional attribute specifies the clock interval in seconds as a floating-point value.
+
+|shiftDecimal
+a|This optional attribute specifies the time offset in seconds for the first clock tick relative to simulation start.
+Default is 0.
+
+|supportsFraction
+a|This optional boolean attribute indicates whether the clock supports fractional representations for intervals and shifts.
+Default is `false`.
+
+|resolution
+a|This optional attribute specifies the denominator for rational number representations of intervals and shifts.
+
+|intervalCounter
+a|This optional attribute specifies the numerator of the clock interval as rational number (intervalCounter / resolution).
+
+|shiftCounter
+a|This optional attribute specifies the numerator of the clock shift as rational number (shiftCounter / resolution).
+Default is 0.
+
+|priority
+a|This optional attribute specifies the execution priority of the clock for scheduling purposes.
+Lower values indicate higher priority.
+|===
+
 [#ssc_transformations]
 ==== Transformation Choice
 
-image:images/image18.png[image,width=474,height=133]
+image:images/SystemStructureCommon_GTransformationChoice.svg[image]
 
 The following XML child elements specify a transformation to be applied to a value prior to its use in a connection or parameter mapping:
 
@@ -356,7 +397,7 @@ The following XML child elements specify a transformation to be applied to a val
 
 ===== LinearTransformation
 
-image:images/image19.png[image,width=323,height=187]
+image:images/SystemStructureCommon_LinearTransformation.svg[image]
 
 This element provides for a linear transformation of the source value to the target value, i.e. in the calculation target = factor * source + offset.
 
@@ -374,7 +415,7 @@ The default is 0.
 
 ===== BooleanMappingTransformation
 
-image:images/image20.png[image,width=579,height=155]
+image:images/SystemStructureCommon_BooleanMappingTransformation.svg[image]
 
 This element provides for a transformation of Boolean values based on a mapping table and is valid for connectors of Boolean type.
 Each mapping table entry is provided by a MapEntry element.
@@ -391,7 +432,7 @@ In that case values not mapped by a mapping entry are kept unchanged.
 
 ===== IntegerMappingTransformation
 
-image:images/image21.png[image,width=546,height=155]
+image:images/SystemStructureCommon_IntegerMappingTransformation.svg[image]
 
 This element provides for a transformation of integer values based on a mapping table and is valid for connectors of all the integer types and Enumeration type.
 Each mapping table entry is provided by a MapEntry element.
@@ -416,7 +457,7 @@ Such entries are ignored in the mapping process.
 
 ===== EnumerationMappingTransformation
 
-image:images/image22.png[image,width=588,height=155]
+image:images/SystemStructureCommon_EnumerationMappingTransformation.svg[image]
 
 This element provides for a transformation of enumeration values based on a mapping table of their enumeration item names and is valid for connectors of Enumeration type.
 Each mapping table entry is provided by a MapEntry element.
@@ -438,7 +479,7 @@ This transformation can be applied between connectors of different Enumeration t
 [#ssc_dimensions]
 ==== Dimension Sequence
 
-image:images/image61.png[image,width=535,height=153]
+image:images/SystemStructureCommon_GDimensions.svg[image]
 
 The Dimension element is used to specify the dimensions of array connectors, signal dictionary entries, or parameter values.
 
@@ -452,7 +493,7 @@ See below for details.
 
 ===== Dimension
 
-image:images/image60.png[image,width=295,height=149]
+image:images/SystemStructureCommon_Dimension.svg[image]
 
 This element specifies one dimension of a potentially multi-dimensional array connector, signal dictionary entry, or parameter value (modeling element).
 If no dimension elements are present in a modeling element, it is a scalar modeling element.
@@ -481,7 +522,7 @@ This attribute references another connector by name, that gives the size of this
 [#ssc_metadata]
 ==== MetaData Sequence
 
-image:images/SystemStructureCommon_GMetaData.png[image,width=690,height=197]
+image:images/SystemStructureCommon_GMetaData.svg[image]
 
 The group GMetaData allows the specification of additional meta data for a given model element.
 Multiple (or no) MetaData elements may be present in a given model element.
@@ -495,7 +536,7 @@ See below for details.
 
 ===== MetaData
 
-image:images/SystemStructureCommon_MetaData.png[image,width=462,height=479]
+image:images/SystemStructureCommon_MetaData.svg[image]
 
 This element specifies a source of meta data related to the containing model element.
 
@@ -541,7 +582,7 @@ The last option allows the specification of meta data sources that reside inside
 
 ===== Content
 
-image:images/SystemStructureCommon_Content.png[image,width=372,height=191]
+image:images/SystemStructureCommon_Content.svg[image]
 
 This element specifies the inlined content of the model element meta data.
 
@@ -551,7 +592,7 @@ In that case there *SHOULD* be a layered specification that defines how embeddin
 [#ssc_signature]
 ==== Signature Sequence
 
-image:images/SystemStructureCommon_GSignature.png[image,width=652,height=133]
+image:images/SystemStructureCommon_GSignature.svg[image]
 
 The group GSignature allows the specification of digital signatures for a given model element.
 Multiple (or no) Signature elements may be present in a given model element.
@@ -565,7 +606,7 @@ See below for details.
 
 ===== Signature
 
-image:images/SystemStructureCommon_Signature.png[image,width=423,height=419]
+image:images/SystemStructureCommon_Signature.svg[image]
 
 This element specifies digital signature information on the data or meta data referenced by the enclosing element:
 If the Signature element is contained within a MetaData element, it refers to the meta data referenced by the MetaData element.

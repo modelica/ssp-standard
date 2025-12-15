@@ -16,7 +16,7 @@ Any enumerations or units used in the DictionaryEntry elements *MUST* be declare
 
 === SignalDictionary
 
-image:images/SystemStructureSignalDictionary_SignalDictionary.png[image,width=438,height=585]
+image:images/SystemStructureSignalDictionary_SignalDictionary.svg[image]
 
 This element describes a signal dictionary, which consists of one or more dictionary entries, each describing one signal in the signal dictionary (see next section).
 
@@ -41,7 +41,7 @@ The following XML child elements are specified for the SignalDictionary element:
 
 ==== DictionaryEntry
 
-image:images/image59.png[image,width=485,height=923]
+image:images/SystemStructureSignalDictionary_DictionaryEntry.svg[image]
 
 A dictionary entry defines a single signal in the signal dictionary.
 
@@ -59,7 +59,7 @@ The following XML child elements are specified for the DictionaryEntry element:
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary |Exactly one of these elements *MUST* be present to specify the type of the signal dictionary entry.
+Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *MUST* be present to specify the type of the signal dictionary entry.
 See <<ssc_types>> for details.
 |Dimension |One or more of these optional elements define the signal dictionary entry array dimensions, making the signal dictionary entry an array signal dictionary entry.
 See <<ssc_dimensions>> for details.
