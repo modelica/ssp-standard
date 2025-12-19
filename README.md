@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/SSP_dark.svg" style="width:70%;">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/SSP.svg" style="width:70%;">
-  <img alt="System Structure and Parameterization" src="docs/images/SSP.svg" style="width:70%;">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/modelica/ma-asciidoctor-theme/blob/main/images/SSP-logo-horizontal-dark.svg" style="width:70%;">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/modelica/ma-asciidoctor-theme/blob/main/images/SSP-logo-horizontal-light.svg" style="width:70%;">
+  <img alt="System Structure and Parameterization" src="https://github.com/modelica/ma-asciidoctor-theme/blob/main/images/SSP-logo-horizontal-light.svg" style="width:70%;">
 </picture>
 
 # System Structure and Parameterization (SSP)
