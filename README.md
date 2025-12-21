@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/SSP_dark.svg" style="width:70%;">
-  <source media="(prefers-color-scheme: light)" srcset="docs/images/SSP.svg" style="width:70%;">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/modelica/ma-asciidoctor-theme/refs/heads/main/images/SSP-logo-horizontal-dark.svg" style="width:70%;">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/modelica/ma-asciidoctor-theme/refs/heads/main/images/SSP-logo-horizontal-light.svg" style="width:70%;">
   <img alt="System Structure and Parameterization" src="docs/images/SSP.svg" style="width:70%;">
 </picture>
 
