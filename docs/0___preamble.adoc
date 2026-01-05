@@ -27,7 +27,7 @@ Please report issues that you find with this specification to map-ssp_projectlea
 
 *License of this document*
 
-Copyright © 2016 – 2025 Modelica Association Project “SSP”
+Copyright © 2016 – 2026 Modelica Association Project “SSP”
 
 This document is provided “as is” without any warranty.
 It is licensed under the CC-BY-SA (Creative Commons Attribution-Sharealike 4.0 International) license, which is the license used by Wikipedia.

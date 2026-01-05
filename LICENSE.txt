@@ -1,4 +1,4 @@
-Copyright (C) 2016-2025 Modelica Association Project "SSP"
+Copyright (C) 2016-2026 Modelica Association Project "SSP"
               All rights reserved.
 
 Source code or other data, such as C-header and XML-schema files, that
