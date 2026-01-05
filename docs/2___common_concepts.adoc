@@ -59,6 +59,19 @@ Layered standards can fall into three categories:
 * Layered standards can be defined/adopted and published by MAP SSP itself, making them MAP SSP layered standards.
 * Finally, layered standards that have achieved enough adoption or importance to be included into the base standard set can be incorporated into a new minor release version of the base standard as an optional or mandatory appendix, making support for this layered standard optional or required for conformance with the newly published minor release version of the base standard.
 
+==== Version Mixing
+
+Since version information is specific to each individual XML file within an SSP package (as specified by the `version` attribute in SSD, SSV, SSM, and SSB root elements), it is explicitly allowed for an SSP package to contain XML files that conform to different SSP versions.
+Referenced resources within an SSP package, like component implementations (e.g., FMUs or nested SSP packages) *MAY* conform to different standards and different versions of those standards.
+This flexibility allows for the integration of resources developed at different times or with different tooling capabilities.
+
+{empty}[ _For example, an SSP 2.0 package may contain:_
+
+* _An SSD file conforming to SSP 2.0_
+* _Parameter sets (SSV files) where some conform to SSP 1.0 and others to SSP 2.0_
+* _FMUs conforming to FMI 2.0, FMI 3.0, or both_
+* _Nested SSP packages conforming to SSP 1.0_ ]
+
 === Content addressing
 
 All references between files using file formats defined in the SSP standard are expressed through URIs.
