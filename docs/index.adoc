@@ -1,35 +1,41 @@
 = System Structure and Parameterization
-:doctype: book
 :sectnums:
 :sectnumlevels: 5
 :toc: left
 :toc-title: Contents
 :toclevels: 5
+:idprefix:
+:idseparator: -
 :xrefstyle: short
 :docinfo: shared
-:stylesheet: ssp-spec.css
+:docinfodir: theme/docinfo
 :stem: latexmath
 :source-highlighter: highlightjs
+:highlightjs-theme: github
 :nofooter:
-:favicon: images/favicon.ico
+:favicon: theme/images/SSP-favicon.svg
 :icons: font
+:website-url: https://ssp-standard.org/
+:repo-url: https://github.com/modelica/ssp-standard
+:logo: SSP
+:stylesdir: ./foobar
 
-include::0___preamble.adoc[]
+include::0_preamble.adoc[]
 
-include::1___overview.adoc[]
+include::1_overview.adoc[]
 
-include::2___common_concepts.adoc[]
+include::2_common_concepts.adoc[]
 
-include::3___packaging.adoc[]
+include::3_packaging.adoc[]
 
-include::4___common_content.adoc[]
+include::4_common_content.adoc[]
 
-include::5___ssd.adoc[]
+include::5_ssd.adoc[]
 
-include::6___ssv.adoc[]
+include::6_ssv.adoc[]
 
-include::7___ssm.adoc[]
+include::7_ssm.adoc[]
 
-include::8___ssb.adoc[]
+include::8_ssb.adoc[]
 
-include::A___literature.adoc[]
+include::9_appendix.adoc[]
