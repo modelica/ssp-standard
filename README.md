@@ -7,7 +7,7 @@
 # System Structure and Parameterization (SSP)
 
 The System Structure and Parameterization (SSP) standard is a free standard that defines a tool-independent format for the description, packaging and exchange of system structures and their parameterization.
-It is currently supported by [8](https://ssp-standard.org/tools/) tools and maintained as a [Modelica Association Project](https://modelica.org/projects).
+It is currently supported by [17+ tools](https://ssp-standard.org/tools/) and maintained as a [Modelica Association Project](https://modelica.org/association/).
 
 [Releases](https://ssp-standard.org/) and the [latest development version](https://ssp-standard.org/docs/main/) of the specification are available on the [SSP website](https://ssp-standard.org/).
 
