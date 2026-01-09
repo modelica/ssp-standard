@@ -80,7 +80,7 @@ The parameter settings are used to differentiate the applications.
 Therefore a good parameterization concept is important to facilitate this reuse.
 SSP supports the creation of a central parameterization structure for entire systems.
 The SSP parameter data model can be used to integrate parameters from various sources, including external parameter databases, which can export their parameter data as SSV data sets.
-Through the URI-based addressing mechanism, tools can support direct access to such databases from system structure descriptions.
+Through the URI-based addressing mechanism, tools can support direct access to such databases from System Structure Descriptions.
 
 ==== SSP as particular instances of ready-to-simulate simulation systems
 
@@ -101,7 +101,7 @@ There is an increasing desire to reuse environment models to provide proven, con
 
 Data management environments provide capabilities for managing model compositions, handling variants of systems and managing the parameter and signal interfaces of the different model systems.
 
-The SSP approach enables the sharing of standardized system structure descriptions between data management, integration and configuration tools for SIL, MIL and HIL scenarios.
+The SSP approach enables the sharing of standardized System Structure Descriptions between data management, integration and configuration tools for SIL, MIL and HIL scenarios.
 
 === Feature Overview
 
@@ -163,7 +163,7 @@ The following changes were performed as part of the 2.0.0 major release:
   ** Support for structural parameters with the new connector kind `structuralParameter`.
   ** Support for the redesigned alias variable handling in FMI 3.0.
 * Architectural design features
-  ** The component source attribute is now optional to support the usage of system structure descriptions for simulation architecture design without available component implementations.
+  ** The component source attribute is now optional to support the usage of System Structure Descriptions for simulation architecture design without available component implementations.
   ** New connector kinds `local`, and `constant` are added to the specification, to support more encompassing interface specifications for components, and further parameter propagation.
   ** Support for optional inner view connector coordinates, in addition to the outer view connector coordinates.
      This feature enables more advanced graphical editing of SSP models.

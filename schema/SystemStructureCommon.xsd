@@ -565,7 +565,7 @@
                             <xs:documentation xml:lang="en">
                                 This attribute specifies the name of the enumeration
                                 which references into the set of defined enumerations
-                                of the system structure description, as contained in
+                                of the System Structure Description, as contained in
                                 the Enumerations element of the root element.
                             </xs:documentation>
                         </xs:annotation>

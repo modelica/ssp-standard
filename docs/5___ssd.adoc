@@ -804,7 +804,7 @@ A component is an atomic element of a system (i.e. its internal structure is not
 |===
 |Attribute |Description
 |type |Optional attribute giving the MIME type of the component, which defaults to `application/x-fmu-sharedlibrary` to indicate the type of the component.
-Valid further types are `application/x-ssp-definition` for system structure description files, `application/x-ssp-package` for system structure package files, and `text/x-modelica` for Modelica models.
+Valid further types are `application/x-ssp-definition` for System Structure Description files, `application/x-ssp-package` for system structure package files, and `text/x-modelica` for Modelica models.
 No further types are currently defined.
 For type `text/x-modelica`, a media type parameter `path` specifies the full path of the Modelica class.
 {empty}[ _Example: `type="text/x-modelica; path=Modelica.Mechanics.Rotational.Interface.Flange_A"`._ ]

@@ -20,11 +20,11 @@ _It should also be noted that Unicode normalization issues that affect cross fil
 The ZIP archive *MUST* contain an entry named SystemStructure.ssd at root level, containing a valid System Structure Description, as specified in <<SSD>>.
 
 Optionally the ZIP archive *MAY* contain multiple SSD file entries at root level, each with a different file name [ _e.g. SystemStructure.ssd, VarA.ssd, VarB.ssd_ ].
-This allows the bundling of multiple variants of a system structure definition referencing a similar set of packaged resources as one SSP.
+This allows the bundling of multiple variants of a System Structure Description referencing a similar set of packaged resources as one SSP.
 There *MUST* still be one SSD file named SystemStructure.ssd at the root of the ZIP archive which is deemed to be the default variant.
 Tools not supporting variant-containing SSPs *MUST* deal with the given SSP by ignoring all contained SSD files except for the SystemStructure.ssd default file.
 
-If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such system structure definition *MUST* be different from any of the other root level system structure definitions.
+If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such System Structure Description *MUST* be different from any of the other root level System Structure Descriptions.
 
 {empty}[ _Tools *MAY* want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement._ ]
 
