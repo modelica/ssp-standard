@@ -65,13 +65,6 @@ Since version information is specific to each individual XML file within an SSP 
 Referenced resources within an SSP package, like component implementations (e.g., FMUs or nested SSP packages) *MAY* conform to different standards and different versions of those standards.
 This flexibility allows for the integration of resources developed at different times or with different tooling capabilities.
 
-{empty}[ _For example, an SSP 2.0 package may contain:_
-
-* _An SSD file conforming to SSP 2.0_
-* _Parameter sets (SSV files) where some conform to SSP 1.0 and others to SSP 2.0_
-* _FMUs conforming to FMI 2.0, FMI 3.0, or both_
-* _Nested SSP packages conforming to SSP 1.0_ ]
-
 === Content addressing
 
 All references between files using file formats defined in the SSP standard are expressed through URIs.
