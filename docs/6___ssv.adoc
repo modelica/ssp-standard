@@ -1,6 +1,6 @@
 == System Structure Parameter Values (SSV) [[SSV]]
 
-A System Structure Parameter Values (abbreviated SSV) element provides parameter sets for a component or system.
+A system structure parameter values (abbreviated SSV) element provides parameter sets for a component or system.
 The XML element can be inlined with its parent element or referenced from the parent element and supplied as a separate file that is either included within an SSP package or specified as an external URL.
 
 For information on hierarchical naming structure and precedence rules, see <<ParameterBindings>>.
@@ -49,7 +49,7 @@ image:images/image48.png[image,width=428,height=94]
 The Parameters element contains a list of individual parameters.
 If the list is empty, the parameter set *SHALL* not have any effect on any system or component it is applied to.
 
-It is *not required* that all parameters included in the Parameters element correspond to parameters available in the components or systems the parameter set is applied to (through ParameterBinding elements in the System Structure Description).
+It is *not required* that all parameters included in the Parameters element correspond to parameters available in the components or systems the parameter set is applied to (through ParameterBinding elements in the system structure description).
 This allows the definition of large parameter data sets out of which only a subset is applied in a given case.
 See <<ParameterBindings>> for the semantic defintion of parameter bindings.
 

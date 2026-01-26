@@ -13,7 +13,7 @@ The content of the ssc:Annotation element *CAN* be arbitrary XML data, and *CAN*
 
 ==== Extra Files Mechanism
 
-The System Structure Package (SSP) file format is a ZIP-based packaging format, and thus not XML-based.
+The system structure package (SSP) file format is a ZIP-based packaging format, and thus not XML-based.
 It offers a separate mechanism to include additional data and meta-data into the package format through the reserved extra/ ZIP entry prefix (i.e. top-level directory), as defined in <<Packaging>>.
 Files are placed inside sub-directories under that top-level directory using the namespace as defined in <<Extension Namespaces>> as part of the sub-directory name.
 The content of files and further sub-directories placed in those sub-directories are unrestricted.
