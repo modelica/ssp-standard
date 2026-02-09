@@ -14,7 +14,7 @@ Except for this file extension recommendation the filename is arbitrary and is i
 
 === ParameterSet
 
-image:images/SystemStructureParameterValues_ParameterSet.png[image,width=405,height=639]
+image:images/SystemStructureParameterValues_ParameterSet.svg[image]
 
 The ParameterSet element contains parameter and meta data information.
 If the SSV is provided as a separate file, the root element *MUST* be a ParameterSet element.
@@ -44,7 +44,7 @@ See <<Units>> for its definition.
 
 === Parameters
 
-image:images/image48.png[image,width=428,height=94]
+image:images/SystemStructureParameterValues_Parameters.svg[image]
 
 The Parameters element contains a list of individual parameters.
 If the list is empty, the parameter set *SHALL* not have any effect on any system or component it is applied to.
@@ -53,7 +53,7 @@ It is *not required* that all parameters included in the Parameters element corr
 This allows the definition of large parameter data sets out of which only a subset is applied in a given case.
 See <<ParameterBindings>> for the semantic defintion of parameter bindings.
 
-image:images/image49.png[image,width=458,height=891]
+image:images/SystemStructureParameterValues_Parameter.svg[image]
 
 The following XML attributes are specified for the Parameter element:
 
@@ -83,7 +83,7 @@ The dimensionality of the parameter is given by the presence of one or more Dime
 
 ==== Real
 
-image:images/image50.png[image,width=231,height=149]
+image:images/SystemStructureParameterValues_Real.svg[image]
 
 This type specifies a parameter that represents an IEEE754 double precision floating point number, or an array of such values.
 
@@ -99,7 +99,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Float64
 
-image:images/image50.png[image,width=231,height=149]
+image:images/SystemStructureParameterValues_Float64.svg[image]
 
 This type specifies a parameter that represents an IEEE754 double precision floating point number, or an array of such values.
 
@@ -115,7 +115,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Float32
 
-image:images/image50.png[image,width=231,height=149]
+image:images/SystemStructureParameterValues_Float32.svg[image]
 
 This type specifies a parameter that represents an IEEE754 single precision floating point number, or an array of such values.
 
@@ -131,7 +131,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Integer
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_Integer.svg[image]
 
 This type specifies a parameter that represents a 32-bit signed integer, or an array of such values.
 
@@ -145,7 +145,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Int8
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_Int8.svg[image]
 
 This type specifies a parameter that represents a 8-bit signed integer, or an array of such values.
 
@@ -159,7 +159,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== UInt8
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_UInt8.svg[image]
 
 This type specifies a parameter that represents a 8-bit unsigned integer, or an array of such values.
 
@@ -173,7 +173,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Int16
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_Int16.svg[image]
 
 This type specifies a parameter that represents a 16-bit signed integer, or an array of such values.
 
@@ -187,7 +187,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== UInt16
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_UInt16.svg[image]
 
 This type specifies a parameter that represents a 16-bit unsigned integer, or an array of such values.
 
@@ -201,7 +201,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Int32
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_Int32.svg[image]
 
 This type specifies a parameter that represents a 32-bit signed integer, or an array of such values.
 
@@ -215,7 +215,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== UInt32
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_UInt32.svg[image]
 
 This type specifies a parameter that represents a 32-bit unsigned integer, or an array of such values.
 
@@ -229,7 +229,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Int64
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_Int64.svg[image]
 
 This type specifies a parameter that represents a 64-bit signed integer, or an array of such values.
 
@@ -243,7 +243,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== UInt64
 
-image:images/image51.png[image,width=222,height=95]
+image:images/SystemStructureParameterValues_UInt64.svg[image]
 
 This type specifies a parameter that represents a 64-bit unsigned integer, or an array of such values.
 
@@ -257,7 +257,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== Boolean
 
-image:images/image52.png[image,width=255,height=95]
+image:images/SystemStructureParameterValues_Boolean.svg[image]
 
 This type specifies a parameter that represents a Boolean value, or an array of such values.
 
@@ -271,7 +271,7 @@ For array parameters, values are specified as a space-separated list of values i
 
 ==== String
 
-image:images/image53.png[image,width=426,height=201]
+image:images/SystemStructureParameterValues_String.svg[image]
 
 This type specifies a parameter that represents a zero-terminated UTF-8 encoded string, or an array of such values.
 
@@ -297,7 +297,7 @@ For array parameters with more than one element, values *MUST* be specified as c
 
 ==== Enumeration
 
-image:images/image54.png[image,width=458,height=255]
+image:images/SystemStructureParameterValues_Enumeration.svg[image]
 
 This type specifies a parameter that represents an enumeration value, or an array of such values, as specified by an enumeration definition.
 
@@ -333,7 +333,7 @@ For array parameters with more than one element, values *MUST* be specified as c
 
 ==== Binary
 
-image:images/image55.png[image,width=451,height=274]
+image:images/SystemStructureParameterValues_Binary.svg[image]
 
 This type specifies a parameter that represents a length-terminated binary data type, or an array of such values.
 
