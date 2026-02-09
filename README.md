@@ -25,6 +25,6 @@ It is currently supported by [17+ tools](https://ssp-standard.org/tools/) and ma
 
 ## Copyright and License
 
-XML schemas and documentation copyright &copy; 2016 - 2025 the Modelica Association Project SSP.
+XML schemas and documentation copyright &copy; 2016 - 2026 the Modelica Association Project SSP.
 XML schemas released under the [2-Clause BSD License](https://opensource.org/licenses/BSD-2-Clause).
 Documentation released under [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
