@@ -1,8 +1,8 @@
 == System Structure Package (SSP) [[Packaging]]
 
-System Structure Package (file extension .ssp) files are specified to allow the packaging of System Structure Description (`*.ssd`) files together with related resources, like referenced FMUs, parameter files, etc.
+System structure package (file extension .ssp) files are specified to allow the packaging of system structure description (`*.ssd`) files together with related resources, like referenced FMUs, parameter files, etc.
 
-System Structure Package files *MUST* be valid ZIP archives as specified in [<<ZIP635>>] with the following restrictions:
+System structure package files *MUST* be valid ZIP archives as specified in [<<ZIP635>>] with the following restrictions:
 
 * All file entries *MUST* use either compression method 0 (stored) or 8 (deflated).
 * Encryption *MUST NOT* be used.
@@ -17,20 +17,20 @@ Use of other character sets and encodings is *NOT RECOMMENDED* and is likely to 
 {empty}[ _It should be noted that some common implementations of ZIP archivers erroneously encode characters beyond the Unicode Basic Multilingual Plane (BMP), i.e. code point U+10000 and above, using UTF-8 encoded surrogate pairs, yielding the CESU-8 encoding, instead of correctly encoding those codepoints directly using UTF-8._
 _It should also be noted that Unicode normalization issues that affect cross filesystem/OS compatibility might need to be addressed, since those issues are not addressed in the ZIP specification._ ]
 
-The ZIP archive *MUST* contain an entry named SystemStructure.ssd at root level, containing a valid System Structure Description, as specified in <<SSD>>.
+The ZIP archive *MUST* contain an entry named SystemStructure.ssd at root level, containing a valid system structure description, as specified in <<SSD>>.
 
 Optionally the ZIP archive *MAY* contain multiple SSD file entries at root level, each with a different file name [ _e.g. SystemStructure.ssd, VarA.ssd, VarB.ssd_ ].
-This allows the bundling of multiple variants of a system structure definition referencing a similar set of packaged resources as one SSP.
+This allows the bundling of multiple variants of a system structure description referencing a similar set of packaged resources as one SSP.
 There *MUST* still be one SSD file named SystemStructure.ssd at the root of the ZIP archive which is deemed to be the default variant.
 Tools not supporting variant-containing SSPs *MUST* deal with the given SSP by ignoring all contained SSD files except for the SystemStructure.ssd default file.
 
-If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such system structure definition *MUST* be different from any of the other root level system structure definitions.
+If the ZIP archive contains multiple SSD file entries at the root level, the `name` attribute of each such system structure description *MUST* be different from any of the other root level system structure descriptions.
 
 {empty}[ _Tools *MAY* want to be prepared to handle SSP archives that violate the unique name requirement, as this was not present in earlier releases of SSP, and manually generated SSP archives may inadvertantly violate this requirement._ ]
 
 Tools *SHOULD* use the name attribute of the root SystemStructureDescription element of the SSD files when presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 
-The ZIP archive *MAY* contain additional entries with the prefix `resources/` which can be used to bundle resources referenced from the System Structure Description file(s) through relative URIs as specified in the sections below.
+The ZIP archive *MAY* contain additional entries with the prefix `resources/` which can be used to bundle resources referenced from the system structure description file(s) through relative URIs as specified in the sections below.
 
 {empty}[ _Note: These additional entries may include additional files describing Parameter Values (`*.ssv`), Parameter Mappings (`*.ssm`) or Signal Dictionaries (`*.ssb`)._
 _The names of these files, like all other additional files, are arbitrary and are independent of variant handling or the names of the referencing SSD files themselves._

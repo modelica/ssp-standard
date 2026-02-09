@@ -178,7 +178,7 @@
                         <xs:documentation xml:lang="en">
                             This attribute specifies the MIME type of the component, which defaults to
                             application/x-fmu-sharedlibrary to indicate an FMU.  When referencing another
-                            system structure definition file, the MIME type application/x-ssp-definition
+                            system structure description file, the MIME type application/x-ssp-definition
                             is used, and the MIME type application/x-ssp-package is used for referenced
                             system structure packages (SSPs). No further types are currently defined.
                         </xs:documentation>
