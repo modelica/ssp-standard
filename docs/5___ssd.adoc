@@ -218,8 +218,8 @@ Any inside view is not overridden.
 |systemInnerY |Optional attribute giving a separate y coordinate of the connector for the inside view of a system.
 |===
 
-[ _Graphical example for a ConnectorGeometry:_
-image:images/ConnectorGeometryExample.png[image]
+[ _Graphical example for a ConnectorGeometry:_ +
+image:images/Example_ConnectorGeometry.svg[image] +
 ]
 
 ==== ElementGeometry
@@ -259,110 +259,90 @@ It is *RECOMMENDED* that implementations that support graphical presentation sup
 |iconFixedAspectRatio |Optional attribute defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) with a fixed aspect ratio, or without keeping the aspect ratio fixed.
 |===
 
-[ _Graphical example for an ElementGeometry:_
-image:images/ElementGeometryExample.png[image]
+[ _Graphical example for an ElementGeometry:_ +
+image:images/Example_ElementGeometry.svg[image] +
 ]
 
 [_The next examples show the effects of attributes of the ElementGeometry on the visual representation of a reference element:_
 
-_*Non-transformed reference* (icon fills rectangle, left 2 inputs, right 1 output)_
+_**Non-transformed reference** (icon fills rectangle, left 2 inputs, right 1 output)_
 
-image:images/IconExampleBase.png[image,width=245,height=86]
+image:images/Example_Icon0.svg[image]
 
-*_Coordinate systems:_*
+__**Example 1: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**0** +
+__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**IGNORED** (relevant only if element is flipped)__
 
-_Red: ConnectorGeometry +
-Blue: ElementGeometry_
+image:images/Example_Icon1.svg[image]
 
-__*Example 1: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**0** +
-__iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**IGNORED** (relevant only if element is flipped)__
+__**Example 2: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**0** +
+__iconRotation__=**0**, __iconFixedAspectRatio__=**false**, __iconFlip__=**IGNORED**__
 
-image:images/IconExample1.png[image,width=367,height=215]
+image:images/Example_Icon2.svg[image]
 
-__*Example 2: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**0** +
-__iconRotation__=**0**,__ iconFixedAspectRatio__=**false, **__iconFlip__=**IGNORED**__
+__**Example 3: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**IGNORED**__
 
-image:images/IconExample2.png[image,width=245,height=143]
+image:images/Example_Icon3.svg[image]
 
-*_ +
-_*
+__**Example 4: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**false**, __iconFlip__=**IGNORED**__
 
-__*Example 3: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ** +
-__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**IGNORED**__
+image:images/Example_Icon4.svg[image]
 
-image:images/IconExample3.png[image,width=367,height=215]
+__**Example 5: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**IGNORED**__
 
-__*Example 4: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ +
-**__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**false**,__ iconFlip__=**IGNORED**__
+image:images/Example_Icon5.svg[image]
 
-image:images/IconExample4.png[image,width=249,height=147]
+__**Example 6: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**0**, __iconFixedAspectRatio__=**false**, __iconFlip__=**IGNORED**__
 
-*_ +
-_*
+image:images/Example_Icon6.svg[image]
 
-__*Example 5: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ** +
-__iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**IGNORED**__
+__**Example 7: Horizontal flip** (__x1__>__x2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**true**__
 
-image:images/IconExample5.png[image,width=367,height=215]
+image:images/Example_Icon7.svg[image]
 
-__*Example 6: No flip* (__x1__<__x2__,__ y1__<__y2__),__ rotation__=**ϕ** +
-__iconRotation__=**0**,__ iconFixedAspectRatio__=**false**,__ iconFlip__=**IGNORED**__
+__**Example 8: Horizontal flip** (__x1__>__x2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**false**, __iconFlip__=**false**__
 
-image:images/IconExample6.png[image,width=249,height=147]
+image:images/Example_Icon8.svg[image]
 
-_ +
-_
+__**Example 9: Horizontal flip** (__x1__>__x2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
 
-__*Example 7: Horizontal flip* (__x1__>__x2__),__ rotation__=**ϕ** +
-__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**true**__
+image:images/Example_Icon9.svg[image]
 
-image:images/IconExample7.png[image,width=367,height=215]
+__**Example 10: Vertical flip** (__y1__>__y2__), __rotation__=**0** +
+__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
 
-__*Example 8: Horizontal flip* (__x1__>__x2__),__ rotation__=**ϕ** +
-__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**false**,__ iconFlip__=**false**__
+image:images/Example_Icon10.svg[image]
 
-image:images/IconExample8.png[image,width=241,height=143]
+__**Example 11: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**0** +
+__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
 
-__*Example 9: Horizontal flip* (__x1__>__x2__),__ rotation__=**ϕ** +
-__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**false**__
+image:images/Example_Icon11.svg[image]
 
-image:images/IconExample9.png[image,width=245,height=147]
+__**Example 12: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**0** +
+__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**true**__
 
-_ +
-_
+image:images/Example_Icon12.svg[image]
 
-__*Example 10: Vertical flip* (__y1__>__y2__),__ rotation__=**0 +
-**__iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**false**__
+__**Example 13: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**true**__
 
-image:images/IconExample10.png[image,width=367,height=215]
+image:images/Example_Icon13.svg[image]
 
-__*Example 11: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**0 +
-**__iconRotation__=**0**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**false**__
+__**Example 14: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**false**, __iconFlip__=**true**__
 
-image:images/IconExample11.png[image,width=367,height=215]
+image:images/Example_Icon14.svg[image]
 
-__*Example 12: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__)*, *__rotation__=**0 +
-**__iconRotation__=**0**,__ iconFixedAspectRatio__=**true,**__ iconFlip__=**true**__
+__**Example 15: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**&#x03C6;** +
+__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
 
-image:images/IconExample12.png[image,width=249,height=147]
-
-*_ +
-_*
-
-__*Example 13: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**ϕ +
-**__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true**,__ iconFlip__=**true**__
-
-image:images/IconExample13.png[image,width=367,height=215]
-
-__*Example 14: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**ϕ +
-**__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**false, **__iconFlip__=**true**__
-
-image:images/IconExample14.png[image,width=249,height=147]
-
-__*Example 15: Horizontal and vertical flip* (__x1__>__x2__,__ y1__>__y2__),__ rotation__=**ϕ +
-**__iconRotation__=**ϕ**,__ iconFixedAspectRatio__=**true, **__iconFlip__=**false**__
-
-image:images/IconExample15.png[image,width=245,height=147]
+image:images/Example_Icon15.svg[image]
 
 ]
 
@@ -671,8 +651,8 @@ Note that x and y coordinates are in the coordinate system of the enclosing syst
 |pointsY |Required attribute giving a list of y coordinates of the intermediate waypoints.
 |===
 
-[ _Graphical example for a ConnectionGeometry:_
-image:images/ConnectionGeometryExample.png[image]
+[ _Graphical example for a ConnectionGeometry:_ +
+image:images/Example_ConnectionGeometry.svg[image] +
 ]
 
 ==== SignalDictionaries
@@ -739,31 +719,31 @@ _Hence, the exporting tool has to scale from its own coordinate system when expo
 |y2 |Required attribute giving the y coordinate of the upper-right corner of the system canvas.
 |===
 
-[ _Graphical example for a SystemGeometry:_
-image:images/SystemGeometryExample.png[image]
+[ _Graphical example for a SystemGeometry:_ +
+image:images/Example_SystemGeometry.svg[image] +
 ]
 
-[ _Graphical example showing the interplay of SystemGeometry, ElementGeometry, ConnectorGeometry, and ConnectionGeometry:_
-image:images/GeometryInterplayExample.png[image]
+[ _Graphical example showing the interplay of SystemGeometry, ElementGeometry, ConnectorGeometry, and ConnectionGeometry:_ +
+image:images/Example_GeometryInterplay.svg[image] +
 ]
 
 [ _Example how the given Geometries can be used to transform coordinates to show elements on different hierarchy levels in a single graphic:_
 
-_Subsystem A is an element with an ElementGeometry (x1_Ae, y1_Ae, x2_Ae, y2_Ae) and a SystemGeometry (x1_As, y1_As, x2_As, y2_As)._
+_Subsystem A is an element with an ElementGeometry (latexmath:[x_{1AE}, y_{1AE}, x_{2AE}, y_{2AE}]) and a SystemGeometry (latexmath:[x_{1AS}, y_{1AS}, x_{2AS}, y_{2AS}])._
 
-_B is an element in subystem A with an ElementGeometry coordinates (x1_Be, y1_Be, x2_Be, y2_Be)._
+_B is an element in subystem A with an ElementGeometry coordinates (latexmath:[x_{1BE}, y_{1BE}, x_{2BE}, y_{2BE}])._
 
-image:images/GeometryInterplayCoordinates.png[image]
+image:images/Example_NestedElementGeometry.svg[image]
 
 _To plot the element B in the system where A is located, use the following coordinate transformation:_
 
-_x1_Be -> (x1_Ae + (x1_Be - x1_As) * (x2_Ae - x1_Ae) / (x2_As - x1_As))_
+latexmath:[x_{1BE} \rightarrow x_{1AE} + (x_{1BE} - x_{1AS}) \cdot \frac{x_{2AE} - x_{1AE}}{x_{2AS} - x_{1AS}}]
 
-_y1_Be -> (y1_Ae + (y1_Be - y1_As) * (y2_Ae - y1_Ae) / (y2_As - y1_As))_
+latexmath:[y_{1BE} \rightarrow y_{1AE} + (y_{1BE} - y_{1AS}) \cdot \frac{y_{2AE} - y_{1AE}}{y_{2AS} - y_{1AS}}]
 
-_x2_Be -> (x1_Ae + (x2_Be - x1_As) * (x2_Ae - x1_Ae) / (x2_As - x1_As))_
+latexmath:[x_{2BE} \rightarrow x_{2AE} + (x_{2BE} - x_{1AS}) \cdot \frac{x_{2AE} - x_{1AE}}{x_{2AS} - x_{1AS}}]
 
-_y2_Be -> (y1_Ae + (y2_Be - y1_As) * (y2_Ae - y1_Ae) / (y2_As - y1_As))_ ]
+latexmath:[y_{2BE} \rightarrow y_{2AE} + (y_{2BE} - y_{1AS}) \cdot \frac{y_{2AE} - y_{1AE}}{y_{2AS} - y_{1AS}}] ]
 
 ==== GraphicalElements
 
