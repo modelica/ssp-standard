@@ -32,11 +32,11 @@ When it is present, it *MUST* contain 1 or more Annotation elements as specified
 Each annotation is encapsulated in an Annotation element, with a required type attribute specifying the type of the annotation, and arbitrary XML content from arbitrary namespaces.
 
 image:images/SystemStructureCommon_Annotation.svg[image]
-    
+
 In order to ensure uniqueness the annotation type *SHOULD* be provided in reverse domain name notation [ _cf.
 Java package names or Apple UTIs_ ] of a domain that is controlled by the entity defining the semantics and content of the annotation.
 For vendor-specific annotations this *SHOULD* be a domain controlled by the tool vendor.
-For MAP-SSP-defined annotations, this *MUST* be a domain under the org.modelica or org.ssp-standard prefixes.
+For MAP-SSP-defined annotations, this *MUST* be a domain under the `org.modelica` or `org.ssp-standard` prefixes.
 Annotations that are not defined by MAP SSP *MUST NOT* use these two prefixes,
 
 This mechanism can be used both for tool-specific annotations, as well as for layered standards (see <<Versioning and Layered Standards>>) and other agreed-upon extensions, and thus provides a generic extension mechanism.

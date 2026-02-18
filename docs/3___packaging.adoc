@@ -32,7 +32,7 @@ Tools *SHOULD* use the name attribute of the root SystemStructureDescription ele
 
 The ZIP archive *MAY* contain additional entries with the prefix `resources/` which can be used to bundle resources referenced from the system structure description file(s) through relative URIs as specified in the sections below.
 
-{empty}[ _Note: These additional entries may include additional files describing Parameter Values (`*.ssv`), Parameter Mappings (`*.ssm`) or Signal Dictionaries (`*.ssb`)._
+{empty}[ _Note: These additional entries may include additional files describing Parameter Values (++*.ssv++), Parameter Mappings (++*.ssm++) or Signal Dictionaries (++*.ssb++)._
 _The names of these files, like all other additional files, are arbitrary and are independent of variant handling or the names of the referencing SSD files themselves._
 _All stand-alone files are referenced by SSD files via (relative) URIs._ ]
 

@@ -231,7 +231,7 @@ If x1>x2 this indicates horizontal flipping, y1>y2 indicates vertical flipping.
 
 The optional attribute rotation (in degrees) defines an additional rotation (applied after flipping), where positive numbers indicate a counter clockwise rotation.
 
-{empty}[_Sometimes such a counter clockwise orientation is also called a left rotation (x→y), with the coordinate system orientation: x → right, y → up)_]
+{empty}[ _Sometimes such a counter clockwise orientation is also called a left rotation (x→y), with the coordinate system orientation: x → right, y → up)_ ]
 
 The optional attribute iconSource defines an icon URI with the same semantics as for the source attribute of the Component element.
 If defined, this icon overrides any icon that may be defined in an .fmu file (as defined in the relevant FMI standards).
@@ -241,7 +241,7 @@ The optional attribute iconRotation defines the rotation (in degrees) of the ico
 The optional attribute iconFixedAspectRatio defines whether the icon shall be fit into the extent defined by (x1,y1), (x2,y2) and iconRotation with fixed aspect ratio.
 The optional attribute iconFlip defines whether any flipping indicated by (x1,y1), (x2,y2) shall be applied to the icon graphics, too.
 
-{empty}[_If no explicit icon is given, the icon used by the tool to represent the system should be rotated accordingly._]
+{empty}[ _If no explicit icon is given, the icon used by the tool to represent the system should be rotated accordingly._ ]
 
 [width="100%",cols="28%,72%",options="header",]
 |===
@@ -263,7 +263,7 @@ It is *RECOMMENDED* that implementations that support graphical presentation sup
 image:images/ElementGeometryExample.png[image]
 ]
 
-[_The next examples show the effects of attributes of the ElementGeometry on the visual representation of a reference element:_
+[ _The next examples show the effects of attributes of the ElementGeometry on the visual representation of a reference element:_
 
 _*Non-transformed reference* (icon fills rectangle, left 2 inputs, right 1 output)_
 
@@ -832,7 +832,7 @@ In any other regard implementations *CAN* treat such components as equivalent to
 Note that not specifying a source attribute is not the same as specifying a source attribute with an emtpy string value, as that is considered a valid relative URI.
 Implementations *MUST NOT* specify an empty relative URI to indicate a missing implementation.
 
-|implementation |When the referenced component is an FMU that contains multiple implementations [ _for example Co-Simulation and Model Exchange_], this optional attribute can be used to determine which FMU implementation should be employed.
+|implementation |When the referenced component is an FMU that contains multiple implementations [ _for example Co-Simulation and Model Exchange_ ], this optional attribute can be used to determine which FMU implementation should be employed.
 If the attribute is missing or uses the default value any, the importing tool is free to choose what kind of FMU implementation to use.
 If the value is CoSimulation, ModelExchange, or ScheduledExecution the corresponding FMU implementation *MUST* be used.
 It is an error if the specified type of FMU implementation is not present in the FMU.
