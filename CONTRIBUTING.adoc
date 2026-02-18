@@ -240,12 +240,10 @@ main
 Follow these steps to create a (pre-)release:
 
 * update the SSP version in the schemas, and XML examples
-* update <<CHANGELOG.adoc#,CHANGELOG.adoc>>
 * download the `ssp-standard.zip` build artefact and check for completeness
 * create a tag on `main` (e.g. `v3.0-rc.1`) and push it together with a commit to trigger the CI
 * create a new https://github.com/modelica/ssp-standard/releases[release] on GitHub for the tag
 ** check `This a pre-release` if it's not the final release
-** add the text from `CHANGELOG.adoc`
 ** add the version to `ssp-standard.zip` (e.g. `ssp-standard-3.0-rc.1.zip`) and upload it to the release
 
 == Contributor License Agreement
