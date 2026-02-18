@@ -6,7 +6,7 @@ A signal dictionary can be provided either as a stand-alone XML file (an SSB fil
 
 An SSB file *MUST* be a well-formed XML 1.0 [<<XML10>>] file that conforms to the SystemStructureSignalDictionary XML Schema that is distributed as part of this standard.
 The file *MUST* use the UTF-8 encoding.
-All SSB-specific elements live in the `http://ssp-standard.org/SSP1/SystemStructureSignalDictionary` namespace, nicknamed `ssb`.
+All SSB-specific elements live in the `+http://ssp-standard.org/SSP1/SystemStructureSignalDictionary+` namespace, nicknamed `ssb`.
 
 It is *RECOMMENDED* that the file extension `.ssb` be used for stand-alone SSB files.
 Except for this file extension recommendation the filename is arbitrary and is independent of variant handling or the names of SSD files.

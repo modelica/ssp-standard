@@ -8,7 +8,7 @@ A parameter mapping can be provided either as a stand-alone XML file (an SSM fil
 
 An SSM file *MUST* be a well-formed XML 1.0 [<<XML10>>] file that conforms to the SystemStructureParameterMapping XML Schema that is distributed as part of this standard.
 The file *MUST* use the UTF-8 encoding.
-All SSM-specific elements live in the `http://ssp-standard.org/SSP1/SystemStructureParameterMapping` namespace, nicknamed `ssm`.
+All SSM-specific elements live in the `+http://ssp-standard.org/SSP1/SystemStructureParameterMapping+` namespace, nicknamed `ssm`.
 
 It is *RECOMMENDED* that the file extension `.ssm` be used for stand-alone SSM files.
 Except for this file extension recommendation the filename is arbitrary and is independent of variant handling or the names of SSD files.
