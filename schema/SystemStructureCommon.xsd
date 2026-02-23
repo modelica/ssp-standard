@@ -138,7 +138,7 @@
                             <xs:documentation xml:lang="en">Name of the Enumeration Item</xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
-                    <xs:attribute name="value" type="xs:int" use="required">
+                    <xs:attribute name="value" type="xs:long" use="required">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">The Value of the Enumeration Item</xs:documentation>
                         </xs:annotation>
