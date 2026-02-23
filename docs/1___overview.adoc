@@ -145,6 +145,32 @@ The following companies and persons were involved in the creation of the standar
 
 We would also like to thank all persons that provided feedback during the internal and public feedback periods, as well as prototype implementations and public presentations furthering the aims of this standard.
 
+=== Changes in 2.0.1
+
+The following changes were performed as part of the 2.0.1 maintenance release:
+
+* Update error condition for sizeConnector attribute (https://github.com/modelica/ssp-standard/pull/90)
+* Documentation updates (https://github.com/modelica/ssp-standard/pull/87)
+* Add justification for SSP "size" vs FMI "start" attribute naming (https://github.com/modelica/ssp-standard/pull/91)
+* Add favicon (https://github.com/modelica/ssp-standard/pull/93)
+* Clarify support for mixed SSP versions in nested SSP (https://github.com/modelica/ssp-standard/pull/92)
+* Update all schema images, fix missing clock section (https://github.com/modelica/ssp-standard/pull/98)
+* Fix SSP relationship to FMI as complementary standard (https://github.com/modelica/ssp-standard/pull/102)
+* Update MAP link in readme.md (https://github.com/modelica/ssp-standard/pull/106)
+* Bump copyright to year 2026 (https://github.com/modelica/ssp-standard/pull/101)
+* Change "system structure definition" to "system structure description" (https://github.com/modelica/ssp-standard/pull/105)
+* Update all geometry example images, fix formatting issues in geometry section (https://github.com/modelica/ssp-standard/pull/100)
+* Fix enumeration value space for SSP2 (fixes #96) (https://github.com/modelica/ssp-standard/pull/109)
+* Fix literature references/keys (https://github.com/modelica/ssp-standard/pull/110)
+* Advise users to report issues on github (https://github.com/modelica/ssp-standard/pull/111)
+* Remove xml namespace links (https://github.com/modelica/ssp-standard/pull/112)
+* Fix formatting issues (https://github.com/modelica/ssp-standard/pull/113)
+* Add note for clock namespaces (https://github.com/modelica/ssp-standard/pull/114)
+* Remove reference to non existing changelog file (https://github.com/modelica/ssp-standard/pull/115)
+* Add legend for schema images (https://github.com/modelica/ssp-standard/pull/116)
+
+Note that the schema definition for enumeration item values was updated to cover the full range of values for the new data types in FMI 3.0, as originally intended in the 2.0 release.
+
 === Changes in 2.0.0
 
 This major release of the SSP standard provides support for FMI 3.0, as well as other enhancements in response to new end-user requirements for architectural design, traceability, incremental development, and support of Modelica models as components.
