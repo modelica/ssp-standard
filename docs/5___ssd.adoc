@@ -169,6 +169,10 @@ The dimensionality of the Connector is given by the presence of one or more Dime
 
 The association of a connector to a clock is given by the presence of one or more Clock elements.
 
+{empty}[ _Note: The element name Clock is used for two different child elements in the Connector context._
+_In the type choice, Clock refers to the SystemStructureCommon element `ssc:Clock` (the connector type)._
+_The additional Clock child element with attribute `name` refers to the SystemStructureDescription element `ssd:Clock` (the connector-to-clock association)._ ]
+
 When Modelica models are represented in SSP, built-in input and output connectors shall be mapped as follows:
 
 [width="100%",cols="25%,25%,50%",options="header",]
