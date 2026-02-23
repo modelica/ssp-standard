@@ -1,7 +1,7 @@
 == Common Content (SSC) [[SSC]]
 
 Common Structures and Attributes that are used across all XML Schemas are defined in the SystemStructureCommon.xsd Schema, which is imported by all other XML Schemas.
-All Types and AttributeGroups live in the `http://ssp-standard.org/SSP1/SystemStructureCommon` namespace, nicknamed `ssc`.
+All Types and AttributeGroups live in the `+http://ssp-standard.org/SSP1/SystemStructureCommon+` namespace, nicknamed `ssc`.
 
 === Common Attributes
 
