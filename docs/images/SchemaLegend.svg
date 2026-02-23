@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="284"
+     color-interpolation="auto" font-family="'Dialog'" font-size="12"
+     stroke="#000" stroke-linecap="square" stroke-miterlimit="10">
+
+  <defs>
+
+    <!-- GROUP: x=0..61, y=70..92 -->
+    <symbol id="icon-group" viewBox="-1 69 63 24" width="61" height="22">
+      <g font-family="sans-serif" font-size="11">
+        <path fill="#d8e4f7" stroke="#000" stroke-width="1" stroke-linecap="butt" d="M0 70h55l1 1h1l1 1 1 1 1 1v1l1 1v16H0z"/>
+        <g fill="#1965b3" stroke="none">
+          <path d="M10 76h5v5h-5z"/>
+          <path d="M10 83h5v5h-5z"/>
+          <path d="M17 83h5v5h-5z"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- COMPLEX TYPE: x=0..62, y=3..25 -->
+    <symbol id="icon-complex" viewBox="-1 2 64 24" width="61" height="22">
+      <defs>
+        <linearGradient id="sb" gradientUnits="userSpaceOnUse" x1="9" x2="9" y1="8" y2="20">
+          <stop offset="0%" stop-color="#fff" stop-opacity=".353"/>
+          <stop offset="100%" stop-color="#876dbc" stop-opacity=".667"/>
+        </linearGradient>
+        <linearGradient id="sc" gradientUnits="userSpaceOnUse" x1="9" x2="21" y1="8" y2="8">
+          <stop offset="0%" stop-color="#fff" stop-opacity=".353"/>
+          <stop offset="100%" stop-color="#876dbc" stop-opacity=".667"/>
+        </linearGradient>
+      </defs>
+      <path fill="#f3f0f8" stroke="#000" stroke-width="1" stroke-linecap="butt" d="M0 3h62v22H0z"/>
+      <path d="M9 8h12v12H9z" fill="white" stroke="none"/>
+      <path d="M9 8h12v12H9z" fill="url(#sb)" stroke="none"/>
+      <path d="M9 8h12v12H9z" fill="url(#sc)" stroke="none"/>
+      <path d="M9 8h12v12H9z" fill="none" stroke="#876dbc" stroke-width="1"/>
+    </symbol>
+
+    <!-- ATTRIBUTE GROUP: x=0..61, y=36..58 -->
+    <symbol id="icon-attrgroup" viewBox="-1 35 63 24" width="61" height="22">
+      <path fill="#ffefd3" stroke="#000" stroke-width="1" stroke-linecap="butt" d="M0 36h55l1 1h1l1 1 1 1 1 1v1l1 1v16H0z"/>
+      <g fill="#f29800" stroke="none">
+        <path d="M10 42h5v5h-5z"/>
+        <path d="M10 49h5v5h-5z"/>
+        <path d="M17 49h5v5h-5z"/>
+      </g>
+    </symbol>
+
+    <!-- ATTRIBUTE: full rounded pill shape matching group width -->
+    <symbol id="icon-attr" viewBox="-1 -1 63 24" width="61" height="22">
+      <g font-size="11" stroke-linecap="butt">
+        <path fill="#ffefd3" stroke="#000" stroke-width="1" d="M0 0h55l1 1h1l1 1 1 1 1 1v1l1 1v8l-1 1v1l-1 1-1 1-1 1h-1l-1 1H0z"/>
+        <text fill="#f29800" x="8" y="10" font-family="sans-serif" font-size="11" stroke="none" dominant-baseline="central">@</text>
+      </g>
+    </symbol>
+
+    <!-- ELEMENT: after translate(-239,-4), x=0..67, y=73..94 -->
+    <symbol id="icon-element" viewBox="-1 72 69 23" width="61" height="22">
+      <g font-family="sans-serif" font-size="11" stroke-linecap="butt">
+        <path fill="#d8e4f7" stroke="#000" stroke-width="1"
+          transform="translate(-239,-4)"
+          d="m239 83 1-1v-1l1-1 1-1 1-1h1l1-1h55l1 1h1l1 1 1 1 1 1v1l1 1v9l-1 1v1l-1 1-1 1-1 1h-1l-1 1h-55l-1-1h-1l-1-1-1-1-1-1v-1l-1-1z"/>
+      </g>
+    </symbol>
+
+    <!-- ANY: after translate(-239,-4), x=181..248, y=106..127 -->
+    <symbol id="icon-any" viewBox="180 105 69 23" width="61" height="22">
+      <g font-family="sans-serif" font-size="11" stroke-linecap="butt">
+        <path fill="#d8e4f7" stroke="#000" stroke-width="1"
+          transform="translate(-239,-4)"
+          d="m420 116 1-1v-1l1-1 1-1 1-1h1l1-1h55l1 1h1l1 1 1 1 1 1v1l1 1v9l-1 1v1l-1 1-1 1-1 1h-1l-1 1h-55l-1-1h-1l-1-1-1-1-1-1v-1l-1-1z"/>
+        <g fill="none" stroke="#1965b3" stroke-width="1">
+          <path d="m428 116 4 9" transform="translate(-235,-4)"/>
+          <path d="m432 125 4-9" transform="translate(-235,-4)"/>
+          <path d="M429 119h6" transform="translate(-235,-4)"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- SEQUENCE: after translate(-239,-4), circle at cx=124,cy=116,r=14, full x=110..138, y=102..130 -->
+    <symbol id="icon-sequence" viewBox="107 99 36 36" width="34" height="34">
+      <g font-family="sans-serif" font-size="11" stroke-linecap="butt">
+        <g text-rendering="optimizeLegibility" transform="translate(-239,-4)">
+          <circle cx="363" cy="120" fill="#fdfce4" r="14" stroke="none"/>
+          <circle cx="363" cy="120" fill="none" r="14"/>
+          <path fill="none" shape-rendering="crispEdges" d="M369 117h4"/>
+          <path shape-rendering="crispEdges" d="M372 116h2v3h-2z" stroke="none"/>
+        </g>
+        <g fill="#acacac" shape-rendering="crispEdges" stroke="#acacac" text-rendering="geometricPrecision">
+          <path d="M363 114h6v6h-6z" stroke="none" transform="translate(-239,-4)"/>
+          <path fill="none" stroke="#000" d="M363 114h6v6h-6z" transform="translate(-239,-4)"/>
+          <path d="M360 117h6v6h-6z" stroke="none" transform="translate(-239,-4)"/>
+          <path fill="none" stroke="#000" d="M360 117h6v6h-6z" transform="translate(-239,-4)"/>
+          <path d="M357 120h6v6h-6z" stroke="none" transform="translate(-239,-4)"/>
+          <path fill="none" stroke="#000" d="M357 120h6v6h-6z" transform="translate(-239,-4)"/>
+          <path fill="none" stroke="#000" d="M357 123h-4" transform="translate(-239,-4)"/>
+          <path fill="#000" d="M353 122h2v3h-2z" stroke="none" transform="translate(-239,-4)"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- CHOICE: after translate(-404,-331), circle at cx=200,cy=163,r=14, full x=186..214, y=149..177 -->
+    <symbol id="icon-choice" viewBox="183 146 34 34" width="32" height="32">
+      <g font-family="sans-serif" font-size="11" stroke-linecap="butt">
+        <g text-rendering="optimizeLegibility" transform="translate(-404,-331)">
+          <circle cx="604" cy="494" fill="#fdfce4" r="14" stroke="none"/>
+          <circle cx="604" cy="494" fill="none" r="14"/>
+          <path fill="none" shape-rendering="crispEdges" d="M596 489h16"/>
+          <path shape-rendering="crispEdges" d="M596 488h2v3h-2z" stroke="none"/>
+          <path shape-rendering="crispEdges" d="M611 488h2v3h-2z" stroke="none"/>
+        </g>
+        <g fill="#acacac" shape-rendering="crispEdges" stroke="#acacac" text-rendering="geometricPrecision">
+          <path d="M601 486h6v6h-6z" stroke="none" transform="translate(-404,-331)"/>
+          <path fill="none" stroke="#000" d="M601 486h6v6h-6z" transform="translate(-404,-331)"/>
+          <path fill="#fff" d="M601 495h6v6h-6z" stroke="none" transform="translate(-404,-331)"/>
+          <path fill="none" stroke="#000" d="M601 495h6v6h-6z" transform="translate(-404,-331)"/>
+        </g>
+      </g>
+    </symbol>
+
+  </defs>
+
+  <!-- Background -->
+  <rect width="250" height="284" fill="white" stroke="#bbb" stroke-width="1" rx="2"/>
+  <!-- Title -->
+  <text x="12" y="20" font-size="12" font-weight="bold" fill="#333" font-family="sans-serif" stroke="none">Legend</text>
+  <line x1="12" y1="26" x2="238" y2="26" stroke="#ddd" stroke-width="1"/>
+
+  <!-- ROW 1: Complex Type -->
+  <use href="#icon-complex"   x="12" y="34"/>
+  <text x="88" y="49" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Complex Type</text>
+
+  <!-- ROW 2: Group -->
+  <use href="#icon-group"     x="12" y="62"/>
+  <text x="88" y="77" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Group</text>
+
+  <!-- ROW 3: Element -->
+  <use href="#icon-element"   x="12" y="90"/>
+  <text x="88" y="105" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Element</text>
+
+  <!-- ROW 4: Any -->
+  <use href="#icon-any"       x="12" y="118"/>
+  <text x="88" y="133" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Any</text>
+
+  <!-- ROW 5: Attribute Group -->
+  <use href="#icon-attrgroup" x="12" y="146"/>
+  <text x="88" y="161" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Attribute Group</text>
+
+  <!-- ROW 6: Attribute -->
+  <use href="#icon-attr"      x="12" y="174"/>
+  <text x="88" y="189" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Attribute</text>
+
+  <!-- ROW 7: Sequence -->
+  <use href="#icon-sequence"  x="12" y="202"/>
+  <text x="88" y="222" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Sequence</text>
+
+  <!-- ROW 8: Choice -->
+  <use href="#icon-choice"    x="12" y="240"/>
+  <text x="88" y="260" font-size="11" font-family="sans-serif" fill="#222" stroke="none">Choice</text>
+
+</svg>
