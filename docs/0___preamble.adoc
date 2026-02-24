@@ -1,6 +1,6 @@
 Document version: 2.0.1-rc.1
 
-February 23, 2026
+February 24, 2026
 
 This document is the first release candidate of release 2.0.1 of the System Structure and Parameterization Standard (SSP).
 
@@ -20,7 +20,7 @@ History / Road Map
 |1.0 |2019-03-05 |First Public Release of SSP
 |1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
 |2.0 |2024-12-20 |Public Release of SSP 2.0
-|2.0.1-rc.1 |2026-02-23 |First Release Candidate of SSP 2.0.1
+|2.0.1-rc.1 |2026-02-24 |First Release Candidate of SSP 2.0.1
 |===
 
 <<<
