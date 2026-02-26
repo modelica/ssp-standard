@@ -673,6 +673,7 @@ image:images/SystemStructureDescription_SignalDictionaries.svg[image]
 This optional element provides the set of defined signal dictionaries for the system.
 
 image:images/SystemStructureDescription_SignalDictionary.svg[image]
+
 A signal dictionary is a collection of signals which can be accessed in different systems at different levels of the hierarchy through signal dictionary references referencing the signal dictionary.
 
 [width="100%",cols="26%,74%",options="header",]
