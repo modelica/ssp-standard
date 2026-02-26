@@ -402,7 +402,7 @@ The following XML child elements specify a transformation to be applied to a val
 
 image:images/SystemStructureCommon_LinearTransformation.svg[image]
 
-This element provides for a linear transformation of the source value to the target value, i.e. in the calculation target = factor * source + offset.
+This element provides for a linear transformation of the source value to the target value, i.e. in the calculation latexmath:[\text{target} = \text{factor} \cdot \text{source} + \text{offset}].
 
 Note that conversions based on different units are performed, unless prevented by suppressUnitConversion, prior to the application of the linear transformation, i.e. the value of source is already converted to the target unit in the formula above.
 Linear transformations are only valid for connectors of Real, Float64 or Float32 type.
