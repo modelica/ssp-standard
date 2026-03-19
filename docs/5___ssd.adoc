@@ -17,7 +17,7 @@ The root element of an SSD file *MUST* be a SystemStructureDescription element, 
 |Attribute |Description
 |version |This required attribute specifies the version of this specification that the system description conforms to.
 Only major and minor version number are included, the patch version number *MUST NOT* be included in this attribute.
-For the current release this *MUST* be either 1.0 or 2.0.
+For the current release this *MUST* be either 1.0, 2.0, or 2.1.
 If it is 1.0 the file *MUST* also conform fully to the 1.0 standard.
 |name |This required attribute provides a name, which can be used for purposes of presenting the system structure to the user, for example when selecting individual variant SSDs from an SSP.
 |===
@@ -32,6 +32,8 @@ The following XML child elements are specified for the SystemStructureDescriptio
 See <<Enumerations>> for its definition.
 |Units |This optional element *MUST* contain definitions for all units referenced in the system description file.
 See <<Units>> for its definition.
+|Terminals |This optional element *MUST* contain definitions for all terminal types referenced in the system description file.
+See <<Terminals>> for its definition.
 |DefaultExperiment |This optional element *MAY* contain information of a default simulation setup that is supplied with the system definition for informational purposes, see description below.
 |===
 
@@ -144,6 +146,10 @@ This can be used for example to allow a connector to function as both an input a
 Connectors of kind `unspecified` are used to define connectors for which the flow of information is either not yet specified, or is determined at runtime, for example for acausal connections of Modelica models.
 Such connectors can be connected to any other connector under the rules of the underlying modeling language.
 
+Connectors of kind `terminal` are used to group member connectors into a structured interface, compatible with FMI 3.0 terminals.
+The name of the connector follows the naming convention `connectorName.memberName` for the member bindings.
+Such a connector *MUST* reference a terminal type definition via a Terminal child element (see <<ssc_types>> for details).
+
 |===
 
 The following XML child elements are specified for the Connector element:
@@ -154,7 +160,7 @@ The following XML child elements are specified for the Connector element:
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *CAN* be present to specify the type of the Connector.
+Boolean / String / Enumeration / Binary / Clock / Terminal |Exactly one of these elements *CAN* be present to specify the type of the Connector.
 See <<ssc_types>> for details.
 |Dimension |One or more of these optional elements specify the connector array dimensions, making the connector an array connector.
 See <<ssc_dimensions>> for details.
@@ -837,4 +843,55 @@ Name lookups occur in hierarchical fashion, i.e. the name is first looked up in 
 If that lookup yields no match, the lookup is performed on the enclosing system, etc., until a match is found.
 
 It is an error if no matching signal dictionary is found.
+|===
+
+[#Terminals]
+=== Terminals
+
+image:images/SystemStructureDescription_Terminals.svg[image]
+
+This optional element provides the set of global terminal type definitions for the system structure description.
+Terminal type definitions are referenced by name from connectors of kind `terminal`.
+
+==== Terminal
+
+image:images/SystemStructureDescription_Terminal.svg[image]
+
+This element defines a terminal type, which groups member connectors and optional nested sub-terminals into a structured interface compatible with FMI 3.0 terminals.
+
+The member-to-variable binding follows the naming convention `connectorName.memberName`, where `connectorName` is the name of the connector of kind `terminal` in the system or component, and `memberName` is the name of the member connector defined in this terminal type.
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|name |This required attribute gives the terminal type a unique name within the Terminals element.
+Qualified names using reverse domain name notation (e.g. `com.example.MyTerminalType`) are *RECOMMENDED*.
+|matchingRule a|
+This required attribute specifies the rule used to match member connectors when two terminals are connected.
+Compatible with FMI 3.0 terminal matching semantics:
+
+`plug` -- All members must match by `memberName`.
+
+`bus` -- Partial matching by `memberName` is allowed; unmatched members are left unconnected.
+
+`sequence` -- Matching is done by member order; the count of members must match.
+
+`none` -- No automatic matching is performed.
+
+Each terminal's `matchingRule` is evaluated independently.
+|terminalKind |This optional attribute specifies the terminal kind using FMI 3.0 semantics.
+Use reverse domain name notation (e.g. `com.example.MyTerminalType`).
+|===
+
+The following XML child elements are specified for the Terminal element:
+
+[width="100%",cols="23%,77%",options="header",]
+|===
+|Element |Description
+|Connectors |This optional element *MUST* contain the member connectors of this terminal type.
+Member connectors *MUST* use kind `local`.
+See <<Connectors>> for details.
+|Terminals |This optional element *MUST* contain nested sub-terminal type definitions.
+|Annotations |This optional element *MAY* contain annotations.
+See <<Annotations>> for details.
 |===

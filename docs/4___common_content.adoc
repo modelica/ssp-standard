@@ -177,7 +177,7 @@ The following XML child elements denote the data type of a connector or dictiona
 |Real / Float64 / Float32 / +
 Integer / Int8 / UInt8 / Int16 / UInt16 / +
 Int32 / UInt32 / Int64 / UInt64 / +
-Boolean / String / Enumeration / Binary / Clock |Exactly one of these elements *MUST* be present to specify the type of the element.
+Boolean / String / Enumeration / Binary / Clock / Terminal |Exactly one of these elements *MUST* be present to specify the type of the element.
 See below for details.
 |===
 
@@ -380,6 +380,21 @@ Default is 0.
 |priority
 a|This optional attribute specifies the execution priority of the clock for scheduling purposes.
 Lower values indicate higher priority.
+|===
+
+===== Terminal
+
+image:images/SystemStructureCommon_Terminal.svg[image]
+
+This type specifies that the connector in question represents a structured terminal, compatible with FMI 3.0 terminals.
+It *MUST* only be used for connectors of kind `terminal`. For detailed terminal semantics and behavior, refer to the FMI 3.0 specification.
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|name |This required attribute references a terminal type definition by name.
+The name *MUST* match the name of a Terminal entry in the Terminals XML element of the top-level SystemStructureDescription element.
+The member-to-variable binding follows the naming convention `connectorName.memberName`.
 |===
 
 [#ssc_transformations]
