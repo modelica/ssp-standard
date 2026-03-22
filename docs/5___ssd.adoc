@@ -774,8 +774,8 @@ Inside the text attribute, newlines indicate paragraph breaks.
 |Attribute |Description
 |x1 |Required attribute giving the x coordinate of the lower-left corner of the note.
 |y1 |Required attribute giving the y coordinate of the lower-left corner of the note.
-|x2 |Required attribute giving the x coordinate of the upper-right corner of the note.
-|y2 |Required attribute giving the y coordinate of the upper-right corner of the note.
+|x2 |Required attribute giving the x coordinate of the upper-right corner of the note, x1 < x2.
+|y2 |Required attribute giving the y coordinate of the upper-right corner of the note, y1 < y2.
 |===
 
 === Component
