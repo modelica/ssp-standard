@@ -168,6 +168,8 @@ The following changes were performed as part of the 2.0.1 maintenance release:
 * Add note for clock namespaces (https://github.com/modelica/ssp-standard/pull/114)
 * Remove reference to non existing changelog file (https://github.com/modelica/ssp-standard/pull/115)
 * Add legend for schema images (https://github.com/modelica/ssp-standard/pull/116)
+* Fix formating (https://github.com/modelica/ssp-standard/pull/119)
+* Clarification of coordinates for ssd:Note (https://github.com/modelica/ssp-standard/pull/121)
 
 Note that the schema definition for enumeration item values was updated to cover the full range of values for the new data types in FMI 3.0, as originally intended in the 2.0 release.
 
