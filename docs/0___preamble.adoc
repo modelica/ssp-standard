@@ -1,8 +1,8 @@
-Document version: 2.0.1-rc.1
+Document version: 2.0.1-rc.2
 
-February 24, 2026
+March 26, 2026
 
-This document is the first release candidate of release 2.0.1 of the System Structure and Parameterization Standard (SSP).
+This document is the second release candidate of release 2.0.1 of the System Structure and Parameterization Standard (SSP).
 
 This specification, as well as supporting XML schema files, is provided on the SSP site (https://ssp-standard.org/).
 https://github.com/modelica/ssp-standard/releases[Releases] and https://github.com/modelica/ssp-standard/issues[issues] can be found on https://github.com/modelica/ssp-standard[github.com/modelica/ssp-standard].
@@ -21,6 +21,7 @@ History / Road Map
 |1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
 |2.0 |2024-12-20 |Public Release of SSP 2.0
 |2.0.1-rc.1 |2026-02-24 |First Release Candidate of SSP 2.0.1
+|2.0.1-rc.2 |2026-03-26 |Second Release Candidate of SSP 2.0.1
 |===
 
 <<<
