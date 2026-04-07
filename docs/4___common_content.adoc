@@ -56,6 +56,8 @@ image:images/SystemStructureCommon_ATopLevelMetaData.svg[image]
 |license |Optional attribute giving information about licensing of the contents of this file.
 |generationTool |Optional attribute giving information about the tool used to generate this file.
 |generationDateAndTime |Optional attribute giving the date and time this file was generated.
+The value must be a valid ISO 8601 date-time string (type `xs:dateTime`).
+{empty}[ _For example `2009-12-08T14:33:22Z`, `2025-06-12T19:14:14.839539+02:00`, etc._ ]
 |===
 
 === Top-Level XML Child Elements
