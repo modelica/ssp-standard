@@ -114,3 +114,13 @@ jobs:
         user-email: ci@ssp-standard.org
         target-branch: main
         target-directory: static/docs/main
+
+  check-trailing-spaces:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v4
+
+    - name: Check for trailing spaces
+      run: |
+        ! grep -rIn ' $' --exclude="*.svg" .
