@@ -134,6 +134,7 @@ The following XML child elements are specified for the Unit element:
 |===
 |Element |Description
 |BaseUnit |Required element defining the base unit of the given unit in SI units, see below.
+|DisplayUnit |Optional element(s) defining one or more display units for this unit, see below.
 |===
 
 ===== BaseUnit
@@ -156,6 +157,30 @@ image:images/SystemStructureCommon_BaseUnit.svg[image]
 |rad |Optional attribute specifying the exponent of SI base unit rad, defaults to 0.
 |factor |Optional attribute specifying an optional factor, defaults to 1.
 |offset |Optional attribute specifying an optional offset, defaults to 0.
+|===
+
+===== DisplayUnit
+
+This optional element defines a display unit for the enclosing unit.
+Multiple DisplayUnit elements may be specified.
+This is aligned with the specification of display units in section 2.4.3 of the FMI 3.0 standard <<FMI30>>.
+
+image:images/SystemStructureCommon_DisplayUnit.svg[image]
+
+[width="100%",cols="28%,72%",options="header",]
+|===
+|Attribute |Description
+|name |This required attribute provides a name for the display unit, which *MUST* be unique within the set of display units of the enclosing unit definition.
+|factor |This optional attribute specifies the factor to convert from the unit to the display unit.
+Defaults to 1.
+If `inverse` is false: latexmath:[\mathit{displayValue} = \mathit{factor} \cdot \mathit{value} + \mathit{offset}]. +
+If `inverse` is true: latexmath:[\mathit{displayValue} = \dfrac{\mathit{factor}}{\mathit{value}} + \mathit{offset}].
+|offset |This optional attribute specifies the additive offset to convert from the unit to the display unit.
+Defaults to 0.
+|inverse |This optional boolean attribute specifies whether the conversion uses an inverse factor.
+Defaults to false.
+If false: latexmath:[\mathit{displayValue} = \mathit{factor} \cdot \mathit{value} + \mathit{offset}]. +
+If true: latexmath:[\mathit{displayValue} = \dfrac{\mathit{factor}}{\mathit{value}} + \mathit{offset}].
 |===
 
 === XML Element Groups
