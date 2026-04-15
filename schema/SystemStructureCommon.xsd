@@ -212,6 +212,55 @@
                     <xs:attribute name="offset" type="xs:double" default="0"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="DisplayUnit" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This optional element defines a display unit for the given unit.
+                        Multiple display units may be defined. This is aligned with the
+                        specification of display units in section 2.4.3 of the FMI 3.0
+                        standard.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:attribute name="name" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This required attribute provides a name for the display unit,
+                                which must be unique within the set of display units of the
+                                enclosing unit definition.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="factor" type="xs:double" default="1">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This optional attribute specifies the factor to convert from
+                                the unit to the display unit. Defaults to 1.
+                                If inverse is false: displayValue =   factor  * value + offset
+                                If inverse is true:  displayValue =   factor  / value + offset
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="offset" type="xs:double" default="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This optional attribute specifies the offset to convert from
+                                the unit to the display unit. Defaults to 0.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="inverse" type="xs:boolean" default="false">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This optional attribute specifies whether the conversion from
+                                unit to display unit uses an inverse factor. Defaults to false.
+                                If inverse is false: displayValue =   factor  * value + offset
+                                If inverse is true:  displayValue =   factor  / value + offset
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
