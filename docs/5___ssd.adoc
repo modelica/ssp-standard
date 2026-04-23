@@ -814,7 +814,7 @@ If the source attribute is missing, this indicates that there is no provided sou
 Implementations *CAN* take any specified type attribute into account when handling such components.
 In any other regard implementations *CAN* treat such components as equivalent to an empty system with the same connectors and other properties as specified for the component.
 
-Note that not specifying a source attribute is not the same as specifying a source attribute with an emtpy string value, as that is considered a valid relative URI.
+Note that not specifying a source attribute is not the same as specifying a source attribute with an empty string value, as that is considered a valid relative URI.
 Implementations *MUST NOT* specify an empty relative URI to indicate a missing implementation.
 
 |implementation |When the referenced component is an FMU that contains multiple implementations [ _for example Co-Simulation and Model Exchange_ ], this optional attribute can be used to determine which FMU implementation should be employed.
