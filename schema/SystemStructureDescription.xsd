@@ -231,7 +231,7 @@
                             same connectors and other properties as specified for the component.
 
                             Note that not specifying a source attribute is not the same as
-                            specifying a source attribute with an emtpy string value, as that
+                            specifying a source attribute with an empty string value, as that
                             is considered a valid relative URI. Implementations *MUST NOT*
                             specify an empty relative URI to indicate a missing implementation.
                         </xs:documentation>
