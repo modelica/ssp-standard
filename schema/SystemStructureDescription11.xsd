@@ -10,11 +10,11 @@
     <xs:annotation>
         <xs:documentation xml:lang="en">
             This is the XML Schema 1.1 schema for the MAP SSP
-            SystemStructureDescription 2.0 format.  It is provided
+            SystemStructureDescription 2.1 format.  It is provided
             as a non-normative alternative to the XML Schema 1.0 schema
             to support simpler cross-namespace validation of SSD files.
 
-            Version: 2.0.1
+            Version: 2.1.0-alpha
 
             Copyright 2016 -- 2026 Modelica Association Project "SSP"
 
@@ -59,6 +59,7 @@
                 <xs:element name="System" type="ssd:TSystem"/>
                 <xs:element name="Enumerations" minOccurs="0" type="ssc:TEnumerations"/>
                 <xs:element name="Units" minOccurs="0" type="ssc:TUnits"/>
+                <xs:element name="Terminals" minOccurs="0" type="ssc:TTerminalTypes"/>
                 <xs:element name="DefaultExperiment" minOccurs="0" type="ssd:TDefaultExperiment"/>
                 <xs:group ref="ssc:GMetaData"/>
                 <xs:group ref="ssc:GSignature"/>
@@ -74,6 +75,7 @@
                     <xs:restriction base="xs:normalizedString">
                         <xs:pattern value="1[.]0"/>
                         <xs:pattern value="2[.]0"/>
+                        <xs:pattern value="2[.]1"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
@@ -104,7 +106,7 @@
                         The set of connectors of this element, which represent
                         the interface of the element to the outside world.
 
-                        For components the set of connectors must match variable/ports
+                        For components the set of connectors must match variables
                         of the underlying component implementation, e.g. the referenced
                         FMU, by name.
 
@@ -710,7 +712,7 @@
                                 This attribute gives the connector a name, which
                                 shall be unique within the component or system and,
                                 for components, must match the name of a relevant
-                                variable/port in the underlying component implementation,
+                                variable in the underlying component implementation,
                                 e.g. the referenced FMU.
 
                                 Note that there is no requirement that connectors must
@@ -779,6 +781,7 @@
                                 <xs:enumeration value="local"/>
                                 <xs:enumeration value="inout"/>
                                 <xs:enumeration value="unspecified"/>
+                                <xs:enumeration value="terminal"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>

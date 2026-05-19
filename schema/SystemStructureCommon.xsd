@@ -7,7 +7,7 @@
             This is the normative XML Schema 1.0 schema for the MAP SSP
             SystemStructure 2.0 common content across formats.
 
-            Version: 2.0.1
+            Version: 2.1.0-alpha
 
             Copyright 2016 -- 2026 Modelica Association Project "SSP"
 
@@ -446,12 +446,13 @@
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
 
-    <xs:group name="GTypeChoice">
+    <xs:group name="GValueTypeChoice">
         <xs:choice>
             <xs:annotation>
                 <xs:documentation xml:lang="en">
-                    This element gives the type of a connector or signal dictionary entry
-                    (called entity below).
+                    The value-carrying type choices for a connector or signal dictionary
+                    entry: all types except Terminal. Used directly by TTerminalConnectors
+                    (where Terminal is not permitted) and composed into GTypeChoice.
                 </xs:documentation>
             </xs:annotation>
             <xs:element name="Real">
@@ -614,8 +615,321 @@
                   <xs:attribute name="priority" type="xs:unsignedInt" use="optional"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="Terminal" type="ssc:TTerminal">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Specifies the terminal type for a connector of kind "terminal".
+                        Two usage patterns are supported (see TTerminal and TTerminalType):
+                        1. Global type reference: provide only the name attribute, which
+                           references a TerminalType in the Terminals section of the SSD.
+                           The connector names are used directly as the variable names.
+                        2. Inline definition: omit name and provide matchingRule along with
+                           a Connectors child. Each Connector's name serves as the
+                           terminal-internal connector name and the variable name; the
+                           optional variableName attribute overrides the variable name.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:choice>
     </xs:group>
+
+    <xs:group name="GTypeChoice">
+        <xs:choice>
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This element gives the type of a connector or signal dictionary entry
+                    (called entity below).
+                </xs:documentation>
+            </xs:annotation>
+            <xs:group ref="ssc:GValueTypeChoice"/>
+            <xs:element name="Terminal" type="ssc:TTerminal">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Specifies the terminal type for a connector of kind "terminal".
+                        Two usage patterns are supported (see TTerminal and TTerminalType):
+                        1. Global type reference: provide only the name attribute, which
+                           references a TerminalType in the Terminals section of the SSD.
+                           The connector names are used directly as the variable names.
+                        2. Inline definition: omit name and provide matchingRule along with
+                           a Connectors child. Each Connector's name serves as the
+                           terminal-internal connector name and the variable name; the
+                           optional variableName attribute overrides the variable name.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:choice>
+    </xs:group>
+
+    <xs:complexType name="TTerminalConnectors">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The set of connectors within a terminal type definition or inline terminal definition.
+
+                Each connector is identified by its name, which serves as the connector
+                name within the terminal interface and, unless variableName is specified,
+                also as the variable/port name in the component at the point of use.
+                The optional variableName attribute overrides the variable/port name bound
+                in the component, decoupling the terminal interface name (used for matching)
+                from the underlying component variable name.
+
+                Connectors within a terminal definition must not use kind "terminal"; nested
+                sub-terminals are expressed via the Terminals child element of the enclosing
+                TTerminalType or TTerminal.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Connector" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="ssc:GValueTypeChoice" minOccurs="0"/>
+                        <xs:group ref="ssc:GDimensions"/>
+                        <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
+                    <xs:attribute name="name" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                The name of this connector within the terminal interface.
+                                Used for terminal connector matching. Unless variableName
+                                is also specified, this name is also used as the variable/port
+                                name in the component at the point of use.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="variableName" type="xs:string" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                Optional override for the variable/port name in the component
+                                at the point of use. When present, this name is used to bind
+                                to the variable/port in the component instead of the name
+                                attribute. This allows the terminal connector name (used for
+                                terminal matching) to differ from the underlying component
+                                variable name, enabling adaptation of components whose variable
+                                names differ from the terminal type connector names.
+                                When absent, the name attribute is used as the variable/port name.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="kind" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                The kind (causality/variability) of this terminal connector.
+                                May be omitted in global Terminal type definitions, since the
+                                same type is used on both ends of a connection with complementary
+                                directions. Should be specified in inline terminal definitions
+                                where direction is known.
+                                The value "terminal" must not be used here; nested sub-terminals
+                                are expressed via the Terminals child element of the enclosing
+                                Terminal type or inline Terminal definition.
+                            </xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="input"/>
+                                <xs:enumeration value="output"/>
+                                <xs:enumeration value="parameter"/>
+                                <xs:enumeration value="calculatedParameter"/>
+                                <xs:enumeration value="structuralParameter"/>
+                                <xs:enumeration value="constant"/>
+                                <xs:enumeration value="local"/>
+                                <xs:enumeration value="inout"/>
+                                <xs:enumeration value="unspecified"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TTerminalType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A named terminal type definition. Defines the interface of a reusable
+                terminal type, registered in the Terminals section of an SSD.
+                Components and sub-systems reference this type by name using
+                ssc:Terminal name="..." on a connector of kind="terminal".
+                The connector names defined here are used directly as the variable
+                names in the component; no separate name mapping is required.
+                Required attributes: name (unique within the Terminals collection),
+                matchingRule.
+                The Connectors child defines the terminal's connector interface.
+                The Terminals child defines nested sub-terminal types.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Connectors" minOccurs="0" type="ssc:TTerminalConnectors">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines the connector interface of this terminal type. Each Connector
+                        child specifies a connector by name, kind, and optional type. The
+                        connector name is used directly as the variable name in the
+                        component at the point of use; no separate name mapping is required.
+                        Connectors of kind "terminal" must not appear here; use the Terminals
+                        child for nested sub-terminal types.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Terminals" minOccurs="0" type="ssc:TTerminalTypes">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Nested sub-terminal type definitions that form part of this
+                        terminal type's interface. Each TerminalType child defines a
+                        named sub-terminal.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+        <xs:attribute name="name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    The unique name of this terminal type. Qualified names using reverse
+                    domain name notation (e.g. "com.example.ControlInterface") are
+                    recommended. Must be unique within the enclosing Terminals collection.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="matchingRule" type="xs:normalizedString" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    Matching rule for connecting terminals (FMI 3.0 semantics).
+                    This is an open string (xs:normalizedString) following FMI 3.0,
+                    allowing tool-specific and domain-specific rules in addition to
+                    the standard values:
+                    - plug: All connectors must match by name.
+                    - bus: Partial matching by connector name allowed.
+                    - sequence: Matching by connector order; count must match.
+                    - none: No automatic matching.
+                    Each terminal level is evaluated independently.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="terminalKind" type="xs:normalizedString" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    Optional terminal kind (FMI 3.0 semantics). Use reverse domain
+                    name notation (e.g. "com.example.MyTerminalType").
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="TTerminalTypes">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A collection of Terminal elements defining reusable terminal types. Used either
+                at the top level of an SSD (global terminal type registry) or as the Terminals
+                child of a TTerminalType (for nested sub-terminal type definitions). Each
+                Terminal element's name must be unique within the collection.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Terminal" minOccurs="1" maxOccurs="unbounded" type="ssc:TTerminalType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TTerminal">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Represents a terminal at the point of use on a connector of kind="terminal".
+                Two usage patterns are supported:
+
+                1. Global type reference:
+                   Provide only the name attribute, referencing a TerminalType in the
+                   Terminals section of the SSD. The connector names defined in the
+                   TerminalType are used directly as the variable names in the component.
+
+                2. Inline definition:
+                   Omit name and provide matchingRule along with a Connectors child.
+                   Each Connector's name serves as both the terminal-internal connector
+                   name and the variable name in the component. The optional variableName
+                   attribute on a Connector overrides the variable name, allowing
+                   adaptation of components whose variable names differ from the connector
+                   names. Nested inline sub-terminals may be defined via a Terminals child.
+
+                Note: XSD 1.0 cannot enforce context constraints; implementations must
+                validate these semantic constraints.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Connectors" minOccurs="0" type="ssc:TTerminalConnectors">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines the connector interface in inline terminal definitions.
+                        Each Connector's name serves both as the terminal-internal connector
+                        name and as the variable name in the component; the optional
+                        variableName attribute overrides the variable name.
+                        Must not be present when referencing a global TerminalType by name.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Terminals" minOccurs="0" type="ssc:TTerminals">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Nested inline sub-terminal definitions. Each Terminal child has
+                        a name (for matching), matchingRule, and Connectors.
+                        Used only in inline terminal definitions; not applicable in global
+                        type references (sub-terminal definitions are part of the
+                        referenced TerminalType).
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+        <xs:attribute name="name" type="xs:string" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    In global type references: required; references a Terminal defined
+                    in the Terminals section of the enclosing SSD. Qualified type names
+                    (e.g. "com.example.ControlInterface") are recommended.
+                    In nested inline sub-terminal definitions: required; identifies the
+                    sub-terminal by name for matching purposes.
+                    In outermost inline terminal definitions: must not be present.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="matchingRule" type="xs:normalizedString" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    Matching rule for connecting terminals (FMI 3.0 semantics).
+                    This is an open string (xs:normalizedString) following FMI 3.0,
+                    allowing tool-specific and domain-specific rules in addition to
+                    the standard values:
+                    - plug: All connectors must match by name.
+                    - bus: Partial matching by connector name allowed.
+                    - sequence: Matching by connector order; count must match.
+                    - none: No automatic matching.
+                    Required in inline terminal definitions (outermost and nested inline
+                    sub-terminals). Not present in global type references, where the
+                    matchingRule is taken from the referenced TerminalType.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="terminalKind" type="xs:normalizedString" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    Optional terminal kind (FMI 3.0 semantics). Use reverse domain
+                    name notation (e.g. "com.example.MyTerminalType").
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="TTerminals">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A collection of Terminal elements at the point of use. Used as the
+                Terminals child of TTerminal for nested inline sub-terminal definitions.
+                Each Terminal child has a name (for matching), matchingRule, and Connectors.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Terminal" minOccurs="1" maxOccurs="unbounded" type="ssc:TTerminal"/>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:group name="GTransformationChoice">
         <xs:annotation>
