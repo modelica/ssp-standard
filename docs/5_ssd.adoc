@@ -272,11 +272,15 @@ Any inside view is not overridden.
 |y
 |Required attribute giving the y coordinate of the connector inside the connector coordinate system.
 
+|rotation|Optional attribute defines an additional rotation in degrees, where positive numbers indicate left rotation (x→y).
+
 |systemInnerX
 |Optional attribute giving a separate x coordinate of the connector for the inside view of a system.
 
 |systemInnerY
 |Optional attribute giving a separate y coordinate of the connector for the inside view of a system.
+
+|systemInnerRotation|Optional attribute giving a separate rotation in degrees of the connector for the inside view of a system, where positive numbers indicate left rotation (x→y).
 |===
 
 [NOTE]
