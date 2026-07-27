@@ -9,7 +9,7 @@ The SSP standard allows the set of data and meta-data stored and transported via
 All XML-based file formats defined in the SSP standard allow optional ssc:Annotation elements to be inserted in all XML elements that represent entities of the underlying data model.
 This is achieved through the ssc:TAnnotations type defined in <<Common XML Child Elements>>.
 Each ssc:Annotation element contains a required type attribute, which contains the namespace for that annotation, as defined in <<Extension Namespaces>>.
-The content of the ssc:Annotation element can be arbitrary XML data, and can make use of XML namespaces and XML schemas for combined validation where appropriate.
+The content of the ssc:Annotation element *CAN* be arbitrary XML data, and *CAN* make use of XML namespaces and XML schemas for combined validation where appropriate.
 
 ==== Extra Files Mechanism
 
@@ -60,6 +60,12 @@ Layered standards can fall into three categories:
 * Layered standards can be defined by third parties, making them third-party layered standards, without any representations by MAP SSP for their suitability or content, or even knowledge by MAP SSP about their existence.
 * Layered standards can be defined/adopted and published by MAP SSP itself, making them MAP SSP layered standards.
 * Finally, layered standards that have achieved enough adoption or importance to be included into the base standard set can be incorporated into a new minor release version of the base standard as an optional or mandatory appendix, making support for this layered standard optional or required for conformance with the newly published minor release version of the base standard.
+
+==== Version Mixing
+
+Since version information is specific to each individual XML file within an SSP package (as specified by the `version` attribute in SSD, SSV, SSM, and SSB root elements), it is explicitly allowed for an SSP package to contain XML files that conform to different SSP versions.
+Referenced resources within an SSP package, like component implementations (e.g., FMUs or nested SSP packages) *MAY* conform to different standards and different versions of those standards.
+This flexibility allows for the integration of resources developed at different times or with different tooling capabilities.
 
 === Content addressing
 

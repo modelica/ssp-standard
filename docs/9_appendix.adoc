@@ -33,6 +33,7 @@ The following companies and persons were involved in the creation of the standar
 * Christian Bertsch, Bosch
 * Dag Brück, Dassault Systèmes
 * Markus Deppe, dSPACE
+* Nikolai Fast, Beckhoff Automation
 * Hans-Martin Heinkel, Bosch
 * Maria Henningsson, Modelon
 * Jan-Niklas Jäschke, TLK-Thermo
