@@ -8,13 +8,25 @@ For non-public issues, contact the SSP development group at map-ssp_projectlead@
 
 *History*
 
-[width="100%",cols="18%,12%,70%",]
+[cols="1,1,5"]
 |===
 |Version |Date |Remarks
-|1.0 |2019-03-05 |First Public Release of SSP
-|1.0.1 |2022-07-25 |Public Release of SSP 1.0.1
-|2.0 |2024-12-20 |Public Release of SSP 2.0
-|2.0.1 |2026-05-05 |Public Release of SSP 2.0.1
+
+|1.0
+|2019-03-05
+|First Public Release of SSP
+
+|1.0.1
+|2022-07-25
+|Public Release of SSP 1.0.1
+
+|2.0
+|2024-12-20
+|Public Release of SSP 2.0
+
+|2.0.1
+|2026-05-05
+|Public Release of SSP 2.0.1
 |===
 
 *License of this document*
