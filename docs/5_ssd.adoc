@@ -276,82 +276,202 @@ image:images/Example_ElementGeometry.svg[image]
 ====
 The next examples show the effects of attributes of the ElementGeometry on the visual representation of a reference element:
 
-**Non-transformed reference** (icon fills rectangle, left 2 inputs, right 1 output)
+*Non-transformed reference* (icon fills rectangle, left 2 inputs, right 1 output)
 
 image:images/Example_Icon0.svg[image]
 
-__**Example 1: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**0** +
-__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**IGNORED** (relevant only if element is flipped)__
+*Example 1: No flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` < `x2`, `y1` < `y2`
+|rotation             |`0`
+|iconRotation         |`0`
+|iconFixedAspectRatio |`true`
+|iconFlip             |ignored (relevant only if element is flipped)
+|===
 
 image:images/Example_Icon1.svg[image]
 
-__**Example 2: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**0** +
-__iconRotation__=**0**, __iconFixedAspectRatio__=**false**, __iconFlip__=**IGNORED**__
+*Example 2: No flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` < `x2`, `y1` < `y2`
+|rotation             |`0`
+|iconRotation         |`0`
+|iconFixedAspectRatio |`false`
+|iconFlip             |ignored
+|===
 
 image:images/Example_Icon2.svg[image]
 
-__**Example 3: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**IGNORED**__
+*Example 3: No flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` < `x2`, `y1` < `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`true`
+|iconFlip             |ignored
+|===
 
 image:images/Example_Icon3.svg[image]
 
-__**Example 4: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**false**, __iconFlip__=**IGNORED**__
+*Example 4: No flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` < `x2`, `y1` < `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`false`
+|iconFlip             |ignored
+|===
 
 image:images/Example_Icon4.svg[image]
 
-__**Example 5: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**IGNORED**__
+*Example 5: No flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` < `x2`, `y1` < `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |`0`
+|iconFixedAspectRatio |`true`
+|iconFlip             |ignored
+|===
 
 image:images/Example_Icon5.svg[image]
 
-__**Example 6: No flip** (__x1__<__x2__, __y1__<__y2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**0**, __iconFixedAspectRatio__=**false**, __iconFlip__=**IGNORED**__
+*Example 6: No flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` < `x2`, `y1` < `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |`0`
+|iconFixedAspectRatio |`false`
+|iconFlip             |ignored
+|===
 
 image:images/Example_Icon6.svg[image]
 
-__**Example 7: Horizontal flip** (__x1__>__x2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**true**__
+*Example 7: Horizontal flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` < `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`true`
+|iconFlip             |`true`
+|===
 
 image:images/Example_Icon7.svg[image]
 
-__**Example 8: Horizontal flip** (__x1__>__x2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**false**, __iconFlip__=**false**__
+*Example 8: Horizontal flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` < `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`false`
+|iconFlip             |`false`
+|===
 
 image:images/Example_Icon8.svg[image]
 
-__**Example 9: Horizontal flip** (__x1__>__x2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
+*Example 9: Horizontal flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` < `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`true`
+|iconFlip             |`false`
+|===
 
 image:images/Example_Icon9.svg[image]
 
-__**Example 10: Vertical flip** (__y1__>__y2__), __rotation__=**0** +
-__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
+*Example 10: Vertical flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` < `x2`, `y1` > `y2`
+|rotation             |`0`
+|iconRotation         |`0`
+|iconFixedAspectRatio |`true`
+|iconFlip             |`false`
+|===
 
 image:images/Example_Icon10.svg[image]
 
-__**Example 11: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**0** +
-__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
+*Example 11: Horizontal and vertical flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` > `y2`
+|rotation             |`0`
+|iconRotation         |`0`
+|iconFixedAspectRatio |`true`
+|iconFlip             |`false`
+|===
 
 image:images/Example_Icon11.svg[image]
 
-__**Example 12: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**0** +
-__iconRotation__=**0**, __iconFixedAspectRatio__=**true**, __iconFlip__=**true**__
+*Example 12: Horizontal and vertical flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` > `y2`
+|rotation             |`0`
+|iconRotation         |`0`
+|iconFixedAspectRatio |`true`
+|iconFlip             |`true`
+|===
 
 image:images/Example_Icon12.svg[image]
 
-__**Example 13: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**true**__
+*Example 13: Horizontal and vertical flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` > `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`true`
+|iconFlip             |`true`
+|===
 
 image:images/Example_Icon13.svg[image]
 
-__**Example 14: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**false**, __iconFlip__=**true**__
+*Example 14: Horizontal and vertical flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` > `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`false`
+|iconFlip             |`true`
+|===
 
 image:images/Example_Icon14.svg[image]
 
-__**Example 15: Horizontal and vertical flip** (__x1__>__x2__, __y1__>__y2__), __rotation__=**&#x03C6;** +
-__iconRotation__=**&#x03C6;**, __iconFixedAspectRatio__=**true**, __iconFlip__=**false**__
+*Example 15: Horizontal and vertical flip*
+
+[cols="1,2"]
+|===
+|Coordinates          |`x1` > `x2`, `y1` > `y2`
+|rotation             |latexmath:[\varphi]
+|iconRotation         |latexmath:[\varphi]
+|iconFixedAspectRatio |`true`
+|iconFlip             |`false`
+|===
 
 image:images/Example_Icon15.svg[image]
 ====
