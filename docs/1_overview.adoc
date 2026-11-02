@@ -121,29 +121,29 @@ The SSP approach enables the sharing of standardized system structure descriptio
 
 The following changes were performed as part of the 2.0.1 maintenance release:
 
-* Update error condition for sizeConnector attribute (https://github.com/modelica/ssp-standard/pull/90)
-* Documentation updates (https://github.com/modelica/ssp-standard/pull/87)
-* Add justification for SSP "size" vs FMI "start" attribute naming (https://github.com/modelica/ssp-standard/pull/91)
-* Add favicon (https://github.com/modelica/ssp-standard/pull/93)
-* Clarify support for mixed SSP versions in nested SSP (https://github.com/modelica/ssp-standard/pull/92)
-* Update all schema images, fix missing clock section (https://github.com/modelica/ssp-standard/pull/98)
-* Fix SSP relationship to FMI as complementary standard (https://github.com/modelica/ssp-standard/pull/102)
-* Update MAP link in readme.md (https://github.com/modelica/ssp-standard/pull/106)
-* Bump copyright to year 2026 (https://github.com/modelica/ssp-standard/pull/101)
-* Change "system structure definition" to "system structure description" (https://github.com/modelica/ssp-standard/pull/105)
-* Update all geometry example images, fix formatting issues in geometry section (https://github.com/modelica/ssp-standard/pull/100)
-* Fix enumeration value space for SSP2 (fixes #96) (https://github.com/modelica/ssp-standard/pull/109)
-* Fix literature references/keys (https://github.com/modelica/ssp-standard/pull/110)
-* Advise users to report issues on github (https://github.com/modelica/ssp-standard/pull/111)
-* Remove xml namespace links (https://github.com/modelica/ssp-standard/pull/112)
-* Fix formatting issues (https://github.com/modelica/ssp-standard/pull/113)
-* Add note for clock namespaces (https://github.com/modelica/ssp-standard/pull/114)
-* Remove reference to non existing changelog file (https://github.com/modelica/ssp-standard/pull/115)
-* Add legend for schema images (https://github.com/modelica/ssp-standard/pull/116)
-* Fix formatting (https://github.com/modelica/ssp-standard/pull/119)
-* Clarification of coordinates for ssd:Note (https://github.com/modelica/ssp-standard/pull/121)
-* Fix typo (https://github.com/modelica/ssp-standard/pull/129)
-* Clarify generationDateAndTime format (https://github.com/modelica/ssp-standard/pull/126)
+* Update error condition for sizeConnector attribute (https://github.com/modelica/ssp-standard/pull/90[PR #90])
+* Documentation updates (https://github.com/modelica/ssp-standard/pull/87[PR #87])
+* Add justification for SSP "size" vs FMI "start" attribute naming (https://github.com/modelica/ssp-standard/pull/91[PR #91])
+* Add favicon (https://github.com/modelica/ssp-standard/pull/93[PR #93])
+* Clarify support for mixed SSP versions in nested SSP (https://github.com/modelica/ssp-standard/pull/92[PR #92])
+* Update all schema images, fix missing clock section (https://github.com/modelica/ssp-standard/pull/98[PR #98])
+* Fix SSP relationship to FMI as complementary standard (https://github.com/modelica/ssp-standard/pull/102[PR #102])
+* Update MAP link in readme.md (https://github.com/modelica/ssp-standard/pull/106[PR #106])
+* Bump copyright to year 2026 (https://github.com/modelica/ssp-standard/pull/101[PR #101])
+* Change "system structure definition" to "system structure description" (https://github.com/modelica/ssp-standard/pull/105[PR #105])
+* Update all geometry example images, fix formatting issues in geometry section (https://github.com/modelica/ssp-standard/pull/100[PR #100])
+* Fix enumeration value space for SSP2 (fixes #96) (https://github.com/modelica/ssp-standard/pull/109[PR #109])
+* Fix literature references/keys (https://github.com/modelica/ssp-standard/pull/110[PR #110])
+* Advise users to report issues on github (https://github.com/modelica/ssp-standard/pull/111[PR #111])
+* Remove xml namespace links (https://github.com/modelica/ssp-standard/pull/112[PR #112])
+* Fix formatting issues (https://github.com/modelica/ssp-standard/pull/113[PR #113])
+* Add note for clock namespaces (https://github.com/modelica/ssp-standard/pull/114[PR #114])
+* Remove reference to non existing changelog file (https://github.com/modelica/ssp-standard/pull/115[PR #115])
+* Add legend for schema images (https://github.com/modelica/ssp-standard/pull/116[PR #116])
+* Fix formatting (https://github.com/modelica/ssp-standard/pull/119[PR #119])
+* Clarification of coordinates for ssd:Note (https://github.com/modelica/ssp-standard/pull/121[PR #121])
+* Fix typo (https://github.com/modelica/ssp-standard/pull/129[PR #129])
+* Clarify generationDateAndTime format (https://github.com/modelica/ssp-standard/pull/126[PR #126])
 
 Note that the schema definition for enumeration item values was updated to cover the full range of values for the new data types in FMI 3.0, as originally intended in the 2.0 release.
 
@@ -177,10 +177,10 @@ The following changes were performed as part of the 2.0.0 major release:
   ** Support in the core standard for Modelica models as components
   ** Support for the mapping of complex Modelica types in interfaces to binary connectors in SSP
 * General clarifications and bug fixes
-  ** Fix missing type of Connector name attribute in https://github.com/modelica/ssp-standard/pull/4
-  ** Clarify type conversion handling in https://github.com/modelica/ssp-standard/pull/21
-  ** Clarify uniqueness of root SSDs in https://github.com/modelica/ssp-standard/pull/23
-  ** Clarify hierarchical parameter name resolution in https://github.com/modelica/ssp-standard/pull/27
+  ** Fix missing type of Connector name attribute (https://github.com/modelica/ssp-standard/pull/4[PR #4])
+  ** Clarify type conversion handling (https://github.com/modelica/ssp-standard/pull/21[PR #21])
+  ** Clarify uniqueness of root SSDs (https://github.com/modelica/ssp-standard/pull/23[PR #23])
+  ** Clarify hierarchical parameter name resolution (https://github.com/modelica/ssp-standard/pull/27[PR #27])
 
 === Changes in 1.0.1
 
