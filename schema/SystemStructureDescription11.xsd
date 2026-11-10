@@ -686,19 +686,21 @@
                                     determined by SystemGeometry for the inside view.
 
                                     For systems, optionally, different placement of connectors for the
-                                    inside view of the system can be specified with the systemInnerX
-                                    and systemInnerY coordinates. This enables preserving the inside
-                                    system layout when integrating a system in a system structure and
-                                    avoiding unintended changes to the position of the connectors on
-                                    the inside view of the system when making layout changes on the
-                                    outside view and vice versa.
+                                    inside view of the system can be specified with the systemInnerX,
+                                    systemInnerY and systemInnerRotation attributes. This enables
+                                    preserving the inside system layout when integrating a system in a
+                                    system structure and avoiding unintended changes to the position of
+                                    the connectors on the inside view of the system when making layout
+                                    changes on the outside view and vice versa.
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:attribute name="x" type="xs:double" use="required"/>
                                 <xs:attribute name="y" type="xs:double" use="required"/>
+                                <xs:attribute name="rotation" type="xs:double" use="optional"/>
                                 <xs:attribute name="systemInnerX" type="xs:double" use="optional"/>
                                 <xs:attribute name="systemInnerY" type="xs:double" use="optional"/>
+                                <xs:attribute name="systemInnerRotation" type="xs:double" use="optional"/>
                             </xs:complexType>
                         </xs:element>
                         <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
