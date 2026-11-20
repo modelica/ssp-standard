@@ -290,6 +290,81 @@ Any inside view is not overridden.
 image:images/Example_ConnectorGeometry.svg[image]
 ====
 
+==== Terminal Connector
+
+Terminal connectors are structured terminals, i.e., connectors constructed from other connectors or terminal connectors.
+Key characteristics of terminal connectors are:
+
+* The contents and structure of the connector is defined in a file-level `TerminalDefinition`.
+*  A `TerminalConnctor` element names a connector of a component or system, and links to the terminal definition.
+* For terminals in FMU components, we need additional `TerminalMember` elements to describe the mapping from terminal variables to FMU connectors outside the terminal.
+
+[mermaid]
+----
+classDiagram
+    direction LR
+     class ABaseTerminal["ssc:ABaseterminal"] {
+        +String description
+        +String id
+    }
+    class TerminalConnector["ssd:TerminalConnector"] {
+        +String name
+        +String kind
+        +String source
+        +Boolean conjugate
+    }
+    class TerminalMember["ssd:TerminalMember"] {
+        +String memberName
+        +String variableName
+    }
+    class ConnectorGeometry["ssd:ConnectorGeometry"] {
+        + Real x, y
+        + Real systemInnerX, systemInnerY
+    }
+
+    TerminalConnector <|-- ABaseTerminal
+    TerminalConnector *-- "0..n" TerminalMember
+    TerminalConnector *-- "0..1" ConnectorGeometry
+----
+
+A terminal connector is defined through a terminal connector definition XML element with the following attributes:
+
+[cols="1,4"]
+|===
+|Attribute |Description
+
+|name
+|This required attribute provides a name, which must be unique within the set of terminals in a given file.
+
+|kind
+|This optional attribute specifies the semantics of connecting terminals, see <<Connectors>>.
+
+|source
+|This required attribute provides a name, which must match a terminal definition in the SSP file.
+
+|conjugate
+|This optional attribute specfiies that the designate `source` should be regarded as a conjugated terminal definition, i.e., where each declared  `input` is regarded as output and each declared `output` is regarded as input..
+|===
+
+For components of type `application/x-fmu-sharedlibrary` the terminal connector may contain zero or more terminal member elements.
+The terminal member elements shall match the connectors of the terminal definition designated by `source`.
+
+===== Terminal Member
+
+A terminal member element maps an FMU component connector to a terminal member.
+This means that connections to a terminal connector are semantically equal connections to connectors of the FMU component.
+
+[cols="1,4"]
+|===
+|Attribute |Description
+
+|memberName
+|This required attribute provides a name, which must match a connector or terminal connector in terminal definition designated by the `source` attribute of the parentthe terminal connector.
+
+|variableName
+|This required attribute provides a name, which ust match the name of another connector or terminal connector in the component of the parent terminal connector.
+|===
+
 ==== ElementGeometry
 
 image:images/SystemStructureDescription_ElementGeometry.svg[image]
