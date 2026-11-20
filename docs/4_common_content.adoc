@@ -140,6 +140,96 @@ For each item in the enumeration there is one Item XML element with the followin
 NOTE: Note that the value attribute is a signed integer value with 64-bit precision in SSP 2.0, to support the enhanced value space of enumerations in FMI 3.0, but it is a 32-bit signed integer value in SSP 1.0, to be compatible with the enumeration value space of FMI 2.0.
 The initial release of SSP 2.0 had erroneously retained the 32-bit signed integer value space for enumeration items, which is now corrected.
 
+==== Terminals
+
+This optional element must contain definitions for all terminal definitions referenced in a file.
+It must only be used for the specification of terminal connectors.
+
+NOTE: As a file-based interchange standard, the natural scope for terminals is the file scope, so that files can be parsed and processed separately, without the need for cross-file references or scoped references with the possibilities of shadowing and ambiguities.
+Upon import tools are free to merge terminal information across files or separate them between hierarchy layers as they see fit.
+
+WARNING: Sorry, I don't get how we make the diagrams so I fake it with Mermaid class diagrams.
+
+[mermaid]
+----
+classDiagram
+    direction LR
+    class TTerminals {
+    }
+    class ABaseTerminal["ssc:ABaseterminal"] {
+        +String description
+        +String id
+    }
+    class TerminalDefinition["ssc:TerminalDefinition"] {
+        +String name
+        +String matchingRule
+    }
+    class TerminalItem
+    TTerminals -- "0..n" TerminalDefinition
+    TerminalDefinition <|-- ABaseTerminal
+    TerminalDefinition *-- "0..n" TerminalItem
+    class Connector["ssd:Connector"]
+    class TerminalConnector["ssd:TerminalConnector"]
+    TerminalItem --> Connector
+    TerminalItem --> TerminalConnector
+----
+
+Each terminal is defined through a terminal definition XML element with the following attributes:
+
+[cols="1,4"]
+|===
+|Attribute |Description
+
+|name
+|This required attribute provides a name, which must be unique within the set of terminals in a given file.
+
+|matchingRule
+|This optional attribute species the semantics of connecting terminals of this kind. If the attribute is not specified, the default value is `bus`.
+|===
+
+===== Matching Rule
+
+The following matching rule values are allowed:
+
+[cols="1,4"]
+|===
+|Value |Description
+
+|`plug`
+|All connectors must match by `name`.
+
+|`bus`
+|Partial matching by connector `name` is allowed; unmatched connectors are left unconnected.
+
+|`sequence`
+|Matching is done by connector order; the count of connectors must match.
+|===
+
+The following XML child elements are specified for the Terminal element:
+
+[cols="1,4"]
+|===
+|Element |Description
+
+|TerminalItem
+|One or more elements specifying the items of the terminal.
+|===
+
+===== Terminal Item
+
+A terminal items specifies one element of a terminal definition. Each item must be one of the following:
+
+[cols="1,4"]
+|===
+|Type |Description
+
+|ssd:Connector
+|Specifies a connector element in the terminal definition.
+
+|ssd:TerminalConnector
+|Specifies a terminal connector element in the terminal definition. This allows the definition of terminal connectors with several levels of hierarchy.
+|===
+
 ==== Units
 
 image:images/SystemStructureCommon_TUnits.svg[image]
